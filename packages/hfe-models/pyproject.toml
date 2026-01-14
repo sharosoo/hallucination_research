@@ -1,0 +1,21 @@
+[project]
+name = "hfe-models"
+version = "0.1.0"
+description = "Model wrappers for hallucination detection (Qwen, OLMo, vLLM)"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.45.0",
+    "accelerate>=1.0.0",
+    "bitsandbytes>=0.44.0",
+    "vllm>=0.6.0",
+    "spacy>=3.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hfe_models"]

@@ -1,0 +1,24 @@
+[project]
+name = "hfe-core"
+version = "0.1.0"
+description = "Core Hybrid Free Energy detector for LLM hallucination detection"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.45.0",
+    "sentence-transformers>=3.0.0",
+    "accelerate>=1.0.0",
+    "scipy>=1.14.0",
+    "scikit-learn>=1.5.0",
+    "numpy>=2.0.0",
+    "httpx>=0.27.0",
+    "tqdm>=4.66.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hfe_core"]
