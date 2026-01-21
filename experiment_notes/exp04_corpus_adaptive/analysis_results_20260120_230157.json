@@ -1,0 +1,946 @@
+{
+  "timestamp": "2026-01-20T23:01:57.720821",
+  "config": {
+    "datasets": [
+      "truthfulqa",
+      "halueval"
+    ],
+    "energy_sign_policy": "NO FLIP - higher energy = uncertain = hallucination",
+    "bin_types": [
+      "equal_width_5bins",
+      "percentile_5bins",
+      "percentile_10bins"
+    ]
+  },
+  "datasets": {
+    "truthfulqa": {
+      "dataset_name": "TruthfulQA",
+      "n_samples": 200,
+      "n_hallucination": 165,
+      "hallucination_rate": 0.825,
+      "coverage_stats": {
+        "min": 0.0,
+        "max": 0.8293324269620368,
+        "mean": 0.27766542247397025,
+        "median": 0.1779702752197137,
+        "std": 0.26769059300424375,
+        "percentiles": {
+          "p10": 0.0,
+          "p25": 0.0,
+          "p50": 0.1779702752197137,
+          "p75": 0.5,
+          "p90": 0.6545786716861884
+        }
+      },
+      "overall_metrics": {
+        "semantic_entropy": {
+          "auroc": 0.6190476190476191,
+          "auprc": 0.8727333396753127,
+          "n_samples": 200,
+          "n_positive": 165,
+          "n_negative": 35,
+          "positive_rate": 0.825
+        },
+        "semantic_energy": {
+          "auroc": 0.538008658008658,
+          "auprc": 0.8444600647043696,
+          "n_samples": 200,
+          "n_positive": 165,
+          "n_negative": 35,
+          "positive_rate": 0.825
+        },
+        "winner": "SE",
+        "auroc_diff": 0.08103896103896102,
+        "se_statistics": {
+          "overall": {
+            "mean": 0.9213638868088035,
+            "std": 0.5743001049637664,
+            "min": 0.0,
+            "max": 1.6094379124341005
+          },
+          "hallucination": {
+            "mean": 0.9624541200415065,
+            "std": 0.5689398245520532,
+            "n": 165
+          },
+          "normal": {
+            "mean": 0.7276527872832047,
+            "std": 0.5596664518597947,
+            "n": 35
+          }
+        },
+        "energy_statistics": {
+          "overall": {
+            "mean": -44.294840100876065,
+            "std": 3.2300966001516342,
+            "min": -56.88842954133686,
+            "max": -34.451852798461914
+          },
+          "hallucination": {
+            "mean": -44.116262102812655,
+            "std": 2.968460801280882,
+            "n": 165
+          },
+          "normal": {
+            "mean": -45.13670780603215,
+            "std": 4.149687344972043,
+            "n": 35
+          }
+        }
+      },
+      "bin_analysis": {
+        "equal_width_5bins": [
+          {
+            "bin_name": "0.00-0.20",
+            "coverage_range": [
+              0.0,
+              0.202
+            ],
+            "n_samples": 106,
+            "n_hallucination": 85,
+            "hallucination_rate": 0.8018867924528302,
+            "se_auroc": 0.5969187675070028,
+            "energy_auroc": 0.4778711484593838,
+            "winner": "SE",
+            "auroc_diff": 0.11904761904761901
+          },
+          {
+            "bin_name": "0.20-0.40",
+            "coverage_range": [
+              0.202,
+              0.404
+            ],
+            "n_samples": 10,
+            "n_hallucination": 8,
+            "hallucination_rate": 0.8,
+            "se_auroc": 0.5,
+            "energy_auroc": 0.5,
+            "winner": "Tie",
+            "auroc_diff": 0.0
+          },
+          {
+            "bin_name": "0.40-0.61",
+            "coverage_range": [
+              0.404,
+              0.6060000000000001
+            ],
+            "n_samples": 60,
+            "n_hallucination": 51,
+            "hallucination_rate": 0.85,
+            "se_auroc": 0.6797385620915033,
+            "energy_auroc": 0.6143790849673203,
+            "winner": "SE",
+            "auroc_diff": 0.065359477124183
+          },
+          {
+            "bin_name": "0.61-0.81",
+            "coverage_range": [
+              0.6060000000000001,
+              0.808
+            ],
+            "n_samples": 19,
+            "n_hallucination": 17,
+            "hallucination_rate": 0.8947368421052632,
+            "se_auroc": 0.8676470588235294,
+            "energy_auroc": 1.0,
+            "winner": "Energy",
+            "auroc_diff": -0.13235294117647056
+          },
+          {
+            "bin_name": "0.81-1.01",
+            "coverage_range": [
+              0.808,
+              1.01
+            ],
+            "n_samples": 5,
+            "n_hallucination": 4,
+            "hallucination_rate": 0.8,
+            "se_auroc": 0.25,
+            "energy_auroc": 1.0,
+            "winner": "Energy",
+            "auroc_diff": -0.75
+          }
+        ],
+        "percentile_5bins": [
+          {
+            "bin_name": "Q1",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q2",
+            "coverage_range": [
+              0.0,
+              0.10630953094741984
+            ],
+            "n_samples": 80,
+            "n_hallucination": 64,
+            "hallucination_rate": 0.8,
+            "se_auroc": 0.638671875,
+            "energy_auroc": 0.5556640625,
+            "winner": "SE",
+            "auroc_diff": 0.0830078125
+          },
+          {
+            "bin_name": "Q3",
+            "coverage_range": [
+              0.10630953094741984,
+              0.5
+            ],
+            "n_samples": 37,
+            "n_hallucination": 30,
+            "hallucination_rate": 0.8108108108108109,
+            "se_auroc": 0.46904761904761905,
+            "energy_auroc": 0.30952380952380953,
+            "winner": "SE",
+            "auroc_diff": 0.1595238095238095
+          },
+          {
+            "bin_name": "Q4",
+            "coverage_range": [
+              0.5,
+              0.5
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q5",
+            "coverage_range": [
+              0.5,
+              1.01
+            ],
+            "n_samples": 83,
+            "n_hallucination": 71,
+            "hallucination_rate": 0.8554216867469879,
+            "se_auroc": 0.6778169014084507,
+            "energy_auroc": 0.6795774647887324,
+            "winner": "Tie",
+            "auroc_diff": -0.0017605633802816323
+          }
+        ],
+        "percentile_10bins": [
+          {
+            "bin_name": "Q1",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q2",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q3",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q4",
+            "coverage_range": [
+              0.0,
+              0.10630953094741984
+            ],
+            "n_samples": 80,
+            "n_hallucination": 64,
+            "hallucination_rate": 0.8,
+            "se_auroc": 0.638671875,
+            "energy_auroc": 0.5556640625,
+            "winner": "SE",
+            "auroc_diff": 0.0830078125
+          },
+          {
+            "bin_name": "Q5",
+            "coverage_range": [
+              0.10630953094741984,
+              0.1779702752197137
+            ],
+            "n_samples": 20,
+            "n_hallucination": 17,
+            "hallucination_rate": 0.85,
+            "se_auroc": 0.35294117647058826,
+            "energy_auroc": 0.17647058823529413,
+            "winner": "SE",
+            "auroc_diff": 0.17647058823529413
+          },
+          {
+            "bin_name": "Q6",
+            "coverage_range": [
+              0.1779702752197137,
+              0.5
+            ],
+            "n_samples": 17,
+            "n_hallucination": 13,
+            "hallucination_rate": 0.7647058823529411,
+            "se_auroc": 0.5769230769230769,
+            "energy_auroc": 0.40384615384615385,
+            "winner": "SE",
+            "auroc_diff": 0.17307692307692302
+          },
+          {
+            "bin_name": "Q7",
+            "coverage_range": [
+              0.5,
+              0.5
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q8",
+            "coverage_range": [
+              0.5,
+              0.5
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q9",
+            "coverage_range": [
+              0.5,
+              0.6545786716861884
+            ],
+            "n_samples": 63,
+            "n_hallucination": 54,
+            "hallucination_rate": 0.8571428571428571,
+            "se_auroc": 0.6779835390946503,
+            "energy_auroc": 0.611111111111111,
+            "winner": "SE",
+            "auroc_diff": 0.0668724279835392
+          },
+          {
+            "bin_name": "Q10",
+            "coverage_range": [
+              0.6545786716861884,
+              1.01
+            ],
+            "n_samples": 20,
+            "n_hallucination": 17,
+            "hallucination_rate": 0.85,
+            "se_auroc": 0.6764705882352942,
+            "energy_auroc": 0.8823529411764707,
+            "winner": "Energy",
+            "auroc_diff": -0.20588235294117652
+          }
+        ]
+      },
+      "baseline_comparison": [
+        {
+          "method": "se_only",
+          "auroc": 0.6190476190476191,
+          "auprc": 0.8727333396753127,
+          "description": "Semantic Entropy only"
+        },
+        {
+          "method": "energy_only",
+          "auroc": 0.538008658008658,
+          "auprc": 0.8444600647043696,
+          "description": "Semantic Energy only"
+        },
+        {
+          "method": "fixed_0.1",
+          "auroc": 0.6230303030303029,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.1"
+        },
+        {
+          "method": "fixed_0.3",
+          "auroc": 0.6207792207792208,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.3"
+        },
+        {
+          "method": "fixed_0.5",
+          "auroc": 0.6143722943722943,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.5"
+        },
+        {
+          "method": "fixed_0.7",
+          "auroc": 0.5948051948051948,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.7"
+        },
+        {
+          "method": "fixed_0.9",
+          "auroc": 0.5596536796536797,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.9"
+        },
+        {
+          "method": "adaptive_sigmoid",
+          "auroc": 0.5842424242424243,
+          "auprc": null,
+          "description": "Adaptive: adaptive_sigmoid"
+        },
+        {
+          "method": "adaptive_linear",
+          "auroc": 0.5929004329004329,
+          "auprc": null,
+          "description": "Adaptive: adaptive_linear"
+        },
+        {
+          "method": "adaptive_threshold",
+          "auroc": 0.5972294372294372,
+          "auprc": null,
+          "description": "Adaptive: adaptive_threshold"
+        },
+        {
+          "method": "se_fallback_0.05",
+          "auroc": 0.6374025974025974,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.05"
+        },
+        {
+          "method": "se_fallback_0.1",
+          "auroc": 0.6374025974025974,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.1"
+        },
+        {
+          "method": "se_fallback_0.2",
+          "auroc": 0.6374025974025974,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.2"
+        },
+        {
+          "method": "se_fallback_0.3",
+          "auroc": 0.6374025974025974,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.3"
+        }
+      ],
+      "zero_se_analysis": {
+        "threshold": 0.1,
+        "n_samples": 41,
+        "n_hallucination": 31,
+        "n_normal": 10,
+        "hallucination_rate": 0.7560975609756098,
+        "energy_auroc": 0.7677419354838709
+      }
+    },
+    "halueval": {
+      "dataset_name": "HaluEval QA",
+      "n_samples": 200,
+      "n_hallucination": 21,
+      "hallucination_rate": 0.105,
+      "coverage_stats": {
+        "min": 0.0,
+        "max": 0.6799687032354211,
+        "mean": 0.11351780324420747,
+        "median": 0.023443378029923842,
+        "std": 0.18566102758610906,
+        "percentiles": {
+          "p10": 0.0,
+          "p25": 0.0,
+          "p50": 0.023443378029923842,
+          "p75": 0.12497688364926463,
+          "p90": 0.5
+        }
+      },
+      "overall_metrics": {
+        "semantic_entropy": {
+          "auroc": 0.5057196062782654,
+          "auprc": 0.11496111302045545,
+          "n_samples": 200,
+          "n_positive": 21,
+          "n_negative": 179,
+          "positive_rate": 0.105
+        },
+        "semantic_energy": {
+          "auroc": 0.6036179835062516,
+          "auprc": 0.2001980537714535,
+          "n_samples": 200,
+          "n_positive": 21,
+          "n_negative": 179,
+          "positive_rate": 0.105
+        },
+        "winner": "Energy",
+        "auroc_diff": -0.09789837722798622,
+        "se_statistics": {
+          "overall": {
+            "mean": 0.3654911230692805,
+            "std": 0.48154917071717823,
+            "min": 0.0,
+            "max": 1.6094379124341005
+          },
+          "hallucination": {
+            "mean": 0.3893307983558841,
+            "std": 0.5221976558804273,
+            "n": 21
+          },
+          "normal": {
+            "mean": 0.3626942896557683,
+            "std": 0.47647499547876393,
+            "n": 179
+          }
+        },
+        "energy_statistics": {
+          "overall": {
+            "mean": -51.28025708578693,
+            "std": 3.0747251181057935,
+            "min": -60.1963557619037,
+            "max": -42.07669186592102
+          },
+          "hallucination": {
+            "mean": -49.89668417741264,
+            "std": 3.3266037884792494,
+            "n": 21
+          },
+          "normal": {
+            "mean": -51.442575695149266,
+            "std": 3.0023071540117336,
+            "n": 179
+          }
+        }
+      },
+      "bin_analysis": {
+        "equal_width_5bins": [
+          {
+            "bin_name": "0.00-0.20",
+            "coverage_range": [
+              0.0,
+              0.202
+            ],
+            "n_samples": 167,
+            "n_hallucination": 13,
+            "hallucination_rate": 0.07784431137724551,
+            "se_auroc": 0.48576423576423583,
+            "energy_auroc": 0.6273726273726274,
+            "winner": "Energy",
+            "auroc_diff": -0.14160839160839161
+          },
+          {
+            "bin_name": "0.20-0.40",
+            "coverage_range": [
+              0.202,
+              0.404
+            ],
+            "n_samples": 4,
+            "n_hallucination": 2,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "0.40-0.61",
+            "coverage_range": [
+              0.404,
+              0.6060000000000001
+            ],
+            "n_samples": 21,
+            "n_hallucination": 5,
+            "hallucination_rate": 0.23809523809523808,
+            "se_auroc": 0.5312499999999999,
+            "energy_auroc": 0.4625,
+            "winner": "SE",
+            "auroc_diff": 0.06874999999999987
+          },
+          {
+            "bin_name": "0.61-0.81",
+            "coverage_range": [
+              0.6060000000000001,
+              0.808
+            ],
+            "n_samples": 8,
+            "n_hallucination": 1,
+            "hallucination_rate": 0.125,
+            "se_auroc": 0.9285714285714286,
+            "energy_auroc": 1.0,
+            "winner": "Energy",
+            "auroc_diff": -0.0714285714285714
+          },
+          {
+            "bin_name": "0.81-1.01",
+            "coverage_range": [
+              0.808,
+              1.01
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          }
+        ],
+        "percentile_5bins": [
+          {
+            "bin_name": "Q1",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q2",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q3",
+            "coverage_range": [
+              0.0,
+              0.05463906196411548
+            ],
+            "n_samples": 120,
+            "n_hallucination": 12,
+            "hallucination_rate": 0.1,
+            "se_auroc": 0.45833333333333326,
+            "energy_auroc": 0.5979938271604939,
+            "winner": "Energy",
+            "auroc_diff": -0.13966049382716061
+          },
+          {
+            "bin_name": "Q4",
+            "coverage_range": [
+              0.05463906196411548,
+              0.16666666666666666
+            ],
+            "n_samples": 39,
+            "n_hallucination": 1,
+            "hallucination_rate": 0.02564102564102564,
+            "se_auroc": 0.9473684210526316,
+            "energy_auroc": 0.9473684210526316,
+            "winner": "Tie",
+            "auroc_diff": 0.0
+          },
+          {
+            "bin_name": "Q5",
+            "coverage_range": [
+              0.16666666666666666,
+              1.01
+            ],
+            "n_samples": 41,
+            "n_hallucination": 8,
+            "hallucination_rate": 0.1951219512195122,
+            "se_auroc": 0.5435606060606061,
+            "energy_auroc": 0.5984848484848485,
+            "winner": "Energy",
+            "auroc_diff": -0.05492424242424243
+          }
+        ],
+        "percentile_10bins": [
+          {
+            "bin_name": "Q1",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q2",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q3",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q4",
+            "coverage_range": [
+              0.0,
+              0.0
+            ],
+            "n_samples": 0,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A (insufficient)",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q5",
+            "coverage_range": [
+              0.0,
+              0.023443378029923842
+            ],
+            "n_samples": 100,
+            "n_hallucination": 10,
+            "hallucination_rate": 0.1,
+            "se_auroc": 0.4961111111111111,
+            "energy_auroc": 0.6144444444444443,
+            "winner": "Energy",
+            "auroc_diff": -0.11833333333333323
+          },
+          {
+            "bin_name": "Q6",
+            "coverage_range": [
+              0.023443378029923842,
+              0.05463906196411548
+            ],
+            "n_samples": 20,
+            "n_hallucination": 2,
+            "hallucination_rate": 0.1,
+            "se_auroc": 0.25,
+            "energy_auroc": 0.4722222222222222,
+            "winner": "Energy",
+            "auroc_diff": -0.2222222222222222
+          },
+          {
+            "bin_name": "Q7",
+            "coverage_range": [
+              0.05463906196411548,
+              0.10198143132809599
+            ],
+            "n_samples": 20,
+            "n_hallucination": 1,
+            "hallucination_rate": 0.05,
+            "se_auroc": 0.9736842105263157,
+            "energy_auroc": 1.0,
+            "winner": "Energy",
+            "auroc_diff": -0.026315789473684292
+          },
+          {
+            "bin_name": "Q8",
+            "coverage_range": [
+              0.10198143132809599,
+              0.16666666666666666
+            ],
+            "n_samples": 19,
+            "n_hallucination": 0,
+            "hallucination_rate": 0.0,
+            "se_auroc": null,
+            "energy_auroc": null,
+            "winner": "N/A",
+            "auroc_diff": null
+          },
+          {
+            "bin_name": "Q9",
+            "coverage_range": [
+              0.16666666666666666,
+              0.5
+            ],
+            "n_samples": 12,
+            "n_hallucination": 2,
+            "hallucination_rate": 0.16666666666666666,
+            "se_auroc": 0.45,
+            "energy_auroc": 0.75,
+            "winner": "Energy",
+            "auroc_diff": -0.3
+          },
+          {
+            "bin_name": "Q10",
+            "coverage_range": [
+              0.5,
+              1.01
+            ],
+            "n_samples": 29,
+            "n_hallucination": 6,
+            "hallucination_rate": 0.20689655172413793,
+            "se_auroc": 0.5652173913043478,
+            "energy_auroc": 0.5507246376811594,
+            "winner": "SE",
+            "auroc_diff": 0.01449275362318836
+          }
+        ]
+      },
+      "baseline_comparison": [
+        {
+          "method": "se_only",
+          "auroc": 0.5057196062782654,
+          "auprc": 0.11496111302045545,
+          "description": "Semantic Entropy only"
+        },
+        {
+          "method": "energy_only",
+          "auroc": 0.6036179835062516,
+          "auprc": 0.2001980537714535,
+          "description": "Semantic Energy only"
+        },
+        {
+          "method": "fixed_0.1",
+          "auroc": 0.541633413141793,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.1"
+        },
+        {
+          "method": "fixed_0.3",
+          "auroc": 0.5434956105347166,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.3"
+        },
+        {
+          "method": "fixed_0.5",
+          "auroc": 0.5536046820963022,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.5"
+        },
+        {
+          "method": "fixed_0.7",
+          "auroc": 0.5738228252194733,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.7"
+        },
+        {
+          "method": "fixed_0.9",
+          "auroc": 0.5921787709497207,
+          "auprc": null,
+          "description": "Fixed weight: w_energy=0.9"
+        },
+        {
+          "method": "adaptive_sigmoid",
+          "auroc": 0.5565309922851822,
+          "auprc": null,
+          "description": "Adaptive: adaptive_sigmoid"
+        },
+        {
+          "method": "adaptive_linear",
+          "auroc": 0.5682362330407024,
+          "auprc": null,
+          "description": "Adaptive: adaptive_linear"
+        },
+        {
+          "method": "adaptive_threshold",
+          "auroc": 0.5403032721468475,
+          "auprc": null,
+          "description": "Adaptive: adaptive_threshold"
+        },
+        {
+          "method": "se_fallback_0.05",
+          "auroc": 0.567438148443735,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.05"
+        },
+        {
+          "method": "se_fallback_0.1",
+          "auroc": 0.567438148443735,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.1"
+        },
+        {
+          "method": "se_fallback_0.2",
+          "auroc": 0.567438148443735,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.2"
+        },
+        {
+          "method": "se_fallback_0.3",
+          "auroc": 0.567438148443735,
+          "auprc": null,
+          "description": "SE-Fallback: threshold=0.3"
+        }
+      ],
+      "zero_se_analysis": {
+        "threshold": 0.1,
+        "n_samples": 114,
+        "n_hallucination": 12,
+        "n_normal": 102,
+        "hallucination_rate": 0.10526315789473684,
+        "energy_auroc": 0.5939542483660132
+      }
+    }
+  },
+  "summary": {
+    "best_methods": {
+      "truthfulqa": {
+        "method": "se_fallback_0.05",
+        "auroc": 0.6374025974025974
+      },
+      "halueval": {
+        "method": "energy_only",
+        "auroc": 0.6036179835062516
+      }
+    },
+    "hypothesis_check": "See bin analysis for coverage-based patterns"
+  }
+}

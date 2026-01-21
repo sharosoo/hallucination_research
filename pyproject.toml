@@ -15,6 +15,7 @@ dependencies = [
     "hfe-datasets",
     "hfe-models",
     "hfe-eval",
+    "spacy>=3.8.11",
 ]
 
 [tool.uv.sources]

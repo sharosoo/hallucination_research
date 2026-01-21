@@ -1853,6 +1853,7 @@ dependencies = [
     { name = "hfe-datasets" },
     { name = "hfe-eval" },
     { name = "hfe-models" },
+    { name = "spacy" },
 ]
 
 [package.dev-dependencies]
@@ -1870,6 +1871,7 @@ requires-dist = [
     { name = "hfe-datasets", editable = "packages/hfe-datasets" },
     { name = "hfe-eval", editable = "packages/hfe-eval" },
     { name = "hfe-models", editable = "packages/hfe-models" },
+    { name = "spacy", specifier = ">=3.8.11" },
 ]
 
 [package.metadata.requires-dev]

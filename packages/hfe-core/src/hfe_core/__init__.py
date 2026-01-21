@@ -66,6 +66,62 @@ def __getattr__(name: str):
         from hfe_core.weight_predictor import WeightPrediction
 
         return WeightPrediction
+    elif name == "InfiniGramClient":
+        from hfe_core.corpus_stats import InfiniGramClient
+
+        return InfiniGramClient
+    elif name == "CorpusCoverageCalculator":
+        from hfe_core.corpus_stats import CorpusCoverageCalculator
+
+        return CorpusCoverageCalculator
+    elif name == "CorpusCoverage":
+        from hfe_core.corpus_stats import CorpusCoverage
+
+        return CorpusCoverage
+    elif name == "TripletExtractor":
+        from hfe_core.triplet_extractor import TripletExtractor
+
+        return TripletExtractor
+    elif name == "Triplet":
+        from hfe_core.triplet_extractor import Triplet
+
+        return Triplet
+    elif name == "EntityExtractor":
+        import warnings
+
+        warnings.warn(
+            "EntityExtractor is deprecated. Use TripletExtractor instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        from hfe_core.entity_extractor import EntityExtractor
+
+        return EntityExtractor
+    # Metrics
+    elif name == "compute_auroc":
+        from hfe_core.metrics import compute_auroc
+
+        return compute_auroc
+    elif name == "compute_auprc":
+        from hfe_core.metrics import compute_auprc
+
+        return compute_auprc
+    elif name == "compute_metrics":
+        from hfe_core.metrics import compute_metrics
+
+        return compute_metrics
+    elif name == "compute_all_metrics":
+        from hfe_core.metrics import compute_all_metrics
+
+        return compute_all_metrics
+    elif name == "MetricsResult":
+        from hfe_core.metrics import MetricsResult
+
+        return MetricsResult
+    elif name == "AllMetricsResult":
+        from hfe_core.metrics import AllMetricsResult
+
+        return AllMetricsResult
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
@@ -89,4 +145,20 @@ __all__ = [
     # Weight Predictor
     "WeightPredictor",
     "WeightPrediction",
+    # Corpus Stats
+    "InfiniGramClient",
+    "CorpusCoverageCalculator",
+    "CorpusCoverage",
+    # Triplet Extractor (QuCo-RAG)
+    "TripletExtractor",
+    "Triplet",
+    # Metrics
+    "compute_auroc",
+    "compute_auprc",
+    "compute_metrics",
+    "compute_all_metrics",
+    "MetricsResult",
+    "AllMetricsResult",
+    # Deprecated
+    "EntityExtractor",
 ]
