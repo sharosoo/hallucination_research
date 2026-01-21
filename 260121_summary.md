@@ -28,6 +28,8 @@ LLM 환각(hallucination) 탐지를 위해 **Semantic Entropy (SE)**와 **Semant
 
 **Coverage 값과 무관하게 데이터셋 전체 특성이 결정적**
 
+![Corpus Coverage Bin별 SE vs Energy AUROC 차이](https://raw.githubusercontent.com/sharosoo/hallucination_research/master/experiment_notes/exp05_quintile_analysis/corpus_coverage_bin-auroc_difference_between_se_and_energy.png)
+
 ### 문제점
 
 1. **Corpus coverage가 의미 없음**: 낮은 coverage든 높은 coverage든 같은 방법이 우세
