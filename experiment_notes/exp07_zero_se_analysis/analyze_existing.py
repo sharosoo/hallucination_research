@@ -50,16 +50,35 @@ def load_existing_results():
 
 
 def load_new_results():
-    """exp07에서 새로 생성된 데이터셋 결과 로드"""
+    """exp07에서 새로 생성된 데이터셋 결과 로드.
+    _llm_judge.json 파일이 존재하면 해당 데이터셋의 원본 대신 사용."""
     datasets = {}
     new_dir = EXP_DIR / "exp07_zero_se_analysis"
 
-    for json_file in new_dir.glob("results_*.json"):
+    all_files = sorted(new_dir.glob("results_*.json"))
+
+    # Build set of base names that have _llm_judge versions
+    llm_judge_bases = set()
+    for f in all_files:
+        if f.stem.endswith("_llm_judge"):
+            base = f.stem.replace("_llm_judge", "")
+            llm_judge_bases.add(base)
+
+    for json_file in all_files:
+        stem = json_file.stem
+        # Skip old file if _llm_judge version exists
+        if not stem.endswith("_llm_judge") and stem in llm_judge_bases:
+            print(f"  (skipped {json_file.name} — _llm_judge version exists)")
+            continue
+
         with open(json_file) as f:
             data = json.load(f)
-        name = data.get("dataset_name", json_file.stem.replace("results_", ""))
+        name = data.get(
+            "dataset_name", stem.replace("results_", "").replace("_llm_judge", "")
+        )
         datasets[name] = data["samples"]
-        print(f"  {name}: {len(data['samples'])} samples loaded")
+        label_src = "LLM-judge" if stem.endswith("_llm_judge") else "original"
+        print(f"  {name}: {len(data['samples'])} samples loaded ({label_src})")
 
     return datasets
 

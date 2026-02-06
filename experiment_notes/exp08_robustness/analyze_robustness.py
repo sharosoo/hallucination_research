@@ -45,14 +45,29 @@ def load_all_datasets():
         datasets["HaluEval"] = d["samples"]
         print(f"  HaluEval: {len(d['samples'])} samples")
 
-    # exp07 new datasets
+    # exp07 new datasets — prefer _llm_judge.json when available
     exp07_dir = EXP_DIR / "exp07_zero_se_analysis"
-    for json_file in exp07_dir.glob("results_*.json"):
+    all_files = sorted(exp07_dir.glob("results_*.json"))
+
+    llm_judge_bases = set()
+    for f in all_files:
+        if f.stem.endswith("_llm_judge"):
+            llm_judge_bases.add(f.stem.replace("_llm_judge", ""))
+
+    for json_file in all_files:
+        stem = json_file.stem
+        if not stem.endswith("_llm_judge") and stem in llm_judge_bases:
+            print(f"  (skipped {json_file.name} — _llm_judge version exists)")
+            continue
+
         with open(json_file) as f:
             d = json.load(f)
-        name = d.get("dataset_name", json_file.stem.replace("results_", ""))
+        name = d.get(
+            "dataset_name", stem.replace("results_", "").replace("_llm_judge", "")
+        )
         datasets[name] = d["samples"]
-        print(f"  {name}: {len(d['samples'])} samples")
+        label_src = "LLM-judge" if stem.endswith("_llm_judge") else "original"
+        print(f"  {name}: {len(d['samples'])} samples ({label_src})")
 
     return datasets
 

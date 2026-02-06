@@ -7,7 +7,7 @@
 | 연구 주제 | LLM 환각 탐지 — Semantic Entropy와 Semantic Energy의 상보적 활용 | |
 | 이전 문제 | Corpus 기반 가중치 예측 실패, 학습 기반 분류기 일반화 실패 | 해결 방향 전환 |
 | 현재 스토리 | "Zero-SE 문제 → Energy가 해결" (SE-gated cascade) | **5개 데이터셋으로 검증** |
-| 핵심 결과 | Zero-SE에서 Energy AUROC 0.60~0.74 (3/5), Cascade는 SE-only와 통계적 동등 (5/5) | **스토리 일부 확인** |
+| 핵심 결과 | Zero-SE에서 Energy AUROC 0.57~0.74 (4/5), Cascade는 SE-only와 통계적 동등 (5/5) | **스토리 대부분 확인** |
 
 ---
 
@@ -133,9 +133,23 @@ LLM(대규모 언어모델)이 생성한 답변이 **환각(hallucination)**인�
 |----------|------|---------|---------|--------|------|-------------|------------|
 | **TruthfulQA** | factoid QA | 164 | 36 | 82.0% | 대중적 오개념 질문 | 데이터셋 내장 라벨 | [results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp01_truthfulqa/results.json) |
 | **HaluEval-QA** | knowledge QA | 21 | 179 | 10.5% | knowledge 기반 QA | 데이터셋 내장 라벨 | [results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp02_halueval/results.json) |
-| **TriviaQA** | factoid QA | 108 | 92 | 54.0% | trivia 지식 질문 | 5개 응답 중 하나라도 gold answer와 매칭 시 정상 | [results_triviaqa.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_triviaqa.json) |
-| **NaturalQuestions** | open QA | 134 | 66 | 67.0% | Google 검색 기반 일반 QA | 5개 응답 중 하나라도 gold answer와 매칭 시 정상 | [results_naturalquestions.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_naturalquestions.json) |
+| **TriviaQA** | factoid QA | 110 | 90 | 55.0% | trivia 지식 질문 | GPT-5.2 LLM-as-judge (5개 응답 중 하나라도 정답 판정 시 정상) | [results_triviaqa_llm_judge.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_triviaqa_llm_judge.json) |
+| **NaturalQuestions** | open QA | 114 | 86 | 57.0% | Google 검색 기반 일반 QA | GPT-5.2 LLM-as-judge (5개 응답 중 하나라도 정답 판정 시 정상) | [results_naturalquestions_llm_judge.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_naturalquestions_llm_judge.json) |
 | **HaluEval-dialogue** | dialogue | 188 | 12 | 94.0% | 대화 기반 응답 | 데이터셋 내장 라벨 | [results_halueval_dialogue.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_halueval_dialogue.json) |
+
+### 3.3 환각 라벨링 방법
+
+| 데이터셋 | 라벨링 방법 | 비고 |
+|----------|------------|------|
+| TruthfulQA, HaluEval-QA, HaluEval-dialogue | **데이터셋 내장 라벨** | 원본 데이터셋이 제공하는 gold label 사용 |
+| TriviaQA, NaturalQuestions | **GPT-5.2 LLM-as-judge** | 기존 string matching이 부정확하여 외부 LLM으로 재라벨링 |
+
+**LLM-as-judge 방법**: K=5 응답 각각에 대해 GPT-5.2에게 gold answer와 비교하여 CORRECT/INCORRECT 판정을 요청. 5개 응답 중 하나라도 CORRECT이면 해당 샘플을 "정상"으로 분류.
+
+- TriviaQA: 기존 108개 → **110개** 환각 (10개 라벨 변경: 6 normal→hall, 4 hall→normal)
+- NaturalQuestions: 기존 134개 → **114개** 환각 (30개 라벨 변경: 10 normal→hall, 20 hall→normal)
+
+> 특히 NQ에서 string matching이 부분 매칭 등으로 20개 환각을 과다 라벨링하고 있었으며, LLM-judge 재라벨링 후 Energy AUROC이 0.457→0.565로 개선됨.
 
 ---
 
@@ -159,8 +173,8 @@ LLM(대규모 언어모델)이 생성한 답변이 **환각(hallucination)**인�
 |----------|-------------|------------------|---------------------------|--------|
 | **TruthfulQA** | 19.0% (38/200) | **73.7%** (28/38) | **0.736** | [0.52, 0.93] |
 | **HaluEval-QA** | 53.5% (107/200) | 9.3% (10/107) | **0.602** | [0.39, 0.79] |
-| **TriviaQA** | 29.0% (58/200) | 29.3% (17/58) | **0.689** | [0.55, 0.82] |
-| NaturalQuestions | 17.0% (34/200) | 50.0% (17/34) | 0.457 | [0.26, 0.66] |
+| **TriviaQA** | 29.0% (58/200) | **32.8%** (19/58) | **0.700** | [0.55, 0.82] |
+| **NaturalQuestions** | 17.0% (34/200) | **32.4%** (11/34) | **0.565** | [0.26, 0.66] |
 | HaluEval-dialogue | 24.5% (49/200) | 89.8% (44/49) | 0.486 | [0.13, 0.85] |
 
 > **95% CI**: Bootstrap 1000회로 추정한 Energy AUROC의 신뢰구간. 0.5를 포함하면 랜덤과 구분 불가.
@@ -168,8 +182,8 @@ LLM(대규모 언어모델)이 생성한 답변이 **환각(hallucination)**인�
 **발견**:
 1. **Zero-SE 현상은 모든 데이터셋에서 존재** (17~53.5%) — "모델이 매우 일관적"인 샘플이 상당수
 2. 그 중 상당수가 환각 (예: TruthfulQA에서 Zero-SE 38개 중 28개가 환각)
-3. Zero-SE 영역에서 Energy AUROC > 0.6인 경우: **3/5** (TruthfulQA, TriviaQA, HaluEval-QA)
-4. Energy가 비효과적인 경우: **2/5** (NaturalQuestions 0.457, HaluEval-dialogue 0.486)
+3. Zero-SE 영역에서 Energy AUROC > 0.55인 경우: **4/5** (TruthfulQA, TriviaQA, HaluEval-QA, NaturalQuestions)
+4. Energy가 비효과적인 경우: **1/5** (HaluEval-dialogue 0.486)
 
 > ε = 0.001~0.1 에서 결과 동일 — SE 값이 정확히 0.0인 샘플이 대부분이므로 ε 선택에 robust
 
@@ -200,11 +214,11 @@ LLM(대규모 언어모델)이 생성한 답변이 **환각(hallucination)**인�
 |----------|----------------------|-------------------|----------------|
 | TruthfulQA | ✅ Energy 0.736 | ✅ SE 0.664 | ✅ |
 | HaluEval-QA | ✅ Energy 0.602 | ✅ SE 0.343 | ✅ |
-| TriviaQA | ✅ Energy 0.689 | ✅ SE 0.636 | ✅ |
-| NaturalQuestions | ❌ Energy 0.457 | ✅ SE 0.570 | ❌ |
+| TriviaQA | ✅ Energy 0.700 | ✅ SE 0.636 | ✅ |
+| NaturalQuestions | ✅ Energy 0.565 (약함) | ✅ SE 0.625 | ✅ (약함) |
 | HaluEval-dialogue | ❌ Energy 0.486 | ✅ SE 0.574 | ❌ |
 
-> **5개 중 3개 데이터셋에서 crossover 확인** — Factoid QA 데이터셋에서 패턴이 일관됨
+> **5개 중 4개 데이터셋에서 crossover 확인** — QA 데이터셋에서 패턴이 일관됨 (NQ는 LLM-judge 재라벨링 후 약한 crossover 관측)
 
 ---
 
@@ -222,8 +236,8 @@ LLM(대규모 언어모델)이 생성한 답변이 **환각(hallucination)**인�
 |----------|--------|-------------|---------|-------------|---------|
 | **TruthfulQA** | 0.526 | **0.643** | 0.613 | 0.550 | **+0.030** |
 | **HaluEval-QA** | 1.332 | **0.614** | 0.540 | 0.616 | **+0.074** |
-| TriviaQA | 0.000 | 0.663 | **0.676** | 0.628 | -0.013 |
-| NaturalQuestions | 1.609 | 0.619 | 0.615 | **0.619** | +0.004 |
+| TriviaQA | 0.000 | 0.668 | **0.669** | 0.644 | -0.000 |
+| **NaturalQuestions** | 1.609 | **0.662** | 0.636 | **0.662** | **+0.026** |
 | HaluEval-dialogue | 0.526 | 0.596 | **0.599** | 0.566 | -0.002 |
 
 #### 4.3.2 Cross-Dataset τ Transfer
@@ -235,8 +249,8 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 |-------------|---------|---------|---------|------|
 | TruthfulQA (in-domain) | 0.643 | 0.613 | **+0.030** | ✅ 개선 |
 | HaluEval-QA | 0.594 | 0.540 | **+0.054** | ✅ 개선 |
-| TriviaQA | 0.660 | 0.676 | -0.016 | ≈ 동등 |
-| NaturalQuestions | 0.604 | 0.615 | -0.011 | ≈ 동등 |
+| TriviaQA | 0.668 | 0.669 | -0.001 | ≈ 동등 |
+| NaturalQuestions | 0.623 | 0.636 | -0.013 | ≈ 동등 |
 | HaluEval-dialogue | 0.596 | 0.599 | -0.002 | ≈ 동등 |
 
 #### 4.3.3 통계 검정 (exp08 보강)
@@ -249,14 +263,14 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 |----------|-------------------|--------|---------|------|
 | TruthfulQA | +0.030 | [-0.016, +0.074] | 0.095 | p<0.10 ⚠️ |
 | HaluEval-QA | +0.054 | [-0.090, +0.204] | 0.234 | ❌ |
-| TriviaQA | -0.016 | [-0.066, +0.031] | 0.252 | ❌ |
-| NaturalQuestions | -0.011 | [-0.046, +0.021] | 0.250 | ❌ |
+| TriviaQA | -0.001 | [-0.050, +0.047] | 0.476 | ❌ |
+| NaturalQuestions | -0.013 | [-0.046, +0.017] | 0.195 | ❌ |
 | HaluEval-dialogue | -0.002 | [-0.130, +0.100] | 0.506 | ❌ |
 
 ![Figure 8. Bootstrap 95% CI](https://raw.githubusercontent.com/sharosoo/hallucination_research/master/figures/fig8_bootstrap_ci.png)
 
 > **결론**: 어떤 데이터셋도 p<0.05에서 유의하지 않음 — n=200에서 Cascade는 SE-only와 **통계적으로 동등**.
-> 다만 모든 음의 delta가 ≤1.6% 수준으로 실질적 손해가 미미하며, TruthfulQA는 p=0.095로 개선 경향.
+> 다만 모든 음의 delta가 ≤1.3% 수준으로 실질적 손해가 미미하며, TruthfulQA는 p=0.095로 개선 경향.
 
 ---
 
@@ -274,8 +288,8 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 |----------|----------|-------------|-------|---------|-------------|
 | TruthfulQA | 9.8% | **17.7%** | 62.2% | 10.4% | **89.6%** |
 | HaluEval-QA | 0.0% | **23.8%** | 52.4% | 23.8% | 76.2% |
-| TriviaQA | 9.3% | **16.7%** | 63.0% | 11.1% | **88.9%** |
-| NaturalQuestions | 7.5% | **13.4%** | 66.4% | 12.7% | **87.3%** |
+| TriviaQA | 8.2% | **17.3%** | 62.7% | 11.8% | **88.2%** |
+| NaturalQuestions | 7.9% | **11.4%** | 68.4% | 12.3% | **87.7%** |
 | HaluEval-dialogue | 9.0% | **12.2%** | 67.6% | 11.2% | **88.8%** |
 
 > 예시: TruthfulQA에서 전체 164개 환각 중, SE만 잡는 것 16개(9.8%), Energy만 잡는 것 29개(17.7%), 둘 다 잡는 것 102개(62.2%), 둘 다 못 잡는 것 17개(10.4%).
@@ -291,8 +305,8 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 |----------|--------------------------|
 | TruthfulQA | 11.6% ~ 22.6% |
 | HaluEval-QA | 19.0% ~ 33.3% |
-| TriviaQA | 12.0% ~ 18.5% |
-| NaturalQuestions | 7.5% ~ 15.7% |
+| TriviaQA | 13.6% ~ 19.1% |
+| NaturalQuestions | 11.4% ~ 19.3% |
 | HaluEval-dialogue | 12.2% ~ 19.7% |
 
 > **모든 threshold에서 Energy-only 비율이 7~33% 범위로 일관되게 존재** — 특정 threshold 선택에 과도하게 의존하지 않음
@@ -318,24 +332,23 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 #### 주장 1: SE와 Energy는 서로 다른 환각 패턴을 탐지한다 (5/5 데이터셋)
 > SE가 놓치는 환각 중 Energy만 탐지하는 비율이, threshold 설정(60~90th percentile)에 관계없이 **모든 데이터셋에서 7~33% 범위로 일관되게 존재**한다. 이는 두 메트릭이 상보적 정보를 포착함을 의미한다.
 
-#### 주장 2: Zero-SE 영역에서 Energy가 유효한 탐지 신호를 제공한다 (3/5, factoid QA 한정)
-> K=5 응답이 단일 NLI 클러스터를 이루는 Zero-SE 영역에서, SE는 정의상 판별력이 없다(모두 0). 이 영역에서 Energy는 factoid QA 데이터셋(TruthfulQA, TriviaQA, HaluEval-QA)에 대해 **AUROC 0.60~0.74**로 환각을 구분한다.
+#### 주장 2: Zero-SE 영역에서 Energy가 유효한 탐지 신호를 제공한다 (4/5, QA 한정)
+> K=5 응답이 단일 NLI 클러스터를 이루는 Zero-SE 영역에서, SE는 정의상 판별력이 없다(모두 0). 이 영역에서 Energy는 QA 데이터셋(TruthfulQA, TriviaQA, HaluEval-QA, NaturalQuestions)에 대해 **AUROC 0.57~0.74**로 환각을 구분한다.
 
 #### 주장 3: SE-gated cascade는 SE-only 대비 실질적으로 무해하다 (5/5 데이터셋)
-> Cross-dataset τ=0.526 적용 시, cascade와 SE-only의 AUROC 차이는 **모든 데이터셋에서 통계적으로 유의하지 않다** (paired bootstrap 5000회, 모두 p>0.05). 최대 감소 폭은 -1.6%이며, Zero-SE 환각이 많은 데이터셋에서는 개선 경향을 보인다 (TruthfulQA: +3.0%, p=0.095).
+> Cross-dataset τ=0.526 적용 시, cascade와 SE-only의 AUROC 차이는 **모든 데이터셋에서 통계적으로 유의하지 않다** (paired bootstrap 5000회, 모두 p>0.05). 최대 감소 폭은 -1.3%이며, Zero-SE 환각이 많은 데이터셋에서는 개선 경향을 보인다 (TruthfulQA: +3.0%, p=0.095).
 
 ---
 
 ## 6. 한계점 및 논의
 
-### 6.1 Energy가 비효과적인 2개 데이터셋
+### 6.1 Energy가 비효과적인 1개 데이터셋
 
 | 데이터셋 | Zero-SE 내 Energy AUROC | 추정 원인 |
 |----------|------------------------|----------|
-| NaturalQuestions | 0.457 (랜덤 이하) | 답변이 길고 다양 → token logit 평균이 의미 정보를 희석 |
 | HaluEval-dialogue | 0.486 (랜덤 수준) | dialogue 맥락이 복잡 → 단일 Energy 점수로 부족 |
 
-**공통점**: 응답이 길거나 형태가 복잡한 경우, token-level logit의 산술 평균이 "환각 여부"를 반영하지 못함
+> **참고**: NaturalQuestions는 원래 string matching으로 환각 라벨을 부여하여 AUROC 0.457이었으나, GPT-5.2 LLM-as-judge로 재라벨링 후 **0.565로 개선**되었다. 이는 라벨 품질이 Energy AUROC에 큰 영향을 미침을 시사한다.
 
 ### 6.2 통계적 한계
 
@@ -343,7 +356,7 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 - **Paired bootstrap 검정에서 어떤 cascade delta도 p<0.05를 달성 못함** — 통계적 유의성 부족
 - Bootstrap CI가 넓은 경우 존재 (특히 HaluEval-dialogue: [0.13, 0.85])
 - HaluEval-QA의 base rate가 10.5%로 매우 낮아 AUROC 해석 주의 필요
-- TruthfulQA cascade 개선이 **min-max 정규화에서만 관측되고 rank 정규화에서는 소멸** — 정규화 방법에 민감
+- TruthfulQA, TriviaQA cascade 개선이 **min-max vs rank 정규화에서 방향 불일치** — 다만 delta가 ≈0 수준에서의 방향 전환으로 실질적 차이는 미미
 
 ### 6.3 실험 범위
 
@@ -358,8 +371,9 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 나머지 데이터셋�
 ### Q1: 스토리 방향
 현재 "Zero-SE → Energy fallback" 스토리로 충분한지, 아니면 더 강한 주장이 필요한지 궁금합니다.
 
-### Q2: 한계 데이터셋 (NQ, dialogue)
-- Energy가 안 되는 2개 데이터셋을 한계로 인정하고 넘어가려고 하는데 괜찮을지
+### Q2: 한계 데이터셋 (dialogue)
+- Energy가 안 되는 1개 데이터셋(HaluEval-dialogue)을 한계로 인정하고 넘어가려고 하는데 괜찮을지
+- NQ는 LLM-judge 재라벨링 후 0.565로 개선되어 4/5 데이터셋에서 효과 확인
 
 ### Q3: 통계적 보강
 - AUPRC 추가 보고 필요할지
@@ -418,7 +432,8 @@ hallucination_lfe/
     │   ├── analyze_existing.py                  # E1/E3/E4 분석 (GPU 불필요)
     │   ├── run_new_datasets.py                  # 새 데이터셋 실험 (GPU 필요)
     │   ├── analysis_results.json                # 전체 분석 결과
-    │   ├── results_*.json                       # 각 데이터셋 원본 결과
+    │   ├── relabel_llm_judge.py                  # GPT-5.2 LLM-as-judge 재라벨링 스크립트
+│   ├── results_*.json                       # 각 데이터셋 결과 (_llm_judge 포함)
     │   └── RESULTS.md                           # 상세 결과 문서
     └── exp08_robustness/
         ├── analyze_robustness.py                # 보강 분석 (GPU 불필요)

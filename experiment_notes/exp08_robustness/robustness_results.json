@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-06T13:33:30.148007",
+  "timestamp": "2026-02-06T15:10:22.787018",
   "description": "exp08: Robustness analysis for exp07 claims",
   "complementarity_sensitivity": [
     {
@@ -107,110 +107,6 @@
       "neither_catch_pct": 14.285714285714285
     },
     {
-      "dataset": "TriviaQA",
-      "percentile": 60,
-      "n_hallucinations": 108,
-      "se_only": 12,
-      "se_only_pct": 11.11111111111111,
-      "energy_only": 20,
-      "energy_only_pct": 18.51851851851852,
-      "both_catch": 45,
-      "both_catch_pct": 41.66666666666667,
-      "neither_catch": 31,
-      "neither_catch_pct": 28.703703703703702
-    },
-    {
-      "dataset": "TriviaQA",
-      "percentile": 70,
-      "n_hallucinations": 108,
-      "se_only": 12,
-      "se_only_pct": 11.11111111111111,
-      "energy_only": 13,
-      "energy_only_pct": 12.037037037037036,
-      "both_catch": 62,
-      "both_catch_pct": 57.407407407407405,
-      "neither_catch": 21,
-      "neither_catch_pct": 19.444444444444446
-    },
-    {
-      "dataset": "TriviaQA",
-      "percentile": 80,
-      "n_hallucinations": 108,
-      "se_only": 10,
-      "se_only_pct": 9.25925925925926,
-      "energy_only": 18,
-      "energy_only_pct": 16.666666666666664,
-      "both_catch": 68,
-      "both_catch_pct": 62.96296296296296,
-      "neither_catch": 12,
-      "neither_catch_pct": 11.11111111111111
-    },
-    {
-      "dataset": "TriviaQA",
-      "percentile": 90,
-      "n_hallucinations": 108,
-      "se_only": 9,
-      "se_only_pct": 8.333333333333332,
-      "energy_only": 15,
-      "energy_only_pct": 13.88888888888889,
-      "both_catch": 82,
-      "both_catch_pct": 75.92592592592592,
-      "neither_catch": 2,
-      "neither_catch_pct": 1.8518518518518516
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "percentile": 60,
-      "n_hallucinations": 134,
-      "se_only": 17,
-      "se_only_pct": 12.686567164179104,
-      "energy_only": 21,
-      "energy_only_pct": 15.671641791044777,
-      "both_catch": 59,
-      "both_catch_pct": 44.02985074626866,
-      "neither_catch": 37,
-      "neither_catch_pct": 27.611940298507463
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "percentile": 70,
-      "n_hallucinations": 134,
-      "se_only": 12,
-      "se_only_pct": 8.955223880597014,
-      "energy_only": 14,
-      "energy_only_pct": 10.44776119402985,
-      "both_catch": 80,
-      "both_catch_pct": 59.70149253731343,
-      "neither_catch": 28,
-      "neither_catch_pct": 20.8955223880597
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "percentile": 80,
-      "n_hallucinations": 134,
-      "se_only": 10,
-      "se_only_pct": 7.462686567164178,
-      "energy_only": 18,
-      "energy_only_pct": 13.432835820895523,
-      "both_catch": 89,
-      "both_catch_pct": 66.4179104477612,
-      "neither_catch": 17,
-      "neither_catch_pct": 12.686567164179104
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "percentile": 90,
-      "n_hallucinations": 134,
-      "se_only": 7,
-      "se_only_pct": 5.223880597014925,
-      "energy_only": 10,
-      "energy_only_pct": 7.462686567164178,
-      "both_catch": 110,
-      "both_catch_pct": 82.08955223880598,
-      "neither_catch": 7,
-      "neither_catch_pct": 5.223880597014925
-    },
-    {
       "dataset": "HaluEval-dialogue",
       "percentile": 60,
       "n_hallucinations": 188,
@@ -261,6 +157,110 @@
       "both_catch_pct": 73.93617021276596,
       "neither_catch": 14,
       "neither_catch_pct": 7.446808510638298
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 60,
+      "n_hallucinations": 114,
+      "se_only": 14,
+      "se_only_pct": 12.280701754385964,
+      "energy_only": 15,
+      "energy_only_pct": 13.157894736842104,
+      "both_catch": 53,
+      "both_catch_pct": 46.49122807017544,
+      "neither_catch": 32,
+      "neither_catch_pct": 28.07017543859649
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 70,
+      "n_hallucinations": 114,
+      "se_only": 9,
+      "se_only_pct": 7.894736842105263,
+      "energy_only": 22,
+      "energy_only_pct": 19.298245614035086,
+      "both_catch": 58,
+      "both_catch_pct": 50.877192982456144,
+      "neither_catch": 25,
+      "neither_catch_pct": 21.929824561403507
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 80,
+      "n_hallucinations": 114,
+      "se_only": 9,
+      "se_only_pct": 7.894736842105263,
+      "energy_only": 13,
+      "energy_only_pct": 11.403508771929824,
+      "both_catch": 78,
+      "both_catch_pct": 68.42105263157895,
+      "neither_catch": 14,
+      "neither_catch_pct": 12.280701754385964
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 90,
+      "n_hallucinations": 114,
+      "se_only": 4,
+      "se_only_pct": 3.508771929824561,
+      "energy_only": 19,
+      "energy_only_pct": 16.666666666666664,
+      "both_catch": 83,
+      "both_catch_pct": 72.80701754385966,
+      "neither_catch": 8,
+      "neither_catch_pct": 7.017543859649122
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 60,
+      "n_hallucinations": 110,
+      "se_only": 12,
+      "se_only_pct": 10.909090909090908,
+      "energy_only": 21,
+      "energy_only_pct": 19.090909090909093,
+      "both_catch": 45,
+      "both_catch_pct": 40.909090909090914,
+      "neither_catch": 32,
+      "neither_catch_pct": 29.09090909090909
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 70,
+      "n_hallucinations": 110,
+      "se_only": 12,
+      "se_only_pct": 10.909090909090908,
+      "energy_only": 15,
+      "energy_only_pct": 13.636363636363635,
+      "both_catch": 62,
+      "both_catch_pct": 56.36363636363636,
+      "neither_catch": 21,
+      "neither_catch_pct": 19.090909090909093
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 80,
+      "n_hallucinations": 110,
+      "se_only": 9,
+      "se_only_pct": 8.181818181818182,
+      "energy_only": 19,
+      "energy_only_pct": 17.272727272727273,
+      "both_catch": 69,
+      "both_catch_pct": 62.727272727272734,
+      "neither_catch": 13,
+      "neither_catch_pct": 11.818181818181818
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 90,
+      "n_hallucinations": 110,
+      "se_only": 8,
+      "se_only_pct": 7.2727272727272725,
+      "energy_only": 16,
+      "energy_only_pct": 14.545454545454545,
+      "both_catch": 83,
+      "both_catch_pct": 75.45454545454545,
+      "neither_catch": 3,
+      "neither_catch_pct": 2.727272727272727
     }
   ],
   "bootstrap_tests": [
@@ -325,66 +325,6 @@
       "tau_source": "cross_dataset_0.526"
     },
     {
-      "observed_delta": -0.012530193236715004,
-      "bootstrap_mean_delta": -0.012554516346698684,
-      "ci_95_lower": -0.06167638973502142,
-      "ci_95_upper": 0.03708635018540492,
-      "p_value": 0.3108,
-      "significant_at_005": false,
-      "significant_at_010": false,
-      "n_bootstrap_valid": 5000,
-      "dataset": "TriviaQA",
-      "tau": 0.0,
-      "se_auroc": 0.6759259259259259,
-      "cascade_auroc": 0.6633957326892109,
-      "tau_source": "best_per_dataset"
-    },
-    {
-      "observed_delta": -0.016404991948470227,
-      "bootstrap_mean_delta": -0.01654001028125004,
-      "ci_95_lower": -0.06604194069000965,
-      "ci_95_upper": 0.03142886052660761,
-      "p_value": 0.2516,
-      "significant_at_005": false,
-      "significant_at_010": false,
-      "n_bootstrap_valid": 5000,
-      "dataset": "TriviaQA",
-      "tau": 0.526,
-      "se_auroc": 0.6759259259259259,
-      "cascade_auroc": 0.6595209339774557,
-      "tau_source": "cross_dataset_0.526"
-    },
-    {
-      "observed_delta": 0.003505201266395308,
-      "bootstrap_mean_delta": 0.002969148152395428,
-      "ci_95_lower": -0.07590022786458335,
-      "ci_95_upper": 0.08451551338370966,
-      "p_value": 0.4622,
-      "significant_at_005": false,
-      "significant_at_010": false,
-      "n_bootstrap_valid": 5000,
-      "dataset": "NaturalQuestions",
-      "tau": 1.6094379124341005,
-      "se_auroc": 0.6149932157394844,
-      "cascade_auroc": 0.6184984170058797,
-      "tau_source": "best_per_dataset"
-    },
-    {
-      "observed_delta": -0.011137494346449617,
-      "bootstrap_mean_delta": -0.011602261675040767,
-      "ci_95_lower": -0.045566405952435225,
-      "ci_95_upper": 0.02051211516572488,
-      "p_value": 0.2496,
-      "significant_at_005": false,
-      "significant_at_010": false,
-      "n_bootstrap_valid": 5000,
-      "dataset": "NaturalQuestions",
-      "tau": 0.526,
-      "se_auroc": 0.6149932157394844,
-      "cascade_auroc": 0.6038557213930348,
-      "tau_source": "cross_dataset_0.526"
-    },
-    {
       "observed_delta": -0.002437943262411313,
       "bootstrap_mean_delta": -0.003203329769632754,
       "ci_95_lower": -0.13035232741115083,
@@ -412,6 +352,66 @@
       "tau": 0.526,
       "se_auroc": 0.5986258865248227,
       "cascade_auroc": 0.5961879432624114,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": 0.02611179110567119,
+      "bootstrap_mean_delta": 0.02524465667801616,
+      "ci_95_lower": -0.04949333333333328,
+      "ci_95_upper": 0.09958411024912323,
+      "p_value": 0.2518,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "NaturalQuestions",
+      "tau": 1.6094379124341005,
+      "se_auroc": 0.6355569155446756,
+      "cascade_auroc": 0.6616687066503468,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": -0.012902896776825767,
+      "bootstrap_mean_delta": -0.013348046436020633,
+      "ci_95_lower": -0.045507265123697176,
+      "ci_95_upper": 0.01698341335006778,
+      "p_value": 0.1952,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "NaturalQuestions",
+      "tau": 0.526,
+      "se_auroc": 0.6355569155446756,
+      "cascade_auroc": 0.6226540187678499,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": -0.00035353535353532806,
+      "bootstrap_mean_delta": -0.0005188139665441746,
+      "ci_95_lower": -0.04937914624338824,
+      "ci_95_upper": 0.04820146345913245,
+      "p_value": 0.503,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TriviaQA",
+      "tau": 0.0,
+      "se_auroc": 0.6686868686868687,
+      "cascade_auroc": 0.6683333333333333,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": -0.00121212121212122,
+      "bootstrap_mean_delta": -0.0014588283666853359,
+      "ci_95_lower": -0.05022339314331504,
+      "ci_95_upper": 0.04720251325167752,
+      "p_value": 0.4756,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TriviaQA",
+      "tau": 0.526,
+      "se_auroc": 0.6686868686868687,
+      "cascade_auroc": 0.6674747474747474,
       "tau_source": "cross_dataset_0.526"
     }
   ],
@@ -491,80 +491,6 @@
       }
     },
     {
-      "dataset": "TriviaQA",
-      "n_total": 200,
-      "n_se_zero_eps001": 58,
-      "n_single_cluster": 58,
-      "n_overlap": 58,
-      "exact_match": true,
-      "se_zero_but_multi_cluster": 0,
-      "single_cluster_but_se_nonzero": 0,
-      "cluster_distribution": {
-        "1": {
-          "total": 58,
-          "hall": 17,
-          "normal": 41
-        },
-        "2": {
-          "total": 36,
-          "hall": 17,
-          "normal": 19
-        },
-        "3": {
-          "total": 42,
-          "hall": 28,
-          "normal": 14
-        },
-        "4": {
-          "total": 31,
-          "hall": 27,
-          "normal": 4
-        },
-        "5": {
-          "total": 33,
-          "hall": 19,
-          "normal": 14
-        }
-      }
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "n_total": 200,
-      "n_se_zero_eps001": 34,
-      "n_single_cluster": 34,
-      "n_overlap": 34,
-      "exact_match": true,
-      "se_zero_but_multi_cluster": 0,
-      "single_cluster_but_se_nonzero": 0,
-      "cluster_distribution": {
-        "1": {
-          "total": 34,
-          "hall": 17,
-          "normal": 17
-        },
-        "2": {
-          "total": 42,
-          "hall": 25,
-          "normal": 17
-        },
-        "3": {
-          "total": 33,
-          "hall": 24,
-          "normal": 9
-        },
-        "4": {
-          "total": 37,
-          "hall": 27,
-          "normal": 10
-        },
-        "5": {
-          "total": 54,
-          "hall": 41,
-          "normal": 13
-        }
-      }
-    },
-    {
       "dataset": "HaluEval-dialogue",
       "n_total": 200,
       "n_se_zero_eps001": 49,
@@ -598,6 +524,80 @@
           "total": 25,
           "hall": 25,
           "normal": 0
+        }
+      }
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "n_total": 200,
+      "n_se_zero_eps001": 34,
+      "n_single_cluster": 34,
+      "n_overlap": 34,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 34,
+          "hall": 11,
+          "normal": 23
+        },
+        "2": {
+          "total": 42,
+          "hall": 21,
+          "normal": 21
+        },
+        "3": {
+          "total": 33,
+          "hall": 22,
+          "normal": 11
+        },
+        "4": {
+          "total": 37,
+          "hall": 22,
+          "normal": 15
+        },
+        "5": {
+          "total": 54,
+          "hall": 38,
+          "normal": 16
+        }
+      }
+    },
+    {
+      "dataset": "TriviaQA",
+      "n_total": 200,
+      "n_se_zero_eps001": 58,
+      "n_single_cluster": 58,
+      "n_overlap": 58,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 58,
+          "hall": 19,
+          "normal": 39
+        },
+        "2": {
+          "total": 36,
+          "hall": 17,
+          "normal": 19
+        },
+        "3": {
+          "total": 42,
+          "hall": 28,
+          "normal": 14
+        },
+        "4": {
+          "total": 31,
+          "hall": 25,
+          "normal": 6
+        },
+        "5": {
+          "total": 33,
+          "hall": 21,
+          "normal": 12
         }
       }
     }
@@ -650,52 +650,6 @@
       "tau_source": "cross_dataset_0.526"
     },
     {
-      "dataset": "TriviaQA",
-      "tau": 0.0,
-      "se_auroc_minmax": 0.6759259259259259,
-      "se_auroc_rank": 0.6678743961352658,
-      "cascade_auroc_minmax": 0.6633957326892109,
-      "cascade_auroc_rank": 0.6648550724637681,
-      "delta_minmax": -0.012530193236715004,
-      "delta_rank": -0.003019323671497709,
-      "rank_vs_minmax_consistent": true
-    },
-    {
-      "dataset": "TriviaQA",
-      "tau": 0.526,
-      "se_auroc_minmax": 0.6759259259259259,
-      "se_auroc_rank": 0.6678743961352658,
-      "cascade_auroc_minmax": 0.6595209339774557,
-      "cascade_auroc_rank": 0.648450080515298,
-      "delta_minmax": -0.016404991948470227,
-      "delta_rank": -0.019424315619967825,
-      "rank_vs_minmax_consistent": true,
-      "tau_source": "cross_dataset_0.526"
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "tau": 1.6094379124341005,
-      "se_auroc_minmax": 0.6149932157394844,
-      "se_auroc_rank": 0.6121664405246494,
-      "cascade_auroc_minmax": 0.6184984170058797,
-      "cascade_auroc_rank": 0.6184984170058797,
-      "delta_minmax": 0.003505201266395308,
-      "delta_rank": 0.006331976481230295,
-      "rank_vs_minmax_consistent": true
-    },
-    {
-      "dataset": "NaturalQuestions",
-      "tau": 0.526,
-      "se_auroc_minmax": 0.6149932157394844,
-      "se_auroc_rank": 0.6121664405246494,
-      "cascade_auroc_minmax": 0.6038557213930348,
-      "cascade_auroc_rank": 0.5982587064676615,
-      "delta_minmax": -0.011137494346449617,
-      "delta_rank": -0.013907734056987864,
-      "rank_vs_minmax_consistent": true,
-      "tau_source": "cross_dataset_0.526"
-    },
-    {
       "dataset": "HaluEval-dialogue",
       "tau": 0.5255307469172573,
       "se_auroc_minmax": 0.5986258865248227,
@@ -716,6 +670,52 @@
       "delta_minmax": -0.002437943262411313,
       "delta_rank": -0.00044326241134751143,
       "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "tau": 1.6094379124341005,
+      "se_auroc_minmax": 0.6355569155446756,
+      "se_auroc_rank": 0.6286209710322317,
+      "cascade_auroc_minmax": 0.6616687066503468,
+      "cascade_auroc_rank": 0.6616687066503468,
+      "delta_minmax": 0.02611179110567119,
+      "delta_rank": 0.03304773561811514,
+      "rank_vs_minmax_consistent": true
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.6355569155446756,
+      "se_auroc_rank": 0.6286209710322317,
+      "cascade_auroc_minmax": 0.6226540187678499,
+      "cascade_auroc_rank": 0.6159220726234191,
+      "delta_minmax": -0.012902896776825767,
+      "delta_rank": -0.012698898408812553,
+      "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "TriviaQA",
+      "tau": 0.0,
+      "se_auroc_minmax": 0.6686868686868687,
+      "se_auroc_rank": 0.6606060606060606,
+      "cascade_auroc_minmax": 0.6683333333333333,
+      "cascade_auroc_rank": 0.671969696969697,
+      "delta_minmax": -0.00035353535353532806,
+      "delta_rank": 0.011363636363636354,
+      "rank_vs_minmax_consistent": false
+    },
+    {
+      "dataset": "TriviaQA",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.6686868686868687,
+      "se_auroc_rank": 0.6606060606060606,
+      "cascade_auroc_minmax": 0.6674747474747474,
+      "cascade_auroc_rank": 0.6624747474747474,
+      "delta_minmax": -0.00121212121212122,
+      "delta_rank": 0.0018686868686867975,
+      "rank_vs_minmax_consistent": false,
       "tau_source": "cross_dataset_0.526"
     }
   ]
