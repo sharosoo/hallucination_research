@@ -6,7 +6,7 @@
 |------|------|------|
 | 이전 문제 | Corpus 기반 가중치 예측 실패, 학습 기반 분류기 일반화 실패 | 해결 방향 전환 |
 | 현재 스토리 | "Zero-SE 문제 → Energy가 해결" (SE-gated cascade) | **5개 데이터셋으로 검증** |
-| 핵심 결과 | Zero-SE에서 Energy AUROC 0.60~0.74 (3/5 데이터셋), Cascade 해치지 않음 (5/5) | **스토리 일부 확인** |
+| 핵심 결과 | Zero-SE에서 Energy AUROC 0.60~0.74 (3/5), Cascade는 SE-only와 통계적 동등 (5/5) | **스토리 일부 확인** |
 
 ---
 
@@ -14,9 +14,9 @@
 
 ### 1.1 이전 접근법 (실패)
 
-260121 미팅에서 보고한 결과:
-- **Corpus coverage 기반 가중치 예측**: Coverage가 SE/Energy 선택에 영향 없음 → **가설 기각**
-- **학습 기반 분류기**: 같은 분포 내에서만 작동 (AUROC 0.91), cross-dataset에서 실패 (AUROC 0.51) → **일반화 실패**
+[260121 미팅 보고서](https://github.com/sharosoo/hallucination_research/blob/master/260121_summary.md)에서 보고한 결과:
+- **Corpus coverage 기반 가중치 예측**: Coverage가 SE/Energy 선택에 영향 없음 → **가설 기각** ([exp05](https://github.com/sharosoo/hallucination_research/tree/master/experiment_notes/exp05_combined_analysis))
+- **학습 기반 분류기**: 같은 분포 내에서만 작동 (AUROC 0.91), cross-dataset에서 실패 (AUROC 0.51) → **일반화 실패** ([exp06](https://github.com/sharosoo/hallucination_research/tree/master/experiment_notes/exp06_weight_classifier))
 
 ### 1.2 260121 미팅에서 조교님 피드백
 
@@ -53,19 +53,28 @@
 
 ### 2.2 데이터셋 (기존 2개 + 신규 3개)
 
-| 데이터셋 | 소스 | 환각 수 | 정상 수 | 환각률 | 특성 |
-|----------|------|---------|---------|--------|------|
-| **TruthfulQA** | 기존 exp01 | 164 | 36 | 82.0% | 대중적 오개념 |
-| **HaluEval-QA** | 기존 exp02 | 21 | 179 | 10.5% | knowledge 기반 QA |
-| **TriviaQA** | 🆕 신규 | 108 | 92 | 54.0% | trivia 지식 |
-| **NaturalQuestions** | 🆕 신규 | 134 | 66 | 67.0% | 일반 QA |
-| **HaluEval-dialogue** | 🆕 신규 | 188 | 12 | 94.0% | dialogue 기반 |
+| 데이터셋 | 소스 | 환각 수 | 정상 수 | 환각률 | 특성 | 원본 데이터 |
+|----------|------|---------|---------|--------|------|------------|
+| **TruthfulQA** | 기존 exp01 | 164 | 36 | 82.0% | 대중적 오개념 | [results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp01_truthfulqa/results.json) |
+| **HaluEval-QA** | 기존 exp02 | 21 | 179 | 10.5% | knowledge 기반 QA | [results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp02_halueval/results.json) |
+| **TriviaQA** | 신규 | 108 | 92 | 54.0% | trivia 지식 | [results_triviaqa.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_triviaqa.json) |
+| **NaturalQuestions** | 신규 | 134 | 66 | 67.0% | 일반 QA | [results_naturalquestions.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_naturalquestions.json) |
+| **HaluEval-dialogue** | 신규 | 188 | 12 | 94.0% | dialogue 기반 | [results_halueval_dialogue.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/results_halueval_dialogue.json) |
 
 ---
+
+> **exp07 분석 코드**: [analyze_existing.py](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/analyze_existing.py) | **신규 데이터셋 실험 코드**: [run_new_datasets.py](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/run_new_datasets.py) | **전체 분석 결과 JSON**: [analysis_results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/analysis_results.json)
+>
+> **exp08 보강 분석**: [analyze_robustness.py](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp08_robustness/analyze_robustness.py) | [robustness_results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp08_robustness/robustness_results.json)
+>
+> **상세 결과 문서**: [RESULTS.md](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/RESULTS.md) | **Figure 생성 코드**: [generate_all.py](https://github.com/sharosoo/hallucination_research/blob/master/figures/generate_all.py)
 
 ## 3. 실험 결과
 
 ### 3.1 E1: Zero-SE 현상 정량화
+
+> **Zero-SE 정의**: K=5 응답이 모두 **단일 NLI 클러스터**에 속하는 경우 (SE=0).
+> exp08 검증 결과 SE≤0.001과 num_clusters==1이 **5/5 데이터셋에서 완전 일치** 확인.
 
 **핵심 질문**: "SE가 0에 가까운 샘플이 얼마나 있고, 그 중 환각은 몇 %인가?"
 
@@ -134,7 +143,7 @@
 | NaturalQuestions | 1.609 | 0.619 | 0.615 | **0.619** | +0.004 | +0.000 |
 | HaluEval-dialogue | 0.526 | 0.596 | **0.599** | 0.566 | -0.002 | +0.030 |
 
-#### 3.3.2 Cross-Dataset τ Transfer (핵심!)
+#### 3.3.2 Cross-Dataset τ Transfer
 
 TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 적용:
 
@@ -146,8 +155,20 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 | NaturalQuestions | 0.604 | 0.615 | -0.011 | ≈ 동등 |
 | HaluEval-dialogue | 0.596 | 0.599 | -0.002 | ≈ 동등 |
 
-> **Cascade가 SE-only보다 심각하게 나쁜 경우 없음** (최대 -1.6%)
-> TruthfulQA, HaluEval에서는 의미있는 개선 (+3~5.4%)
+#### 3.3.3 통계 검정 (exp08 보강: Paired Bootstrap 5000회)
+
+| 데이터셋 | Δ AUROC (τ=0.526) | 95% CI | p-value |
+|----------|-------------------|--------|---------|
+| TruthfulQA | +0.030 | [-0.016, +0.074] | 0.095 |
+| HaluEval-QA | +0.054 | [-0.090, +0.204] | 0.234 |
+| TriviaQA | -0.016 | [-0.066, +0.031] | 0.252 |
+| NaturalQuestions | -0.011 | [-0.046, +0.021] | 0.250 |
+| HaluEval-dialogue | -0.002 | [-0.130, +0.100] | 0.506 |
+
+![Figure 8. Bootstrap 95% CI](https://raw.githubusercontent.com/sharosoo/hallucination_research/master/figures/fig8_bootstrap_ci.png)
+
+> **어떤 데이터셋도 p<0.05에서 유의하지 않음** — n=200에서 Cascade는 SE-only와 **통계적으로 동등**.
+> 모든 음의 delta가 ≤1.6% 수준이며, TruthfulQA는 p=0.095로 개선 경향.
 
 ---
 
@@ -165,8 +186,21 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 | NaturalQuestions | 7.5% | **13.4%** | 66.4% | 12.7% | **87.3%** |
 | HaluEval-dialogue | 9.0% | **12.2%** | 67.6% | 11.2% | **88.8%** |
 
-> **Energy만 잡는 환각이 모든 데이터셋에서 12~24% 존재**
-> 이는 SE 단독으로는 절대 탐지 불가능한 영역
+#### 3.4.1 Threshold Sensitivity (exp08 보강)
+
+80th percentile 선택에 의존하지 않는지 확인 (60/70/80/90th에서 반복):
+
+![Figure 7. Complementarity Threshold Sensitivity](https://raw.githubusercontent.com/sharosoo/hallucination_research/master/figures/fig7_complementarity_sensitivity.png)
+
+| 데이터셋 | Energy-only 범위 (60~90th) |
+|----------|--------------------------|
+| TruthfulQA | 11.6% ~ 22.6% |
+| HaluEval-QA | 19.0% ~ 33.3% |
+| TriviaQA | 12.0% ~ 18.5% |
+| NaturalQuestions | 7.5% ~ 15.7% |
+| HaluEval-dialogue | 12.2% ~ 19.7% |
+
+> **모든 threshold에서 Energy-only 비율이 7~33% 범위로 일관되게 존재** — threshold 선택에 과도하게 의존하지 않음
 
 ---
 
@@ -184,16 +218,16 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 
 > **"SE는 혼란을 측정하고, Energy는 지어냄을 측정한다. SE-gated cascade가 두 유형 모두를 탐지한다."**
 
-### 4.2 세 가지 주장 (강도별)
+### 4.2 세 가지 주장
 
-#### 강한 주장 (5/5 데이터셋 근거)
-> "SE와 Energy는 서로 다른 환각 유형을 탐지한다. **Energy만 잡는 환각이 전체 환각의 12~24%**를 차지하며, SE 단독으로는 이를 탐지할 수 없다."
+#### 주장 1 (5/5 데이터셋 근거)
+> "SE와 Energy는 서로 다른 환각 패턴을 탐지한다. 80th percentile threshold 기준 **Energy만 탐지하는 환각이 12~24%** 이며, threshold를 60~90th로 변화시켜도 **7~33% 범위에서 일관되게 존재**한다."
 
-#### 조건부 주장 (3/5 데이터셋, factoid QA 한정)
-> "Factoid QA 데이터셋에서 **Zero-SE 영역의 환각을 Energy가 AUROC 0.60~0.74로** 효과적으로 탐지한다."
+#### 주장 2 (3/5 데이터셋, factoid QA 한정)
+> "Factoid QA 데이터셋에서 **Zero-SE(단일 NLI 클러스터) 영역의 환각을 Energy가 AUROC 0.60~0.74로** 효과적으로 탐지한다."
 
-#### 실용적 주장 (5/5 데이터셋)
-> "**SE-gated cascade (SE < τ → Energy)는 SE-only 대비 성능을 해치지 않으면서**, Zero-SE 환각이 많은 데이터셋에서 추가 이득을 제공한다."
+#### 주장 3 (5/5 데이터셋)
+> "SE-gated cascade (SE < τ → Energy)는 cross-dataset τ=0.526 적용 시, **SE-only 대비 최대 -1.6% 감소로 통계적으로 동등 수준**이며 (paired bootstrap 모두 p>0.05), Zero-SE 환각이 많은 데이터셋에서 개선 경향을 보인다 (TruthfulQA: +3.0%, p=0.095)."
 
 ---
 
@@ -211,8 +245,10 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 ### 5.2 통계적 한계
 
 - 각 200개 샘플 — Zero-SE 영역은 34~107개로 더 적음
+- **Paired bootstrap 검정에서 어떤 cascade delta도 p<0.05를 달성 못함** — 통계적 유의성 부족
 - Bootstrap CI가 넓은 경우 존재 (특히 HaluEval-dialogue)
 - HaluEval-QA의 base rate가 10.5%로 매우 낮아 AUROC 해석 주의 필요
+- TruthfulQA cascade 개선이 **min-max 정규화에서만 관측되고 rank 정규화에서는 소멸** — 정규화 방법에 민감
 
 ### 5.3 실험 범위
 
@@ -224,38 +260,43 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 ## 6. 조교님께 여쭤보고 싶은 것
 
 ### Q1: 스토리 방향
-현재 "Zero-SE → Energy fallback" 스토리로 충분한가? 아니면 더 강한 주장이 필요한가?
+현재 "Zero-SE → Energy fallback" 스토리로 충분한지, 아니면 더 강한 주장이 필요한지 궁금합니다.
 
 ### Q2: 한계 데이터셋 (NQ, dialogue)
-- Energy가 안 되는 2개 데이터셋을 **한계로 인정**하고 넘어갈지
-- 아니면 **다른 Energy 정의** (max logit, top-k logit 등)를 시도해야 하는지
+- Energy가 안 되는 2개 데이터셋을 한계로 인정하고 넘어가려고 하는데 괜찮을지
 
 ### Q3: 통계적 보강
-- AUPRC 추가 보고 필요한가? (base rate 차이가 큰 데이터셋들)
-- Bootstrap CI가 넓은 결과에 대한 추가 검증?
+- AUPRC 추가 보고 필요할지
+- CI가 넓은 결과에 대한 추가로 검증이 필요할지
 
 ### Q4: 모델 확장
-- 더 큰 모델 (7B)에서 재현 실험 필요한가?
+- 더 큰 모델 (7B)에서 재현 실험 필요한지
 - Zero-SE 비율이 모델 크기에 따라 어떻게 변하는지?
 
 ### Q5: τ 설정
-- 현재 절대값 기반 τ (SE < 0.526) → **percentile 기반 τ** (하위 20% 등)가 더 일반적이지 않은가?
+- 현재 절대값 기반 τ (SE < 0.526)으로 했는데 데이터셋마다 다르게 나올 것 같아서 조금 더 엄밀한 정의가 필요하진 않을지?
 
 ---
 
-## 7. 다음 단계 (제안)
+## 7. 관련 문서 링크
 
-### 즉시 가능 (코드 준비됨)
-- [ ] AUPRC 비교 추가
-- [ ] Bootstrap CI 결과 본문 반영
-- [ ] 응답 길이별 ablation (Energy 실패 원인 분석)
+| 문서 | 링크 |
+|------|------|
+| 1차 미팅 보고 (260115) | [260115_meeting.md](https://github.com/sharosoo/hallucination_research/blob/master/260115_meeting.md) |
+| 2차 보고 — 가설 기각 (260121) | [260121_summary.md](https://github.com/sharosoo/hallucination_research/blob/master/260121_summary.md) |
+| exp07 실험 계획 (260203) | [260203.md](https://github.com/sharosoo/hallucination_research/blob/master/260203.md) |
+| exp07 상세 결과 | [RESULTS.md](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/RESULTS.md) |
+| 전체 분석 JSON | [analysis_results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp07_zero_se_analysis/analysis_results.json) |
+| SE 구현 코드 | [semantic_entropy.py](https://github.com/sharosoo/hallucination_research/blob/master/packages/hfe-core/src/hfe_core/semantic_entropy.py) |
+| Energy 구현 코드 | [semantic_energy.py](https://github.com/sharosoo/hallucination_research/blob/master/packages/hfe-core/src/hfe_core/semantic_energy.py) |
+| NLI 클러스터링 코드 | [nli_clusterer.py](https://github.com/sharosoo/hallucination_research/blob/master/packages/hfe-core/src/hfe_core/nli_clusterer.py) |
+| exp08 보강 분석 코드 | [analyze_robustness.py](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp08_robustness/analyze_robustness.py) |
+| exp08 보강 결과 JSON | [robustness_results.json](https://github.com/sharosoo/hallucination_research/blob/master/experiment_notes/exp08_robustness/robustness_results.json) |
 
-### 추가 실험 (GPU 필요)
-- [ ] 더 큰 모델 (Qwen2.5-7B-Instruct)에서 패턴 재현
-- [ ] Temperature 변화 (0.3, 0.5, 1.0)에 따른 Zero-SE 비율 변화
-- [ ] Percentile 기반 τ 검증
+---
 
-### 논문 작성
+## 8. 예상 논문 작성 단계
+
 - [ ] Introduction: "SE의 blind spot" 문제 제기
 - [ ] Method: SE-gated cascade 정의
 - [ ] Experiments: 5개 데이터셋 결과
@@ -263,7 +304,7 @@ TruthfulQA에서 학습한 **τ=0.526을 고정**하여 다른 데이터셋에 �
 
 ---
 
-## 8. 파일 구조
+## 9. 파일 구조
 
 ```
 hallucination_lfe/
@@ -273,19 +314,17 @@ hallucination_lfe/
 ├── 260206_meeting.md                            # 이 문서
 ├── figures/
 │   ├── generate_all.py                          # Figure 생성 스크립트
-│   ├── fig1_zero_se_overview.png                # Zero-SE 현상 개요
-│   ├── fig2_se_bin_crossover.png                # SE 구간별 crossover
-│   ├── fig3_complementarity.png                 # 상보성 분석
-│   ├── fig4_cascade_sweep.png                   # Cascade τ sweep
-│   ├── fig5_overall_comparison.png              # 전체 비교
-│   └── fig6_story_diagram.png                   # 논문 스토리 다이어그램
+│   ├── fig1~fig6*.png                           # exp07 기본 figures
+│   ├── fig7_complementarity_sensitivity.png     # exp08: threshold sensitivity
+│   └── fig8_bootstrap_ci.png                    # exp08: bootstrap CI
 └── experiment_notes/
-    └── exp07_zero_se_analysis/
-        ├── analyze_existing.py                  # 분석 스크립트 (GPU 불필요)
-        ├── run_new_datasets.py                  # 새 데이터셋 실험 (GPU 필요)
-        ├── analysis_results.json                # 전체 분석 결과
-        ├── results_triviaqa.json                # TriviaQA 원본 결과
-        ├── results_naturalquestions.json         # NQ 원본 결과
-        ├── results_halueval_dialogue.json        # HaluEval-dialogue 원본 결과
-        └── RESULTS.md                           # 상세 결과 문서
+    ├── exp07_zero_se_analysis/
+    │   ├── analyze_existing.py                  # E1/E3/E4 분석 (GPU 불필요)
+    │   ├── run_new_datasets.py                  # 새 데이터셋 실험 (GPU 필요)
+    │   ├── analysis_results.json                # 전체 분석 결과
+    │   ├── results_*.json                       # 각 데이터셋 원본 결과
+    │   └── RESULTS.md                           # 상세 결과 문서
+    └── exp08_robustness/
+        ├── analyze_robustness.py                # 보강 분석 (GPU 불필요)
+        └── robustness_results.json              # 보강 결과
 ```

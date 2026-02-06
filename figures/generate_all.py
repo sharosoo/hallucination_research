@@ -702,6 +702,139 @@ def fig6_story_diagram():
     print("  Saved fig6_story_diagram.png")
 
 
+def fig7_complementarity_sensitivity():
+    """Fig 7: Threshold sensitivity — Energy-only % across percentile thresholds"""
+    rob_path = (
+        ROOT / "experiment_notes" / "exp08_robustness" / "robustness_results.json"
+    )
+    if not rob_path.exists():
+        print("  Skipping fig7 — exp08 results not found")
+        return
+    with open(rob_path) as f:
+        rob = json.load(f)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+
+    percentiles = [60, 70, 80, 90]
+    x = np.arange(len(percentiles))
+    width = 0.15
+
+    for i, ds_name in enumerate(DS_ORDER):
+        ds_data = [
+            r for r in rob["complementarity_sensitivity"] if r["dataset"] == ds_name
+        ]
+        if not ds_data:
+            continue
+        vals = [r["energy_only_pct"] for r in ds_data]
+        offset = (i - len(DS_ORDER) / 2 + 0.5) * width
+        bars = ax.bar(
+            x + offset,
+            vals,
+            width,
+            label=DS_SHORT[i].replace("\n", " "),
+            alpha=0.85,
+            edgecolor="white",
+        )
+        for bar, val in zip(bars, vals):
+            if val > 3:
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + 0.3,
+                    f"{val:.0f}",
+                    ha="center",
+                    va="bottom",
+                    fontsize=6.5,
+                )
+
+    ax.set_xticks(x)
+    ax.set_xticklabels([f"{p}th pctl" for p in percentiles], fontsize=10)
+    ax.set_ylabel("Energy-only Hallucinations (%)")
+    ax.set_title(
+        "Figure 7. Complementarity Threshold Sensitivity:\n"
+        "Energy-only Detection Rate Across Percentile Thresholds",
+        fontsize=12,
+        fontweight="bold",
+    )
+    ax.set_ylim(0, 40)
+    ax.legend(fontsize=8, loc="upper left", ncol=2)
+    ax.axhspan(7, 34, alpha=0.06, color="orange")
+    ax.text(
+        3.5,
+        35,
+        "Range: 7–33%",
+        fontsize=9,
+        ha="right",
+        color="orange",
+        fontweight="bold",
+    )
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "fig7_complementarity_sensitivity.png")
+    plt.close(fig)
+    print("  Saved fig7_complementarity_sensitivity.png")
+
+
+def fig8_bootstrap_ci():
+    """Fig 8: Bootstrap CI for Cascade vs SE-only AUROC delta"""
+    rob_path = (
+        ROOT / "experiment_notes" / "exp08_robustness" / "robustness_results.json"
+    )
+    if not rob_path.exists():
+        print("  Skipping fig8 — exp08 results not found")
+        return
+    with open(rob_path) as f:
+        rob = json.load(f)
+
+    cross_results = [
+        r
+        for r in rob["bootstrap_tests"]
+        if r.get("tau_source") == "cross_dataset_0.526"
+    ]
+
+    fig, ax = plt.subplots(figsize=(10, 4.5))
+
+    y_pos = np.arange(len(cross_results))
+    ds_labels = []
+
+    for i, r in enumerate(cross_results):
+        delta = r["observed_delta"]
+        ci_lo = r["ci_95_lower"]
+        ci_hi = r["ci_95_upper"]
+        p_val = r["p_value"]
+
+        color = COLORS["cascade"] if delta > 0 else COLORS["normal"]
+        ax.barh(i, delta, height=0.5, color=color, alpha=0.7, edgecolor="white")
+        ax.plot([ci_lo, ci_hi], [i, i], color="#333", linewidth=2, zorder=3)
+        ax.plot([ci_lo, ci_hi], [i, i], "|", color="#333", markersize=10, zorder=3)
+
+        label = f"p={p_val:.3f}"
+        ax.text(
+            max(ci_hi + 0.005, delta + 0.005),
+            i,
+            label,
+            va="center",
+            fontsize=8,
+            color="gray",
+        )
+        ds_labels.append(r["dataset"])
+
+    ax.axvline(0, color="#333", linewidth=1, linestyle="-")
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(ds_labels, fontsize=10)
+    ax.set_xlabel("AUROC Delta (Cascade − SE-only)")
+    ax.set_title(
+        "Figure 8. Bootstrap 95% CI for Cascade Improvement (τ=0.526)",
+        fontsize=12,
+        fontweight="bold",
+    )
+    ax.invert_yaxis()
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "fig8_bootstrap_ci.png")
+    plt.close(fig)
+    print("  Saved fig8_bootstrap_ci.png")
+
+
 if __name__ == "__main__":
     print("Generating figures...")
     fig1_zero_se_overview()
@@ -710,4 +843,6 @@ if __name__ == "__main__":
     fig4_cascade_sweep()
     fig5_overall_comparison()
     fig6_story_diagram()
+    fig7_complementarity_sensitivity()
+    fig8_bootstrap_ci()
     print("Done! All figures saved to figures/")

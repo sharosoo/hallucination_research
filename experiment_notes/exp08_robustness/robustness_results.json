@@ -1,0 +1,722 @@
+{
+  "timestamp": "2026-02-06T13:33:30.148007",
+  "description": "exp08: Robustness analysis for exp07 claims",
+  "complementarity_sensitivity": [
+    {
+      "dataset": "TruthfulQA",
+      "percentile": 60,
+      "n_hallucinations": 164,
+      "se_only": 20,
+      "se_only_pct": 12.195121951219512,
+      "energy_only": 37,
+      "energy_only_pct": 22.5609756097561,
+      "both_catch": 61,
+      "both_catch_pct": 37.19512195121951,
+      "neither_catch": 46,
+      "neither_catch_pct": 28.04878048780488
+    },
+    {
+      "dataset": "TruthfulQA",
+      "percentile": 70,
+      "n_hallucinations": 164,
+      "se_only": 20,
+      "se_only_pct": 12.195121951219512,
+      "energy_only": 26,
+      "energy_only_pct": 15.853658536585366,
+      "both_catch": 89,
+      "both_catch_pct": 54.268292682926834,
+      "neither_catch": 29,
+      "neither_catch_pct": 17.682926829268293
+    },
+    {
+      "dataset": "TruthfulQA",
+      "percentile": 80,
+      "n_hallucinations": 164,
+      "se_only": 16,
+      "se_only_pct": 9.75609756097561,
+      "energy_only": 29,
+      "energy_only_pct": 17.682926829268293,
+      "both_catch": 102,
+      "both_catch_pct": 62.19512195121951,
+      "neither_catch": 17,
+      "neither_catch_pct": 10.365853658536585
+    },
+    {
+      "dataset": "TruthfulQA",
+      "percentile": 90,
+      "n_hallucinations": 164,
+      "se_only": 8,
+      "se_only_pct": 4.878048780487805,
+      "energy_only": 19,
+      "energy_only_pct": 11.585365853658537,
+      "both_catch": 128,
+      "both_catch_pct": 78.04878048780488,
+      "neither_catch": 9,
+      "neither_catch_pct": 5.487804878048781
+    },
+    {
+      "dataset": "HaluEval",
+      "percentile": 60,
+      "n_hallucinations": 21,
+      "se_only": 3,
+      "se_only_pct": 14.285714285714285,
+      "energy_only": 4,
+      "energy_only_pct": 19.047619047619047,
+      "both_catch": 8,
+      "both_catch_pct": 38.095238095238095,
+      "neither_catch": 6,
+      "neither_catch_pct": 28.57142857142857
+    },
+    {
+      "dataset": "HaluEval",
+      "percentile": 70,
+      "n_hallucinations": 21,
+      "se_only": 2,
+      "se_only_pct": 9.523809523809524,
+      "energy_only": 5,
+      "energy_only_pct": 23.809523809523807,
+      "both_catch": 9,
+      "both_catch_pct": 42.857142857142854,
+      "neither_catch": 5,
+      "neither_catch_pct": 23.809523809523807
+    },
+    {
+      "dataset": "HaluEval",
+      "percentile": 80,
+      "n_hallucinations": 21,
+      "se_only": 0,
+      "se_only_pct": 0.0,
+      "energy_only": 5,
+      "energy_only_pct": 23.809523809523807,
+      "both_catch": 11,
+      "both_catch_pct": 52.38095238095239,
+      "neither_catch": 5,
+      "neither_catch_pct": 23.809523809523807
+    },
+    {
+      "dataset": "HaluEval",
+      "percentile": 90,
+      "n_hallucinations": 21,
+      "se_only": 0,
+      "se_only_pct": 0.0,
+      "energy_only": 7,
+      "energy_only_pct": 33.33333333333333,
+      "both_catch": 11,
+      "both_catch_pct": 52.38095238095239,
+      "neither_catch": 3,
+      "neither_catch_pct": 14.285714285714285
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 60,
+      "n_hallucinations": 108,
+      "se_only": 12,
+      "se_only_pct": 11.11111111111111,
+      "energy_only": 20,
+      "energy_only_pct": 18.51851851851852,
+      "both_catch": 45,
+      "both_catch_pct": 41.66666666666667,
+      "neither_catch": 31,
+      "neither_catch_pct": 28.703703703703702
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 70,
+      "n_hallucinations": 108,
+      "se_only": 12,
+      "se_only_pct": 11.11111111111111,
+      "energy_only": 13,
+      "energy_only_pct": 12.037037037037036,
+      "both_catch": 62,
+      "both_catch_pct": 57.407407407407405,
+      "neither_catch": 21,
+      "neither_catch_pct": 19.444444444444446
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 80,
+      "n_hallucinations": 108,
+      "se_only": 10,
+      "se_only_pct": 9.25925925925926,
+      "energy_only": 18,
+      "energy_only_pct": 16.666666666666664,
+      "both_catch": 68,
+      "both_catch_pct": 62.96296296296296,
+      "neither_catch": 12,
+      "neither_catch_pct": 11.11111111111111
+    },
+    {
+      "dataset": "TriviaQA",
+      "percentile": 90,
+      "n_hallucinations": 108,
+      "se_only": 9,
+      "se_only_pct": 8.333333333333332,
+      "energy_only": 15,
+      "energy_only_pct": 13.88888888888889,
+      "both_catch": 82,
+      "both_catch_pct": 75.92592592592592,
+      "neither_catch": 2,
+      "neither_catch_pct": 1.8518518518518516
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 60,
+      "n_hallucinations": 134,
+      "se_only": 17,
+      "se_only_pct": 12.686567164179104,
+      "energy_only": 21,
+      "energy_only_pct": 15.671641791044777,
+      "both_catch": 59,
+      "both_catch_pct": 44.02985074626866,
+      "neither_catch": 37,
+      "neither_catch_pct": 27.611940298507463
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 70,
+      "n_hallucinations": 134,
+      "se_only": 12,
+      "se_only_pct": 8.955223880597014,
+      "energy_only": 14,
+      "energy_only_pct": 10.44776119402985,
+      "both_catch": 80,
+      "both_catch_pct": 59.70149253731343,
+      "neither_catch": 28,
+      "neither_catch_pct": 20.8955223880597
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 80,
+      "n_hallucinations": 134,
+      "se_only": 10,
+      "se_only_pct": 7.462686567164178,
+      "energy_only": 18,
+      "energy_only_pct": 13.432835820895523,
+      "both_catch": 89,
+      "both_catch_pct": 66.4179104477612,
+      "neither_catch": 17,
+      "neither_catch_pct": 12.686567164179104
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "percentile": 90,
+      "n_hallucinations": 134,
+      "se_only": 7,
+      "se_only_pct": 5.223880597014925,
+      "energy_only": 10,
+      "energy_only_pct": 7.462686567164178,
+      "both_catch": 110,
+      "both_catch_pct": 82.08955223880598,
+      "neither_catch": 7,
+      "neither_catch_pct": 5.223880597014925
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "percentile": 60,
+      "n_hallucinations": 188,
+      "se_only": 24,
+      "se_only_pct": 12.76595744680851,
+      "energy_only": 30,
+      "energy_only_pct": 15.957446808510639,
+      "both_catch": 83,
+      "both_catch_pct": 44.148936170212764,
+      "neither_catch": 51,
+      "neither_catch_pct": 27.127659574468083
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "percentile": 70,
+      "n_hallucinations": 188,
+      "se_only": 25,
+      "se_only_pct": 13.297872340425531,
+      "energy_only": 37,
+      "energy_only_pct": 19.680851063829788,
+      "both_catch": 94,
+      "both_catch_pct": 50.0,
+      "neither_catch": 32,
+      "neither_catch_pct": 17.02127659574468
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "percentile": 80,
+      "n_hallucinations": 188,
+      "se_only": 17,
+      "se_only_pct": 9.042553191489363,
+      "energy_only": 23,
+      "energy_only_pct": 12.23404255319149,
+      "both_catch": 127,
+      "both_catch_pct": 67.5531914893617,
+      "neither_catch": 21,
+      "neither_catch_pct": 11.170212765957446
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "percentile": 90,
+      "n_hallucinations": 188,
+      "se_only": 5,
+      "se_only_pct": 2.6595744680851063,
+      "energy_only": 30,
+      "energy_only_pct": 15.957446808510639,
+      "both_catch": 139,
+      "both_catch_pct": 73.93617021276596,
+      "neither_catch": 14,
+      "neither_catch_pct": 7.446808510638298
+    }
+  ],
+  "bootstrap_tests": [
+    {
+      "observed_delta": 0.029471544715447218,
+      "bootstrap_mean_delta": 0.029351432844658524,
+      "ci_95_lower": -0.015813337053571495,
+      "ci_95_upper": 0.07412970847327567,
+      "p_value": 0.0946,
+      "significant_at_005": false,
+      "significant_at_010": true,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TruthfulQA",
+      "tau": 0.5255307469172573,
+      "se_auroc": 0.6132283197831978,
+      "cascade_auroc": 0.642699864498645,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": 0.029471544715447218,
+      "bootstrap_mean_delta": 0.029351432844658524,
+      "ci_95_lower": -0.015813337053571495,
+      "ci_95_upper": 0.07412970847327567,
+      "p_value": 0.0946,
+      "significant_at_005": false,
+      "significant_at_010": true,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TruthfulQA",
+      "tau": 0.526,
+      "se_auroc": 0.6132283197831978,
+      "cascade_auroc": 0.642699864498645,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": 0.07382282521947325,
+      "bootstrap_mean_delta": 0.07301155025385075,
+      "ci_95_lower": -0.06222569444444451,
+      "ci_95_upper": 0.22042799654180043,
+      "p_value": 0.1546,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "HaluEval",
+      "tau": 1.3321790402101223,
+      "se_auroc": 0.5400372439478585,
+      "cascade_auroc": 0.6138600691673317,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": 0.0544027666932696,
+      "bootstrap_mean_delta": 0.05351769177650182,
+      "ci_95_lower": -0.08965884000805971,
+      "ci_95_upper": 0.20429684091679925,
+      "p_value": 0.2344,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "HaluEval",
+      "tau": 0.526,
+      "se_auroc": 0.5400372439478585,
+      "cascade_auroc": 0.5944400106411281,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": -0.012530193236715004,
+      "bootstrap_mean_delta": -0.012554516346698684,
+      "ci_95_lower": -0.06167638973502142,
+      "ci_95_upper": 0.03708635018540492,
+      "p_value": 0.3108,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TriviaQA",
+      "tau": 0.0,
+      "se_auroc": 0.6759259259259259,
+      "cascade_auroc": 0.6633957326892109,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": -0.016404991948470227,
+      "bootstrap_mean_delta": -0.01654001028125004,
+      "ci_95_lower": -0.06604194069000965,
+      "ci_95_upper": 0.03142886052660761,
+      "p_value": 0.2516,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "TriviaQA",
+      "tau": 0.526,
+      "se_auroc": 0.6759259259259259,
+      "cascade_auroc": 0.6595209339774557,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": 0.003505201266395308,
+      "bootstrap_mean_delta": 0.002969148152395428,
+      "ci_95_lower": -0.07590022786458335,
+      "ci_95_upper": 0.08451551338370966,
+      "p_value": 0.4622,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "NaturalQuestions",
+      "tau": 1.6094379124341005,
+      "se_auroc": 0.6149932157394844,
+      "cascade_auroc": 0.6184984170058797,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": -0.011137494346449617,
+      "bootstrap_mean_delta": -0.011602261675040767,
+      "ci_95_lower": -0.045566405952435225,
+      "ci_95_upper": 0.02051211516572488,
+      "p_value": 0.2496,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "NaturalQuestions",
+      "tau": 0.526,
+      "se_auroc": 0.6149932157394844,
+      "cascade_auroc": 0.6038557213930348,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "observed_delta": -0.002437943262411313,
+      "bootstrap_mean_delta": -0.003203329769632754,
+      "ci_95_lower": -0.13035232741115083,
+      "ci_95_upper": 0.0995311114804962,
+      "p_value": 0.5056,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "HaluEval-dialogue",
+      "tau": 0.5255307469172573,
+      "se_auroc": 0.5986258865248227,
+      "cascade_auroc": 0.5961879432624114,
+      "tau_source": "best_per_dataset"
+    },
+    {
+      "observed_delta": -0.002437943262411313,
+      "bootstrap_mean_delta": -0.003203329769632754,
+      "ci_95_lower": -0.13035232741115083,
+      "ci_95_upper": 0.0995311114804962,
+      "p_value": 0.5056,
+      "significant_at_005": false,
+      "significant_at_010": false,
+      "n_bootstrap_valid": 5000,
+      "dataset": "HaluEval-dialogue",
+      "tau": 0.526,
+      "se_auroc": 0.5986258865248227,
+      "cascade_auroc": 0.5961879432624114,
+      "tau_source": "cross_dataset_0.526"
+    }
+  ],
+  "zero_se_single_cluster_verification": [
+    {
+      "dataset": "TruthfulQA",
+      "n_total": 200,
+      "n_se_zero_eps001": 38,
+      "n_single_cluster": 38,
+      "n_overlap": 38,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 38,
+          "hall": 28,
+          "normal": 10
+        },
+        "2": {
+          "total": 36,
+          "hall": 27,
+          "normal": 9
+        },
+        "3": {
+          "total": 42,
+          "hall": 36,
+          "normal": 6
+        },
+        "4": {
+          "total": 48,
+          "hall": 39,
+          "normal": 9
+        },
+        "5": {
+          "total": 36,
+          "hall": 34,
+          "normal": 2
+        }
+      }
+    },
+    {
+      "dataset": "HaluEval",
+      "n_total": 200,
+      "n_se_zero_eps001": 107,
+      "n_single_cluster": 107,
+      "n_overlap": 107,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 107,
+          "hall": 10,
+          "normal": 97
+        },
+        "2": {
+          "total": 54,
+          "hall": 7,
+          "normal": 47
+        },
+        "3": {
+          "total": 20,
+          "hall": 0,
+          "normal": 20
+        },
+        "4": {
+          "total": 17,
+          "hall": 3,
+          "normal": 14
+        },
+        "5": {
+          "total": 2,
+          "hall": 1,
+          "normal": 1
+        }
+      }
+    },
+    {
+      "dataset": "TriviaQA",
+      "n_total": 200,
+      "n_se_zero_eps001": 58,
+      "n_single_cluster": 58,
+      "n_overlap": 58,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 58,
+          "hall": 17,
+          "normal": 41
+        },
+        "2": {
+          "total": 36,
+          "hall": 17,
+          "normal": 19
+        },
+        "3": {
+          "total": 42,
+          "hall": 28,
+          "normal": 14
+        },
+        "4": {
+          "total": 31,
+          "hall": 27,
+          "normal": 4
+        },
+        "5": {
+          "total": 33,
+          "hall": 19,
+          "normal": 14
+        }
+      }
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "n_total": 200,
+      "n_se_zero_eps001": 34,
+      "n_single_cluster": 34,
+      "n_overlap": 34,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 34,
+          "hall": 17,
+          "normal": 17
+        },
+        "2": {
+          "total": 42,
+          "hall": 25,
+          "normal": 17
+        },
+        "3": {
+          "total": 33,
+          "hall": 24,
+          "normal": 9
+        },
+        "4": {
+          "total": 37,
+          "hall": 27,
+          "normal": 10
+        },
+        "5": {
+          "total": 54,
+          "hall": 41,
+          "normal": 13
+        }
+      }
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "n_total": 200,
+      "n_se_zero_eps001": 49,
+      "n_single_cluster": 49,
+      "n_overlap": 49,
+      "exact_match": true,
+      "se_zero_but_multi_cluster": 0,
+      "single_cluster_but_se_nonzero": 0,
+      "cluster_distribution": {
+        "1": {
+          "total": 49,
+          "hall": 44,
+          "normal": 5
+        },
+        "2": {
+          "total": 39,
+          "hall": 37,
+          "normal": 2
+        },
+        "3": {
+          "total": 43,
+          "hall": 42,
+          "normal": 1
+        },
+        "4": {
+          "total": 44,
+          "hall": 40,
+          "normal": 4
+        },
+        "5": {
+          "total": 25,
+          "hall": 25,
+          "normal": 0
+        }
+      }
+    }
+  ],
+  "rank_normalization_comparison": [
+    {
+      "dataset": "TruthfulQA",
+      "tau": 0.5255307469172573,
+      "se_auroc_minmax": 0.6132283197831978,
+      "se_auroc_rank": 0.6512533875338753,
+      "cascade_auroc_minmax": 0.642699864498645,
+      "cascade_auroc_rank": 0.6508299457994579,
+      "delta_minmax": 0.029471544715447218,
+      "delta_rank": -0.00042344173441744015,
+      "rank_vs_minmax_consistent": false
+    },
+    {
+      "dataset": "TruthfulQA",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.6132283197831978,
+      "se_auroc_rank": 0.6512533875338753,
+      "cascade_auroc_minmax": 0.642699864498645,
+      "cascade_auroc_rank": 0.6508299457994579,
+      "delta_minmax": 0.029471544715447218,
+      "delta_rank": -0.00042344173441744015,
+      "rank_vs_minmax_consistent": false,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "HaluEval",
+      "tau": 1.3321790402101223,
+      "se_auroc_minmax": 0.5400372439478585,
+      "se_auroc_rank": 0.518488959829742,
+      "cascade_auroc_minmax": 0.6138600691673317,
+      "cascade_auroc_rank": 0.6142591114658154,
+      "delta_minmax": 0.07382282521947325,
+      "delta_rank": 0.09577015163607339,
+      "rank_vs_minmax_consistent": true
+    },
+    {
+      "dataset": "HaluEval",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.5400372439478585,
+      "se_auroc_rank": 0.518488959829742,
+      "cascade_auroc_minmax": 0.5944400106411281,
+      "cascade_auroc_rank": 0.6169193934557062,
+      "delta_minmax": 0.0544027666932696,
+      "delta_rank": 0.09843043362596426,
+      "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "TriviaQA",
+      "tau": 0.0,
+      "se_auroc_minmax": 0.6759259259259259,
+      "se_auroc_rank": 0.6678743961352658,
+      "cascade_auroc_minmax": 0.6633957326892109,
+      "cascade_auroc_rank": 0.6648550724637681,
+      "delta_minmax": -0.012530193236715004,
+      "delta_rank": -0.003019323671497709,
+      "rank_vs_minmax_consistent": true
+    },
+    {
+      "dataset": "TriviaQA",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.6759259259259259,
+      "se_auroc_rank": 0.6678743961352658,
+      "cascade_auroc_minmax": 0.6595209339774557,
+      "cascade_auroc_rank": 0.648450080515298,
+      "delta_minmax": -0.016404991948470227,
+      "delta_rank": -0.019424315619967825,
+      "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "tau": 1.6094379124341005,
+      "se_auroc_minmax": 0.6149932157394844,
+      "se_auroc_rank": 0.6121664405246494,
+      "cascade_auroc_minmax": 0.6184984170058797,
+      "cascade_auroc_rank": 0.6184984170058797,
+      "delta_minmax": 0.003505201266395308,
+      "delta_rank": 0.006331976481230295,
+      "rank_vs_minmax_consistent": true
+    },
+    {
+      "dataset": "NaturalQuestions",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.6149932157394844,
+      "se_auroc_rank": 0.6121664405246494,
+      "cascade_auroc_minmax": 0.6038557213930348,
+      "cascade_auroc_rank": 0.5982587064676615,
+      "delta_minmax": -0.011137494346449617,
+      "delta_rank": -0.013907734056987864,
+      "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "tau": 0.5255307469172573,
+      "se_auroc_minmax": 0.5986258865248227,
+      "se_auroc_rank": 0.5722517730496454,
+      "cascade_auroc_minmax": 0.5961879432624114,
+      "cascade_auroc_rank": 0.5718085106382979,
+      "delta_minmax": -0.002437943262411313,
+      "delta_rank": -0.00044326241134751143,
+      "rank_vs_minmax_consistent": true
+    },
+    {
+      "dataset": "HaluEval-dialogue",
+      "tau": 0.526,
+      "se_auroc_minmax": 0.5986258865248227,
+      "se_auroc_rank": 0.5722517730496454,
+      "cascade_auroc_minmax": 0.5961879432624114,
+      "cascade_auroc_rank": 0.5718085106382979,
+      "delta_minmax": -0.002437943262411313,
+      "delta_rank": -0.00044326241134751143,
+      "rank_vs_minmax_consistent": true,
+      "tau_source": "cross_dataset_0.526"
+    }
+  ]
+}

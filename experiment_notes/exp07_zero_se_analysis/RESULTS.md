@@ -29,6 +29,13 @@
 
 ## 2. E1: Zero-SE 정량화 (핵심 결과)
 
+### 2.0 Zero-SE 정의
+
+**Zero-SE (SE=0)**: K=5 응답이 모두 단일 NLI 클러스터에 속하는 경우.
+- Discrete SE 공식에서 p(C₁)=1 → H = -1·log(1) = 0
+- exp08 검증 결과, **SE≤0.001인 샘플과 num_clusters==1인 샘플이 5/5 데이터셋에서 완전 일치** (100% overlap)
+- 따라서 Zero-SE는 "모든 응답이 의미적으로 동일한 클러스터"와 정확히 같은 조건
+
 ### 2.1 Zero-SE 현상 존재 확인
 
 | 데이터셋 | Zero-SE 비율 | Zero-SE 내 환각률 | **Energy AUROC** | SE AUROC |
@@ -125,15 +132,45 @@ TruthfulQA에서 학습한 τ=0.526을 다른 데이터셋에 적용:
 | TruthfulQA → HaluEval-dial | 0.596 | 0.599 | -0.002 | ≈ 동등 |
 
 **해석**: τ=0.526 (TruthfulQA 기준)으로 고정 시,
-- TruthfulQA, HaluEval에서 SE-only 대비 의미있는 개선 (+3~5%)
-- 나머지 데이터셋에서는 동등 (Cascade가 해치지 않음)
-- **Cascade가 SE-only보다 나쁜 경우 없음** (최대 -1.6% 수준)
+- TruthfulQA, HaluEval에서 SE-only 대비 개선 방향 (+3~5%)
+- 나머지 데이터셋에서는 실질적으로 동등 (최대 -1.6%)
+
+### 4.3 통계 검정 (exp08 보강: Paired Bootstrap Test)
+
+Cascade vs SE-only AUROC delta에 대한 paired bootstrap 5000회 검정 (τ=0.526):
+
+| 데이터셋 | Δ AUROC | 95% CI | p-value | 유의? |
+|----------|---------|--------|---------|------|
+| TruthfulQA | +0.030 | [-0.016, +0.074] | 0.095 | p<0.10 ⚠️ |
+| HaluEval-QA | +0.054 | [-0.090, +0.204] | 0.234 | ❌ |
+| TriviaQA | -0.016 | [-0.066, +0.031] | 0.252 | ❌ |
+| NaturalQuestions | -0.011 | [-0.046, +0.021] | 0.250 | ❌ |
+| HaluEval-dialogue | -0.002 | [-0.130, +0.100] | 0.506 | ❌ |
+
+> **어떤 데이터셋도 p<0.05에서 유의하지 않음** — n=200에서 cascade는 SE-only와 통계적으로 동등.
+> 이는 "cascade가 개선한다"도 "해친다"도 유의하게 말할 수 없다는 뜻.
+> 단, 모든 음의 delta가 -0.016 이하 (실질적 무해) 이며, TruthfulQA는 p=0.095로 개선 경향.
+
+### 4.4 Rank-Based Normalization 검증 (exp08 보강)
+
+Min-max 정규화의 정보 누출 가능성을 검증하기 위해 rank-based normalization으로 재현:
+
+| 데이터셋 | MinMax Δ | Rank Δ | 방향 일치? |
+|----------|----------|--------|-----------|
+| TruthfulQA | +0.030 | -0.000 | ❌ |
+| HaluEval-QA | +0.074 | +0.096 | ✅ |
+| TriviaQA | -0.013 | -0.003 | ✅ |
+| NaturalQuestions | +0.004 | +0.006 | ✅ |
+| HaluEval-dialogue | -0.002 | -0.000 | ✅ |
+
+> **4/5 데이터셋에서 방향 일치** — min-max 정규화에 의한 과대평가는 제한적.
+> TruthfulQA의 불일치는 MinMax에서 +0.03이 Rank에서 ≈0으로 축소되어, 개선 효과가 정규화 방법에 민감함을 시사.
 
 ---
 
 ## 5. 상보성 분석
 
-### 5.1 SE vs Energy 탐지 영역 분해
+### 5.1 SE vs Energy 탐지 영역 분해 (80th percentile)
 
 | 데이터셋 | SE만 | Energy만 | 둘 다 | 못 잡음 | **Oracle** |
 |----------|------|---------|-------|---------|-----------|
@@ -143,12 +180,25 @@ TruthfulQA에서 학습한 τ=0.526을 다른 데이터셋에 적용:
 | NaturalQuestions | 7.5% | **13.4%** | 66.4% | 12.7% | **87.3%** |
 | HaluEval-dialogue | 9.0% | **12.2%** | 67.6% | 11.2% | **88.8%** |
 
-### 5.2 핵심 관찰
+### 5.2 Threshold Sensitivity (exp08 보강)
 
-1. **Energy만 잡는 환각이 모든 데이터셋에서 존재** (12~24%)
-2. 이는 SE만으로는 절대 탐지 불가능한 환각
-3. Oracle 탐지율 87~90%: SE+Energy 결합의 이론적 상한
-4. 현재 "못 잡음" 10~24%: 내부 신호만으로는 한계
+상보성 결과가 80th percentile 선택에 의존하는지 확인하기 위해 60/70/80/90th에서 반복:
+
+| 데이터셋 | Energy-only @ 60th | @ 70th | @ 80th | @ 90th | **범위** |
+|----------|-------------------|--------|--------|--------|---------|
+| TruthfulQA | 22.6% | 15.9% | 17.7% | 11.6% | 11.6~22.6% |
+| HaluEval-QA | 19.0% | 23.8% | 23.8% | 33.3% | 19.0~33.3% |
+| TriviaQA | 18.5% | 12.0% | 16.7% | 13.9% | 12.0~18.5% |
+| NaturalQuestions | 15.7% | 10.4% | 13.4% | 7.5% | 7.5~15.7% |
+| HaluEval-dialogue | 16.0% | 19.7% | 12.2% | 16.0% | 12.2~19.7% |
+
+> **모든 threshold에서 Energy-only 비율이 7%~33% 범위로 일관되게 존재** — 80th percentile 선택에 과도하게 의존하지 않음
+
+### 5.3 핵심 관찰
+
+1. **Energy만 잡는 환각이 모든 데이터셋, 모든 threshold에서 존재** (threshold에 따라 7~33% 범위)
+2. Oracle 탐지율 87~90%: SE+Energy 결합의 이론적 상한
+3. 현재 "못 잡음" 10~24%: 내부 신호만으로는 한계
 
 ---
 
@@ -162,26 +212,31 @@ TruthfulQA에서 학습한 τ=0.526을 다른 데이터셋에 적용:
 | Zero-SE에서 Energy가 효과적 | ⚠️ **3/5** 데이터셋 | TruthfulQA(0.74), TriviaQA(0.69), HaluEval(0.60) |
 | SE-Energy crossover 존재 | ⚠️ **3/5** 데이터셋 | Factoid QA에서 확인, dialogue에서 미확인 |
 | Cascade가 SE-only보다 낫다 | ⚠️ **2/5** 확실히 개선 | TruthfulQA(+3%), HaluEval(+7.4%) |
-| Cascade가 해치지 않는다 | ✅ **5/5** 데이터셋 | 최대 -1.6% (실질적 동등) |
-| Energy만 잡는 환각 존재 | ✅ **5/5** 데이터셋 | 12~24% 범위 |
+| Cascade가 SE-only와 통계적 동등 | ✅ **5/5** 데이터셋 | 최대 -1.6%, 모두 p>0.05 (bootstrap) |
+| Energy만 잡는 환각 존재 | ✅ **5/5** 데이터셋 | threshold 60~90th에서 7~33% 범위 |
 
-### 6.2 수정된 주장 (현실적 버전)
+### 6.2 수정된 주장 (exp08 보강 후)
 
-**강한 주장 (근거 충분)**:
-> "SE와 Energy는 서로 다른 환각 유형을 탐지한다. Energy만 잡는 환각이 전체 환각의 12~24%를 차지하며, SE 단독으로는 이를 탐지할 수 없다."
+**주장 1 (5/5 데이터셋)**:
+> "SE와 Energy는 서로 다른 환각 패턴을 탐지한다. 80th percentile threshold 기준 Energy만 탐지하는 환각이 12~24%이며, threshold를 60~90th로 변화시켜도 7~33% 범위에서 일관되게 존재한다."
 
-**조건부 주장 (factoid QA에 한정)**:
-> "Factoid QA 데이터셋(TruthfulQA, TriviaQA)에서, Zero-SE 영역의 환각을 Energy가 AUROC 0.69~0.74로 효과적으로 탐지한다."
+**주장 2 (3/5 데이터셋, factoid QA 한정)**:
+> "Factoid QA 데이터셋(TruthfulQA, TriviaQA)에서, Zero-SE(단일 NLI 클러스터) 영역의 환각을 Energy가 AUROC 0.69~0.74로 효과적으로 탐지한다."
 
-**실용적 주장**:
-> "SE-gated cascade (SE < τ → Energy)는 SE-only 대비 성능을 해치지 않으면서, Zero-SE 환각이 많은 데이터셋에서 추가 이득을 제공한다."
+**주장 3 (5/5 데이터셋)**:
+> "SE-gated cascade (SE < τ → Energy)는 cross-dataset τ=0.526 적용 시, SE-only 대비 최대 -1.6% 감소로 통계적으로 동등 수준이며 (paired bootstrap p>0.05), Zero-SE 환각이 많은 데이터셋에서 개선 경향을 보인다 (TruthfulQA: +3.0%, p=0.095)."
 
 ---
 
 ## 7. 다음 단계
 
-### 7.1 즉시 가능
-- [ ] Bootstrap CI 추가 (현재 분석 코드에 포함되어 있으나 결과에 미반영)
+### 7.1 완료
+- [x] Bootstrap CI 추가 (exp08 — 5000회 paired bootstrap)
+- [x] 상보성 threshold sensitivity (exp08 — 60/70/80/90th percentile)
+- [x] Zero-SE = single-cluster 검증 (exp08 — 5/5 완전 일치)
+- [x] Rank-based normalization 검증 (exp08 — 4/5 방향 일치)
+
+### 7.2 가능
 - [ ] AUPRC 비교 (base rate 차이가 크므로 AUROC만으로는 부족)
 - [ ] 응답 길이 / temperature별 ablation
 
@@ -203,4 +258,8 @@ exp07_zero_se_analysis/
 ├── results_naturalquestions.json # NQ 원본 결과
 ├── results_halueval_dialogue.json # HaluEval-dialogue 원본 결과
 └── RESULTS.md                   # 이 문서
+
+exp08_robustness/
+├── analyze_robustness.py        # 보강 분석 (GPU 불필요)
+└── robustness_results.json      # 보강 결과
 ```
