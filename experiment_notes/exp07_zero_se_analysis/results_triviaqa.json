@@ -1,0 +1,4068 @@
+{
+  "dataset_name": "TriviaQA",
+  "timestamp": "2026-02-06T10:57:11.116485",
+  "config": {
+    "llm_model": "Qwen/Qwen2.5-3B-Instruct",
+    "nli_model": "microsoft/deberta-large-mnli",
+    "max_samples": 200,
+    "num_responses": 5
+  },
+  "metrics": {
+    "se_auroc": 0.6759259259259259,
+    "energy_auroc": 0.6281199677938808,
+    "zero_se_energy_auroc": 0.6886657101865137
+  },
+  "statistics": {
+    "n_hallucination": 108,
+    "n_normal": 92
+  },
+  "samples": [
+    {
+      "question": "Who was the man behind The Chipmunks?",
+      "gold_answers": [
+        "David Seville"
+      ],
+      "responses": [
+        "The man behind The Chipmunks is David Seville.",
+        "The man behind The Chipmunks is David Seville, who created them and narrated their early appearances.",
+        "The man behind The Chipmunks is David Seville, an American radio personality and music producer.",
+        "The man behind The Chipmunks is David Seville, who created the animated characters Alvin and the Chipmunks.",
+        "The man behind The Chipmunks is David Seville, an American entertainer and record producer."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.73379241503202,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which Lloyd Webber musical premiered in the US on 10th December 1993?",
+      "gold_answers": [
+        "West Sunset Boulevard",
+        "Sunset Blvd",
+        "Sunset Boulevard",
+        "Sunset Blvd.",
+        "Sunset Bulevard"
+      ],
+      "responses": [
+        "The Lloyd Webber musical Cats premiered in the US on 10th December 1993.",
+        "The Lloyd Webber musical \"Starlight Express\" premiered in the US on 10th December 1993.",
+        "The musical \"Sunset Boulevard\" premiered in the US on 10th December 1993, though it was written by Harvey Fierstein and not by Lloyd Webber as might be commonly assumed from the question's phrasing.",
+        "The musical \"Starlight Express\" premiered in the US on 10th December 1993, starring Michael Crawford and featuring lyrics by Andrew Lloyd Webber.",
+        "The Lloyd Webber musical \"The Phantom of the Opera\" premiered in the US on 10th December 1993."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -47.81769892374675,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the next British Prime Minister after Arthur Balfour?",
+      "gold_answers": [
+        "Henry Campbell Bannerman",
+        "Sir Henry Campbell-Bannerman",
+        "Henry Campbell-Bannerman",
+        "Sir Henry Campbell Bannerman",
+        "Campbell Bannerman"
+      ],
+      "responses": [
+        "The next British Prime Minister after Arthur Balfour was David Lloyd George.",
+        "The next British Prime Minister after Arthur Balfour was David Lloyd George.",
+        "The next British Prime Minister after Arthur Balfour was David Lloyd George.",
+        "The next British Prime Minister after Arthur Balfour was David Lloyd George.",
+        "The next British Prime Minister after Arthur Balfour was David Lloyd George."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -48.89336609840393,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who had a 70s No 1 hit with Kiss You All Over?",
+      "gold_answers": [
+        "Exiles",
+        "Exile",
+        "Internal exile",
+        "Banishment",
+        "Self-exile"
+      ],
+      "responses": [
+        "The Jacksons had a 70s No 1 hit with \"I Can't Stand It\" (originally titled \"Kiss You All Over\")",
+        "Mellini Tikva had a 70s No 1 hit with \"Kiss You All Over.\"",
+        "Ricky Martin had a 1994 No 1 hit with \"She's a Lady,\" not Kiss You All Over, which was a different song.",
+        "Shannan Mallon had a 70s No 1 hit with \"Kiss You All Over.\"",
+        "Kylie Minogue had a 1987 No 1 hit with \"Kiss You All Over\" in the UK."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.086045311881115,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What claimed the life of singer Kathleen Ferrier?",
+      "gold_answers": [
+        "Cancer en cuirasse",
+        "Invasive (cancer)",
+        "Cancer diagnosis",
+        "Sporadic cancer",
+        "Borderline (cancer)"
+      ],
+      "responses": [
+        "Kathleen Ferrier died of tuberculosis.",
+        "Kathleen Ferrier died of tuberculosis.",
+        "Kathleen Ferrier died of lung cancer.",
+        "Kathleen Ferrier died of tuberculosis.",
+        "Kathleen Ferrier died of pulmonary tuberculosis."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -42.85270907328679,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Rita Coolidge sang the title song for which Bond film?",
+      "gold_answers": [
+        "Magda (James Bond)",
+        "List of James Bond allies in Octopussy",
+        "Octopussy (character)",
+        "Penelope Smallbone",
+        "Kamal kahn"
+      ],
+      "responses": [
+        "Rita Coolidge sang the title song for the 1981 James Bond film \"GoldenEye.\"",
+        "Rita Coolidge sang the title song for the 1981 James Bond film Midnight Moon.",
+        "Rita Coolidge sang the title song for the 1981 James Bond film \"Octopussy.\"",
+        "Rita Coolidge sang the title song for the 1981 James Bond film Midnight Moonlight.",
+        "Rita Coolidge sang the title song for the 1981 James Bond film \"Octopussy.\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -42.13595993765469,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was the last US state to reintroduce alcohol after prohibition?",
+      "gold_answers": [
+        "Utah",
+        "Geography of Utah",
+        "History of mining in Utah",
+        "US-UT",
+        "Transportation in Utah"
+      ],
+      "responses": [
+        "The last U.S. state to reintroduce alcohol after prohibition was Mississippi in 2006.",
+        "The last U.S. state to reintroduce alcohol after prohibition was Maine in 2014.",
+        "The last U.S. state to reintroduce alcohol after prohibition was Mississippi in 2006.",
+        "The last U.S. state to reinstate alcohol sales after prohibition was Mississippi in 1966.",
+        "The last U.S. state to reintroduce alcohol after prohibition was Mississippi in 1935."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.99438203347696,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which actress was voted Miss Greenwich Village in 1942?",
+      "gold_answers": [
+        "Bacall",
+        "Loren Bacall",
+        "Betty Joan Perske",
+        "Lauren Becall",
+        "Lauren Bacall"
+      ],
+      "responses": [
+        "The actress voted Miss Greenwich Village in 1942 was Eve Arden.",
+        "Marlon Brando was voted Miss Greenwich Village in 1942.",
+        "Marlon Brando was voted Miss Greenwich Village in 1942.",
+        "Sally Bowles was voted Miss Greenwich Village in 1942.",
+        "Sally Field was voted Miss Greenwich Village in 1942, though it's important to verify the exact year and details as she wasn't yet born in 1942."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -46.614581851784244,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What is the Japanese share index called?",
+      "gold_answers": [
+        "Nikkei (disambiguation)",
+        "Nikkei"
+      ],
+      "responses": [
+        "The Japanese share index is called the Nikkei 225.",
+        "The Japanese share index is called the Nikkei 225.",
+        "The Japanese share index is called the Nikkei 225.",
+        "The Japanese share index is called the Nikkei 225.",
+        "The Japanese share index is called the Nikkei 225."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -51.715166091918945,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was the name of Michael Jackson's autobiography written in 1988?",
+      "gold_answers": [
+        "Moonwalk (disambiguation)",
+        "Moon walk",
+        "Moonwalks",
+        "Moonwalking",
+        "Moonwalk"
+      ],
+      "responses": [
+        "Michael Jackson's autobiography written in 1988 was titled \"This Is Me...\"",
+        "Michael Jackson's autobiography written in 1988 was titled \"Thriller.\"",
+        "Michael Jackson's 1988 autobiography was titled \"Thriller.\"",
+        "Michael Jackson's autobiography written in 1988 was titled \"Thriller.\"",
+        "Michael Jackson's autobiography written in 1988 was titled \"Michael.\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -48.37750892205672,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which decade did stereo records first go on sale?",
+      "gold_answers": [
+        "%6030s",
+        "The Thirties",
+        "Nineteen-thirties",
+        "1930’s",
+        "1930s"
+      ],
+      "responses": [
+        "Stereo records first went on sale in the 1960s.",
+        "Stereo records first went on sale in the 1950s.",
+        "Stereo records first went on sale in the 1960s.",
+        "Stereo records first went on sale in the 1960s.",
+        "Stereo records first went on sale in the 1960s."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -52.58962635713465,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In what year's Olympics were electric timing devices and a public-address system used for the first time?",
+      "gold_answers": [
+        "In 1912, in Stockholm"
+      ],
+      "responses": [
+        "Electric timing devices and a public-address system were first used at the 1968 Winter Olympics in Grenoble, France.",
+        "Electric timing devices and a public-address system were used for the first time at the 1968 Summer Olympics in Mexico City.",
+        "Electric timing devices and a public-address system were used for the first time at the 1912 Summer Olympics in Stockholm, Sweden.",
+        "Electric timing devices and a public-address system were first used at the 1912 Summer Olympics in Stockholm, Sweden.",
+        "Electric timing devices and a public-address system were first used in the 1964 Summer Olympics in Tokyo, Japan."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -47.682309795828424,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which volcano in Tanzania is the highest mountain in Africa?",
+      "gold_answers": [
+        "Gilman's Point",
+        "Mawenzi",
+        "Mt. Kilimanjaro",
+        "Highest mountain in Africa",
+        "Mount Kilimanjaro"
+      ],
+      "responses": [
+        "Mount Kilimanjaro is the highest mountain in Africa, including Tanzania, standing at 5,895 meters (19,341 ft) above sea level.",
+        "Mount Kilimanjaro is the highest mountain in Africa, located in Tanzania.",
+        "Mount Kilimanjaro is the highest mountain in Africa, located in Tanzania.",
+        "Mount Kilimanjaro is the highest mountain in Africa, located in Tanzania.",
+        "Mount Kilimanjaro is the highest mountain in Africa, including Tanzania, and the tallest peak in continental Africa."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.49402812518905,
+      "is_hallucination": 0
+    },
+    {
+      "question": "The flag of Libya is a plain rectangle of which color?",
+      "gold_answers": [
+        "Rgb(0, 255, 0)",
+        "Green",
+        "Green (colour)",
+        "Greenness",
+        "List of terms associated with the color green"
+      ],
+      "responses": [
+        "The flag of Libya is a plain rectangle of dark green color.",
+        "The flag of Libya is a plain rectangle of dark green color.",
+        "The flag of Libya is a plain rectangle of dark green color.",
+        "The flag of Libya is a plain rectangle of dark green color.",
+        "The flag of Libya is a plain rectangle of dark red color."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -43.75727694375174,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Of which African country is Niamey the capital?",
+      "gold_answers": [
+        "Niger",
+        "Niger Republic",
+        "Nigerois",
+        "Niger (country)",
+        "NG-NI"
+      ],
+      "responses": [
+        "Niamey is the capital of Niger, an African country.",
+        "Niamey is the capital of Niger, an African country.",
+        "Niamey is the capital of Niger, an African country.",
+        "Niamey is the capital of Niger in West Africa.",
+        "Niamey is the capital of Niger in West Africa."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -50.76038562550264,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the director of the CIA from 1976-81?",
+      "gold_answers": [
+        "George Bush, President",
+        "George Bush",
+        "Goerge Bush",
+        "George Bush (disambiguation)",
+        "Bush, George"
+      ],
+      "responses": [
+        "William Casey was the director of the CIA from 1976 to 1981.",
+        "William Colby was the director of the CIA from 1976 to 1981.",
+        "William Colby was the director of the CIA from 1976 to 1981.",
+        "William Colby was the director of the CIA from 1976 to 1981.",
+        "William Colby was the director of the CIA from 1976 to 1981."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -52.767431945131534,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which musical featured the song The Street Where You Live?",
+      "gold_answers": [
+        "My fair lady",
+        "My Fair Lady (upcoming film)",
+        "My Fair Lady",
+        "I'm an Ordinary Man",
+        "Enry Iggins"
+      ],
+      "responses": [
+        "The musical that featured the song \"The Street Where You Live\" is Fiorello!",
+        "The musical that featured the song \"The Street Where You Live\" is Fiorello!",
+        "The musical that featured the song \"The Street Where You Live\" is Once.",
+        "The musical \"Fiddler on the Roof\" featured the song \"The Street Where You Live.\"",
+        "The musical \"Fiddler on the Roof\" features the song \"The Street Where You Live.\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -42.75852423003226,
+      "is_hallucination": 1
+    },
+    {
+      "question": "\"Who was the target of the failed \"\"Bomb Plot\"\" of 1944?\"",
+      "gold_answers": [
+        "Hitler, Adolf",
+        "Adolf Hitler's medical health",
+        "Adolf Hitler's health",
+        "Adolpf Hitler",
+        "Adolf Schicklegruber"
+      ],
+      "responses": [
+        "The target of the failed \"Bomb Plot\" of 1944 was British Foreign Secretary Anthony Eden.",
+        "The target of the failed \"Bomb Plot\" of 1944 was Hermann Göring, Hitler's second-in-command.",
+        "The target of the failed \"Bomb Plot\" of 1944 was Herman Göring, head of the Luftwaffe and a leading Nazi official during World War II.",
+        "The target of the failed \"Bomb Plot\" of 1944 was Reinhard Heydrich, a key figure in Nazi Germany's security services and later as head of the Reich Security Main Office.",
+        "The target of the failed \"Bomb Plot\" of 1944 was Reinhard Heydrich, a senior Nazi official."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.88301555465602,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who had an 80s No 1 hit with Hold On To The Nights?",
+      "gold_answers": [
+        "Richard Marx",
+        "Richard Noel Marx"
+      ],
+      "responses": [
+        "Pat Benatar had an 80s No 1 hit with \"Holding On to Heaven\", often mistakenly referred to as \"Hold On to the Nights\".",
+        "Bryan Adams had an 80s No 1 hit with the song \"Hold On To The Nights.\"",
+        "Shania Twain had an 80s No 1 hit with \"Honey, I'm Home,\" often mistakenly credited as \"Hold On To the Nights.\"",
+        "Steve Winwood had an 80s No 1 hit with \"Hold On To The Nights.\"",
+        "Pat Benatar had an 80s No 1 hit with \"Holding On to Heaven\", often mistakenly referred to as \"Hold On to the Nights\"."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -45.16514149608228,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who directed the classic 30s western Stagecoach?",
+      "gold_answers": [
+        "John Ford (1895-1973)",
+        "John Ford",
+        "Sean Aloysius O'Feeney",
+        "John Ford (film director)",
+        "Ford, John"
+      ],
+      "responses": [
+        "John Ford directed the classic 1939 Western film Stagecoach.",
+        "John Ford directed the classic 1939 Western film Stagecoach.",
+        "John Ford directed the classic 1939 western film Stagecoach.",
+        "John Ford directed the classic 1939 Western film Stagecoach.",
+        "John Ford directed the classic 1939 Western film Stagecoach."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.91103610992432,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Dave Gilmore and Roger Waters were in which rock group?",
+      "gold_answers": [
+        "Pink Floyd trivia",
+        "Pink Floyd (band)",
+        "The Tea Set",
+        "Pik floyd",
+        "The Meggadeaths"
+      ],
+      "responses": [
+        "Both Dave Grohl (of Foo Fighters) and Roger Waters (of Pink Floyd) are well-known musicians, not members of the same rock group.",
+        "Both Dave Grohl (of Foo Fighters) and Roger Waters (of Pink Floyd) are not in the same band, as Foo Fighters and Pink Floyd are different groups.",
+        "Both Dave Gilmore (formerly of Pink Floyd) and Roger Waters were associated with the rock group Pink Floyd.",
+        "Both Dave Grohl (of Foo Fighters) and Roger Waters (of Pink Floyd) are not in the same band, making the question factually incorrect as posed.",
+        "Both Dave Gilmore (now known as Dweezil Zappa) and Roger Waters were former members of the rock band Pink Floyd."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.41097523036756,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which highway was Revisited in a classic 60s album by Bob Dylan?",
+      "gold_answers": [
+        "sixty-one",
+        "61"
+      ],
+      "responses": [
+        "Highway 61 Revisited was revisited in a classic 1965 album by Bob Dylan.",
+        "Highway 61 Revisited was revisited in a classic 1965 album by Bob Dylan.",
+        "Highway 61 Revisited was revisited in a classic 1965 album by Bob Dylan.",
+        "Highway 61 Revisited was revisited in a classic 1965 album by Bob Dylan.",
+        "Highway 61 Revisited was revisited in a classic 1965 album by Bob Dylan."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.02687803904215,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which was the only eastern bloc country to participate in the 1984 LA Olympics?",
+      "gold_answers": [
+        "Romînia",
+        "Romanian state",
+        "România",
+        "Danubian-Carpathian Area",
+        "Romania"
+      ],
+      "responses": [
+        "Moldova was the only Eastern Bloc country to participate in the 1984 Los Angeles Olympics.",
+        "Moldova was the only Eastern Bloc country to participate in the 1984 Los Angeles Olympics.",
+        "Moldova was the only Eastern Bloc country to participate in the 1984 Los Angeles Olympics.",
+        "Moldova was the only eastern bloc country to participate in the 1984 Los Angeles Olympics.",
+        "Moldova was the only Eastern Bloc country to participate in the 1984 Los Angeles Olympics."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.938547847581944,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which 90s sci fi series with James Belushi was based on Bruce Wagner's comic strip of the same name?",
+      "gold_answers": [
+        "Wild Palms"
+      ],
+      "responses": [
+        "The 1990s sci-fi series based on Bruce Wagner's comic strip starring James Belushi was Gen¹³.",
+        "Wayne was a 1990s sci-fi series starring James Belushi based on Bruce Wagner's comic strip of the same name.",
+        "The 1990s sci-fi series based on Bruce Wagner's comic strip starring James Belushi was Firefly.",
+        "Wayne was a 1990s sci-fi series based on Bruce Wagner's comic strip, starring James Belushi.",
+        "Wayne was a 1990s sci-fi series based on Bruce Wagner's comic strip, starring James Belushi."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.587822127516255,
+      "is_hallucination": 1
+    },
+    {
+      "question": "If I Were A Rich Man Was a big hit from which stage show?",
+      "gold_answers": [
+        "2 life",
+        "Fiddler on a Roof",
+        "The Fiddler on the Roof",
+        "Anatevka",
+        "Fiddler On The Roof"
+      ],
+      "responses": [
+        "\"If I Were a Rich Man\" was a big hit from the musical Fiddler on the Roof.",
+        "\"If I Were a Rich Man\" was a big hit from the musical Fiddler on the Roof.",
+        "\"If I Were a Rich Man\" was a big hit from the musical Fiddler on the Roof.",
+        "\"If I Were a Rich Man\" was a big hit from the musical Fiddler on the Roof.",
+        "\"If I Were a Rich Man\" was a big hit from the musical Fiddler on the Roof."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.635100624778055,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Men Against the Sea and Pitcairn's Island were two sequels to what famous novel?",
+      "gold_answers": [
+        "Thomas Ledward",
+        "Mutiny on the Bounty (history)",
+        "Mutiny on Bounty",
+        "HMS Bounty mutineers",
+        "Mutiny on the bounty"
+      ],
+      "responses": [
+        "Men Against the Sea and Pitcairn's Island were two sequels to Charles Nordhoff and James Norman Hall's famous novel \"Mutiny on the Bounty.\"",
+        "Men Against the Sea and Pitcairn's Island were sequels to Daniel Defoe's \"Robinson Crusoe.\"",
+        "Men Against the Sea and Pitcairn's Island were two sequels to the famous novel \"Moby-Dick\" by Herman Melville.",
+        "Men Against the Sea and Pitcairn's Island were two sequels to Charles Lock Eastlake's novel \"The Blue罢者\" (originally published as \"Men Against the Sea\").",
+        "Men Against the Sea and Pitcairn's Island were two sequels to Charles Dickens' novel \"Barnaby Rudge.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -45.00915177063372,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was Truman Capote's last name before he was adopted by his stepfather?",
+      "gold_answers": [
+        "Person",
+        "Personhood theory",
+        "Perſons",
+        "Personhood Theory",
+        "Persons"
+      ],
+      "responses": [
+        "Truman Capote's last name before being adopted by his stepfather was Clayton.",
+        "Truman Capote's last name before adoption was Clayton.",
+        "Capote's last name before adoption was Wilson.",
+        "Capote's last name before adoption was Wilson.",
+        "Truman Capote's last name before adoption was Clayton."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -45.32628920584014,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In Lewis Carroll's poem The Hunting of the Snark, what did the elusive, troublesome snark turn into to fool hunters?",
+      "gold_answers": [
+        "Boojum (disambiguation)",
+        "Boojum",
+        "A boojum"
+      ],
+      "responses": [
+        "The snark turned into a barrel to fool the hunters in Lewis Carroll's poem \"The Hunting of the Snark.\"",
+        "The snark turned into a barrel to fool the hunters in Lewis Carroll's poem \"The Hunting of the Snark.\"",
+        "The snark turned into a barrel to fool the hunters in Lewis Carroll's poem \"The Hunting of the Snark.\"",
+        "The snark turned into a barrel to fool the hunters in Lewis Carroll's poem \"The Hunting of the Snark.\"",
+        "The snark turned into a barrel to fool the hunters in Lewis Carroll's poem \"The Hunting of the Snark.\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.53448455810547,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In the Bible, who did the sun and moon stand still before?",
+      "gold_answers": [
+        "Yoshoa",
+        "Yhoshoa",
+        "Yhosha",
+        "Yahusha",
+        "Yehoshua Ben Nun"
+      ],
+      "responses": [
+        "The Bible does not specify who or what the sun and moon stood still before; this is traditionally understood as a miraculous event that occurred for the Israelites under Joshua's leadership.",
+        "The sun and moon stood still before Gideon according to the Bible.",
+        "The Bible does not specify who or what the sun and moon stood still before; this is traditionally believed to have happened at the Battle of Gibeon.",
+        "The sun and moon stood still before Goliath and his Philistine army as described in 1 Samuel 15:45.",
+        "The Bible does not specify who or what the sun and moon stood still before; this is a legendary account of Gideon's battle against the Midianites."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.03554766424771,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What Michelle Pfeiffer movie got a boost from the Coolio song Gangsta's Paradise?",
+      "gold_answers": [
+        "Dangerous Minds",
+        "Dangerous Minds (film)",
+        "My Posse Don't Do Homework"
+      ],
+      "responses": [
+        "Michelle Pfeiffer's movie \"Dangerous Minds\" got a boost from the Coolio song \"Gangsta's Paradise.\"",
+        "Michelle Pfeiffer's film \"False Positive\" received a boost from the use of Coolio's song \"Gangsta's Paradise.\"",
+        "Michelle Pfeiffer's movie \"Transformers\" got a boost from the Coolio song \"Gangsta's Paradise.\"",
+        "Michelle Pfeiffer's movie \"False Positive\" got a boost from the Coolio song \"Gangsta's Paradise.\"",
+        "Michelle Pfeiffer's film Rainbow boosted popularity with the use of Coolio's song \"Gangsta's Paradise.\""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.566559798735426,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was President Gerald Ford's middle name?",
+      "gold_answers": [
+        "Rodolphe",
+        "Rudolph",
+        "Rudolph (disambiguation)",
+        "Rodolph",
+        "Rudolf"
+      ],
+      "responses": [
+        "President Gerald Ford's middle name was Allen.",
+        "President Gerald Ford's middle name was Allen.",
+        "President Gerald Ford's middle name was Allen.",
+        "President Gerald Ford's middle name was Allen.",
+        "President Gerald Ford's middle name was Allen."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.96460781097412,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Art Garfunkel trained for which profession although he didn't qualify?",
+      "gold_answers": [
+        "Registered Architect",
+        "HOK Canada, Inc.",
+        "Architecht",
+        "Master Builder (occupation)",
+        "Graziani + Corazza"
+      ],
+      "responses": [
+        "Art Garfunkel trained as a lawyer but did not qualify.",
+        "Art Garfunkel trained as a lawyer but did not qualify for one.",
+        "Art Garfunkel trained as a lawyer but did not qualify.",
+        "Art Garfunkel trained as a lawyer but did not qualify for a legal career.",
+        "Art Garfunkel trained as a lawyer but did not qualify."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.5068470519266,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was the last inmate of Spandau jail in Berlin?",
+      "gold_answers": [
+        "Rudolf Hess",
+        "Rudolph Hess",
+        "Rudolf Walter Richard Heß",
+        "Rudolf hess",
+        "Rudolf Hesse"
+      ],
+      "responses": [
+        "The last inmate of Spandau jail in Berlin was Soviet spy Rudolf Amelkovich Kalman Goriavitinov (known as Markus Anton Karl Feodor Zaliznyak).",
+        "The last inmate of Spandau jail in Berlin was Vladimir Petrovich Voronkov.",
+        "The last inmate of Spandau jail in Berlin was Heinrich Böll, who was released in 2006 after serving time with other former West German terrorists.",
+        "The last inmate of Spandau jail in Berlin was Hanns-Martin Schleyer, who was released in 1987 after 28 years behind bars.",
+        "The last inmate of Spandau jail in Berlin was Vladimir Petrovich Krastel, who remained until his death in 2008."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.73926808020312,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What was Eddie Murphy's first movie?",
+      "gold_answers": [
+        "forty-eight  time",
+        "48 Hours",
+        "48 time"
+      ],
+      "responses": [
+        "Eddie Murphy's first movie was \"Raw Deal\" in 1989.",
+        "Eddie Murphy's first movie was \"Blamed on Jenny\" (1981).",
+        "Eddie Murphy's first movie was \"Raw Deal\" in 1989.",
+        "Eddie Murphy's first movie was \"Raw Deal\" in 1986.",
+        "Eddie Murphy's first movie was \"Raw Deal\" in 1986."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -43.64358776807785,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In the 80s who wrote the novel Empire of The Sun?",
+      "gold_answers": [
+        "Ballardian",
+        "J G Ballard",
+        "JG Ballard",
+        "J.G. Ballard",
+        "James G. Ballard"
+      ],
+      "responses": [
+        "Chinese author J. G. Yang (real name Wang Anyi) wrote the novel Empire of The Sun.",
+        "Jerome Charyn wrote the novel Empire of The Sun.",
+        "Jerome Charyn wrote the novel Empire of The Sun in the 1980s.",
+        "Chinese author J. G. Farrell wrote the novel Empire of the Sun.",
+        "Julian Lloyd Webber wrote the novel Empire of The Sun."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.88201619266124,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Kagoshima international airport is in which country?",
+      "gold_answers": [
+        "Japian",
+        "Jpan",
+        "JAPAN",
+        "JPN",
+        "日本国"
+      ],
+      "responses": [
+        "Kagoshima International Airport is in Japan.",
+        "Kagoshima International Airport is in Japan.",
+        "Kagoshima International Airport is in Japan.",
+        "Kagoshima International Airport is in Japan.",
+        "Kagoshima International Airport is in Japan."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -51.31860975785689,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which sport could the Pacers take on the Pistons?",
+      "gold_answers": [
+        "Baksetball",
+        "Men's Basketball",
+        "Basketball player",
+        "Basket-ball",
+        "Basket ball"
+      ],
+      "responses": [
+        "The Pacers could take on the Pistons in an NBA game between Indiana Pacers and Detroit Pistons teams.",
+        "The Pacers and Pistons could potentially take on each other in an NBA game.",
+        "The Pacers could take on the Pistons in a basketball game between the Indiana Pacers and Detroit Pistons teams.",
+        "The Pacers and Pistons could take on each other in a game of basketball.",
+        "The Pacers and Pistons could take on each other in a game of basketball."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.42654830418276,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Kim Carnes' nine weeks at No 1 with Bette Davis Eyes was interrupted for one week by which song?",
+      "gold_answers": [
+        "Stars on 45 medley",
+        "Stars on 45 (Single)",
+        "Stars on 45 Medley",
+        "Stars on 45 (song)",
+        "Stars On 45 Medley"
+      ],
+      "responses": [
+        "Kim Carnes' nine-week stay at No. 1 with \"Bette Davis Eyes\" was interrupted by \"Respect\" by Aretha Franklin for one week.",
+        "Kim Carnes' nine-week reign at No. 1 with \"Bette Davis Eyes\" was interrupted by Cher's \"Bang Bang (My Baby Shot Me Down)\" for one week in 1983.",
+        "Kim Carnes' nine-week reign at No. 1 with \"Bette Davis Eyes\" was interrupted by Cher's \"Believe\" for one week in the US Billboard Hot 100.",
+        "Kim Carnes' nine-week run at No. 1 with \"Bette Davis Eyes\" was interrupted by Lionel Richie's \"All Night Long (All Night)\" for one week.",
+        "Kim Carnes' nine-week reign at No. 1 with \"Bette Davis Eyes\" was interrupted by Cher's \"Believe\" for one week."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.855287828593674,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Where in Canada is the Lion's Gate bridge?",
+      "gold_answers": [
+        "Vancouver BC",
+        "Vancouver Christian School",
+        "Vancouverite",
+        "Hongcouver",
+        "Vancouver (Canada)"
+      ],
+      "responses": [
+        "The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada.",
+        "The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada.",
+        "The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada.",
+        "The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada.",
+        "The Lion's Gate Bridge is located in Vancouver, British Columbia, Canada."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -49.23788642883301,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was Walter Matthau's first movie?",
+      "gold_answers": [
+        "The Kentuckian"
+      ],
+      "responses": [
+        "Walter Matthau's first movie was \"The Cincinnati Kid\" (1965).",
+        "Walter Matthau's first movie was \"The Fortune Cookie\" in 1966.",
+        "Walter Matthau's first movie was \"The Fortune Cookie\" in 1966.",
+        "Walter Matthau's first movie was \"Love Bug\" in 1967.",
+        "Walter Matthau's first movie was \"The Fortune Cookie\" in 1966."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.60447618799302,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Otis Barton was a pioneer in exploring where?",
+      "gold_answers": [
+        "Undersea",
+        "Underwater",
+        "Underwater life",
+        "Under water"
+      ],
+      "responses": [
+        "Otis Barton was a pioneer in deep-sea exploration, particularly known for his work on deep diving suits.",
+        "Otis Barton was a pioneer in exploring underwater basket diving and neutral buoyancy techniques.",
+        "Otis Barton was a pioneer in underwater basket weaving and exploring with underwater baskets.",
+        "Otis Barton was a pioneer in underwater breathing apparatus and scuba diving equipment exploration.",
+        "Otis Barton was a pioneer in exploring remote and uninhabited islands, particularly Easter Island."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.49025344848633,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Where in England was actor Nigel Hawthorne born?",
+      "gold_answers": [
+        "Coventry (city)",
+        "City of Coventry",
+        "County Borough of Coventry",
+        "Coventry, UK",
+        "Metropolitan Borough of Coventry"
+      ],
+      "responses": [
+        "Nigel Hawthorne was born in Manchester, England.",
+        "Nigel Hawthorne was born in Liverpool, England.",
+        "Nigel Hawthorne was born in Hull, England.",
+        "Nigel Hawthorne was born in Birmingham, England.",
+        "Nigel Hawthorne was born in Birmingham, England."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -48.8305380821228,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What mythological beast has the head of a man, the body of a lion, and the tail and feet of a dragon?",
+      "gold_answers": [
+        "The Manticore",
+        "A manticore"
+      ],
+      "responses": [
+        "This mythological beast is known as the Chimera.",
+        "This mythological beast is known as the Harpy-Elephant-Lizard or Cerberus-like Chimerical Beast in some contexts, but the most accurate answer is the Griffin.",
+        "This mythological beast is known as the Harpy-Elephant-Lion-Dragon hybrid or less commonly as the Chimaera.",
+        "This mythological beast is known as the Chimera.",
+        "This mythological beast is known as the Harpy or, more specifically for its described features, the Griffin."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -38.13171832329404,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In Greek mythology, who were Arges, Brontes and Steropes?",
+      "gold_answers": [
+        "Cyclopes",
+        "Cyclopes (disambiguation)"
+      ],
+      "responses": [
+        "Arges, Brontes, and Steropes were the three Titans known as the Hundred-Handed Ones in Greek mythology.",
+        "Arges, Brontes, and Steropes were the three bronze giant sons of Erebus and Nyx in Greek mythology, known as the Hecatonchires or Hundred-Handed Ones.",
+        "Arges, Brontes, and Steropes were the three storm-bearing horses of the sun god Helios in Greek mythology.",
+        "Arges, Brontes, and Steropes were the three stormy-eyed Cyclopes who helped Hephaestus in his workshop in Greek mythology.",
+        "Arges, Brontes, and Steropes were the three bronze giants (also known as the Cyclopes) who were the锻造ers of the thunderbolts for Zeus in Greek mythology."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.65157584022073,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which musician founded the Red Hot Peppers?",
+      "gold_answers": [
+        "Louise Monette",
+        "Jelly-Roll Morton",
+        "F.P. Lamothe",
+        "Ferdinand Morton",
+        "Jelly Roll Morton"
+      ],
+      "responses": [
+        "Anthony Kiedis founded the Red Hot Chili Peppers.",
+        "John Lydon founded the Red Hot Chili Peppers.",
+        "Johnny Depp founded the Red Hot Chili Peppers.",
+        "Johnny Depp founded the Red Hot Chili Peppers.",
+        "Anthony Kiedis founded the Red Hot Chili Peppers."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -38.21034517595845,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Where did the Shinning Path terrorists operate?",
+      "gold_answers": [
+        "El Perú",
+        "Name of Peru",
+        "Peruvia",
+        "Republic of Perú",
+        "Péru"
+      ],
+      "responses": [
+        "The Shining Path terrorists primarily operated in rural areas of Peru.",
+        "The Shining Path terrorists primarily operated in rural areas of Peru during their insurgency from the 1980s to the 2000s.",
+        "The Shining Path terrorists operated primarily in rural areas of Peru, particularly in the Andean regions.",
+        "The Shining Path terrorists operated primarily in rural areas of Peru.",
+        "The Shining Path terrorists primarily operated in Peru, particularly in the countryside and cities during their insurgency from the 1980s to the 2000s."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.77474214249298,
+      "is_hallucination": 0
+    },
+    {
+      "question": "How old was Jimi Hendrix when he died?",
+      "gold_answers": [
+        "twenty-seven",
+        "27"
+      ],
+      "responses": [
+        "Jimi Hendrix was 27 years old when he died.",
+        "Jimi Hendrix was 27 years old when he died.",
+        "Jimi Hendrix was 27 years old when he died.",
+        "Jimi Hendrix was 27 years old when he died.",
+        "Jimi Hendrix was 27 years old when he died."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -53.11593348185222,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which Brit broke the land speed record in 1990 in Thrust 2?",
+      "gold_answers": [
+        "Richard Noble"
+      ],
+      "responses": [
+        "Phil Lipson broke the land speed record in 1990 in Thrust 2.",
+        "Richard Noble broke the land speed record in 1990 in Thrust 2.",
+        "Philipe Kunz broke the land speed record in 1990 in Thrust 2.",
+        "Phil Lipson broke the land speed record in 1990 in Thrust 2.",
+        "Philipe Kunz broke the land speed record in 1990 in Thrust 2."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -47.17971256544005,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which state was Gene Vincent born?",
+      "gold_answers": [
+        "Religion in Virginia",
+        "Virginia, USA",
+        "The Old Dominion",
+        "Viginia",
+        "Rest of Virginia"
+      ],
+      "responses": [
+        "Gene Vincent was born in Ohio.",
+        "Gene Vincent was born in Chesterfield, Kentucky.",
+        "Gene Vincent was born in California.",
+        "Gene Vincent was born in Ohio.",
+        "Gene Vincent was born in Ohio."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -46.42412500603255,
+      "is_hallucination": 1
+    },
+    {
+      "question": "How was the European Recovery Program in the 1940s more commonly known?",
+      "gold_answers": [
+        "Marshall Paln",
+        "Operation Rathole",
+        "European Recovery Programme",
+        "Marshal plan",
+        "The marshal plan"
+      ],
+      "responses": [
+        "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan.",
+        "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan.",
+        "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan.",
+        "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan.",
+        "The European Recovery Program in the 1940s was more commonly known as the Marshall Plan."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -54.883033925836735,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Brandon Lee died during the making of which movie?",
+      "gold_answers": [
+        "The Crow",
+        "The Crow: Dead Time",
+        "The Crow (2016 film)"
+      ],
+      "responses": [
+        "Brandon Lee died during the making of the film \"The Crow\" while filming a stunt on set.",
+        "Brandon Lee died during the making of the movie \"The Crow\" while filming a scene.",
+        "Brandon Lee died during the making of the film \"The Crow\" while filming a sword sequence.",
+        "Brandon Lee died during the making of the movie \"The Crow\" while filming a sword scene.",
+        "Brandon Lee died during the making of the film \"The Crow\" while filming a sword scene."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -38.34903528213501,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who had a 70s No 1 hit with Let's Do It Again?",
+      "gold_answers": [
+        "Cleotha Staples",
+        "Staple Singers",
+        "The Staple Singers",
+        "The Staples Singers",
+        "Staples Singers"
+      ],
+      "responses": [
+        "Whitney Houston had a 1987 No 1 hit with \"Let's Do It Again.\"",
+        "Culture Club had a 70s No 1 hit with Let's Do It Again.",
+        "The Who had a 70s No 1 hit with Let's Do It Again.",
+        "The Boomtown Rats had a 1987 No 1 hit with \"Let's Do It Again,\" not in the 1970s as stated in the question.",
+        "The Boomtown Rats had a 70s No 1 hit with Let's Do It Again."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -45.50462527537909,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who had a Too Legit To Quit Tour?",
+      "gold_answers": [
+        "You Shouldn't Touch This",
+        "Family Affair (MC Hammer album)",
+        "MC Hammer",
+        "Too Tight (MC Hammer album)",
+        "M c hammer"
+      ],
+      "responses": [
+        "Dave Chappelle had a Too Legit To Quit Tour.",
+        "Dave Chappelle had a Too Legit To Quit Tour.",
+        "Nicki Minaj had a Too Legit To Quit Tour.",
+        "Kanye West had a Too Legit To Quit Tour.",
+        "Kanye West had a Too Legit To Quit Tour."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -40.1765892645892,
+      "is_hallucination": 1
+    },
+    {
+      "question": "\"According to Rudyard Kipling what were the \"\"two imposters\"\" to meet and treat the same day?\"",
+      "gold_answers": [
+        "Triumph and Disaster"
+      ],
+      "responses": [
+        "According to Rudyard Kipling, the \"two imposters\" to meet and treat on the same day were Lord Baden-Powell and W. H. R. Rivers.",
+        "According to Rudyard Kipling, the \"two imposters\" to meet and treat on the same day were the American and British envoys in his poem \"The White Man's Burden.\"",
+        "According to Rudyard Kipling, the \"two imposters\" referred to in his poem were Simla and London that were to meet and treat on the same day.",
+        "According to Rudyard Kipling, the \"two imposters\" to meet and treat on the same day were Britain and America.",
+        "According to Rudyard Kipling, the \"two imposters\" to meet and treat on the same day were Britain and America."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.54404330808063,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who is the most successful UK solo artist in the USA?",
+      "gold_answers": [
+        "Reginald K. Dwight",
+        "Reginald Kenneth",
+        "Sir Elton",
+        "Ann Orson",
+        "Reginald kenneth dwight"
+      ],
+      "responses": [
+        "Duran Duran is often considered the most successful UK solo artist in the USA.",
+        "Duran Duran is often considered the most successful UK solo artist in the USA.",
+        "Duran Duran is often considered the most successful UK solo artist in the USA based on their global and US chart success.",
+        "Ed Sheeran is considered the most successful UK solo artist in the USA based on chart performance and sales.",
+        "Duran Duran is often considered the most successful UK solo artist in the USA."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.61455708105587,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which country does the airline TAAG come from?",
+      "gold_answers": [
+        "ISO 3166-1:AO",
+        "Republic of Angola",
+        "Sport in Angola",
+        "Angola",
+        "Etymology of Angola"
+      ],
+      "responses": [
+        "TAAG comes from Angola, a country in Sub-Saharan Africa.",
+        "TAAG comes from Angola, a country in Sub-Saharan Africa.",
+        "TAAG is an airline from Angola.",
+        "TAAG comes from Angola, operated by Angolan airline TAP Angola.",
+        "TAAG comes from Angola, a country in Sub-Saharan Africa."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.45974435379256,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which US No 1 single came from Diana Ross's platinum album Diana?",
+      "gold_answers": [
+        "Upside Down (single)",
+        "Upside Down (Diana Ross song)",
+        "Up side down",
+        "Upside Down"
+      ],
+      "responses": [
+        "Diana Ross's platinum album \"Diana\" produced the US No. 1 single \"Touch Me In the Rain.\"",
+        "Diana Ross's platinum album \"Diana\" produced the US No. 1 single \"Touch Me In the Rain.\"",
+        "Diana Ross's platinum album \"Diana\" produced the US No. 1 single \"Touch Me In the Right Places.\"",
+        "Diana Ross's platinum album \"Diana\" produced the US No. 1 single \"Love You on a Day to Night\"",
+        "Diana Ross's platinum album \"Diana\" produced the US No. 1 single \"Love You Doin'. \""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.89075829928979,
+      "is_hallucination": 1
+    },
+    {
+      "question": "River Phoenix died during the making of which movie?",
+      "gold_answers": [
+        "Dark Blood (film)",
+        "Dark Blood"
+      ],
+      "responses": [
+        "River Phoenix died during the making of the film \"Ithaca\" in 1993.",
+        "River Phoenix died during the making of the film \"Ithaca\" in 1993.",
+        "River Phoenix died during the making of the film \"Ithaca\" in 1993.",
+        "River Phoenix died during the making of the movie \"Ithaca\" in 1993.",
+        "River Phoenix died during the making of the film \"Ithaca\" in 1993."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.193088150024415,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which artist David was born in Bradford UK?",
+      "gold_answers": [
+        "Hockney",
+        "David Hockney"
+      ],
+      "responses": [
+        "David Bowie, the iconic British singer-songwriter, was born in Bradford, UK.",
+        "David Bowie, the iconic British singer and songwriter, was born in Bradford, UK.",
+        "David Bowie was born in Bromley, Kent, not Bradford, UK.",
+        "David Bowie was born in Bradford, UK.",
+        "David Bowie was born in London, not Bradford, UK."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.055586624145505,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What is Mel Gibson's middle name?",
+      "gold_answers": [
+        "Vita Sancti Columbae",
+        "Columba, Saint",
+        "Saint Columba",
+        "Calum Cille",
+        "St Colm"
+      ],
+      "responses": [
+        "Mel Gibson's middle name is Michael.",
+        "Mel Gibson's middle name is Michael.",
+        "Mel Gibson's middle name is Michael.",
+        "Mel Gibson's middle name is Michael.",
+        "Mel Gibson's middle name is Michael."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.20325787862142,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Richard Daley was mayor of which city for 21 years?",
+      "gold_answers": [
+        "Chicago, Illionis",
+        "Chicago (IL)",
+        "USCHI",
+        "Chicago, Illinois, USA",
+        "Religion in Chicago"
+      ],
+      "responses": [
+        "Richard J. Daley was mayor of Chicago for 21 years.",
+        "Richard J. Daley was mayor of Chicago for 21 years.",
+        "Richard J. Daley was the mayor of Chicago for 21 years.",
+        "Richard J. Daley was mayor of Chicago for 21 years.",
+        "Richard J. Daley was mayor of Chicago for 21 years."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -50.86765279887635,
+      "is_hallucination": 0
+    },
+    {
+      "question": "\"In which movie did Garbo say, \"\"I want to be alone\"\".\"",
+      "gold_answers": [
+        "Grand hotel",
+        "Grand Hotel",
+        "Grand Hotel (disambiguation)",
+        "The grand hotel",
+        "The Grand Hotel"
+      ],
+      "responses": [
+        "Greta Garbo said \"I want to be alone\" in the movie \"Ninotchka.\"",
+        "Greta Garbo said \"I want to be alone\" in the movie \"Ninotchka.\"",
+        "Greta Garbo said \"I want to be alone\" in the movie \"Ninotchka.\"",
+        "Greta Garbo said \"I want to be alone\" in the movie \"Ninotchka.\"",
+        "Greta Garbo said \"I want to be alone\" in the movie \"Ninotchka.\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.98824258284135,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What is Osbert Lancaster best known for producing?",
+      "gold_answers": [
+        "American cartoon",
+        "Cartoonistic",
+        "Cartoonism",
+        "Cartoonish",
+        "Cartoons"
+      ],
+      "responses": [
+        "Osbert Lancaster is best known for his illustrations and children's books.",
+        "Osbert Lancaster is best known for his illustrations and cartoons.",
+        "Osbert Lancaster is best known for his illustrations and designs, particularly for book covers and furniture.",
+        "Osbert Lancaster is best known for his illustrations and cartoons.",
+        "Osbert Lancaster is best known for his illustrations and children's books."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -45.291188390631426,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the defending champion when Martina Navratilova first won Wimbledon singles?",
+      "gold_answers": [
+        "Virginia Wade",
+        "Sarah Virginia Wade"
+      ],
+      "responses": [
+        "Martina Navratilova first won Wimbledon singles title before becoming defending champion herself, as she won it in 1982 while the previous champion was not specified or held the title in her absence.",
+        "Martina Navratilova became Wimbledon singles defending champion when she first won it, as she had not been the defending champion previously.",
+        "Martina Navratilova became Wimbledon singles defending champion when she first won it, as she won in 1982 and there was no previous champion to defend against.",
+        "Martina Navratilova became Wimbledon singles champion before there was a defending champion, as she won her first title in 1978.",
+        "Martina Navratilova first won Wimbledon singles title before she became the defending champion herself."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -44.08210330939143,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was the first US-born winner of golf's British Open?",
+      "gold_answers": [
+        "Hagen, Walter",
+        "Walter Charles Hagen",
+        "Walter Hagen"
+      ],
+      "responses": [
+        "Scott Verplank was the first US-born winner of golf's British Open.",
+        "Scott Verplank was the first US-born winner of golf's British Open.",
+        "Tony Jacklin was the first U.S.-born winner of golf's British Open.",
+        "Bobby Jones was the first U.S.-born winner of golf's British Open.",
+        "Bobby Jones was the first U.S.-born winner of golf's British Open."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -44.99020732532848,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which country is the Sky Train Rail bridge?",
+      "gold_answers": [
+        "Commonwealth of Canada",
+        "Dominion of canada",
+        "Čanada",
+        "Canadian Federation",
+        "CANADA"
+      ],
+      "responses": [
+        "The Skytrain Rail Bridge is located in Vancouver, Canada.",
+        "The SkyTrain Rail Bridge is located in Canada, specifically in Vancouver, British Columbia.",
+        "The Skytrain Rail Bridge is located in Canada, specifically in Vancouver, British Columbia.",
+        "The SkyTrain rail bridge is located in Canada, specifically in Vancouver, British Columbia.",
+        "The Skytrain Rail Bridge is located in Vancouver, Canada."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -42.28413555622101,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was the Paramount Film Company originally called?",
+      "gold_answers": [
+        "The Famous Players",
+        "Celebrated Players Film Corporation",
+        "Famous Players Film Company",
+        "Raleigh Studios"
+      ],
+      "responses": [
+        "The Paramount Film Company was originally called Essanay Studios.",
+        "The Paramount Film Company was originally called the Essanay Film Company.",
+        "The Paramount Film Company was originally called Essanay Studios.",
+        "The Paramount Film Company was originally called Essanay Studios.",
+        "The Paramount Film Company was originally called Essanay Studios."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -45.80430460687894,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was the first person after Scott to reach the South Pole overland?",
+      "gold_answers": [
+        "Sir Ed",
+        "Ed Hillary",
+        "Sir Edmund Hilary",
+        "Sir Edmund Hillary",
+        "Sir Edmund"
+      ],
+      "responses": [
+        "Roald Amundsen was the first person after Scott to reach the South Pole overland.",
+        "Roald Amundsen was the first person after Scott to reach the South Pole overland.",
+        "Roald Amundsen was the first person after Robert Falcon Scott to reach the South Pole overland.",
+        "Roald Amundsen was the first person after Scott to reach the South Pole overland.",
+        "Roald Amundsen was the first person after Scott to reach the South Pole overland."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.28577785865933,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which journalist first told the world about the My Lai massacre?",
+      "gold_answers": [
+        "Seymour Hersch",
+        "Seymour Hersh",
+        "Seymour (Sy) Myron Hersh",
+        "Seymour M. Hersh",
+        "Chain of Command (book)"
+      ],
+      "responses": [
+        "Nick邯郸Saakashvili was the journalist who first told the world about the My Lai massacre.",
+        "Nick邯郸Saunders was the first journalist to tell the world about the My Lai massacre.",
+        "Nick邯郸Saunders was the first journalist to tell the world about the My Lai massacre.",
+        "Dan Riffe was the first journalist to tell the world about the My Lai massacre through his reporting for The Miami Herald.",
+        "Nick邯郸Savage was the journalist who first told the world about the My Lai massacre."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -37.334486184296786,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What is the name of Terence and Shirley Conran's dress designer son?",
+      "gold_answers": [
+        "Egyptian jasper",
+        "Jasper (mineral)",
+        "Lydian stone",
+        "Jaspis",
+        "Bruneau jasper"
+      ],
+      "responses": [
+        "Terence and Shirley Conran's dress designer son was John Conran.",
+        "Terence and Shirley Conran's dress designer son was John Conran.",
+        "The name of Terence and Shirley Conran's dress designer son is John Conran.",
+        "Terence and Shirley Conran's dress designer son was John Conran.",
+        "Terence and Shirley Conran's dress designer son was Giles Conran."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -47.217431838253894,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which drink did The Spice Girls promote?",
+      "gold_answers": [
+        "Diet Cherry Pepsi",
+        "Mandarin Orange Slice",
+        "Pepsi EDGE",
+        "Pepsi Lime",
+        "Pepsi-Cola"
+      ],
+      "responses": [
+        "The Spice Girls promoted various drinks, but primarily associated with their music was Pepsi.",
+        "The Spice Girls promoted various drinks throughout their career, but none of them are specifically associated with a single beverage.",
+        "The Spice Girls promoted various drinks throughout their career, but Fanta was notably one of them.",
+        "The Spice Girls promoted various drinks throughout their career, but Coca-Cola was notably associated with them.",
+        "The Spice Girls promoted various products, including a range of drinks from different brands."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.736124254993555,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the youngest brother in the Beach Boys?",
+      "gold_answers": [
+        "Wilson, Carl Dean",
+        "Carl Dean Wilson",
+        "Carl Wilson discography",
+        "Wilson, Carl",
+        "Carl Wilson"
+      ],
+      "responses": [
+        "Brian Jones was the youngest brother in the original Beach Boys lineup.",
+        "Brian Wilson was the youngest brother in the iconic Beach Boys band.",
+        "Brian Jones was the youngest brother in the original lineup of the Beach Boys.",
+        "Brian Jones was the youngest brother in the original Beach Boys lineup.",
+        "Brian Wilson was the youngest brother in the iconic American rock band The Beach Boys."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -40.93601473490397,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who first hosted Family Feud?",
+      "gold_answers": [
+        "Richard Dawson",
+        "Colin Emm",
+        "Dick Dawson",
+        "Dickie Dawson",
+        "Colin Lionel Emm"
+      ],
+      "responses": [
+        "Tom Bergeron first hosted Family Feud after Jane Clayson in 2004.",
+        "Tom Bergeron first hosted Family Feud in 2010.",
+        "Tom Bergeron first hosted Family Feud in 2014.",
+        "Mike Richards first hosted Family Feud when it premiered on January 11, 1976.",
+        "Tom Bergeron first hosted Family Feud in 2010."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.56014547243223,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What did the Lone Ranger's title Kemo Sabe mean in Apache?",
+      "gold_answers": [
+        "White Shirt",
+        "Lèine bhàn",
+        "Leine bhan",
+        "White shirt"
+      ],
+      "responses": [
+        "Kemo Sabe means \"Bad Man\" or \"Enemy\" in Apache, which was the Lone Ranger's code name.",
+        "Kemo Sabe means \"Bad Man\" or \"Enemy\" in Apache, fitting for the Lone Ranger's villainous companion.",
+        "Kemo Sabe means \"Bad Man\" or \"Enemy\" in Apache, fitting as it was the Lone Ranger's alias.",
+        "Kemo Sabe means \"Bad Man\" or \"Enemy\" in Apache, fitting as it was the Lone Ranger's alias.",
+        "Kemo Sabe means \"Bad Man\" or \"Enemy\" in Apache, reflecting the Lone Ranger's role as a vigilante."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -40.49584457962601,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who or what was Gentle Ben in the 60s TV series?",
+      "gold_answers": [
+        "Bear",
+        "Ursine",
+        "Mating bears",
+        "Reproductive behavior of bears",
+        "🐻"
+      ],
+      "responses": [
+        "Gentle Ben was a gentle elderly elephant that was a main character in the 1960s TV series named after him.",
+        "Gentle Ben was a gentle old elephant that starred in the 1960s TV series of the same name.",
+        "Gentle Ben was a gentle old mountain lion that visitors to a Texas dude ranch could pet in the 1960s TV series \"The Friendly Gang.\"",
+        "Gentle Ben was a gentle giant elephant character in the 1960s TV series Jungle Book.",
+        "Gentle Ben was a gentle old elephant at the heart of the children's television series Wild Kingdom that aired in the 1960s."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.08807657202896,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which 70s show was based on the British show Till Death Us Do Part?",
+      "gold_answers": [
+        "All in the family",
+        "Justice For All (TV pilot)",
+        "Stretch Cunningham",
+        "Justice for All (TV pilot)",
+        "All In The Family"
+      ],
+      "responses": [
+        "The 1970s American show \"Maude\" was based on the British series \"Till Death Us Do Part.\"",
+        "The 1970s American show \"Maude\" was based on the British show \"Till Death Us Do Part.\"",
+        "The 1970s American show \"Maude\" was based on the British series \"Till Death Us Do Part.\"",
+        "The 1970s American series \"Maude\" was based on the British show \"Till Death Us Do Part.\"",
+        "The 1970s American show \"Hennesey\" was based on the British show \"Till Death Us Do Part.\""
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.330076258233255,
+      "is_hallucination": 1
+    },
+    {
+      "question": "On what date in 1969 did Neil Armstrong first set foot on the Moon?",
+      "gold_answers": [
+        "July 20",
+        "20th July",
+        "Historical anniversaries/July 20",
+        "Jul 20",
+        "July 20th"
+      ],
+      "responses": [
+        "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+        "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+        "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+        "Neil Armstrong first set foot on the Moon on July 20, 1969.",
+        "Neil Armstrong first set foot on the Moon on July 20, 1969."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -57.583925156366256,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Bandar Seri Begawan International airport is in which country?",
+      "gold_answers": [
+        "Burnei",
+        "Legal system of Brunei",
+        "بروني",
+        "State of Brunei",
+        "برني دارالسلا"
+      ],
+      "responses": [
+        "Bandar Seri Begawan International Airport is in Brunei.",
+        "Bandar Seri Begawan International Airport is in Brunei.",
+        "Bandar Seri Begawan International Airport is in Brunei.",
+        "Bandar Seri Begawan International airport is in Brunei.",
+        "Bandar Seri Begawan International Airport is in Brunei."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -49.26872689383371,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was the profession of Paul Strand (1890 - 1976)?",
+      "gold_answers": [
+        "Photographist",
+        "Freelance photographer",
+        "Photographr",
+        "Freelance Photography",
+        "Photographer"
+      ],
+      "responses": [
+        "Paul Strand was a photographer and filmmaker.",
+        "Paul Strand was a photographer and filmmaker.",
+        "Paul Strand was a photographer and filmmaker.",
+        "Paul Strand was a photographer and filmmaker.",
+        "Paul Strand was a photographer and filmmaker known for his contributions to both photography and cinema."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.10138878998933,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who had a 60s No 1 with Downtown?",
+      "gold_answers": [
+        "Pet clark",
+        "Petula Clarke",
+        "Petula Sally Olwen Clark",
+        "Petula Clark"
+      ],
+      "responses": [
+        "The Righteous Brothers had a #1 hit with \"Downtown\" in the 1960s.",
+        "The Jackson 5 had a #1 hit with \"Downtown\" in the 1960s.",
+        "The Jackson 5 had a #1 hit with \"Downtown\" in the 1960s.",
+        "The Jackson 5 had a #1 hit with \"Downtown\" in the 1960s.",
+        "The Righteous Brothers had a #1 hit with \"Downtown\" in the 1960s."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -45.82443912823995,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was born first, Kiefer Sutherland or Christian Slater?",
+      "gold_answers": [
+        "Keifer Sutherland",
+        "Kiefer William Fredrick Dempsey George Rufus Sutherland",
+        "Promised Land (1987)",
+        "Kiefer sutherlund",
+        "Kiefer William Frederick Dempsey George Rufus Sutherland"
+      ],
+      "responses": [
+        "Christian Slater was born first.",
+        "Christian Slater was born first.",
+        "Christian Slater was born first.",
+        "Christian Slater was born first.",
+        "Christian Slater was born first."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.334489822387695,
+      "is_hallucination": 1
+    },
+    {
+      "question": "To the nearest two, how many tennis Grand Slam titles did Jimmy Connors win?",
+      "gold_answers": [
+        "ten",
+        "10"
+      ],
+      "responses": [
+        "Jimmy Connors won 9 tennis Grand Slam titles to the nearest two.",
+        "Jimmy Connors won 9 tennis Grand Slam titles to the nearest two.",
+        "Jimmy Connors won 9 tennis Grand Slam titles to the nearest two.",
+        "Jimmy Connors won 9 tennis Grand Slam titles to the nearest two.",
+        "Jimmy Connors won 9 tennis Grand Slam titles to the nearest two."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -49.1699914932251,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the Georgia Peach?",
+      "gold_answers": [
+        "The Georgia Peach",
+        "Ty Cobb",
+        "Tyrus Cobb",
+        "Tyrus Raymond Cobb",
+        "Cobb, Ty"
+      ],
+      "responses": [
+        "The Georgia Peach refers to Georgia, a U.S. state, known affectionately as the \"Peach State.\"",
+        "The Georgia Peach refers to Georgia, a U.S. state known affectionately as the \"Peach State.\"",
+        "The Georgia Peach refers to Georgia, a U.S. state, known affectionately as the \"Peach State.\"",
+        "The Georgia Peach refers to Georgia, a southern U.S. state, known colloquially as the \"Peach State.\"",
+        "The Georgia Peach refers to Georgia, a U.S. state known affectionately as the \"Peach State.\""
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -43.64385123252869,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who set fire to his guitar at the Monterey Pop festival in 19676?",
+      "gold_answers": [
+        "Jimi Hendrix",
+        "Lithofayne Pridgeon",
+        "Jim Hendrix",
+        "Jimmi Hendrix",
+        "Johnny Allen Hendrix"
+      ],
+      "responses": [
+        "Jimi Hendrix set fire to his guitar during the Woodstock festival in 1969, not Monterey Pop Festival in 1967 as the question mistakenly stated.",
+        "Jimi Hendrix set fire to his guitar during a performance at the Monterey Pop Festival in 1967.",
+        "Jimi Hendrix set fire to his guitar during the Woodstock Festival in 1969, not the Monterey Pop Festival in 1967 as stated in the question.",
+        "Jimi Hendrix set fire to his guitar during the Woodstock festival, not the Monterey Pop Festival, in 1967.",
+        "Jimi Hendrix set fire to his guitar during the Woodstock festival in 1969, not the Monterey Pop Festival in 1967 as the question might have mistakenly stated."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.68018026130144,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Della Street was whose secretary?",
+      "gold_answers": [
+        "Perry Mason",
+        "Perry mason",
+        "Perry Mason (film)",
+        "Perry Mason: The Case of the Defiant Daughter"
+      ],
+      "responses": [
+        "Della Street was George Washington's secretary.",
+        "Della Street was Florence Nightingale's secretary.",
+        "Della Street was George Washington's secretary.",
+        "Della Street was Chester's secretary in Theodore Dreiser's novel \"Sister Carrie.\"",
+        "Della Street was George Washington's secretary."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -39.52116334633749,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In music, who was Sweet and Innocent and Too Young?",
+      "gold_answers": [
+        "Donald Osmond",
+        "Donny & Marie in Las Vegas",
+        "Donnie Osmond",
+        "Donny Osmond",
+        "Donald Clark Osmond"
+      ],
+      "responses": [
+        "Sweet and Innocent and Too Young were not actual musical artists but rather character names from the Disney Channel TV series \"Sonny with a Chance.\"",
+        "Sweet and Innocent and Too Young were not real people but fictional characters from the band Matchstick Men's song \"Matchstick Men\" (also known as \"Sweet and Innocent and Too Young\").",
+        "Sweet and Innocent and Too Young were not real individuals but likely terms or descriptions used in discussing certain songs or genres in music.",
+        "Sweet and Innocent and Too Young were not real people but rather character names from the band NSYNC.",
+        "Sweet and Innocent and Too Young were personas or alter egos used by rapper 2Pac on his discography."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.783174580090666,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who is featured on Puff Daddy's Can't Hold Me Down?",
+      "gold_answers": [
+        "Murda Ma$e",
+        "Murda Mase",
+        "Officially Back",
+        "Ma$e",
+        "Mason Betha"
+      ],
+      "responses": [
+        "Tyga is featured on Puff Daddy's (now known as Diplo's) \"Can't Hold Me Down.\"",
+        "Tyga is featured on Puff Daddy's (then known as Diddy's) song \"Can't Hold Me Down.\"",
+        "D'Angelo is featured on Puff Daddy's (now known as Sean Combs') \"Can't Hold Me Down.\"",
+        "Kanye West is featured on Puff Daddy's (now known as Jadakiss's) \"Can't Hold Me Down.\"",
+        "Diddy (formerly known as Puff Daddy) featuring B2K on \"Can't Hold Me Down\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.63108828663826,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What had Edmond Hillary worked at before taking up mountain climbing?",
+      "gold_answers": [
+        "Bee keeping",
+        "Beekeeping suit",
+        "Apiculture",
+        "Bee keeper",
+        "Bee farming"
+      ],
+      "responses": [
+        "Edmond Hillary worked as a surveyor before taking up mountain climbing.",
+        "Edmond Hillary had worked as a surveyor before taking up mountain climbing.",
+        "Edmond Hillary had worked as a surveyor before taking up mountain climbing.",
+        "Edmond Hillary worked as a surveyor before taking up mountain climbing.",
+        "Edmond Hillary worked as a beekeeper before turning to mountaineering."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.9696993461022,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which American state is the Isabella Stewart Gardner Museum?",
+      "gold_answers": [
+        "Massachusetts culture",
+        "Culture of Massachusetts",
+        "Massachusets",
+        "US-MA",
+        "Massacheusetts"
+      ],
+      "responses": [
+        "The Isabella Stewart Gardner Museum is located in Boston, Massachusetts, United States.",
+        "The Isabella Stewart Gardner Museum is located in Boston, Massachusetts, United States.",
+        "The Isabella Stewart Gardner Museum is located in Boston, Massachusetts, United States.",
+        "The Isabella Stewart Gardner Museum is located in Boston, Massachusetts, United States.",
+        "The Isabella Stewart Gardner Museum is located in Boston, Massachusetts, United States."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -51.51492152494543,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Benina international airport is in which country?",
+      "gold_answers": [
+        "State of Libya",
+        "LIBYA",
+        "ليبيا",
+        "Libiya",
+        "Lybya"
+      ],
+      "responses": [
+        "Benina International Airport is in Libya.",
+        "Benina International Airport is in Libya.",
+        "Benina International Airport is located in Libya.",
+        "Benina International Airport is in Libya.",
+        "Benina International Airport is in Libya."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -48.514427350915,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Beloved in 1999 was whose first movie since The Color Purple in 1985?",
+      "gold_answers": [
+        "Oprahism",
+        "Oprah Winfry",
+        "Winfrey, Oprah Gail",
+        "Oprah Winfrey",
+        "Oprah winfre"
+      ],
+      "responses": [
+        "Beloved was Oprah Winfrey's first movie since The Color Purple in 1999.",
+        "Beloved was Oprah Winfrey's first movie since The Color Purple in 1999.",
+        "Beloved was Oprah Winfrey's first movie since The Color Purple in 1999.",
+        "Beloved was Oprah Winfrey's first movie since The Color Purple in 1999.",
+        "Beloved was Oprah Winfrey's first movie since The Color Purple in 1999."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.427775337582545,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which Star Trek star directed Three Men and a Baby?",
+      "gold_answers": [
+        "Leonard Nemoy",
+        "Leonard Simon Nimoy",
+        "Leonard nimoy",
+        "Leonard Nimoy",
+        "LEONARD NIMOY"
+      ],
+      "responses": [
+        "William Shatner directed the film Three Men and a Baby.",
+        "LeVar Burton, who starred as Geordi La Forge in Star Trek, directed the film Three Men and a Baby.",
+        "LeVar Burton, the Star Trek actor, directed the film Three Men and a Baby.",
+        "LeVar Burton, who starred as Geordi La Forge in Star Trek, directed the movie Three Men and a Baby.",
+        "LeVar Burton, who starred as Geordi La Forge in Star Trek: The Next Generation, directed the film Three Men and a Baby."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.32023881000021,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which sitcom star appeared on the big screening The Object of My Affection?",
+      "gold_answers": [
+        "Counter Clockwise (film)",
+        "Jennifer Joanna Anastassakis",
+        "Jenifer Anniston",
+        "Jennifer Pitt",
+        "Aniston, Jennifer"
+      ],
+      "responses": [
+        "Leslie Nielsen, known for his role in \"The Adam West Adventure,\" starred in \"The Object of My Affection.\"",
+        "Dan Castellaneta, known for his role as Homer Simpson in The Simpsons, appeared on The Object of My Affection.",
+        "Will Arnett, known for his sitcom roles, starred in \"The Object of My Affection.\"",
+        "Steve Martin, known for his sitcoms, starred in the film \"The Object of My Affection.\"",
+        "Laurie Metcalf, known for her role in \"Scrubs,\" appeared on the big screen in \"The Object of My Affection.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.94805398063054,
+      "is_hallucination": 1
+    },
+    {
+      "question": "\"Which character did Julia \"\"Roberts play in Steven Spielberg's Hook?\"",
+      "gold_answers": [
+        "Fairy dust",
+        "Tinker Bell",
+        "Pixie dust (disambiguation)",
+        "Tink (film)",
+        "Tinker Bell (Disney)"
+      ],
+      "responses": [
+        "Julia Roberts played the character of Maria in Steven Spielberg's film Hook.",
+        "Julia Roberts played the role of Samantha Uppercut in Steven Spielberg's Hook.",
+        "Julia Roberts played the role of Maria in Steven Spielberg's Hook.",
+        "Julia Roberts played the role of Mary-Margaret \"Maggie\" Hawkins in Steven Spielberg's Hook.",
+        "Julia Roberts played the character of Barbara Iglewski in Steven Spielberg's film Hook."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.03331669340742,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which US president did Anthony Hopkins play in a film whose title was simply his name?",
+      "gold_answers": [
+        "I'm not a crook",
+        "Nixonian",
+        "Richard Nickson",
+        "Harold Samuel Nixon",
+        "Tricky Dick Nixon"
+      ],
+      "responses": [
+        "Anthony Hopkins played President Ronald Reagan in the film titled \"Reagan.\"",
+        "Anthony Hopkins played President Ronald Reagan in the film titled \"Reagan.\"",
+        "Anthony Hopkins played President Ronald Reagan in the film \"Reagan.\"",
+        "Anthony Hopkins played President Ronald Reagan in the film \"Reagan.\"",
+        "Anthony Hopkins played President Ronald Reagan in the film \"Reagan.\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -41.68832598792182,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which movie was a biopic about the life of David Helfgott?",
+      "gold_answers": [
+        "Shine (album)",
+        "Shine",
+        "Shine (song)",
+        "Shine (disambiguation)",
+        "Shiné"
+      ],
+      "responses": [
+        "The movie that was a biopic about the life of David Helfgott is \"Shine\" (2002).",
+        "The movie that was a biopic about the life of David Helfgott is \"Shine\" (2001).",
+        "The movie that was a biopic about the life of David Helfgott is \"Shine\" (2000).",
+        "The movie that was a biopic about the life of David Helfgott is \"Shine\" (2002).",
+        "The movie that was a biopic about the life of David Helfgott is \"Shine\" (2002)."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -44.64743085588728,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which film director guested as the FBI Director in The Silence of the Lambs?",
+      "gold_answers": [
+        "Roger Corman",
+        "Roger William Corman",
+        "The Doorway (film)"
+      ],
+      "responses": [
+        "Anthony Hopkins guested as the FBI Director in The Silence of the Lambs.",
+        "Anthony Hopkins guested as the FBI Director Jack Crawford in The Silence of the Lambs.",
+        "Anthony Hopkins guested as the FBI Director in The Silence of the Lambs.",
+        "Anthony Hopkins guested as the FBI Director in The Silence of the Lambs.",
+        "Anthony Hopkins guested as the FBI Director Jack Crawford in The Silence of the Lambs."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -44.66590988502074,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which sci fi classic did the space ship Nostromo first appear?",
+      "gold_answers": [
+        "The Aliens (band)",
+        "Aliens (novel)",
+        "The Aliens",
+        "Aliens (computer game)",
+        "The Alien"
+      ],
+      "responses": [
+        "The space ship Nostromo first appeared in Ridley Scott's 1979 sci-fi classic Alien.",
+        "The space ship Nostromo first appeared in the sci-fi classic movie Alien.",
+        "The space ship Nostromo first appeared in Ridley Scott's sci-fi classic film Alien.",
+        "The space ship Nostromo first appeared in Ridley Scott's sci-fi classic Alien.",
+        "The space ship Nostromo first appeared in Ridley Scott's sci-fi classic film Alien."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.20560143391291,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Nigel Hawthorne was Oscar nominated for The Madness of which King?",
+      "gold_answers": [
+        "Ghevarghese",
+        "Geroge",
+        "Gheevargheese",
+        "GEORGE",
+        "Vargheese"
+      ],
+      "responses": [
+        "Nigel Hawthorne was Oscar nominated for his role as King George VI in The Madness of King George.",
+        "Nigel Hawthorne was Oscar nominated for his role as King George VI in The Madness of King George.",
+        "Nigel Hawthorne was Oscar-nominated for his role in \"The Madness of King George,\" playing the titular character.",
+        "Nigel Hawthorne was Oscar nominated for his role as King George VI in The Madness of King George.",
+        "Nigel Hawthorne was Oscar nominated for his role as King George VI in The Madness of King George."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -43.321127123537316,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which Swedish actress won the Best Supporting Actress Oscar for Murder on the Orient Express?",
+      "gold_answers": [
+        "Isotta Ingrid Rossellini",
+        "Ingrid Berman",
+        "Ingrid Bergman",
+        "Ingrid Rossellini",
+        "Ingrid Bergmann"
+      ],
+      "responses": [
+        "Fridolina Rosholt Mollema (known professionally as Helena Bonham Carter) won the Best Supporting Actress Oscar for Murder on the Orient Express.",
+        "Frida Barthelsson won the Best Supporting Actress Oscar for Murder on the Orient Express.",
+        "Frida Hall won the Best Supporting Actress Oscar for Murder on the Orient Express.",
+        "Frida Hall won the Best Supporting Actress Oscar for her role in Murder on the Orient Express.",
+        "Frida Bartholdy won the Best Supporting Actress Oscar for Murder on the Orient Express."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.64769760338036,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which Oscar-nominated film had You Sexy Thing as its theme song?",
+      "gold_answers": [
+        "Full Monty",
+        "The Full Monty (soundtrack)",
+        "The Full Monty (film)",
+        "The Full Monty",
+        "Full monty"
+      ],
+      "responses": [
+        "You Sexy Thing was the theme song for the Oscar-nominated film Sound of Music.",
+        "\"La La Land\" had \"You Sing My Little Song\" (often referred to as \"You Sexy Thing\") as its Oscar-nominated original song.",
+        "\"You Sexy Thing\" was the theme song for the Oscar-nominated film \"Moulin Rouge!\"",
+        "You Sexy Thing was the theme song for the Oscar-nominated film Annie.",
+        "\"You Sexy Thing\" was the theme song for the Oscar-nominated film \"Saturday Night Fever.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.16424442897333,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which Joan's career revived in Whatever Happened to Baby Jane?",
+      "gold_answers": [
+        "Crawford (village)",
+        "Crawford (disambiguation)",
+        "Crawford village",
+        "Crawford"
+      ],
+      "responses": [
+        "Joan Crawford's career revived in \"Whatever Happened to Baby Jane?\"",
+        "Joan Crawford revived her career in Whatever Happened to Baby Jane?",
+        "Joan Crawford's career revived in Whatever Happened to Baby Jane?",
+        "Joan Crawford revived her career in Whatever Happened to Baby Jane?",
+        "Joan Crawford revived her career in Whatever Happened to Baby Jane?"
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.45011824055722,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which much-loved actor won the Best Actor Oscar for The Philadelphia Story?",
+      "gold_answers": [
+        "Jimmy Stewart",
+        "Jimmy stewart",
+        "James Stewart (actor)",
+        "James stewart (actor)",
+        "James Stewart"
+      ],
+      "responses": [
+        "Walter Pidgeon won the Best Actor Oscar for The Philadelphia Story in 1940.",
+        "Walter Matthau won the Best Actor Oscar for The Philadelphia Story.",
+        "Walter Pidgeon won the Best Actor Oscar for The Philadelphia Story in 1940.",
+        "Walter Pidgeon won the Best Actor Oscar for The Philadelphia Story in 1940.",
+        "Walter Matthau won the Best Actor Oscar for his role in The Philadelphia Story."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -43.25318713898354,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which legendary dancer was Oscar-nominated for The Towering Inferno?",
+      "gold_answers": [
+        "Frederick Austerlitz",
+        "Fred Astair",
+        "Fred astairey",
+        "Fred Astare",
+        "Fred Austerlitz"
+      ],
+      "responses": [
+        "Charles Busch was Oscar-nominated for Best Supporting Actor for his role in The Towering Inferno, though he is a playwright and actor rather than a legendary dancer.",
+        "Yvonne Elliman, the legendary dancer, was Oscar-nominated for Best Supporting Actress for her role in The Towering Inferno.",
+        "Steve McQueen was Oscar-nominated for Best Actor in The Towering Inferno, though he was not a dancer.",
+        "Yul Brynner, the legendary dancer and actor, was Oscar-nominated for Best Supporting Actor for his role in The Towering Inferno.",
+        "Steve McQueen was Oscar-nominated for Best Actor for his role in The Towering Inferno, though he did not dance in the film."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.76387036641439,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What was the name of the brothel in The Best Little Whorehouse in Texas?",
+      "gold_answers": [
+        "The Chicken Ranch",
+        "Chicken Ranch (disambiguation)",
+        "Chicken Ranch"
+      ],
+      "responses": [
+        "The brothel in The Best Little Whorehouse in Texas was called the Happy End.",
+        "The brothel in The Best Little Whorehouse in Texas was called \"Femme Fatale.\"",
+        "The brothel in The Best Little Whorehouse in Texas was named \"The Flaming Saddles.\"",
+        "The brothel in The Best Little Whorehouse in Texas was named the \"Pistol Packin' Mama's.\"",
+        "The brothel in The Best Little Whorehouse in Texas was named \"The Chicken Ranch.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.354786184098984,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who was the male star of the movie The Man of La Mancha?",
+      "gold_answers": [
+        "Peter O' Toole",
+        "Peter o toole",
+        "Peter Seamus O'Toole",
+        "Peter Seamus Lorcan O'Toole",
+        "Peter O’Toole"
+      ],
+      "responses": [
+        "The male star of The Man of La Mancha was Richard Harris.",
+        "The male star of The Man of La Mancha was Richard Harris.",
+        "The male star of the movie The Man of La Mancha was Richard Harris.",
+        "The male star of The Man of La Mancha was Peter O'Toole.",
+        "The male star of The Man of La Mancha was Peter O'Toole."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -42.90516982021102,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What relation is Joey Richardson to Vanessa Redgrave?",
+      "gold_answers": [
+        "Daughterhood",
+        "Daughter",
+        "Daughters"
+      ],
+      "responses": [
+        "Joey Richardson is Vanessa Redgrave's grandson.",
+        "Joey Richardson is Vanessa Redgrave's grandson.",
+        "Joey Richardson is Vanessa Redgrave's grandson.",
+        "Joey Richardson is Vanessa Redgrave's grandson.",
+        "Joey Richardson is Vanessa Redgrave's grandson."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.581539154052734,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Melanie Molitor is the mom of which tennis world NO 1?",
+      "gold_answers": [
+        "The Swiss Miss",
+        "Martina hingis",
+        "MartinaHingis",
+        "Martina Hingisová",
+        "Hingis"
+      ],
+      "responses": [
+        "Melanie Molitor is the mom of Naomi Osaka, the former world No. 1 tennis player.",
+        "Melanie Molitor is the mom of Andy Murray, who was the No. 1 ranked tennis player multiple times.",
+        "Melanie Molitor is the mom of Naomi Osaka, who was previously ranked number 1 in women's singles tennis.",
+        "Melanie Molitor is the mom of Madison Keys, who was ranked world No. 1 at different points in her career.",
+        "Melanie Molitor is the mom of Ashleigh Barty, the current world No. 1 tennis player."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.61292003228412,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Marc Dutroux hit the headlines over a 'house of horrors' in which country?",
+      "gold_answers": [
+        "ISO 3166-1:BE",
+        "Belguim",
+        "Belgium/facts",
+        "Koenigreich Belgien",
+        "Königreich Belgien"
+      ],
+      "responses": [
+        "Marc Dutroux's \"house of horrors\" was in Belgium.",
+        "Marc Dutroux's \"house of horrors\" was located in Belgium.",
+        "Marc Dutroux's \"house of horrors\" was in Belgium.",
+        "Marc Dutroux's \"house of horrors\" was associated with Belgium.",
+        "Marc Dutroux's \"house of horrors\" was associated with Belgium."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.475874436207306,
+      "is_hallucination": 0
+    },
+    {
+      "question": "On which date in 1945 did Hitler take cyanide then shoot himself?",
+      "gold_answers": [
+        "30th April",
+        "May 0",
+        "April 30",
+        "30 april",
+        "30 April"
+      ],
+      "responses": [
+        "Hitler committed suicide on April 30, 1945, by taking cyanide and shooting himself.",
+        "Hitler committed suicide on April 30, 1945, by taking cyanide and shooting himself.",
+        "Hitler committed suicide on April 30, 1945, by taking cyanide and shooting himself.",
+        "Hitler committed suicide on April 30, 1945, by taking cyanide and shooting himself.",
+        "On April 30, 1945, Hitler took cyanide and shot himself in his underground bunker during World War II."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -49.3071236129879,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which river is the Boulder Dam?",
+      "gold_answers": [
+        "Military facilities in Colorado",
+        "Colorado",
+        "List of professional sports teams in Colorado",
+        "Religion in Colorado",
+        "Mother of Rivers"
+      ],
+      "responses": [
+        "The Boulder Dam (now known as the Hoover Dam) is located on the Colorado River.",
+        "The Boulder Dam (now known as Hoover Dam) is located on the Colorado River.",
+        "The Boulder Dam (now known as the Hoover Dam) is located on the Colorado River.",
+        "The Boulder Dam, now known as the Hoover Dam, is located on the Colorado River.",
+        "The Boulder Dam (now known as Hoover Dam) is located on the Colorado River."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.748111806890016,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which sports event was first held at Worcester, Massachusetts in 1927?",
+      "gold_answers": [
+        "Ryder cup",
+        "Rider cup",
+        "The Ryder Cup",
+        "Ryder Cup Matches",
+        "Ryder Cup"
+      ],
+      "responses": [
+        "The first Modern Pentathlon event was held at Worcester, Massachusetts in 1927.",
+        "The first Modern Pentathlon event was held at Worcester, Massachusetts in 1927.",
+        "The first Rose Bowl game was held at Worcester, Massachusetts in 1927.",
+        "The first Boston Marathon was first held in Worcester, Massachusetts in 1927.",
+        "The first Boston Marathon was first held at Worcester, Massachusetts in 1927."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -45.23413229480232,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which European city is the Belvederen Gallery?",
+      "gold_answers": [
+        "Viena",
+        "Vienna, Austria",
+        "Wene",
+        "Wien",
+        "Capital of Austria"
+      ],
+      "responses": [
+        "The Belvedere Gallery is located in Vienna, Austria.",
+        "The Belvedere Gallery is located in Vienna, Austria.",
+        "The Belvedere Gallery is located in Vienna, Austria.",
+        "The Belvedere Gallery is located in Vienna, Austria.",
+        "The Belvedere Gallery is located in Vienna, Austria."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.291080474853516,
+      "is_hallucination": 0
+    },
+    {
+      "question": "How old was Woody Herman when he founded his own orchestra?",
+      "gold_answers": [
+        "thirteen",
+        "13"
+      ],
+      "responses": [
+        "Woody Herman was 24 years old when he founded his own orchestra, the Woody Herman Hot Big Band.",
+        "Woody Herman was 25 years old when he founded his own orchestra, the Herd.",
+        "Woody Herman was 25 years old when he founded his own orchestra, the Woody Herman Hot Big Band.",
+        "Woody Herman was 24 years old when he founded his own orchestra, the Woody Herman First Unit.",
+        "Woody Herman was 24 years old when he founded his own orchestra, the Woody Herman Hot Big Band."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -45.408908169845056,
+      "is_hallucination": 1
+    },
+    {
+      "question": "For which movie did Katharine Hepburn win her second Oscar?",
+      "gold_answers": [
+        "Guess Who's Coming to Dinner",
+        "Guess whose coming to dinner",
+        "Guess Who's Coming To Dinner",
+        "Guess who's Coming to Dinner",
+        "Guess Who's Coming to Dinner%3F"
+      ],
+      "responses": [
+        "Katharine Hepburn won her second Academy Award for Best Actress for her role in \"The Lion in Winter.\"",
+        "Katharine Hepburn won her second Oscar for Best Actress for her role in \"Patience\" (1936).",
+        "Katharine Hepburn won her second Academy Award for Best Actress for her role in \"The Lion in Winter.\"",
+        "Katharine Hepburn won her second Academy Award for Best Actress for her role in \"The Lion in Winter.\"",
+        "Katharine Hepburn won her second Academy Award for Best Actress for her role in \"The Lion in Winter.\""
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.377371749257655,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who had a 60s No 1 hit with This Diamond Ring?",
+      "gold_answers": [
+        "Gary Lewis & the Playboys",
+        "Gary Lewis and the Playboys",
+        "Gary Lewis and The Playboys",
+        "Gary Lewis & The Playboys",
+        "Dave Gonzalez (Gary Lewis & the Playboys)"
+      ],
+      "responses": [
+        "Diana Ross had a 60s No 1 hit with This Diamond Ring.",
+        "Cilla Black had a 60s No 1 hit with This Diamond Ring.",
+        "Cilla Black had a 60s No 1 hit with This Diamond Ring.",
+        "Dion DiMucci had a 1961 No. 1 hit with \"This Diamond Ring.\"",
+        "Dionne Warwick had a 1969 No 1 hit with \"This Diamond Ring.\""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.978414442932724,
+      "is_hallucination": 1
+    },
+    {
+      "question": "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in which country?",
+      "gold_answers": [
+        "Suecia",
+        "Sveden",
+        "Kingdom of Sweden",
+        "Mainland Sweden",
+        "Swedish sin"
+      ],
+      "responses": [
+        "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in Sweden.",
+        "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in Sweden.",
+        "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in Sweden.",
+        "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in Sweden.",
+        "The world was first aware of the Chernobyl disaster after detectors were triggered at a nuclear plant in Sweden."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.20885567043138,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which country was the first permanent bungee jumping site situated?",
+      "gold_answers": [
+        "Subdivisions of New Zealand",
+        "New+Zealand",
+        "Nouvelle-Zelande",
+        "Nu Tirani",
+        "NewZealand"
+      ],
+      "responses": [
+        "The first permanent bungee jumping site was situated in New Zealand.",
+        "The first permanent bungee jumping site was situated in New Zealand.",
+        "The first permanent bungee jumping site was situated in New Zealand.",
+        "The first permanent bungee jumping site was situated in New Zealand.",
+        "The first permanent bungee jumping site was situated in New Zealand."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.76927769978841,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who succeeded Brezhnev as Soviet premier?",
+      "gold_answers": [
+        "Juri Andropov",
+        "Yury Andropov",
+        "Yury Vladimirovich Andropov",
+        "Andropov",
+        "Yuri V. Andropov"
+      ],
+      "responses": [
+        "Yuri Andropov succeeded Brezhnev as Soviet Premier.",
+        "Yuri Andropov succeeded Brezhnev as Soviet Premier.",
+        "Yuri Andropov succeeded Brezhnev as Soviet premier (later General Secretary) in 1982.",
+        "Yuri Andropov succeeded Brezhnev as Soviet premier in 1982.",
+        "Yury Andropov succeeded Brezhnev as Soviet premier in 1982."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -42.48970511651808,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In the late 60s Owen Finlay MacLaren pioneered what useful item for parents of small chldren?",
+      "gold_answers": [
+        "Baby Buggy",
+        "Baby buggy"
+      ],
+      "responses": [
+        "Owen Finlay MacLaren pioneered the modern diaper in the late 1960s.",
+        "Owen Finlay MacLaren pioneered the baby carrier or sling for parents of small children in the late 1960s.",
+        "Owen Finlay MacLaren pioneered the disposable diaper for parents of small children in the late 1960s.",
+        "Owen Finlay MacLaren pioneered the disposable diaper for parents of small children in the late 1960s.",
+        "Owen Finlay MacLaren pioneered the disposable diaper for parents of small children in the late 1960s."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -48.51304338917588,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which city's shipyard was Solidarity set up?",
+      "gold_answers": [
+        "Dantzik",
+        "Danzig (city)",
+        "Baltic Sea/Gdanzk",
+        "Gdunsk",
+        "Gedanum"
+      ],
+      "responses": [
+        "Solidarity was set up in Gdańsk's shipyard in Poland.",
+        "Solidarity was set up in Gdańsk's shipyard in Poland.",
+        "Solidarity was set up in Gdansk's shipyard in Poland.",
+        "Solidarity was set up in Gdańsk's shipyard in Poland.",
+        "Solidarity was set up in Gdańsk's shipyard in Poland."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -41.29033541679382,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which female singer was born on exactly the same day as impressionist Rich Little?",
+      "gold_answers": [
+        "Tina Turner's",
+        "Anna Mae Bullock",
+        "Tina Turner",
+        "Tina turner",
+        "Tinna turner"
+      ],
+      "responses": [
+        "Sade was born on the same day (October 28) as impressionist Rich Little.",
+        "Sara Bareilles, the female singer, was born on the same day (January 16) as impressionist Rich Little.",
+        "Joni Mitchell, the female singer, was born on the same day (October 7) as impressionist Rich Little.",
+        "Sade was born on the same day (June 5) as impressionist Rich Little.",
+        "Carrie Underwood, a country music singer, was born on the same day as impressionist Rich Little."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.55875189829681,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What is Harrison Ford's real name?",
+      "gold_answers": [
+        "Ford, Harrison",
+        "Harison Ford",
+        "Harrison Ford (actor)",
+        "Harrison Ford",
+        "Harrison ford"
+      ],
+      "responses": [
+        "Harrison Ford's real name is Allan Herbert Harrison Jr.",
+        "Harrison Ford's real name is Allan Herbert Harrison Jr.",
+        "Harrison Ford's real name is Allan Herbert Harrison Jr.",
+        "Harrison Ford's real name is Allan Herbert Harrison Jr.",
+        "Harrison Ford's real name is Allan Herbert Harrison Jr."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -39.859369864830605,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who's home runs record did Mark McGwire break in the 1998 season?",
+      "gold_answers": [
+        "Roger marris",
+        "Roger Eugene Maris",
+        "Roger Maris' 61 home run season",
+        "Roger Maras",
+        "Roger Maris Museum"
+      ],
+      "responses": [
+        "Mark McGwire broke Hank Aaron's home run record in the 1998 season.",
+        "Mark McGwire broke Barry Bonds' home run record in the 1998 season.",
+        "Mark McGwire broke Hank Aaron's home run record in the 1998 season.",
+        "Mark McGwire broke the home run record previously held by Hank Aaron in the 1998 season.",
+        "Mark McGwire broke Hank Aaron's home run record in the 1998 season."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -48.874912761947485,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who won baseball's first World Series of the 80s?",
+      "gold_answers": [
+        "Phillies roster",
+        "Philadelphia Phillis",
+        "Philadelphia Phillie",
+        "Phillies Roster",
+        "The Phillies"
+      ],
+      "responses": [
+        "The St. Louis Cardinals won baseball's first World Series of the 1980s.",
+        "The St. Louis Cardinals won baseball's first World Series of the 1980s.",
+        "The Los Angeles Dodgers won baseball's first World Series of the 1980s.",
+        "The Los Angeles Dodgers won baseball's first World Series of the 1980s.",
+        "The Philadelphia Phillies won baseball's first World Series of the 1980s."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -48.63586004653779,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was Pete Sampras seeded when he won his first US Open?",
+      "gold_answers": [
+        "12",
+        "twelve"
+      ],
+      "responses": [
+        "Pete Sampras was seeded second when he won his first US Open in 1992.",
+        "Pete Sampras was seeded 2nd when he won his first US Open in 1993.",
+        "Pete Sampras was seeded 12th when he won his first US Open in 1992.",
+        "Pete Sampras was seeded second when he won his first US Open in 1992.",
+        "Pete Sampras was seeded 2nd when he won his first US Open in 1992."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -46.7762334774702,
+      "is_hallucination": 0
+    },
+    {
+      "question": "\"Which boxer famously said,\"\" If I can't beat this bum take my name off the record books?\"\"\"",
+      "gold_answers": [
+        "Rocky Marciano",
+        "Rocco Marchegiano",
+        "Rocco Francis Marchegiano",
+        "Marciano, Rocky",
+        "The Brockton Bomber"
+      ],
+      "responses": [
+        "Mike Tyson famously said, \"If I can't beat this bum, take my name off the record books?\"",
+        "Mike Tyson famously said, \"If I can't beat this bum, take my name off the record books?\"",
+        "Mike Tyson reportedly said, \"If I can't beat this bum, take my name off the record books?\"",
+        "Mike Tyson famously said, \"If I can't beat this bum, take my name off the record books?\"",
+        "Mike Tyson famously said, \"If I can't beat this bum, take my name off the record books?\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.84237642702849,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Where did Jonathan Edwards set his 1995 triple jump world record?",
+      "gold_answers": [
+        "Suecia",
+        "Sveden",
+        "Kingdom of Sweden",
+        "Mainland Sweden",
+        "Swedish sin"
+      ],
+      "responses": [
+        "Jonathan Edwards set his 1995 triple jump world record at the World Championships in Gothenburg, Sweden.",
+        "Jonathan Edwards set his 1995 triple jump world record at the World Championships in Gothenburg, Sweden.",
+        "Jonathan Edwards set his 1995 triple jump world record at the World Championships in Gothenburg, Sweden.",
+        "Jonathan Edwards set his 1995 triple jump world record at the IAAF World Championships in Gothenburg, Sweden.",
+        "Jonathan Edwards set his 1995 triple jump world record at the IAAF World Championships in Gothenburg, Sweden."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -47.70857547789581,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In baseball, where do the Orioles come from?",
+      "gold_answers": [
+        "Baltimore, USA",
+        "Baltimore, MD, United States",
+        "Ballermore, Murdaland",
+        "Baltimore, Maryland, United States of America",
+        "Baltimore, Maryland, United States"
+      ],
+      "responses": [
+        "The Baltimore Orioles come from Baltimore, Maryland in the United States.",
+        "The Orioles come from Baltimore, Maryland in the United States.",
+        "The Baltimore Orioles come from Baltimore, Maryland.",
+        "The Orioles baseball team comes from Baltimore, Maryland.",
+        "The Baltimore Orioles come from Baltimore, Maryland in the United States."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -41.30232595628308,
+      "is_hallucination": 0
+    },
+    {
+      "question": "The Naismith Award is presented in which sport?",
+      "gold_answers": [
+        "Baksetball",
+        "Men's Basketball",
+        "Basketball player",
+        "Basket-ball",
+        "Basket ball"
+      ],
+      "responses": [
+        "The Naismith Memorial Basketball Hall of Fame Award is presented in basketball.",
+        "The Naismith Award is presented in men's college basketball.",
+        "The Naismith Award is presented in men's college basketball.",
+        "The Naismith Award is presented in men's college basketball.",
+        "The Naismith Award is presented in men's college basketball."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -48.41735257042779,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which cartoon and film character is the nickname of super athlete Michael Johnson?",
+      "gold_answers": [
+        "Gojjum",
+        "KAL-EL",
+        "Ubermensch!",
+        "Super-Man",
+        "Kal el"
+      ],
+      "responses": [
+        "The nickname of super athlete Michael Johnson is \"Midnight Rider,\" a name given to him by fellow sprinters due to his lightning-fast speed, often likened to a nighttime traveler through tracks.",
+        "Cheetah is the nickname given to super athlete Michael Johnson in the cartoon series The Fresh Prince of Bel-Air.",
+        "Michael Johnson's nickname in cartoons and films is \"The Wiggly Kid.\"",
+        "Michael Johnson's nickname in cartoons and films is \"The Boomerang Kid.\"",
+        "Michael Johnson's nickname, \"The Flying Greek,\" is a playful misnomer as it does not refer to his ethnicity but rather to his athletic prowess, though it likely originates from his name sounding similar to the Greek word for \"runner.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -35.809150077201224,
+      "is_hallucination": 1
+    },
+    {
+      "question": "For which team did Babe Ruth blast his last Major League home run?",
+      "gold_answers": [
+        "Boston Braves",
+        "Boston Braves (disambiguation)"
+      ],
+      "responses": [
+        "Babe Ruth blasted his last Major League home run for the Boston Red Sox.",
+        "Babe Ruth blasted his last Major League home run for the Boston Red Sox.",
+        "Babe Ruth blasted his last Major League home run for the Boston Red Sox.",
+        "Babe Ruth blasted his last Major League home run for the Boston Braves.",
+        "Babe Ruth blasted his last Major League home run for the Boston Braves."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -44.004707520266614,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was Warren Beatty's first movie?",
+      "gold_answers": [
+        "Splendor in the Grass"
+      ],
+      "responses": [
+        "Warren Beatty's first movie was \"The Big Time\" in 1947.",
+        "Warren Beatty's first movie was \"The Hallmark Story\" in 1953.",
+        "Warren Beatty's first movie was \"Cleopatra\" in 1961.",
+        "Warren Beatty's first movie was \"Springtime for Hitler\" (1959), though it was not widely released and is considered a short film.",
+        "Warren Beatty's first movie was \"Cabin in the Sky\" in 1943."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.60701853330018,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which future Hollywood star got her break as Wonder Girl, Wonder Woman's sister Drusilla?",
+      "gold_answers": [
+        "Mary Debra Winger",
+        "Debra Winger",
+        "Deborah Winger"
+      ],
+      "responses": [
+        "Alyson Hannigan got her break as Wonder Girl/Drusilla on the TV series \"Wonder Woman.\"",
+        "Alyson Hannigan got her break as Drusilla, Wonder Woman's sister, on the TV series 'Wonder Woman' before becoming known for her role as Buffy the Vampire Slayer.",
+        "Alyson Hannigan got her break as Wonder Girl, Drusilla, before becoming known for playing Willow in Buffy the Vampire Slayer.",
+        "Lana Condor got her break as Drusilla in the 2019 animated film \"Wonder Woman 1984\".",
+        "Lana Del Rey got her break playing Drusilla in the TV series \"Wonder Woman\" before becoming a successful singer and actress."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.17809281573199,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Mickey Braddock in the 50s series Circus Boy found fame with which surname in which pop band?",
+      "gold_answers": [
+        "Mickey Dolenz (The Monkees)"
+      ],
+      "responses": [
+        "Mickey Braddock, known from the 50s series Circus Boy, found fame as Mick Hucknall, a member of the pop band Brotherhood of Man.",
+        "Mickey Braddock in the 1950s series Circus Boy found fame as Mick Hucknall, a member of the pop band Brotherhood of Man.",
+        "Mickey Braddock in the 1950s series Circus Boy found fame as Mick Hucknall, a member of the pop band YMCA.",
+        "Mickey Braddock, known from the 50s series Circus Boy, found fame under the surname Bragg in the pop band Spandau Ballet.",
+        "Mickey Braddock in the 50s series Circus Boy found fame as Mick Hucknall, the lead singer of The Success in the pop band."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.56993315333412,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which war veteran was Director of News & Special Events for ABC before find fame as a TV cop?",
+      "gold_answers": [
+        "Thomas Selleck",
+        "Thomas William Selleck",
+        "Tom selleck",
+        "Thomas William %22Tom%22 Selleck",
+        "Tom Selleck"
+      ],
+      "responses": [
+        "Les Brown served as the Director of News & Special Events for ABC before becoming a popular TV cop and correspondent.",
+        "Lesley Stahl, a Vietnam War veteran and former Director of News & Special Events at ABC, became famous for her role on the TV show \"60 Minutes.\"",
+        "Lesley Stahl, who later became a well-known journalist on 60 Minutes, was the Director of News & Special Events for ABC before finding fame as a TV cop.",
+        "Tommy Lee Jones served as the Director of News & Special Events for ABC before becoming a popular TV cop actor.",
+        "Lesley Stahl, a Vietnam War veteran and former Director of News & Special Events for ABC, became famous for her role as a TV cop on \"60 Minutes.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.22696776851531,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What US sitcom was the first exported to Britain?",
+      "gold_answers": [
+        "Amos 'n' Andy Show",
+        "Brazilian Brass Mines",
+        "Amos 'N' Andy",
+        "Amos 'n Andy Show",
+        "Amos ‘n’ Andy"
+      ],
+      "responses": [
+        "The first US sitcom exported to Britain was \"Three's Company\" in 1984.",
+        "The first US sitcom exported to Britain was \"Cheers\" in 1987.",
+        "The first US sitcom exported to Britain was \"Three's Company\" in 1984.",
+        "The first US sitcom exported to Britain was \"The Odd Couple\" in 1970.",
+        "The first US sitcom exported to Britain was \"Cheers\" in 1987."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -41.516481040727975,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In Hanna and Barbera's TV cartoons base on The Addams Family who was the voice of Gomez?",
+      "gold_answers": [
+        "John Astin"
+      ],
+      "responses": [
+        "The voice of Gomez Addams in Hanna-Barbera's TV cartoons was provided by Mel Blanc.",
+        "The voice of Gomez Addams in Hanna-Barbera's TV cartoons was provided by Don Messick.",
+        "The voice of Gomez Addams in Hanna-Barbera's TV cartoons was provided by Lou Gabor.",
+        "The voice of Gomez Addams in Hanna-Barbera's TV cartoons was provided by Lou Costello.",
+        "The voice of Gomez Addams in Hanna-Barbera's TV cartoons was provided by Don Messick."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.19695896183679,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was the only female victim to be killed off in the opening credit sequence in Police Squad?",
+      "gold_answers": [
+        "Flo Henderson",
+        "Florence Henderson",
+        "Florence Hendersen",
+        "Florence Agnes Henderson"
+      ],
+      "responses": [
+        "The only female victim killed off-screen in the opening credit sequence of Police Squad! was Gloria, played by Candice Bergen.",
+        "Linda Lavin was the only female character to be killed off-screen in the original Police Squad! TV series opening credits.",
+        "The only female victim killed off-screen in the opening credit sequence of Police Squad! was named Maryann.",
+        "Loretta Lumiere, a fictional character, was the only female victim killed off-screen in the opening credit sequence of Police Squad?.",
+        "The only female victim killed off-screen in the opening credit sequence of Police Squad is Officer Mary Malone."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.748809829960024,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which US president won the Nobel Peace Prize in 1920?",
+      "gold_answers": [
+        "Thomas W. Wilson",
+        "President Wilson's",
+        "Presidency of Woodrow Wilson",
+        "Woodrow Wilson",
+        "Woodrow Wilson's"
+      ],
+      "responses": [
+        "Woodrow Wilson was the U.S. president who won the Nobel Peace Prize in 1920.",
+        "Woodrow Wilson was the U.S. president who won the Nobel Peace Prize in 1920.",
+        "Woodrow Wilson was the U.S. president who won the Nobel Peace Prize in 1920.",
+        "Woodrow Wilson was the U.S. president who won the Nobel Peace Prize in 1920.",
+        "Woodrow Wilson was the U.S. president who won the Nobel Peace Prize in 1920."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -54.40740021415379,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who beat Tim Henman in his first Wimbledon singles semifinal?",
+      "gold_answers": [
+        "Pete Sampras",
+        "Sampras, Pete",
+        "Petros %22Pete%22 Sampras",
+        "Peter Sampras",
+        "Sampras"
+      ],
+      "responses": [
+        "Rafael Nadal beat Tim Henman in his first Wimbledon singles semifinal.",
+        "Roger Federer beat Tim Henman in his first Wimbledon singles semifinal.",
+        "Roger Federer beat Tim Henman in his first Wimbledon singles semifinal.",
+        "Roger Federer beat Tim Henman in his first Wimbledon singles semifinal.",
+        "Roger Federer beat Tim Henman in his first Wimbledon singles semifinal."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -47.57123305157917,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What relation was Flo Jo to Jackie Joyner Kersee?",
+      "gold_answers": [
+        "Sibling-in-law",
+        "Brother-in-law",
+        "Bro-law",
+        "Sister-in-Law",
+        "Sister in law"
+      ],
+      "responses": [
+        "Florence Griffith-Joyner was not related to Jackie Joyner-Kersee.",
+        "Florence Griffith-Joyner was not related to Jackie Joyner-Kersee; they were both renowned Olympic athletes but competed in different sports.",
+        "Florence Griffith-Joyner was not related to Jackie Joyner-Kersee.",
+        "Florence Griffith-Joyner was not related to Jackie Joyner-Kersee.",
+        "Florence Griffith-Joyner was not related to Jackie Joyner-Kersee."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.220604840446924,
+      "is_hallucination": 1
+    },
+    {
+      "question": "How long was swimmer Michelle Smith-de Bruin banned for attempting to manipulate a drugs test?",
+      "gold_answers": [
+        "4 years",
+        "four  time",
+        "4 time"
+      ],
+      "responses": [
+        "Michelle Smith-de Bruin was banned for two years after attempting to manipulate a drugs test.",
+        "Michelle Smith-de Bruin was banned for two years after attempting to manipulate a drugs test.",
+        "Michelle Smith-de Bruin was banned for two years after attempting to manipulate a drugs test.",
+        "Michelle Smith-de Bruin was banned for two years after attempting to manipulate a drugs test.",
+        "Michelle Smith-de Bruin was banned for two years after attempting to manipulate a drugs test."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.172667252390006,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Yuan Yuan was caught carrying drugs for which Chinese team?",
+      "gold_answers": [
+        "Swimming",
+        "To-suijutsu",
+        "Swam",
+        "Swimming (disambiguation)"
+      ],
+      "responses": [
+        "Yuan Yuan was caught carrying drugs for the Chinese Olympic Committee.",
+        "Yuan Yuan was caught carrying drugs for the Chinese Olympic Committee team.",
+        "Yuan Yuan was caught carrying drugs for the Chinese Olympic Committee team.",
+        "Yuan Yuan was caught carrying drugs for the Chinese Olympic Committee team.",
+        "Yuan Yuan was caught carrying drugs for the Chinese Olympic Committee."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -41.42561928213459,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which grand slam did Pete Sampras not win in the 20th century?",
+      "gold_answers": [
+        "The French",
+        "Francais",
+        "Frrench",
+        "Francaise",
+        "French"
+      ],
+      "responses": [
+        "Pete Sampras did not win the Australian Open in the 20th century.",
+        "Pete Sampras did not win the Australian Open in the 20th century, as it was not played during that time period.",
+        "Pete Sampras did not win the Australian Open in the 20th century, as it was first held in 1905, after his retirement.",
+        "Pete Sampras did not win the Australian Open in the 20th century.",
+        "Pete Sampras did not win the Australian Open in the 20th century, as it was introduced in 1968, after his career ended."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -45.311990904982075,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which events did Gert Fredriksson win six Olympic gold medals?",
+      "gold_answers": [
+        "Flatwater",
+        "Canoing",
+        "Flatwater canoeing",
+        "Canoeing",
+        "Canoers"
+      ],
+      "responses": [
+        "Gert Fredriksson won six Olympic gold medals in the decathlon events.",
+        "Gert Fredriksson won six Olympic gold medals in the decathlon.",
+        "Gert Fredriksson won six Olympic gold medals in the 5000m and 10000m track events.",
+        "Gert Fredriksson won six Olympic gold medals in the 1500 meters and 5000 meters track and field events.",
+        "Gert Fredriksson won six Olympic gold medals in the decathlon event."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.468150405196454,
+      "is_hallucination": 1
+    },
+    {
+      "question": "How many of his 45 races did Mike Hawthorn, a former Formula One motor racing world champion, win?",
+      "gold_answers": [
+        "3",
+        "three",
+        "Three"
+      ],
+      "responses": [
+        "Mike Hawthorn won 12 of his 45 Formula One races.",
+        "Mike Hawthorn won 16 of his 45 Formula One races.",
+        "Mike Hawthorn won 10 of his 45 Formula One races.",
+        "Mike Hawthorn won 10 of his 45 Formula One races.",
+        "Mike Hawthorn won 10 of his 45 Formula One races."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -48.71323870490579,
+      "is_hallucination": 1
+    },
+    {
+      "question": "On the Internet what is Spam?",
+      "gold_answers": [
+        "Junkmail",
+        "Junk Mail",
+        "Junk mail",
+        "Junk mail (disambiguation)",
+        "Junkmailing"
+      ],
+      "responses": [
+        "Spam refers to unsolicited and often promotional messages sent indiscriminately to a mailing list or email inbox, considered annoying or intrusive.",
+        "Spam refers to unsolicited and often promotional messages sent indiscriminately to a mailing list or newsgroup.",
+        "Spam refers to unsolicited and often advertising-based messages sent indiscriminately to a mailing list or in an electronic forum.",
+        "Spam refers to unsolicited and often advertising-based messages sent indiscriminately to a mailing list or via email.",
+        "Spam refers to unsolicited and often promotional messages sent indiscriminately to a mailing list or via email."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.81313044738769,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which country did the Internet start?",
+      "gold_answers": [
+        "VS America",
+        "The United States",
+        "America class",
+        "The U.-S.-A.",
+        "États-Unis d'Amérique"
+      ],
+      "responses": [
+        "The Internet started in the United States in the 1960s with military and academic networks.",
+        "The Internet started in the United States with early ARPANET research and development.",
+        "The Internet started in the United States in the 1960s with early packet switching networks.",
+        "The Internet started in the United States with early ARPANET research and development projects at universities and laboratories.",
+        "The Internet started in the United States in the 1960s with military and academic networks."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.45077313014439,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which year was the Juilliard School founded in New York?",
+      "gold_answers": [
+        "one thousand, nine hundred and five",
+        "1905"
+      ],
+      "responses": [
+        "The Juilliard School was founded in 1905 in New York.",
+        "The Juilliard School was founded in 1905 in New York.",
+        "The Juilliard School was founded in 1905 in New York.",
+        "The Juilliard School was founded in 1905 in New York.",
+        "The Juilliard School was founded in 1905 in New York."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -52.53460693359375,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who wrote My Life and Loves in 1926, originally banned in the US?",
+      "gold_answers": [
+        "Frank Harris"
+      ],
+      "responses": [
+        "D.H. Lawrence wrote \"My Life and Loves\" in 1926, which was originally banned in the US.",
+        "F. Scott Fitzgerald wrote \"My Life and Loves\" in 1926, which was originally banned in the US.",
+        "Evelyn Waugh wrote \"My Life and Loves\" in 1926, which was originally banned in the US.",
+        "F. Scott Fitzgerald wrote \"My Life and Loves\" in 1926, which was originally banned in the US.",
+        "Evelyn Waugh wrote \"My Life and Loves\" in 1926, which was originally banned in the US."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -48.58717417194895,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What was Blondie's last UK No 1 of the 80s?",
+      "gold_answers": [
+        "Pretribulation rapture",
+        "Rapture",
+        "Mid-tribulation rapture",
+        "Pre-trib",
+        "Pre-tribulational"
+      ],
+      "responses": [
+        "Blondie's last UK No 1 of the 80s was \"Call Me\" in 1986.",
+        "Blondie's last UK No 1 of the 80s was \"Call Me\" from their album Eat to the Beat.",
+        "Blondie's last UK No 1 of the 80s was \"Call Me\" from their album Eat to the Beat.",
+        "Blondie's last UK No 1 of the 80s was \"Heart of Glass\" from their album \"Parallel Lines\".",
+        "Blondie's last UK No 1 of the 80s was \"Call Me\" from their album \"Autodafe\" in 1986."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.48368739450215,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In baseball, where do the Royals come from?",
+      "gold_answers": [
+        "Kansas City",
+        "Kansas City Metro Area",
+        "Kansas City metropolitan Area",
+        "Kansas City metro area",
+        "Kansas city"
+      ],
+      "responses": [
+        "The Kansas City Royals come from Kansas City, Missouri.",
+        "The Kansas City Royals come from Kansas City, Missouri.",
+        "The Kansas City Royals come from Kansas City, Missouri.",
+        "The Kansas City Royals come from Kansas City, Missouri.",
+        "The Kansas City Royals come from Kansas City, Missouri."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -42.63207244873047,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What is the largest city in Ohio?",
+      "gold_answers": [
+        "Cleveland, USA",
+        "Government of Cleveland, Ohio",
+        "Cleveland, Ohio, U.S.",
+        "Clevelnad",
+        "Cleveland, oh"
+      ],
+      "responses": [
+        "Cleveland is the largest city by population in Ohio.",
+        "Cleveland is the largest city by population in Ohio.",
+        "Cleveland is the largest city by population in Ohio.",
+        "Cleveland is the largest city by population in Ohio.",
+        "Cleveland is the largest city by population in Ohio."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.48600800832113,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which decade of the 20th century was Anne Bancroft born?",
+      "gold_answers": [
+        "%6030s",
+        "The Thirties",
+        "Nineteen-thirties",
+        "1930’s",
+        "1930s"
+      ],
+      "responses": [
+        "Anne Bancroft was born in the 1930s of the 20th century.",
+        "Anne Bancroft was born in the 1930s of the 20th century.",
+        "Anne Bancroft was born in the 1930s of the 20th century.",
+        "Anne Bancroft was born in the 1930s of the 20th century.",
+        "Anne Bancroft was born in the 1930s of the 20th century."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -54.099383312722914,
+      "is_hallucination": 0
+    },
+    {
+      "question": "The Suez Canal connects the Mediterranean Sea to which other Sea?",
+      "gold_answers": [
+        "The red sea",
+        "Red Sea",
+        "Arabicus Sinus",
+        "Sinus Arabicus",
+        "Red sea"
+      ],
+      "responses": [
+        "The Suez Canal connects the Mediterranean Sea to the Red Sea.",
+        "The Suez Canal connects the Mediterranean Sea to the Red Sea.",
+        "The Suez Canal connects the Mediterranean Sea to the Red Sea.",
+        "The Suez Canal connects the Mediterranean Sea to the Red Sea.",
+        "The Suez Canal connects the Mediterranean Sea to the Red Sea."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -53.831774030412944,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which rock star did Cindy Crawford name her first son after?",
+      "gold_answers": [
+        "Pressly",
+        "Presley",
+        "Pressley"
+      ],
+      "responses": [
+        "Cindy Crawford named her first son Kaia after the famous fashion model and activist Karl Lagerfeld.",
+        "Cindy Crawford named her first son Spencer after her late husband, musician Spencer Krug.",
+        "Cindy Crawford named her first son Kaia after the rock star Kate Bush.",
+        "Cindy Crawford named her first son Kaia after the famous fashion model and activist Kaia Gerber.",
+        "Cindy Crawford named her first son Kaia after the late rock star Alexander \"Ike\" McGee."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.42007438809264,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Sun Yat Sen overthrew the emperor in which country establishing a republic after 2000 years of imperial rule?",
+      "gold_answers": [
+        "The Peoples Republic of China",
+        "PRChina",
+        "China's",
+        "China (Peking)",
+        "Zhōngguó"
+      ],
+      "responses": [
+        "Sun Yat-Sen overthrew the emperor in China, establishing a republic after 2000 years of imperial rule in 1911.",
+        "Sun Yat-Sen overthrew the emperor in China, establishing a republic after 2000 years of imperial rule.",
+        "Sun Yat-Sen overthrew the emperor in China, establishing a republic after 2000 years of imperial rule in 1911.",
+        "Sun Yat-Sen overthrew the emperor in China, establishing a republic after 2000 years of imperial rule in 1911.",
+        "Sun Yat-Sen overthrew the emperor in China, establishing a republic after 2000 years of imperial rule in 1911."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -50.309296003202114,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who designed the dress which made the most at Diana's dress auction?",
+      "gold_answers": [
+        "Victor Edelstein"
+      ],
+      "responses": [
+        "The designer of the dress that sold for the highest price at Diana, Princess of Wales' posthumous auction is Norman Hartnell.",
+        "The designer of the dress that sold for the highest price at Diana's dress auction is Zac Posen.",
+        "The designer of the dress that sold for the highest price at Diana, Princess of Wales' charity dress auction is Jean Paul Gaultier.",
+        "The designer of the dress that sold for the highest price at Diana's dress auction is Norman Hartnell.",
+        "The dress that made the most at Diana, Princess of Wales' auction was designed by Jean Muir."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.43768378777233,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which Palestinian co-founded al Fatah in 1957?",
+      "gold_answers": [
+        "Jassir Arafat",
+        "Muhammad Abd ar-Rauf al-Qudwah al-Husayni",
+        "محمد عبد الرحمن عبد الرؤوف عرفات القدوة الحسيني",
+        "Death of yasser arafat",
+        "Yasser Arafat"
+      ],
+      "responses": [
+        "Yasser Arafat co-founded al-Fatah in 1957.",
+        "Yasser Arafat co-founded al Fatah in 1957.",
+        "Yasser Arafat co-founded al-Fatah in 1957.",
+        "Yasser Arafat co-founded al-Fatah in 1957.",
+        "Yasser Arafat co-founded al Fatah in 1957."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.352133821186264,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In which country was Earl Spencer's acrimonious divorce settlement heard?",
+      "gold_answers": [
+        "ISO 3166-1:ZA",
+        "The Beloved Country",
+        "Republiek van Suid-Afrika",
+        "The Republic of South Africa",
+        "Rep. of SOUTH AFRICA"
+      ],
+      "responses": [
+        "Earl Spencer's acrimonious divorce settlement was heard in England.",
+        "Earl Spencer's acrimonious divorce settlement was heard in England.",
+        "Earl Spencer's acrimonious divorce settlement was heard in England.",
+        "Earl Spencer's acrimonious divorce settlement was heard in the High Court of England and Wales.",
+        "Earl Spencer's acrimonious divorce settlement was heard in London, United Kingdom."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -47.79926781427292,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which North African country was Mohammed Al-Fayed, owner of Harrods department store in London, born?",
+      "gold_answers": [
+        "Egypt (name)",
+        "Republic of Eygpt",
+        "National identity of Egyptians",
+        "Egypt info",
+        "Name of Egypt"
+      ],
+      "responses": [
+        "Mohammed Al-Fayed was born in Alexandria, Egypt.",
+        "Mohammed Al-Fayed was born in Alexandria, Egypt.",
+        "Mohammed Al-Fayed was born in Alexandria, Egypt.",
+        "Mohammed Al-Fayed was born in Alexandria, Egypt.",
+        "Mohammed Al-Fayed was born in Alexandria, Egypt."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.95042214026818,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Aung San Suu Kyi is a controversial leader in which country?",
+      "gold_answers": [
+        "Eastern Burma",
+        "Birma",
+        "Economic sanctions against Myanmar",
+        "မြန်မာပြည်",
+        "Mayanmar"
+      ],
+      "responses": [
+        "Aung San Suu Kyi is a controversial leader in Myanmar (formerly known as Burma).",
+        "Aung San Suu Kyi is a controversial leader in Myanmar (formerly known as Burma).",
+        "Aung San Suu Kyi is a controversial leader in Myanmar (formerly known as Burma).",
+        "Aung San Suu Kyi is a controversial leader in Myanmar (formerly known as Burma).",
+        "Aung San Suu Kyi is a controversial leader in Myanmar (formerly known as Burma)."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -51.60443630218506,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which of the founders of United Artists had the last name nearest the beginning of the alphabet?",
+      "gold_answers": [
+        "Chaplin (musical)",
+        "Chaplin (disambiguation)",
+        "Chaplin"
+      ],
+      "responses": [
+        "Charlie Chaplin, one of United Artists' founders, had the last name nearest the beginning of the alphabet.",
+        "Charlie Chaplin, who had the last name nearest the beginning of the alphabet among United Artists' founders, was not a founder but Dino De Laurentiis was closest to the start of the alphabet.",
+        "Charlie Chaplin, who had the last name nearest the beginning of the alphabet among the founders of United Artists, was the last name starting closest to the start of the alphabet.",
+        "Charlie Chaplin, one of United Artists' founders, had the last name nearest the beginning of the alphabet.",
+        "Charlie Chaplin, one of United Artists' founders, had the last name nearest the beginning of the alphabet."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.515916720539536,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In La Cage Aux Folles, what was La Cage Aux Folles?",
+      "gold_answers": [
+        "Clubgoer",
+        "Discotech",
+        "Night clubs",
+        "Dance Club",
+        "Disco pub"
+      ],
+      "responses": [
+        "La Cage Aux Folles is the name of both the title of the French comedy musical and the cabaret restaurant where it takes place in the Broadway adaptation.",
+        "La Cage Aux Folles is the name of the cabaret restaurant and nightclub in the French musical comedy \"La Cage aux Folles\" where the main characters work.",
+        "La Cage Aux Folles is the title of both the French comedy and the Broadway musical, literally translating to \"The Cage for the Mad People.\"",
+        "La Cage Aux Folles is the name of the gay nightclub where the play takes place in La Cage aux Folles.",
+        "La Cage Aux Folles is the title of both the French comedy show and its English translation meaning The Cage of Fools."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.03656234222205,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Where was the Fiddler in the musical's title?",
+      "gold_answers": [
+        "Sur les toits (cambrioleurs et gendarmes)",
+        "On the Roof",
+        "On the Roofs",
+        "Sur les toits"
+      ],
+      "responses": [
+        "The fiddler in the musical \"Fiddler on the Roof\" is a character who plays the role in the titular song, not necessarily located at a specific place.",
+        "The fiddler in the musical \"Fiddler on the Roof\" is a character in the titular tale set in the fictional Russian village of Anatevka.",
+        "The fiddler in the musical \"Fiddler on the Roof\" is traditionally set in the fictional village of Tcyganovka (often mistakenly called Grozdovka) in Russia.",
+        "The fiddler in the musical \"Fiddler on the Roof\" is traditionally said to play on a roof, but the specific location can vary depending on the production.",
+        "The fiddler in the musical \"Fiddler on the Roof\" is traditionally set in the fictional Russian town of Pinkhosovke."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.449371155728116,
+      "is_hallucination": 0
+    },
+    {
+      "question": "South Pacific was set during which war?",
+      "gold_answers": [
+        "World-War II",
+        "Ww2'",
+        "World War II/Edited Text",
+        "World war two",
+        "WarII"
+      ],
+      "responses": [
+        "South Pacific was set during World War II.",
+        "South Pacific was set during World War II.",
+        "South Pacific was set during World War II.",
+        "South Pacific was set during World War II.",
+        "South Pacific was set during World War II."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.20695457458496,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What percentage of the earth's surface is covered by Europe?",
+      "gold_answers": [
+        "eight  %",
+        "8 %",
+        "8%"
+      ],
+      "responses": [
+        "Zero, as Europe is a continent and does not cover any percentage of the Earth's surface.",
+        "Europe covers approximately 2% of the Earth's surface.",
+        "Zero, as Europe is a continent and does not cover any percentage of the Earth's surface.",
+        "Zero, as Europe is a continent and does not cover any percentage of the Earth's surface.",
+        "Zero, as Europe is a continent and does not cover any percentage of the Earth's surface."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -47.914028865034865,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which European town gave its name to a Treaty which symbolizes closer economic links between European countries?",
+      "gold_answers": [
+        "Mastericht",
+        "Mestreech",
+        "Maasthrict",
+        "Limmel",
+        "Maastricht, Netherlands"
+      ],
+      "responses": [
+        "Brussels, the capital of Belgium, gave its name to the Treaty establishing the European Community that symbolizes closer economic links between European countries.",
+        "Brussels, the capital of Belgium, gave its name to the Treaty establishing the European Economic Community symbolizing closer economic links between European countries.",
+        "Brussels, the capital of Belgium, gave its name to the Treaty establishing the European Community, symbolizing closer economic links between European countries.",
+        "Brussels, the capital of Belgium, gave its name to the Treaty establishing the European Economic Community (now European Union) that symbolizes closer economic links between European countries.",
+        "Brussels, the capital of Belgium, gave its name to the Treaty establishing the European Economic Community symbolizing closer economic links between European countries."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -45.03006055970855,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which home of champagne in France was also where the German High Command surrendered in WWII?",
+      "gold_answers": [
+        "Rheims, France",
+        "Rheims",
+        "Reims, France",
+        "Reims",
+        "Saint-Remi Cathedral"
+      ],
+      "responses": [
+        "Château de Villers-sur-Marne, a lesser-known champagne house, is where the German High Command surrendered in WWII, not a major champagne house like Krug or Moët & Chandon.",
+        "Château de Villandry in Chinon, an appellation within the Loire Valley, France, was where the German High Command surrendered in WWII, not a champagne house.",
+        "Château de Villandry, located in the Champagne region of France, is where the German High Command surrendered at the end of World War II.",
+        "Château de Villandry, a lesser-known chateau in France, was where the German High Command surrendered in WWII, not a champagne house.",
+        "Château de Villandry, located in the Champagne region of France, is where the German High Command surrendered at the end of World War II."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -38.58785512891866,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which was the first European city this century to open an underground railway system?",
+      "gold_answers": [
+        "Paris, France",
+        "Paris France",
+        "Name of Paris and its inhabitants",
+        "Parisien",
+        "Paříž"
+      ],
+      "responses": [
+        "London's Underground (Tube) system opened in 1863, marking the first of its kind in Europe this century.",
+        "London's Underground (Tube) was the first European city this century to open an underground railway system.",
+        "London's Underground (now known as the Tube) was the first European city to open an underground railway system this century.",
+        "London's Underground (the Tube) was the first European city this century to open an underground railway system.",
+        "London's Underground (now known as the Tube) was the first European city to open an underground railway system this century."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -43.17685600916545,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who first drew Mickey Mouse when ?Disney first supplied the voice?",
+      "gold_answers": [
+        "Iwerks, Ub",
+        "Celebrity Productions",
+        "Ubbe Ert Iwwerks",
+        "Ub Iwerks Studio",
+        "Ub Iwerks"
+      ],
+      "responses": [
+        "Walt Disney initially drew Mickey Mouse, but he provided the voice later.",
+        "Walt Disney first supplied the voice for Mickey Mouse when he was 15 years old, but Ub Iwerks is credited with creating the original drawing of Mickey Mouse.",
+        "Walt Disney first supplied Mickey Mouse's voice, and Ub Iwerks initially drew the character.",
+        "Walt Disney first supplied Mickey Mouse's voice in 1928, but the character was originally drawn by Ub Iwerks.",
+        "Walt Disney first supplied the voice for Mickey Mouse when he first drew the character in 1928."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.47699399978396,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which actress wrote the novel The Last of the Really Great Whangdoodles?",
+      "gold_answers": [
+        "Dame Julie Andrews",
+        "Julie Andrews",
+        "Julie Wells",
+        "Julie andrews",
+        "Julie Andrews Edwards"
+      ],
+      "responses": [
+        "The actress who wrote The Last of the Really Great Whangdoodles is Missy Elliot.",
+        "Tina Fey wrote the novel The Last of the Really Great Whangdoodles.",
+        "The actress who wrote The Last of the Really Great Whangdoodles is Missy Elliot.",
+        "The novel \"The Last of the Really Great Whangdoodles\" was not written by an actress, it was authored by Kenneth Grahame.",
+        "The novel \"The Last of the Really Great Whangdoodles\" was not written by an actress, but rather by Megan Whalen Turner, although she is primarily known as a novelist and not an actress."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.83830294464574,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who was the star of the film based on the record Harper Valley PTA by Jeannie C Riley?",
+      "gold_answers": [
+        "Barbara Morehead",
+        "Barbara Eden",
+        "Barbara Jean Morehead"
+      ],
+      "responses": [
+        "Reba McEntire starred as the lead role in the film adaptation of the song \"Harper Valley PTA\" from the album of the same name.",
+        "Reba McEntire starred in the film adaptation of the song \"Harper Valley PTA\" by Jeannie C. Riley.",
+        "Reba McEntire starred as the lead role in the film adaptation of Jeannie C. Riley's song \"Harper Valley PTA.\"",
+        "Reba McEntire starred in the film based on Jeannie C. Rielly's song \"Harper Valley PTA.\"",
+        "Reba McEntire starred as the lead in the film adaptation of the song Harper Valley PTA."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.209307248251775,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What color golf balls are used on the golf course in Antarctica?",
+      "gold_answers": [
+        "Oranfe",
+        "Orangishness",
+        "Orange",
+        "Orange (disambiguation)",
+        "Orangeishness"
+      ],
+      "responses": [
+        "Golf balls used on the course in Antarctica are typically white to ensure visibility against the snow.",
+        "Golf balls used on courses in Antarctica are typically white, as is standard worldwide.",
+        "Golf balls are not commonly used on courses in Antarctica due to extreme cold and lack of infrastructure, but if present, they would be white.",
+        "Golf balls used on the course in Antarctica are typically white, as is standard worldwide.",
+        "Golf balls used on the course in Antarctica are typically white to ensure visibility against the snow background."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -41.17727048308761,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Throughout the 80s and 90s Phil Collins recorded on which record label?",
+      "gold_answers": [
+        "The Pond",
+        "Occidental Ocean",
+        "Atlantic (ocean)",
+        "Antlantic Ocean",
+        "Ethiopian Ocean"
+      ],
+      "responses": [
+        "Throughout the 1980s and 1990s, Phil Collins recorded for the EMI label.",
+        "Throughout the 1980s and 1990s, Phil Collins recorded for the Virgin Records label.",
+        "Throughout the 1980s and 1990s, Phil Collins recorded for the Columbia Records label.",
+        "Phil Collins recorded for the Columbia Records label throughout the 1980s and 1990s.",
+        "Phil Collins recorded for the record label Warner Bros Records throughout the 1980s and 1990s."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -52.14203530825102,
+      "is_hallucination": 1
+    },
+    {
+      "question": "On which label did Chuck Berry record in the 1950s and 1960s?",
+      "gold_answers": [
+        "Şah",
+        "Chess publications",
+        "Escacs",
+        "Ŝako",
+        "शतरंज"
+      ],
+      "responses": [
+        "Chuck Berry recorded on Chess Records in the 1950s and 1960s.",
+        "Chuck Berry recorded on Chess Records in the 1950s and 1960s.",
+        "Chuck Berry recorded for Chess Records in the 1950s and 1960s.",
+        "Chuck Berry recorded on Chess Records in the 1950s and 1960s.",
+        "Chuck Berry recorded for the Chess Records label in the 1950s and 1960s."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -54.84216448792026,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What was the name of Michael Jackson's second wife?",
+      "gold_answers": [
+        "Deborah Rowe Jackson",
+        "Deborah Rowe",
+        "Debbie Rowe",
+        "Debbie Jackson",
+        "Deborah Jeanne Rowe"
+      ],
+      "responses": [
+        "Michael Jackson's second wife was Lisa Marie Presley.",
+        "Michael Jackson's second wife was Debbie Rowe.",
+        "Michael Jackson's second wife was Debbie Rowe.",
+        "Michael Jackson's second wife was Debbie Rowe.",
+        "Michael Jackson's second wife was Debbie Rowe."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -40.13687511590811,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which US city was named after a British Prime Minister?",
+      "gold_answers": [
+        "Pittsburgh, Allegheny County, Pennsylvania",
+        "The City of Bridges",
+        "Pittsburgh, Pennsylvania",
+        "Frick International Studies Academy Middle School",
+        "Pittsburgh, PA"
+      ],
+      "responses": [
+        "London, Ontario, Canada, was named after British Prime Minister William Pitt the Younger.",
+        "London, Ontario, Canada was named after British Prime Minister William Pitt the Younger.",
+        "London, a city in the United States, was named after British Prime Minister Edward Hyde, 1st Earl of Rochester.",
+        "Boston, the capital of Massachusetts in the United States, was named after Sir George Booth, a British politician.",
+        "London, Ontario, Canada, was named after the British Prime Minister William Pitt the Younger."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.38865812769476,
+      "is_hallucination": 1
+    },
+    {
+      "question": "\"Who said, To err is human but it feels divine?\"\"\"",
+      "gold_answers": [
+        "Mae West",
+        "Mae West filmography",
+        "Jane Mast",
+        "Mae west",
+        "Is that a gun in your pocket, or are you just happy to see me%3F"
+      ],
+      "responses": [
+        "Benjamin Disraeli reportedly said, \"To err is human, but it feels divine to be discovered.\"",
+        "The quote \"To err is human, but it feels divine\" is often attributed to Ben Jonson, though the exact attribution can vary.",
+        "Benjamin Disraeli famously said, \"To err is human, but it feels divine to be discovered.\"",
+        "The quote \"To err is human, but it feels divine\" is often attributed to Ben Jonson, though its exact origin is debated.",
+        "Ben Jonson is credited with saying \"To err is human, but to forgive, even when wronged, feels divine.\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -44.443847465515134,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Which singer had a big 60s No 1 with Roses Are Red?",
+      "gold_answers": [
+        "Bobby Vinton"
+      ],
+      "responses": [
+        "Gladys Knight had a big 1968 No. 1 hit with \"Roses Are Red.\"",
+        "Cilla Black had a big 1960s No 1 with \"Roses Are Red\"",
+        "Gladys Knight had a big 1968 No. 1 hit with \"Roses Are Red.\"",
+        "The singer who had a big 1960s No 1 with \"Roses Are Red\" was Dusty Springfield.",
+        "Gladys Knight had a big 1968 No. 1 hit with \"Roses Are Red\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -44.37299531603616,
+      "is_hallucination": 1
+    },
+    {
+      "question": "What are the international registration letters of a vehicle from Iceland?",
+      "gold_answers": [
+        "Is.",
+        "I.s.",
+        "I S",
+        "IS",
+        "I.S."
+      ],
+      "responses": [
+        "The international registration letters for a vehicle from Iceland are IS.",
+        "The international registration letters for a vehicle from Iceland are IS.",
+        "The international registration letters for a vehicle from Iceland are IS.",
+        "The international registration letters for a vehicle from Iceland are IS.",
+        "The international registration letters for a vehicle from Iceland are IS."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.079117848322944,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Where was the American venue of the Live Aid concert?",
+      "gold_answers": [
+        "Philadelphia, PA",
+        "Philadelphia (Pa.)",
+        "Philadelphia, U.S.",
+        "Philadelphia (City)",
+        "Philadelphia Regional Rail"
+      ],
+      "responses": [
+        "The American venue of the Live Aid concert was JFK Stadium in Philadelphia, Pennsylvania.",
+        "The American venue of the Live Aid concert was the JFK Stadium in Philadelphia, Pennsylvania.",
+        "The American venue of the Live Aid concert was the JFK Stadium in Philadelphia, Pennsylvania.",
+        "The American venue of the Live Aid concert was the JFK Stadium in Philadelphia, Pennsylvania.",
+        "The American venue of the Live Aid concert was the JFK Stadium in Philadelphia, Pennsylvania."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -42.094055497244504,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which was the longest moon landing?",
+      "gold_answers": [
+        "Apollo 17",
+        "Apollo17",
+        "Apollo XVII"
+      ],
+      "responses": [
+        "The longest moon landing was Apollo 17, which lasted approximately 3 days and 36 minutes.",
+        "The longest moon landing was Apollo 17, which lasted 12 days including launch and return.",
+        "The longest moon landing was Apollo 17, which lasted 12 days including launch and return.",
+        "The longest moon landing was Apollo 17, which spent 3 days on the lunar surface.",
+        "The longest moon landing was Apollo 17, which spent 3 days on the lunar surface."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -38.327201230810324,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who had the most expensive presidential inauguration ceremony of the 20th century?",
+      "gold_answers": [
+        "George Bush (2000)",
+        "George the Younger",
+        "G. Walker Bush",
+        "George W. Bush (painter)",
+        "Dubya"
+      ],
+      "responses": [
+        "Barack Obama's 2009 presidential inauguration had the most expensive inauguration ceremony of the 20th century.",
+        "Barack Obama's 2009 presidential inauguration had the most expensive inauguration ceremony of the 20th century.",
+        "Barack Obama's inauguration in 2009 is widely considered to have had the most expensive presidential inauguration ceremony of the 20th century.",
+        "Barack Obama's inauguration in 2009 is widely considered to have had the most expensive presidential inauguration ceremony of the 20th century.",
+        "Barack Obama's inauguration in 2009 is widely considered to have had the most expensive presidential inauguration ceremony of the 20th century."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -48.288859135395775,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Who became Israel's head of state in 1993?",
+      "gold_answers": [
+        "Ezer Weizman",
+        "עזר ויצמן",
+        "Ezer Weizmann"
+      ],
+      "responses": [
+        "Rabbi Yitzhak Rabin became Israel's head of state in 1993.",
+        "Rabin became Israel's head of state in 1993.",
+        "Yitzhak Rabin became Israel's head of state in 1993.",
+        "Rabbi Shimon Peres and Yitzhak Rabin became Israel's heads of state in 1993 as co-prime ministers.",
+        "Yitzhak Rabin became Israel's head of state in 1993."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.51463912214552,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In WWII, who was the head of the Nazi party's security service?",
+      "gold_answers": [
+        "Heidrich, Rinehart",
+        "Rinehard Heidrich",
+        "Rhinehardt Heydrich",
+        "ReinhardHeydrich",
+        "Heidrich, Reinhart"
+      ],
+      "responses": [
+        "In WWII, the head of the Nazi party's security service was Heinrich Himmler.",
+        "In WWII, the head of the Nazi party's security service was Reinhard Heydrich.",
+        "In WWII, the head of the Nazi party's security service was Reinhard Heydrich.",
+        "In WWII, the head of the Nazi party's security service was Heinrich Himmler.",
+        "In WWII, the head of the Nazi party's security service was Reinhard Heydrich."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -46.43112596511841,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which President of the Philippines was deposed in 1986?",
+      "gold_answers": [
+        "Marcos",
+        "Marcos (disambiguation)",
+        "Markos"
+      ],
+      "responses": [
+        "Corazon Aquino, who was deposed from being President of the Philippines in 1986 through the EDSA Revolution.",
+        "Ferdinand Marcos was deposed in 1986 during the Philippine People Power Revolution.",
+        "Corazon Aquino, who led the People Power Revolution that deposed Ferdinand Marcos in 1986, became the President of the Philippines.",
+        "Corazon Aquino, who led the People Power Revolution that deposed Ferdinand Marcos, became the President of the Philippines in 1986.",
+        "President Ferdinand Marcos was deposed in the People Power Revolution of 1986 in the Philippines."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -43.61519516679577,
+      "is_hallucination": 0
+    },
+    {
+      "question": "What kind of disaster claimed some 100,000 lives in Armenia in 1988?",
+      "gold_answers": [
+        "Seismic movement",
+        "Earthquakes",
+        "Causes of earthquakes",
+        "Earth tremor",
+        "Low-magnitude earthquake"
+      ],
+      "responses": [
+        "The 1988 Armenian earthquake claimed some 100,000 lives in Armenia.",
+        "The 1988 Armenian earthquake claimed some 100,000 lives in Armenia.",
+        "The 1988 Armenian earthquake claimed some 100,000 lives in Armenia.",
+        "The earthquake that struck Armenia in 1988, claiming some 100,000 lives, was a devastating disaster.",
+        "The 1988 Armenian earthquake claimed some 100,000 lives in Armenia."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -49.52320352147837,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which state on the Gulf of Mexico is nearest the end of the alphabet?",
+      "gold_answers": [
+        "Texas",
+        "Christianity in Texas",
+        "Twenty-Eighth State",
+        "The Lone Star State",
+        "28th state"
+      ],
+      "responses": [
+        "Alabama is the state on the Gulf of Mexico nearest the end of the alphabet.",
+        "Alabama is the state on the Gulf of Mexico that is nearest the end of the alphabet.",
+        "Alabama is the state on the Gulf of Mexico nearest the end of the alphabet.",
+        "Alabama is the state on the Gulf of Mexico nearest the end of the alphabet.",
+        "Alabama is the state on the Gulf of Mexico that is nearest the end of the alphabet."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -48.97350508443425,
+      "is_hallucination": 1
+    },
+    {
+      "question": "Truax Field international airport is in which US state?",
+      "gold_answers": [
+        "Transportation in Wisconsin",
+        "Wisconsin (U.S. state)",
+        "America's Dairyland",
+        "Film industry in Wisconsin",
+        "Wisc."
+      ],
+      "responses": [
+        "Truax Field international airport is in Wisconsin, USA.",
+        "Truax Field international airport is in Wisconsin, USA.",
+        "Truax Field Airport is located in Wyoming, United States.",
+        "Truax Field international airport is in Wisconsin, USA.",
+        "Truax Field international airport is in Wisconsin, United States."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.75100585595885,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In what month was the attack on Pearl Harbor?",
+      "gold_answers": [
+        "December",
+        "Xber",
+        "Dec.",
+        "㋋",
+        "Decembre"
+      ],
+      "responses": [
+        "The attack on Pearl Harbor occurred in December.",
+        "The attack on Pearl Harbor occurred in December.",
+        "The attack on Pearl Harbor occurred in December.",
+        "The attack on Pearl Harbor occurred in December.",
+        "The attack on Pearl Harbor occurred in December."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -51.83312454223633,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who did Dr. Crippen murder?",
+      "gold_answers": [
+        "His wife"
+      ],
+      "responses": [
+        "Dr. Crippen murdered his wife, Alice Crippen.",
+        "Dr. Crippen murdered his wife, Alice, in an infamous 1910 case of poisoning and smuggling her body out of the country.",
+        "Dr. Crippen murdered his wife, Alice, in what became one of the most notorious murders of the early 20th century.",
+        "Dr. Crippen murdered his wife Alice in 1910.",
+        "Dr. Crippen murdered his wife, Christine Garner."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.61933506760642,
+      "is_hallucination": 0
+    },
+    {
+      "question": "In the 1904 Olympics, how many of the 23 track and field titles were won by Americans?",
+      "gold_answers": [
+        "21",
+        "twenty-one"
+      ],
+      "responses": [
+        "In the 1904 Olympics, 8 out of 23 track and field titles were won by Americans.",
+        "In the 1904 Olympics, 18 out of 23 track and field titles were won by Americans.",
+        "In the 1904 Olympics, 15 of the 23 track and field titles were won by Americans.",
+        "In the 1904 Olympics, 16 out of the 23 track and field titles were won by Americans.",
+        "In the 1904 Olympics, 8 out of the 23 track and field titles were won by Americans."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -50.15295540138527,
+      "is_hallucination": 1
+    },
+    {
+      "question": "The Black Hills lie between which two rivers?",
+      "gold_answers": [
+        "Belle Fourche and Cheyenne"
+      ],
+      "responses": [
+        "The Black Hills lie between the Belle Fourche River and the Cheyenne River.",
+        "The Black Hills lie between the Cheyenne River and the James River.",
+        "The Black Hills lie between the Belle Fourche River and the Cheyenne River.",
+        "The Black Hills lie between the Belle Fourche River and the Cheyenne River.",
+        "The Black Hills lie between the Cheyenne River and the Missouri River."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.54517442126607,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In what year was the first in-flight movie shown on an internal flight in the USA.",
+      "gold_answers": [
+        "1929",
+        "one thousand, nine hundred and twenty-nine"
+      ],
+      "responses": [
+        "The first in-flight movie shown on an internal flight in the USA was in 1940.",
+        "The first in-flight movie shown on an internal flight in the USA was in 1940.",
+        "The first in-flight movie was shown on an internal flight in the USA in 1940.",
+        "The first in-flight movie was shown on an internal flight in the USA in 1940.",
+        "The first in-flight movie shown on an internal flight in the USA was in 1940."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.06314076510343,
+      "is_hallucination": 1
+    },
+    {
+      "question": "In which city was John Lennon murdered?",
+      "gold_answers": [
+        "Neo York",
+        "State of N Y",
+        "New York (U.S. state)",
+        "New-York",
+        "New York, US"
+      ],
+      "responses": [
+        "John Lennon was murdered in the city of New York, specifically in Manhattan.",
+        "John Lennon was murdered in the city of New York, specifically in Manhattan.",
+        "John Lennon was murdered in the city of New York, specifically in Manhattan.",
+        "John Lennon was murdered in the city of New York, specifically in Manhattan.",
+        "John Lennon was murdered in the city of New York, specifically in Manhattan."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.6554160118103,
+      "is_hallucination": 0
+    },
+    {
+      "question": "How was President Kennedy assassinated?",
+      "gold_answers": [
+        "Shot (drink)",
+        "SHOT",
+        "Shot (unit)",
+        "Shot",
+        "Shot (beverage)"
+      ],
+      "responses": [
+        "President John F. Kennedy was assassinated when he was shot by Lee Harvey Oswald in Dallas, Texas on November 22, 1963.",
+        "President John F. Kennedy was assassinated when he was shot by Lee Harvey Oswald in Dallas, Texas on November 22, 1963.",
+        "President John F. Kennedy was assassinated when he was shot by Lee Harvey Oswald in Dallas, Texas on November 22, 1963.",
+        "President John F. Kennedy was assassinated when he was shot and killed by Lee Harvey Oswald in Dallas, Texas, on November 22, 1963.",
+        "President John F. Kennedy was assassinated when he was shot by Lee Harvey Oswald in Dallas, Texas, on November 22, 1963."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -48.32737948626456,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Which caped crusader operated in Gotham City?",
+      "gold_answers": [
+        "Batman: War on Crime",
+        "Bruno Diaz",
+        "Bat Man",
+        "History of Batman",
+        "BatMan"
+      ],
+      "responses": [
+        "The caped crusader operating in Gotham City is Batman.",
+        "The caped crusader operating in Gotham City is Batman.",
+        "The caped crusader operating in Gotham City is Batman.",
+        "The caped crusader operating in Gotham City is Batman.",
+        "The caped crusader operating in Gotham City is Batman."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -50.43114266028771,
+      "is_hallucination": 0
+    },
+    {
+      "question": "Who did Jack Ruby shoot in November 1963?",
+      "gold_answers": [
+        "Lee harvy oswald",
+        "Lee Harvey Oswald's",
+        "A.J. Hidell",
+        "L.H.O.",
+        "Lee H. Oswald"
+      ],
+      "responses": [
+        "Jack Ruby shot and killed Lee Harvey Oswald, the alleged assassin of John F. Kennedy, in November 1963.",
+        "Jack Ruby shot and killed Lee Harvey Oswald in November 1963, in what became a pivotal moment of confusion during the investigation of the Kennedy assassination.",
+        "Jack Ruby shot and killed Lee Harvey Oswald, the alleged assassin of President John F. Kennedy, in November 1963.",
+        "Jack Ruby shot and killed Lee Harvey Oswald, the accused assassin of John F. Kennedy, in November 1963.",
+        "Jack Ruby shot and killed Lee Harvey Oswald, the assassin of John F. Kennedy, in November 1963."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.028371418621525,
+      "is_hallucination": 0
+    }
+  ]
+}

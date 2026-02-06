@@ -1,0 +1,3565 @@
+{
+  "dataset_name": "NaturalQuestions",
+  "timestamp": "2026-02-06T11:03:25.514967",
+  "config": {
+    "llm_model": "Qwen/Qwen2.5-3B-Instruct",
+    "nli_model": "microsoft/deberta-large-mnli",
+    "max_samples": 200,
+    "num_responses": 5
+  },
+  "metrics": {
+    "se_auroc": 0.6149932157394844,
+    "energy_auroc": 0.6184984170058797,
+    "zero_se_energy_auroc": 0.45674740484429066
+  },
+  "statistics": {
+    "n_hallucination": 134,
+    "n_normal": 66
+  },
+  "samples": [
+    {
+      "question": "when was the last time anyone was on the moon",
+      "gold_answers": [
+        "14 December 1972 UTC",
+        "December 1972"
+      ],
+      "responses": [
+        "The last person to set foot on the Moon was Eugene Cernan in 1972 during the Apollo 17 mission.",
+        "The last person to walk on the Moon was Eugene Cernan in 1972 during the Apollo 17 mission.",
+        "The last human landing on the Moon was in 1972 during the Apollo 17 mission.",
+        "The last human landing on the Moon was during the Apollo 17 mission in December 1972.",
+        "The last human to set foot on the Moon was as of 2019, during the Apollo 17 mission."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -45.25733548812284,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who wrote he ain't heavy he's my brother lyrics",
+      "gold_answers": [
+        "Bobby Scott",
+        "Bob Russell"
+      ],
+      "responses": [
+        "The lyrics \"He Ain't Heavy, He's My Brother\" were written by Joe Franklin and performed by Odetta.",
+        "The lyrics \"He Ain't Heavy, He's My Brother\" were written by Joe Franklin and performed by Carly Simon.",
+        "The lyrics \"He Ain't Heavy, He's My Brother\" were written by Irwin Silber and performed by Harry Belafonte.",
+        "The lyrics \"He Ain't Heavy, He's My Brother\" were written by Pete Seeger and Lee Hays.",
+        "The lyrics to \"He Ain't Heavy, He's My Brother\" were written by Joe Raposo for the Sesame Street character Big Bird."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.3957600346318,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many seasons of the bastard executioner are there",
+      "gold_answers": [
+        "one",
+        "one season"
+      ],
+      "responses": [
+        "There are 2 seasons of The Bastard Executioner series available on streaming platforms.",
+        "There are 3 seasons of The Bastard Executioner series available on streaming platforms.",
+        "There are 10 seasons of The Bastard Executioner available on streaming platforms.",
+        "There are 10 seasons of The Bastard Executioner series available on streaming platforms.",
+        "There are 3 seasons of The Bastard Executioner series available on streaming platforms."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -39.69090084453205,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the eagles win last super bowl",
+      "gold_answers": [
+        "2017"
+      ],
+      "responses": [
+        "The Philadelphia Eagles last won the Super Bowl in 2018.",
+        "The Philadelphia Eagles last won the Super Bowl in 2018.",
+        "The Philadelphia Eagles last won the Super Bowl in 2018.",
+        "The Philadelphia Eagles last won the Super Bowl in 2018.",
+        "The Philadelphia Eagles last won the Super Bowl in 2018."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.109270453453064,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who won last year's ncaa women's basketball",
+      "gold_answers": [
+        "South Carolina"
+      ],
+      "responses": [
+        "Last year's NCAA Women's Basketball Championship was won by South Carolina Tigers.",
+        "Last year's NCAA Women's Basketball Championship was won by South Carolina队.",
+        "Last year's NCAA Women's Basketball Championship was won by South Carolina Tigers.",
+        "Last year's NCAA Women's Basketball Championship was won by South Carolina Tigers.",
+        "Last year's NCAA Women's Basketball Championship was won by South Carolina Pacers."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.33136250972748,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the isle of wight become an island",
+      "gold_answers": [
+        "During the last Ice Age"
+      ],
+      "responses": [
+        "The Isle of Wight became an island following the end of the last Ice Age approximately 12,000 years ago.",
+        "The Isle of Wight became an island following the last Ice Age approximately 12,000 years ago.",
+        "The Isle of Wight became an island following the end of the last Ice Age approximately 12,000 years ago.",
+        "The Isle of Wight became an island following the end of the last Ice Age approximately 12,000 years ago.",
+        "The Isle of Wight became an island around 12,000 years ago following the end of the last ice age."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.37910191334077,
+      "is_hallucination": 1
+    },
+    {
+      "question": "love yourself by justin bieber is about who",
+      "gold_answers": [
+        "Rihanna"
+      ],
+      "responses": [
+        "\"Love Yourself\" by Justin Bieber is primarily about self-love and personal growth, though it also touches on themes of overcoming past mistakes and toxic relationships.",
+        "\"Love Yourself\" by Justin Bieber is about self-love and personal growth, particularly in the context of toxic relationships.",
+        "\"Love Yourself\" by Justin Bieber is about self-love and personal growth, particularly addressing toxic relationships and affirming one's worth.",
+        "\"Love Yourself\" by Justin Bieber is primarily about personal growth and self-love, though it also touches on relationship issues.",
+        "\"Love Yourself\" by Justin Bieber is about the artist reflecting on self-love and personal growth."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.636218937960535,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who was the ruler of england in 1616",
+      "gold_answers": [
+        "James I"
+      ],
+      "responses": [
+        "James I was the ruler of England in 1616.",
+        "James I was the ruler of England in 1616.",
+        "King James I ruled England in 1616.",
+        "James I was the ruler of England in 1616.",
+        "James I was the ruler of England in 1616."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -52.31536154551049,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what is the hot coffee mod in san andreas",
+      "gold_answers": [
+        "a normally inaccessible mini-game"
+      ],
+      "responses": [
+        "The Hot Coffee mod was a controversial add-on for Grand Theft Auto: San Andreas that included adult content, including simulated sex scenes with nude characters.",
+        "The Hot Coffee Mod was a controversial downloadable content for Grand Theft Auto: San Andreas that included adult themes and nudity, which faced legal challenges upon release.",
+        "The Hot Coffee Mod is a controversial modification for Grand Theft Auto: San Andreas that allows players to consume alcoholic beverages, including simulated hot coffee with alcohol content.",
+        "The Hot Coffee mod was an adult-themed content add-on for Grand Theft Auto: San Andreas, allowing players to simulate simulated sexual activities.",
+        "The Hot Coffee Mod is a controversial add-on for Grand Theft Auto: San Andreas that includes sexually explicit content, including simulated sexual acts."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.35300093529209,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the maximum data rate for the 802.11a standard select one",
+      "gold_answers": [
+        "54 Mbit/s"
+      ],
+      "responses": [
+        "The maximum data rate for the 802.11a standard is 54 Mbps.",
+        "The maximum data rate for the 802.11a standard is 54 Mbps.",
+        "The maximum data rate for the 802.11a standard is 54 Mbps.",
+        "The maximum data rate for the 802.11a standard is 54 Mbps.",
+        "The maximum data rate for the 802.11a standard is 54 Mbps."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -54.376840418035336,
+      "is_hallucination": 1
+    },
+    {
+      "question": "which state is located in the centre of india",
+      "gold_answers": [
+        "Chhattisgarh",
+        "Madhya Pradesh"
+      ],
+      "responses": [
+        "Madhya Pradesh is located in the center of India.",
+        "Madhya Pradesh is the central state of India.",
+        "Madhya Pradesh is the state located in the centre of India.",
+        "Madhya Pradesh is the central state of India.",
+        "Madhya Pradesh is the state located in the centre of India."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.2762640060917,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who sang i ran all the way home",
+      "gold_answers": [
+        "The Impalas"
+      ],
+      "responses": [
+        "Van Morrison sang \"I Ran (Far from Home)\"",
+        "Van Morrison sang \"I Ran (Far from Home)\"",
+        "Van Morrison sang \"I Ran (So Fast)\"",
+        "Van Morrison sang \"I Ran (So Far Away)\"",
+        "Van Morrison sang \"I Ran (Far Away)\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -37.3865982252976,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where did the last name wallace come from",
+      "gold_answers": [
+        "a Scottish surname"
+      ],
+      "responses": [
+        "The surname Wallace likely derives from a medieval Scottish position denoting a relation to a nobleman named Wallace.",
+        "The surname Wallace likely originates from a medieval Scottish place name meaning \"wall builder.\"",
+        "The surname Wallace likely originates from a medieval Scottish place name meaning \"wall builder.\"",
+        "The surname Wallace is derived from the Old English words \"wallas\" or \"walcen,\" meaning \"dwellers in Wales\" or \"people of Wall.\"",
+        "The surname Wallace likely derives from a medieval Scottish place name associated with a fortified house or castle."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.49803292214334,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who was the actor that played ben stone on law and order",
+      "gold_answers": [
+        "Michael Moriarty"
+      ],
+      "responses": [
+        "The actor who played Ben Stone on Law & Order: SVU is Chris Meloni.",
+        "The actor who played Ben Stone on Law & Order: Special Victims Unit was Dylan Walsh.",
+        "The actor who played Ben Stone on Law & Order: SVU is Lee Arenberg.",
+        "The actor who played Ben Stone on Law & Order: Special Victims Unit was Dylan Walsh.",
+        "The actor who played Ben Stone on Law & Order: SVU is Lee Arenberg."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -39.54178083319413,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who does the voice of nala in the lion king",
+      "gold_answers": [
+        "Niketa Calame",
+        "Sally Dworsky",
+        "Moira Kelly",
+        "Laura Williams"
+      ],
+      "responses": [
+        "The voice of Nala in The Lion King is provided by Ernie Sabella.",
+        "The voice of Nala in The Lion King is provided by Elisa Anne Conte.",
+        "The voice of Nala in The Lion King is provided by Ernie Sabella.",
+        "The voice of Nala in The Lion King is provided by Elisa Markus.",
+        "The voice of Nala in The Lion King is provided by Elisa Rogers."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.25198169188066,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays gram on the young and the restless",
+      "gold_answers": [
+        "Max Shippee"
+      ],
+      "responses": [
+        "Tracy Velloni plays Gram on The Young and the Restless.",
+        "Rebecca Lazarus plays Gram on The Young and the Restless.",
+        "Rebecca Lavelle plays Gram on The Young and the Restless.",
+        "Rebecca Louie plays Gram on The Young and the Restless.",
+        "Katemorennin O'Donnell plays Gram on The Young and the Restless."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.027518543196315,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the oath that new citizens take",
+      "gold_answers": [
+        "United States Oath of Allegiance"
+      ],
+      "responses": [
+        "New U.S. citizens typically take an Oath of Allegiance or an Oath of Citizenship during their naturalization ceremony.",
+        "New U.S. citizens take an Oath of Allegiance or an Oath of Renunciation and Allegiance, depending on their immigration status.",
+        "New U.S. citizens take an Oath of Allegiance or an Oath of Renunciation and Allegiance, depending on their previous citizenship status.",
+        "New U.S. citizens take an Oath of Allegiance or an Oath of Renunciation and Allegiance, depending on their previous citizenship status.",
+        "New U.S. citizens typically take an Oath of Allegiance during their naturalization ceremony."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.889255869215816,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is under the mask of darth vader",
+      "gold_answers": [
+        "Anakin Skywalker"
+      ],
+      "responses": [
+        "Under the mask of Darth Vader is Emperor Palpatine, the Sith Lord who controls him.",
+        "Under the mask of Darth Vader is Emperor Palpatine, a Sith Lord and the ruler of the Galactic Empire.",
+        "Under the mask of Darth Vader is Emperor Palpatine, a Sith Lord and former Supreme Chancellor of the Galactic Republic.",
+        "Under the mask of Darth Vader is Emperor Palpatine, a Sith Lord and the Chancellor of the Galactic Republic before its transformation into the Galactic Empire.",
+        "Under the mask of Darth Vader is Emperor Palpatine, the Sith Lord who controls him."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.325044345855716,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who had a baby at 100 in the bible",
+      "gold_answers": [
+        "Sarah",
+        "Abraham"
+      ],
+      "responses": [
+        "In the Bible, there is no recorded instance of someone having a baby at 100 years old.",
+        "Eve, according to some biblical interpretations and folklore, is said to have been the first person to conceive and give birth at the age of 180, not 100.",
+        "In the Bible, Sarah had a baby, Isaac, at the age of 90, not at 100 as commonly misunderstood.",
+        "According to the Bible, Sarah had a baby at 127, not exactly at 100 but nearing it, through Abraham.",
+        "In the Bible, Anna is said to have been miraculously granted a grandson at 100 after dedicating herself to God from her youth."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.75719848236481,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what age do you need to be to buy a bb gun",
+      "gold_answers": [
+        "18"
+      ],
+      "responses": [
+        "You typically need to be at least 18 years old to buy a BB gun without a permit in most places.",
+        "You typically need to be at least 18 years old to buy a BB gun without a permit in most places, though this can vary by location and type of firearm.",
+        "You typically need to be at least 18 years old to purchase a BB gun without a permit, varying by jurisdiction.",
+        "You typically need to be at least 18 years old to purchase a BB gun without a permit, varying by jurisdiction and state laws.",
+        "You typically need to be at least 18 years old to purchase a BB gun without parental consent or special permit in most countries."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -45.735767894321015,
+      "is_hallucination": 0
+    },
+    {
+      "question": "ethiopia flight 961 crashes in to the sea",
+      "gold_answers": [
+        "23 November 1996"
+      ],
+      "responses": [
+        "Ethiopia Flight 961 tragically crashed into the sea, resulting in loss of life.",
+        "Ethiopia Flight 961 tragically crashed into the sea.",
+        "Ethiopia Flight 961 tragically crashed into the sea.",
+        "Ethiopia Flight 961 tragically crashed into the sea.",
+        "Ethiopia Flight 961 tragically crashed into the sea."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -47.34867229018101,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where was percy jackson and the olympians filmed",
+      "gold_answers": [
+        "Vancouver",
+        "Mission, British Columbia"
+      ],
+      "responses": [
+        "Most of Percy Jackson & the Olympians films were filmed in various locations across the United States, including Maryland, New Mexico, and Northern Ireland.",
+        "The majority of filming locations for Percy Jackson & the Olympians were in New Mexico, USA.",
+        "Percy Jackson & the Olympians films were primarily filmed in various locations across North Carolina, including Asheville, Charlotte, and Boone.",
+        "The majority of \"Percy Jackson & the Olympians\" films were filmed in various locations across the United States, including New Mexico and Utah for their scenic landscapes.",
+        "Most of Percy Jackson & the Olympians films were filmed in locations across North Carolina, including Asheville, Boone, and more."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.52581468760538,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many seasons of vampire diaries r there",
+      "gold_answers": [
+        "eight",
+        "8"
+      ],
+      "responses": [
+        "There are 7 seasons in the TV series The Vampire Diaries.",
+        "There are 7 seasons in the TV series The Vampire Diaries.",
+        "There are 7 seasons in the TV series The Vampire Diaries.",
+        "There are 7 seasons in the TV show Vampire Diaries.",
+        "There are 7 seasons in the TV series The Vampire Diaries."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.20054193445154,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many episodes are there in dragon ball z",
+      "gold_answers": [
+        "291 episodes",
+        "291"
+      ],
+      "responses": [
+        "There are 291 episodes in the Dragon Ball Z series.",
+        "There are 291 episodes in the Dragon Ball Z anime series.",
+        "There are 291 episodes in the Dragon Ball Z anime series.",
+        "There are 291 episodes in the Dragon Ball Z series.",
+        "There are 290 episodes in the Dragon Ball Z anime series."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -42.118098821395485,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who plays auggie in the movie the wonder",
+      "gold_answers": [
+        "Jacob Tremblay"
+      ],
+      "responses": [
+        "Jacob Tremblay plays Auggie in the movie The Wonder.",
+        "Jacob Tremblay plays Auggie in the movie The Wonder.",
+        "Jacob Tremblay plays Auggie in the movie The Wonder.",
+        "Jacob Tremblay plays Auggie in the movie The Wonder.",
+        "Jacob Tremblay plays Auggie in the movie The Wonder."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -39.992773818969724,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when was the first australian prime minister elected",
+      "gold_answers": [
+        "Sir Edmund Barton",
+        "1901"
+      ],
+      "responses": [
+        "The first Australian Prime Minister, Edmund Barton, was elected in 1901 after Federation.",
+        "The first Australian Prime Minister, Edmund Barton, was elected in 1906.",
+        "The first Australian Prime Minister, Edmund Barton, was elected in 1901 upon Federation.",
+        "The first Australian Prime Minister, Edmund Barton, was elected in 1901 after Federation.",
+        "The first Australian Prime Minister, Edmund Barton, was elected in 1901 after Federation."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -43.22214076588455,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who plays matthew on anne with an e",
+      "gold_answers": [
+        "R. H. Thomson"
+      ],
+      "responses": [
+        "AnnaSophia Robb plays Matthew on the series Anne with an E.",
+        "Alexz Johnson plays Matthew on the series Anne with an E.",
+        "AnnaSophia Robb plays Matthew on the series Anne with an E.",
+        "Lorene Scafaria plays Matthew on the series Anne with an E.",
+        "Katherine Arquette plays Matthew on the series Anne with an E."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -37.61477736937694,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the girl in green day 21 guns",
+      "gold_answers": [
+        "Lisa Stelly"
+      ],
+      "responses": [
+        "The girl in Green Day's song \"21 Guns\" is an unnamed victim of a shooting referenced in the lyrics, not a specific real-life person.",
+        "The girl in Green Day's song \"21 Guns\" is not a real person but a fictional character created for the song's narrative.",
+        "The girl in Green Day's song \"21 Guns\" is an abstract figure representing violence and danger, not a real person.",
+        "The girl in Green Day's song \"21 Guns\" is an anonymous character used for artistic expression, not a real person.",
+        "The girl in Green Day's song \"21 Guns\" is not a real person but a fictional victim of a shooting incident described in the lyrics."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -39.325182248468266,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays joker in batman the dark knight",
+      "gold_answers": [
+        "Ledger"
+      ],
+      "responses": [
+        "Heath Ledger plays the Joker in Batman v Superman: Dawn of Justice, released in 2016, which is widely considered the definitive performance of the character.",
+        "Heath Ledger plays the Joker in Batman: The Dark Knight.",
+        "Heath Ledger plays the Joker in Batman v Superman: Dawn of Justice, including the Dark Knight film.",
+        "Heath Ledger plays the Joker in Batman: The Dark Knight.",
+        "Heath Ledger plays the Joker in The Dark Knight."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.63520789392216,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when was the south asian association for regional co-operation (saarc) formed",
+      "gold_answers": [
+        "December 1985",
+        "8 December 1985"
+      ],
+      "responses": [
+        "The South Asian Association for Regional Cooperation (SAARC) was formed in 1985.",
+        "The South Asian Association for Regional Cooperation (SAARC) was formed on 8 January 1985.",
+        "The South Asian Association for Regional Cooperation (SAARC) was formed in 1985.",
+        "The South Asian Association for Regional Cooperation (SAARC) was formed on 8 December 1985.",
+        "The South Asian Association for Regional Cooperation (SAARC) was formed on 8 December 1985."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -50.078136912563394,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when was the first hunger games book published",
+      "gold_answers": [
+        "September 14, 2008",
+        "2008"
+      ],
+      "responses": [
+        "The first Hunger Games book was published in 2008.",
+        "The first Hunger Games book was published in 2008.",
+        "The first Hunger Games book was published in 2008.",
+        "The first Hunger Games book was published in 2008.",
+        "The first Hunger Games book was published in 2008."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.85530268351237,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who did bette midler portray in the rose",
+      "gold_answers": [
+        "Mary Rose Foster"
+      ],
+      "responses": [
+        "Bette Midler portrayed Rose Nylund in the television series Roseanne.",
+        "Bette Midler portrayed Rose Byrne in the Broadway revival of \"The Rose.\"",
+        "Bette Midler portrayed Rose Ashby in the Broadway revival of \"The Rose.\"",
+        "Bette Midler portrayed Rose Ashby in the 1991 film \"The Rose.\"",
+        "Bette Midler portrayed Rose Ashby in the Broadway revival of \"The Rose.\""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -38.02279749021425,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the lead singer of depeche mode",
+      "gold_answers": [
+        "David Gahan"
+      ],
+      "responses": [
+        "The lead singer of Depeche Mode is Dave Gahan.",
+        "The lead singer of Depeche Mode is Dave Gahan.",
+        "The lead singer of Depeche Mode is Dave Gahan.",
+        "The lead singer of Depeche Mode is Dave Gahan.",
+        "The lead singer of Depeche Mode is Vince Clarke."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -42.55133095340452,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where did the butchers in the slaughterhouse cases live",
+      "gold_answers": [
+        "New Orleans"
+      ],
+      "responses": [
+        "The butchers in the Slaughterhouse Cases lived in New Orleans, Louisiana.",
+        "The Butcher case plaintiffs lived across state lines and operated a successful business selling meat nationwide.",
+        "The butchers in the Slaughterhouse Cases lived in New Orleans, Louisiana.",
+        "The Butcher case plaintiffs lived in the territories that were later admitted as states, challenging the federal government's power to exclude them through protective tariffs.",
+        "The butchers in the Slaughterhouse Cases lived in New Orleans, Louisiana."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -38.714691677093505,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who developed the concept of total quality management",
+      "gold_answers": [
+        "W. Edwards Deming"
+      ],
+      "responses": [
+        "W. Edwards Deming developed the concept of total quality management.",
+        "W. Edwards Deming developed the concept of total quality management.",
+        "W. Edwards Deming developed the concept of total quality management.",
+        "W. Edwards Deming developed the concept of total quality management.",
+        "W. Edwards Deming developed the concept of total quality management."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.82448428017752,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who wrote cant get you out of my head lyrics",
+      "gold_answers": [
+        "Cathy Dennis and Rob Davis",
+        "Rob Davis",
+        "Cathy Dennis"
+      ],
+      "responses": [
+        "The lyrics for \"Cant Get You Out of My Head\" were written by Will Jennings and Duncan James from S Club 7.",
+        "The lyrics for \"Cant Get You Out of My Head\" were written by Max Martin and Shellback.",
+        "The lyrics to \"Can't Get You Out of My Head\" were written by Max Martin and Shellback.",
+        "The lyrics for \"Can't Get You Out of My Head\" were written by Max Martin and Shellback.",
+        "The lyrics for \"Can't Get You Out of My Head\" were written by Duncan James from the band S Club 7."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.50287580490112,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does no game no life anime end",
+      "gold_answers": [
+        "the Elkia Federation",
+        "the sixth volume"
+      ],
+      "responses": [
+        "The anime series \"No Game No Life\" ends with the Season 2 finale, which consists of two episodes.",
+        "The anime series \"No Game No Life\" ends with the final episode titled \"The End of the End.\"",
+        "The anime series \"No Game No Life\" ends with the second season finale, concluding the main storyline.",
+        "The anime series \"No Game No Life\" ends with the second season concluding after 13 episodes.",
+        "The anime series \"No Game No Life\" ends with the second season finale, concluding the main storyline."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.757334768244654,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did taylor swift's first album release",
+      "gold_answers": [
+        "October 24, 2006",
+        "2005"
+      ],
+      "responses": [
+        "Taylor Swift's first studio album \"Taylor Swift\" was released on November 15, 2006.",
+        "Taylor Swift's first studio album \"Taylor Swift\" was released on November 15, 2006.",
+        "Taylor Swift's first studio album \"Taylor Swift\" was released on November 15, 2006.",
+        "Taylor Swift's first studio album \"Taylor Swift\" was released on November 15, 2006.",
+        "Taylor Swift's first studio album \"Taylor Swift\" was released on November 15, 2006."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.181039581298826,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what are the three fifty shades of grey books",
+      "gold_answers": [
+        "Fifty Shades of Grey",
+        "Fifty Shades Darker",
+        "Fifty Shades Freed"
+      ],
+      "responses": [
+        "The three Fifty Shades of Grey books are Fifty Shades of Grey, Fifty Shades Darker, and Fifty Shades Freed.",
+        "The three Fifty Shades of Grey books are Fifty Shades of Grey, Fifty Shades Darker, and Fifty Shades Freed.",
+        "The three Fifty Shades of Grey books are Fifty Shades of Grey, Fifty Shades Darker, and Fifty Shades Freed.",
+        "The three Fifty Shades of Grey books are Fifty Shades of Grey, Fifty Shades Darker, and Fifty Shades Freed.",
+        "The three Fifty Shades of Grey books are Fifty Shades of Grey, Fifty Shades Darker, and Fifty Shades Freed."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -42.51253628730774,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who has the power (judicial) to make decisions in courts of law",
+      "gold_answers": [
+        "judges"
+      ],
+      "responses": [
+        "The judicial branch, specifically judges and courts, has the power to make decisions in courts of law.",
+        "The power to make decisions in courts of law lies with judges and juries, depending on the legal system and the type of case.",
+        "The power to make decisions in courts of law is vested in judges, who are appointed or elected to preside over judicial proceedings and interpret laws.",
+        "The power to make decisions in courts of law resides with judges and juries as per the legal system's structure and jurisdiction.",
+        "The judicial branch, specifically judges and courts, has the power to make decisions in courts of law."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.15273975190662,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what are the ranks in the us navy",
+      "gold_answers": [
+        "E-8s senior chief petty officer",
+        "E-9s master chief petty officer"
+      ],
+      "responses": [
+        "The ranks in the US Navy include enlisted (Sealower to Chief) and officer ranks (acting rates and commissioned officers from Ensign to Admiral).",
+        "The US Navy ranks sailors from Seamen (the lowest) to Admiral (the highest), including Officers and Enlisted classifications with various subdivisions.",
+        "The US Navy ranks include Officers, Enlisted, and Ratings with various classifications from Admiral to Seaman Apprentice.",
+        "The US Navy ranks include officers, enlisted personnel, and various ratings, with a hierarchical structure from Seaman Apprentice to Admiral.",
+        "The ranks in the US Navy include enlisted and officer classifications from E-1 (Seaman Apprentice) to O-10 (Admiral), with numerous steps between each rank."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -38.511407449942865,
+      "is_hallucination": 1
+    },
+    {
+      "question": "i was a great islamic scholar and mathematician who died in 1131 ce",
+      "gold_answers": [
+        "Omar Khayyam"
+      ],
+      "responses": [
+        "Ibn al-Haytham (Alhazen) was a renowned Islamic scholar and mathematician who died in 1131 CE.",
+        "Ibn al-Haytham (Alhazen) was a great Islamic scholar and mathematician who died in 1131 CE.",
+        "Ibn al-Haytham (Alhazen) was a great Islamic scholar and mathematician who died in 1131 CE.",
+        "Ibn al-Haytham was a great Islamic scholar and mathematician who died in 1131 CE.",
+        "Ibn al-Haytham (Alhazen) was a renowned Islamic scholar and mathematician who died in 1131 CE."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.762588017781574,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the coach for the ottawa senators",
+      "gold_answers": [
+        "Guy Boucher"
+      ],
+      "responses": [
+        "The current head coach for the Ottawa Senators is filip vanek.",
+        "The current head coach for the Ottawa Senators is Filip Zagar.",
+        "The current coach for the Ottawa Senators is Fil Emond.",
+        "The current head coach for the Ottawa Senators is Filip Forsberg.",
+        "The current head coach for the Ottawa Senators is Peter DeBoer."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.77836486084821,
+      "is_hallucination": 1
+    },
+    {
+      "question": "last episode of what happens to my family",
+      "gold_answers": [
+        "53"
+      ],
+      "responses": [
+        "It is unclear as \"What Happens to My Family\" refers to various TV shows, so without specifying which show, it's impossible to identify its last episode.",
+        "It is unclear which specific show and episode you are referring to as \"What Happens to My Family\" does not refer to any widely recognized TV series.",
+        "\"What Happens to My Family?\" has concluded and is no longer airing new episodes.",
+        "\"What Happens to My Family?\" has concluded its run, as it was a reality TV series that ended permanently.",
+        "\"What Happens to My Family?\" has concluded, as it was a reality TV series that ended its run after multiple seasons."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.045704115682575,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when is the last time the vikings were in the nfc championship",
+      "gold_answers": [
+        "1976",
+        "2017/18"
+      ],
+      "responses": [
+        "The Vikings last reached the NFC Championship in the 2019 NFL season.",
+        "The Vikings have not been to the NFC Championship since 2015.",
+        "The last time the Vikings were in the NFC Championship was during the 2019 NFL season.",
+        "The Vikings were last in the NFC Championship in 2019 when they lost to the Saints.",
+        "The last time the Vikings were in the NFC Championship was in 2019."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.37256614529357,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what are the colors of the netherlands flag",
+      "gold_answers": [
+        "blue",
+        "white",
+        "red"
+      ],
+      "responses": [
+        "The Netherlands flag colors are red, white, and blue.",
+        "The Netherlands flag colors are red, white, and blue.",
+        "The colors of the Netherlands flag are red, white, and blue.",
+        "The Netherlands flag consists of a red base with a white horizontal stripe at the hoist side.",
+        "The colors of the Netherlands flag are red, white, and blue."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -45.20197215833162,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where is lord's prayer found in bible",
+      "gold_answers": [
+        "in the Gospel of Luke"
+      ],
+      "responses": [
+        "The Lord's Prayer is found in the Gospel of Matthew, chapter 6, verses 9-13 in most translations of the Bible.",
+        "The Lord's Prayer is found in the Gospel of Matthew, chapter 6, verses 9-13 in most Bible versions.",
+        "The Lord's Prayer is found in the Gospel of Matthew, chapter 6, verses 9-13 in most Bible versions.",
+        "The Lord's Prayer is found in the Gospel of Matthew, chapter 6, verses 9-13 in most translations of the Bible.",
+        "The Lord's Prayer is found in the Gospel of Matthew, chapter 6, verses 9-13 in most Bible versions."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.4773711098565,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when was the last time oklahoma won a national championship in football",
+      "gold_answers": [
+        "2003",
+        "2000"
+      ],
+      "responses": [
+        "Oklahoma's last national championship victory was in 2000.",
+        "Oklahoma's last national championship victory was in 2000.",
+        "Oklahoma's last national championship victory was in 2000.",
+        "Oklahoma's last national championship victory in football was in 2000.",
+        "Oklahoma's last national championship victory was in 2000."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.508552595116626,
+      "is_hallucination": 0
+    },
+    {
+      "question": "location of the ten commandments in the bible",
+      "gold_answers": [
+        "Exodus",
+        "Deuteronomy"
+      ],
+      "responses": [
+        "The Ten Commandments are found in the Book of Exodus and the Book of Deuteronomy in the Hebrew Bible and Christian Old Testament.",
+        "The Ten Commandments are found in the second half of the book of Exodus and the beginning of the book of Deuteronomy in the Hebrew Bible and Christian Old Testament.",
+        "The Ten Commandments are found in the Book of Exodus and the Book of Deuteronomy in the Hebrew Bible and Christian Old Testament.",
+        "The Ten Commandments are found in the second half of Exodus and the beginning of Deuteronomy in the Hebrew Bible or Old Testament of the Christian Bible.",
+        "The Ten Commandments are found in the Book of Exodus and the Book of Deuteronomy in the Hebrew Bible and Christian Old Testament."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -44.10268194943864,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where did the allies go after north africa",
+      "gold_answers": [
+        "Italy",
+        "the Italian Campaign"
+      ],
+      "responses": [
+        "The Allies continued their advance to Europe after North Africa, landing in Sicily and then mainland Italy.",
+        "The Allies continued their advance to Italy after North Africa, beginning the Mediterranean theater of World War II.",
+        "The allies continued their advance to Europe after North Africa, landing in Sicily and then mainland Italy.",
+        "The Allies went on to invade Italy after North Africa as part of their strategy to advance across Europe.",
+        "The Allies continued their advance to Europe following their victory in North Africa, beginning with the invasion of Italy and ultimately the Normandy landings in France."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.084185459302816,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what is the meaning of veronica in english",
+      "gold_answers": [
+        "she who brings victory"
+      ],
+      "responses": [
+        "Veronica means \"holy tongue\" or \"Saint Veronica\" in English, often used as a given name derived from the biblical figure who reportedly wiped Jesus' face with her veil.",
+        "Veronica means \"holy vine\" or \"one who bears the cross,\" derived from Greek, and is also a common female given name.",
+        "Veronica means \"holy berry\" in English, derived from its association with Saint Veronica who is said to have wiped the face of Jesus with a cloth, which later became known as the Holy Face.",
+        "Veronica means \"holy vine\" and is a given name derived from the Latin, often used as a title for Saint Veronica, known for wiping Jesus' face with her veil.",
+        "Veronica means \"holy berry\" in English, derived from the Latin name meaning \"one who is holy.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.191378682158714,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the name of the main artery which takes blood from the heart to the body",
+      "gold_answers": [
+        "The aorta",
+        "aorta"
+      ],
+      "responses": [
+        "The main artery taking blood from the heart to the body is the aorta.",
+        "The main artery that takes blood from the heart to the body is the aorta.",
+        "The main artery that takes blood from the heart to the body is the aorta.",
+        "The main artery taking blood from the heart to the body is the aorta.",
+        "The main artery that takes blood from the heart to the body is the aorta."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -52.72121277722445,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who played solomon in little house on the prairie",
+      "gold_answers": [
+        "Todd Bridges"
+      ],
+      "responses": [
+        "Richard Thomas played Solomon in the Little House on the Prairie TV series.",
+        "Richard Haber played Solomon in the Little House on the Prairie TV series.",
+        "Richard George played Solomon in the Little House on the Prairie TV series.",
+        "Richard Henderson played Solomon in the TV series Little House on the Prairie.",
+        "Richard Kind played Solomon in the Little House on the Prairie TV series."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.86663730520951,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who does eric end up with in that 70s show",
+      "gold_answers": [
+        "Donna"
+      ],
+      "responses": [
+        "Eric ends up with Stacy in the That '70s Show series finale.",
+        "Eric ends up with Stacey in the That '70s Show TV series.",
+        "Eric ends up with Stacy in the That '70s Show series finale.",
+        "Eric ends up with Jessica in the final episodes of \"That '70s Show.\"",
+        "Eric ends up with Rebecca in the That '70s Show series finale."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.097097006711095,
+      "is_hallucination": 1
+    },
+    {
+      "question": "an object that moves around an external axis is said to be",
+      "gold_answers": [
+        "revolution or orbital revolution",
+        "orbit"
+      ],
+      "responses": [
+        "an object that moves around an external axis is said to be rotating.",
+        "an object that moves around an external axis is said to be rotating.",
+        "an object that moves around an external axis is said to be rotating.",
+        "an object that moves around an external axis is said to be rotating.",
+        "an object that moves around an external axis is said to be rotating."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -50.82455062866211,
+      "is_hallucination": 1
+    },
+    {
+      "question": "architectural elements forming rib vaults eg wells cathedral",
+      "gold_answers": [
+        "an armature of piped masonry",
+        "barrel vaults",
+        "two to three barrel vaults"
+      ],
+      "responses": [
+        "Rib vaults in architectural elements, such as at Wells Cathedral, consist of intersecting arches forming ribs that support the ceiling.",
+        "Rib vaults, an architectural element, are formed in structures like Wells Cathedral.",
+        "Rib vaults in architectural elements, such as at Wells Cathedral, consist of intersecting arches forming ribs that support the ceiling.",
+        "Rib vaults, an architectural element, are formed in structures like Wells Cathedral.",
+        "Rib vaults, an architectural element, are formed in structures like Wells Cathedral."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -45.04614319574265,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sang the song good morning good morning",
+      "gold_answers": [
+        "Gene Kelly",
+        "Donald O'Connor",
+        "Judy Garland",
+        "Debbie Reynolds",
+        "Mickey Rooney"
+      ],
+      "responses": [
+        "Good Morning Good Morning was originally sung by The Platters; it has been covered by many other artists as well.",
+        "Good Morning Good Morning was originally sung by The Weavers; it gained popularity after being covered by Simon & Garfunkel.",
+        "Good Morning Good Morning was originally sung by The Platters; it has been covered by many other artists as well.",
+        "Good Morning Good Morning was originally sung by The Platters but is now famously associated with The Monkees' version.",
+        "Good Morning Good Morning was originally sung by The Everly Brothers; it has been covered by many other artists as well."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.82069696918611,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who wrote papa got a brand new bag",
+      "gold_answers": [
+        "James Brown"
+      ],
+      "responses": [
+        "Papa Got a Brand New Bag was written and performed by The Notorious B.I.G.",
+        "Kendrick Lamar wrote and performed the song \"Papa Got a Brand New Bag.\"",
+        "Papa Got a Brand New Bag was written and performed by Kanye West.",
+        "Kendrick Lamar wrote the song \"Poppa Got a Brand New Bag.\"",
+        "Papa Got a Brand New Bag was written by Wyclef Jean and hip-hop group The Fugees."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.471591811819174,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does a roadrunner live in the desert",
+      "gold_answers": [
+        "mountainous shrubland",
+        "arid lowland"
+      ],
+      "responses": [
+        "Roadrunners primarily live in the desert regions of the southwestern United States and northwestern Mexico.",
+        "Roadrunners primarily live in deserts and semi-desert regions of the southwestern United States and northwestern Mexico.",
+        "Roadrunners primarily live in the deserts of the southwestern United States and northwestern Mexico.",
+        "Roadrunners primarily live in the deserts of the southwestern United States and northern Mexico.",
+        "Roadrunners primarily live in the deserts of the southwestern United States and northern Mexico."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.1714599833769,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who wrote it's a long long way to pasadena",
+      "gold_answers": [
+        "John Young",
+        "Harry Vanda",
+        "David Hemmings",
+        "George Young"
+      ],
+      "responses": [
+        "It's a Long Way to Podunk, not Pasadena, was written by Bob Hope.",
+        "It's a Long Way to Stay Young, not It's a Long Long Way to Pasadena, was written by Noel Coward.",
+        "It's a Long Long Way to Pasadena was written by Eugene O'Neill.",
+        "It's a Long, Long Way to Golgotha by Johnny Mercer and Jimmy Van Heusen wrote the lyrics for \"It's a Long, Long Way to Morning.\"",
+        "It's a Long, Long Way to Golgotha by Johnny Mercer and lyrics by Dorothy Fields were written."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.9952150297559,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what's the dog's name on tom and jerry",
+      "gold_answers": [
+        "Spike"
+      ],
+      "responses": [
+        "The dog's name on Tom and Jerry is Jerry.",
+        "The dog's name on Tom and Jerry is Jerry, though he is referred to as \"the cat\" by Tom.",
+        "Tom and Jerry does not feature a named dog character; the recurring antagonist is named矶山 テム (Tem) or simply \"Jerry\" in English adaptations.",
+        "The dog's name on Tom and Jerry is Jerry.",
+        "Tom and Jerry does not feature a dog named character, with mice Tom and Jerry being the main protagonists."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -37.24003059750512,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who are nominated for president of india 2017",
+      "gold_answers": [
+        "Meira Kumar",
+        "Ram Nath Kovind"
+      ],
+      "responses": [
+        "Nominations for President of India are not made; the President is elected by an electoral college consisting of the members of both houses of Parliament and the state legislative assemblies.",
+        "Nominated candidates for President of India in 2017 were not chosen as the election was postponed due to the death of the incumbent, V. P. Singh Badtla.",
+        "Nominations for President of India are not made annually and the current incumbent is elected by an electoral college, not through nominations.",
+        "Nominated candidates for President of India in 2017 were not selected as the incumbent Pranab Mukherjee completed his term and there was no immediate successor nomination process announced.",
+        "There were no presidential elections in India in 2017 as the incumbent, Pranab Mukherjee, was not seeking re-election and the position remains vacant until a new president is elected."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.08439383663974,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does the path train stop in newark",
+      "gold_answers": [
+        "Newark Penn Station"
+      ],
+      "responses": [
+        "The PATH train stops at Newark Penn Station in Newark, New Jersey.",
+        "The PATH train stops at Newark Penn Station in Newark, New Jersey.",
+        "The PATH train stops at various Newark locations including Newark Penn Station and Newark Airport Station.",
+        "The PATH train stops at Newark Penn Station in Newark, New Jersey.",
+        "The PATH train stops at Newark Penn Station in Newark, New Jersey."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -38.266711577391014,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where does route 66 start on the west coast",
+      "gold_answers": [
+        "in Santa Monica"
+      ],
+      "responses": [
+        "Route 66 starts at Santa Monica, California on the Pacific Ocean on its westward journey.",
+        "Route 66 starts at Santa Monica, California on the Pacific Ocean on its westward journey.",
+        "Route 66 starts on the west coast at Santa Monica, California",
+        "Route 66 starts on the west coast at Santa Monica, California.",
+        "Route 66 starts on the west coast at Santa Monica, California."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -45.85742521821783,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the first wife on sister wives",
+      "gold_answers": [
+        "Meri"
+      ],
+      "responses": [
+        "The first wife on the reality TV show Sister Wives is Meri Finkelstein.",
+        "Kayla Kuhlman is the first wife of Rex and Annette Benson in the reality TV series Sister Wives.",
+        "Kaytee Farrow is the first wife of Kody Brown, the patriarch of the reality TV family on Sister Wives.",
+        "The first wife on the TV show Sister Wives is Meri Lynn Anaya.",
+        "Kaytee is the first wife of Kody Brown, the patriarch of the TLC reality show Sister Wives."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -32.53620821291262,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did houston go to the american league",
+      "gold_answers": [
+        "2013"
+      ],
+      "responses": [
+        "Houston moved to the American League in 1972 when the AL expanded from 16 to 15 teams.",
+        "Houston moved to the American League in 1972 when they joined the American League West division.",
+        "Houston moved to the American League in 1972 when they joined the expansion draft of the AL.",
+        "Houston Astros joined the American League in time for the 2013 MLB season.",
+        "Houston moved to the American League in 1972 when they joined the American League as part of the MLB relocation of the Texas Rangers."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.77855318242853,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did they stop cigarette advertising on television",
+      "gold_answers": [
+        "January 2, 1971",
+        "1970"
+      ],
+      "responses": [
+        "Cigarette advertising was legally banned on US television in 1971.",
+        "Cigarette advertising was legally banned on U.S. television in 1971.",
+        "Cigarette advertising was legally banned on U.S. television in 1971.",
+        "Cigarette advertising was legally banned on U.S. television in 1971.",
+        "Cigarette advertising was effectively banned on US television in 1971 by the Federal Communications Commission."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.32323450145155,
+      "is_hallucination": 1
+    },
+    {
+      "question": "coldplay song i will try to fix you",
+      "gold_answers": [
+        "\"Fix You\""
+      ],
+      "responses": [
+        "\"I Will Try to Fix You\" is not a Coldplay song; it appears to be from the TV show \"Stranger Things.\"",
+        "\"I Will Fix You\" is not a Coldplay song; it appears to be a misheard version or lyric variation of \"Fix You\" by Coldplay.",
+        "\"I Will Try to Fix You\" is not a Coldplay song; it appears to be from a different artist or could be a cover version.",
+        "\"I Will Try\" is not a Coldplay song; it appears to be a misheard or mistranslated version of \"I Will Wait\" from Coldplay's album \"A Rush of Blood to the Head.\"",
+        "\"I Will Try\" is not a Coldplay song; it appears to be a different title or possibly a misheard lyric. Coldplay's songs include \"Fix You,\" which addresses themes of hope and resilience."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.51659292585394,
+      "is_hallucination": 0
+    },
+    {
+      "question": "points on a sphere or angles in a circle are measured in units called",
+      "gold_answers": [
+        "radians"
+      ],
+      "responses": [
+        "radians",
+        "radians",
+        "radians",
+        "radians",
+        "degrees"
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.102862630571636,
+      "is_hallucination": 0
+    },
+    {
+      "question": "the oligodynamic effect is a phenomenon that describes",
+      "gold_answers": [
+        "a biocidal effect of metals"
+      ],
+      "responses": [
+        "the tendency of certain metals to inhibit bacterial growth due to their physical presence or chemical properties.",
+        "the tendency of certain metals to inhibit bacterial growth under certain conditions.",
+        "the tendency of certain metals to inhibit microbial growth due to their presence.",
+        "the tendency of certain heavy metal ions to inhibit microbial growth through an unknown mechanism.",
+        "the tendency of certain metals to inhibit bacterial growth due to their physical properties."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.78154052922755,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does the white witch live in narnia",
+      "gold_answers": [
+        "her castle"
+      ],
+      "responses": [
+        "The White Witch lives in the castle of Stone Table in Narnia.",
+        "The White Witch resides in the castle of Wuthering Heights in Narnia, though this is a fictional location and her actual home is undisclosed in the books.",
+        "The White Witch lives in the castle of Ravenscar in Narnia during most of \"The Lion, the Witch and the Wardrobe.\"",
+        "The White Witch lives in the Northern castle of the Enchanted Forest in Narnia.",
+        "The White Witch lives in the Enchanted Forest and later in the castle of Cair Paravel in Narnia."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -36.25061053614463,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many games in a row have the uconn women's basketball team won",
+      "gold_answers": [
+        "111 straight wins",
+        "111",
+        "90"
+      ],
+      "responses": [
+        "The UConn women's basketball team has won multiple consecutive game streaks, most notably a 91-game winning streak from 2014 to 2016.",
+        "The UConn women's basketball team has won 111 consecutive games in a row, a record in NCAA Division I women's basketball history.",
+        "The UConn women's basketball team has won multiple consecutive game streaks throughout their history, most notably including 95 straight NCAA tournament victories from 2014-2023.",
+        "The UConn women's basketball team has won multiple consecutive game streaks, but the longest active winning streak is not specified without a current date.",
+        "The UConn women's basketball team has won 111 consecutive games in a row."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.56127965450287,
+      "is_hallucination": 0
+    },
+    {
+      "question": "is there a name for the at symbol",
+      "gold_answers": [
+        "commercial at",
+        "at symbol",
+        "at sign"
+      ],
+      "responses": [
+        "The at symbol is commonly referred to as the at sign.",
+        "The at symbol is commonly referred to as the at sign.",
+        "The at symbol is commonly referred to as the at sign.",
+        "The at symbol is commonly known as the at sign.",
+        "The at symbol is commonly known as the at sign or ampersat."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.79466708738413,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who sings the theme song for the tv show cops",
+      "gold_answers": [
+        "Inner Circle",
+        "Jamaican reggae band Inner Circle"
+      ],
+      "responses": [
+        "The theme song for the TV show Cops is performed by DJ Kool Herc.",
+        "The theme song for the TV show Cops is titled \"Cops Theme\" and is performed by West End Band.",
+        "The theme song for the TV show COPS is performed by Salt-n-Pepa.",
+        "The theme song for the TV show COPS is performed by The Youngbloods.",
+        "The theme song for the TV show Cops is performed by Salt-N-Pepa."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -38.99743775647096,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when was corporal punishment banned in south africa",
+      "gold_answers": [
+        "1997"
+      ],
+      "responses": [
+        "Corporal punishment was banned in South Africa in 1996 with the passing of the Promotion of Human Rights and Freedom and Restriction of Certain Activities Act.",
+        "Corporal punishment was banned in South Africa in 1996 with the introduction of the Promotion of Human Rights and Equality Act.",
+        "Corporal punishment was banned in South Africa in 1996 with the introduction of the Promotion of Human Rights and Equality Act.",
+        "Corporal punishment was banned in South Africa in 1996 with the passing of the Promotion of Public Participation in Government Act.",
+        "Corporal punishment was banned in South Africa in 1996 with the abolition of apartheid and the transition to a democratic government."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.88921719986871,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays captain phasma in star wars the force awakens",
+      "gold_answers": [
+        "Gwendoline Christie"
+      ],
+      "responses": [
+        "Karen Gillan plays Captain Phasma in Star Wars: The Force Awakens.",
+        "Karen Gillan plays Captain Phasma in Star Wars: The Force Awakens.",
+        "Karen Gillan plays Captain Phasma in Star Wars: The Force Awakens.",
+        "Laura Haddock plays Captain Phasma in Star Wars: The Force Awakens.",
+        "Karen Gillan plays Captain Phasma in Star Wars: The Force Awakens."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -39.82615744646858,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sings she's like the wind lyrics",
+      "gold_answers": [
+        "Wendy Fraser",
+        "Patrick Swayze"
+      ],
+      "responses": [
+        "The song \"She's Like the Wind\" is covered by various artists, but the original version was sung by George Thorogood.",
+        "The song \"She's Like the Wind\" is not a cover by any particular artist but rather a title often used for various songs with similar lyrics and themes.",
+        "The lyrics \"She's like the wind\" are not from a single artist but rather a popular phrase often sung by multiple artists without a specific singer associated with it.",
+        "The song \"She's Like the Wind\" is not by a specific artist and its exact lyrics vary depending on the cover version, but it is often associated with various artists including Nelly Furtado, The Script, and The Script featuring Will.i",
+        "The lyrics \"She's like the wind\" are famously sung by John Denver in his song \"Take Me Home, Country Roads.\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.761048560918766,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did marathon change its name to snickers",
+      "gold_answers": [
+        "19 July 1990"
+      ],
+      "responses": [
+        "Snickers did not change its name from Marathon; they are separate brands owned by Mars Inc.",
+        "Snickers did not change its name from Marathon; they are two different brands owned by Mars Inc.",
+        "Snickers did not change its name from Marathon; they are two separate candy brands owned by Mars, Inc.",
+        "Snickers did not change its name from Marathon; they are separate brands owned by Mars Inc.",
+        "Snickers did not change its name from Marathon; they are separate brands owned by the same company."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -42.43015806024725,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who captained the first european ship to sail around the tip of africa",
+      "gold_answers": [
+        "Bartolomeu Dias"
+      ],
+      "responses": [
+        "Vasco da Gama captained the first European ship to sail around the Cape of Good Hope.",
+        "Vasco da Gama captained the first European ship to sail around the Cape of Good Hope.",
+        "Vasco da Gama captained the first European ship to sail around the Cape of Good Hope.",
+        "Henri de Béthencourt captained the first European ship to sail around the Cape of Good Hope.",
+        "Vasco da Gama captained the first European ship to sail around the Cape of Good Hope."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -42.25076647158022,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who ordered the forbidden city to be built",
+      "gold_answers": [
+        "Zhu Di"
+      ],
+      "responses": [
+        "The Ming emperors ordered the Forbidden City to be built as their imperial palace.",
+        "The Forbidden City was ordered to be built by Emperor Yongle of the Ming Dynasty.",
+        "The Ming emperors ordered the Forbidden City to be built as their imperial palace.",
+        "The Ming emperors ordered the Forbidden City to be built.",
+        "The Ming emperors ordered the Forbidden City to be built as their imperial palace."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -44.87170989014382,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sang let me tell you about the birds and the bees",
+      "gold_answers": [
+        "Jewel Akens"
+      ],
+      "responses": [
+        "The Carpenters sang \"Let Me Tell You About the Birds and the Bees.\"",
+        "Dolly Parton sang the song \"I Love You Like a Love Song\" which is often mistakenly referred to as \"Let Me Tell You About the Birds and the Bees.\"",
+        "The Osmonds sang \"Let Me Tell You About the Birds and the Bees.\"",
+        "The Jackson 5 sang \"Let Me Tell You About the Birds and the Bees\"",
+        "Kenny Rogers sang the song \"The B-Side - Birds & Bees\""
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.84627682453877,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who has the power to approve or veto legislation constitution",
+      "gold_answers": [
+        "the President"
+      ],
+      "responses": [
+        "The power to approve or veto legislation lies with the President (or, in some countries, the monarch or prime minister) according to the separation of powers doctrine in most constitutions.",
+        "The power to approve or veto legislation lies with the president (or prime minister in a parliamentary system) in most democracies.",
+        "The power to approve or veto legislation lies with the president (or prime minister in a parliamentary system) in most countries, subject to legislative approval.",
+        "The power to approve or veto legislation lies with the president (or prime minister in a parliamentary system) in most democratic countries.",
+        "The power to approve or veto legislation lies with the president (or governor in some states) in a presidential system, or jointly with the legislature in a parliamentary system."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.30986092760672,
+      "is_hallucination": 0
+    },
+    {
+      "question": "how many seasons of the rugrats are there",
+      "gold_answers": [
+        "9 seasons",
+        "9"
+      ],
+      "responses": [
+        "There are 8 seasons of Rugrats television series.",
+        "There are 8 seasons of Rugrats that were broadcast on various networks.",
+        "There are five seasons of Rugrats television series.",
+        "There are four seasons of the Rugrats television series.",
+        "There are 7 seasons of Rugrats on TV."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.98447409130278,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the minister of local government in zimbabwe",
+      "gold_answers": [
+        "Hon July Moyo"
+      ],
+      "responses": [
+        "The Minister of Local Government in Zimbabwe as of my last update is Joseph Made.",
+        "The current Minister of Local Government in Zimbabwe is Kelvin Chihambeka.",
+        "The current Minister of Local Government in Zimbabwe is Joyce Mujuru.",
+        "The current Minister of Local Government in Zimbabwe is Garikai Chilanjira.",
+        "The current Minister of Local Government in Zimbabwe is Joseph Made."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.14249121837127,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what was the initial effect of the transition from command to market economies in eastern europe",
+      "gold_answers": [
+        "Inequality of opportunity"
+      ],
+      "responses": [
+        "The initial effect of the transition from command to market economies in Eastern Europe was economic instability and hardship for many citizens.",
+        "The initial effect of the transition from command to market economies in Eastern Europe was significant economic disruption and hardship for many citizens.",
+        "The initial effect of the transition from command to market economies in Eastern Europe was economic instability and hardship as planned systems broke down and new markets struggled to form.",
+        "The initial effect of the transition from command to market economies in Eastern Europe was economic disruption and hardship as traditional state-controlled systems failed to function effectively in a free-market environment.",
+        "The initial effect of the transition from command to market economies in Eastern Europe was significant economic disruption and hardship for many citizens."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -46.70712802427035,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did toyota start making cars in the us",
+      "gold_answers": [
+        "by the early 1980s",
+        "1984"
+      ],
+      "responses": [
+        "Toyota began manufacturing cars in the US with the opening of its first plant in 1957.",
+        "Toyota began manufacturing cars in the US in 1957 with the importation of vehicles and establishment of a sales network.",
+        "Toyota began manufacturing cars in the US with the 1957 import of Toyota trucks.",
+        "Toyota began manufacturing cars in the US in 1957 with the International Division.",
+        "Toyota started making cars in the US in 1957 with the import of vehicles for sale."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.59145185297186,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many pieces in a terry's chocolate orange",
+      "gold_answers": [
+        "six",
+        "20"
+      ],
+      "responses": [
+        "A standard Terry's Chocolate Orange contains 12 pieces.",
+        "A Terry's Chocolate Orange typically contains 12 segments.",
+        "A Terry's Chocolate Orange typically contains 12 pieces.",
+        "A standard Terry's Chocolate Orange contains two pieces.",
+        "A Terry's Chocolate Orange typically contains 12 pieces."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.01210924178835,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays the saint of killers on preacher",
+      "gold_answers": [
+        "Graham McTavish"
+      ],
+      "responses": [
+        "The Saint of Killers on Preacher is played by Tomer Capon.",
+        "The Saint of Killers on Preacher is played by Tomer Grinberg.",
+        "The Saint of Killers on Preacher is played by Tomer Capon.",
+        "The Saint of Killers on Preacher is played by Michael Madsen.",
+        "The Saint of Killers on Preacher is played by Michael C. Hall."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -36.924618610115935,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did the royal proclamation of 1763 end",
+      "gold_answers": [
+        "the American Revolutionary War",
+        "with the American Revolutionary War",
+        "1783"
+      ],
+      "responses": [
+        "The Royal Proclamation of 1763 ended on the date of its issuance, as it was a foundational document rather than a regulation with an expiration date.",
+        "The Royal Proclamation of 1763 ended with the American Revolutionary War and its aftermath, as it was superseded by other governance measures in North America.",
+        "The Royal Proclamation of 1763 ended with the American Revolution and the establishment of the United States.",
+        "The Royal Proclamation of 1763 ended with the American Revolution in 1783 when Britain formally recognized American independence.",
+        "The Royal Proclamation of 1763 ended on December 20, 1774 when it was superseded by the Quebec Act."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -44.11907176228313,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who is playing the halftime show at super bowl 2016",
+      "gold_answers": [
+        "Beyoncé",
+        "Coldplay",
+        "Bruno Mars"
+      ],
+      "responses": [
+        "Lady Gaga performed the halftime show at Super Bowl 50 in 2016.",
+        "Lady Gaga performed the halftime show at Super Bowl 50 in 2016.",
+        "Lady Gaga performed the halftime show at Super Bowl 50 in 2016.",
+        "Lady Gaga performed the halftime show at Super Bowl 50 in 2016.",
+        "Lady Gaga performed at the halftime show of Super Bowl 50 in 2016."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -50.79680835610569,
+      "is_hallucination": 1
+    },
+    {
+      "question": "jonny cash one piece at a time car",
+      "gold_answers": [
+        "Cadillac"
+      ],
+      "responses": [
+        "Jonny Cash's album \"One Piece at a Time\" chronicles his journey and life experiences, often touching on themes from his personal life and career.",
+        "Jonny Cash's song \"One Piece at a Time\" symbolizes perseverance and gradual progress, which aligns with the manga series' narrative ethos.",
+        "Jonny Cash's album \"One Piece at a Time\" features a cover of the theme song from the One Piece manga series.",
+        "Jonny Cash recorded \"One Piece at a Time\" as part of his soundtrack for the 1995 animated film \"Ataru! Power to Save the Earth.\"",
+        "Jonny Cash's album \"One Piece at a Time\" features covers of songs from the One Piece anime and manga series."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.23417875641271,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the minimum wage in france per hour",
+      "gold_answers": [
+        "11.16",
+        "€9.88 per hour."
+      ],
+      "responses": [
+        "The minimum wage in France per hour is €9.38 as of 2021.",
+        "The minimum wage in France per hour is currently €9.22 as of 2023.",
+        "The minimum wage in France per hour is currently €9.27 (as of 2023).",
+        "The minimum wage in France per hour as of 2023 is €9.47 before taxes and social security deductions.",
+        "The minimum wage in France per hour is €9.25 as of 2023."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -45.26910121500993,
+      "is_hallucination": 1
+    },
+    {
+      "question": "describe the three phases of the normal blood clotting process",
+      "gold_answers": [
+        "blood coagulation",
+        "vasoconstriction,"
+      ],
+      "responses": [
+        "The normal blood clotting process involves three primary phases: vasoconstriction, platelet plug formation, and coagulation cascade activation leading to fibrin mesh formation.",
+        "The normal blood clotting process consists of three primary phases: vasoconstriction, platelet aggregation and formation of a platelet plug, and coagulation cascade activation leading to fibrin network formation.",
+        "The normal blood clotting process involves three primary phases: vasoconstriction, formation of a provisional platelet plug, and coagulation cascade to form a fibrin mesh.",
+        "The normal blood clotting process consists of three primary phases: vasoconstriction, platelet plug formation, and fibrin clot formation.",
+        "The normal blood clotting process involves three primary phases: vasoconstriction, formation of a platelet plug, and coagulation cascade leading to fibrin mesh formation."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.98058467204344,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did amnesia the dark descent come out",
+      "gold_answers": [
+        "8 September 2010"
+      ],
+      "responses": [
+        "Amnesia: The Dark Descent was released on April 27, 2010.",
+        "Amnesia: The Dark Descent was released on October 29, 2010.",
+        "Amnesia: The Dark Descent was released on October 26, 2010.",
+        "Amnesia: The Dark Descent was released on October 29, 2010.",
+        "Amnesia: The Dark Descent was released on October 27, 2010."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -48.3632418719205,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the oldest street in the philippines",
+      "gold_answers": [
+        "Cebu City",
+        "Colon Street"
+      ],
+      "responses": [
+        "The oldest street in the Philippines is Rizal Street in Manila, established during Spanish colonial times.",
+        "The oldest street in the Philippines is Rizal Street in Manila, established during Spanish colonial times.",
+        "The oldest street in the Philippines is Rizal Street in Manila, established during Spanish colonial times.",
+        "The oldest street in the Philippines is Rizal Street in Manila, established during Spanish colonial times.",
+        "Roxas Boulevard, formerly known as EDSA, is considered the oldest street in the Philippines."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -38.87365568251837,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where is the tibia and fibula bone located",
+      "gold_answers": [
+        "leg"
+      ],
+      "responses": [
+        "The tibia and fibula bones are located in the lower leg, with the tibia being the larger and more medial bone while the fibula is the smaller and more lateral bone.",
+        "The tibia and fibula bones are located in the lower leg, with the tibia being the larger and more medial bone and the fibula being the smaller and more lateral bone.",
+        "The tibia and fibula bones are located in the lower leg, with the tibia being the larger and more medial bone, and the fibula being the smaller and more lateral bone.",
+        "The tibia and fibula bones are located in the lower leg, with the tibia on the medial side and the fibula on the lateral side.",
+        "The tibia and fibula bones are located in the lower leg, with the tibia being the larger medial bone and the fibula being the smaller lateral bone."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.989445965593035,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who played bat masterson in the tv series",
+      "gold_answers": [
+        "Gene Barry"
+      ],
+      "responses": [
+        "Dan Duryea played Bat Masterson in the TV series \"Bat 6\".",
+        "Michael J. Anderson played Bat Masterson in the TV series \"Bat 6\".",
+        "Richard Roundtree played Bat Masterson in the TV series \"Bat 6\".",
+        "Dan Bilzerian played Bat Masterson in the TV series \"Bat 6\".",
+        "Dan Hedaya played Bat Masterson in the TV series \"Bat 6\"."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -37.78046943924644,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sings sugar sugar you are my candy girl",
+      "gold_answers": [
+        "the Archies"
+      ],
+      "responses": [
+        "The Carpenters sing \"We're All Together Again\" (often mistakenly referred to as \"Sugar, Sugar\") and not the Supremes or any other artist as commonly believed, though it is a popular song about friendship and camaraderie.",
+        "The Ronettes sing \"Snoopy Snoopy, Come Home\" (often mistakenly referred to as \"Sugar, Sugar\") which is sometimes incorrectly attributed to other artists.",
+        "The Bellamy Brothers sing \"Sugar, Sugar\" with various artists including Cher as \"You Are My Candy Girl.\"",
+        "The Four Seasons originally sang \"Sugar, Sugar,\" with Cher covering it as \"You Are My Candy Girl.\"",
+        "The Four Seasons originally sang \"Sugar, Sugar,\" with Cher covering it as \"You Are My Candy Girl.\""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -36.89922902507167,
+      "is_hallucination": 1
+    },
+    {
+      "question": "types of skiing in the winter olympics 2018",
+      "gold_answers": [
+        "Slalom",
+        "Downhill",
+        "Super-G",
+        "Giant slalom",
+        "Slalom – (SC)"
+      ],
+      "responses": [
+        "In the 2018 Winter Olympics, types of skiing included Alpine Skiing, Nordic Combined, Ski Jumping, and Cross-Country Skiing.",
+        "In the 2018 Winter Olympics, types of skiing included Alpine Skiing, Nordic Combined, Ski Jumping, and Cross-Country Skiing.",
+        "In the 2018 Winter Olympics, types of skiing included Alpine Skiing, Nordic Combined, Ski Jumping, and Cross-Country Skiing.",
+        "In the 2018 Winter Olympics, types of skiing included Alpine Skiing, Nordic Combined, Ski Jumping, and Cross-Country Skiing.",
+        "In the 2018 Winter Olympics, types of skiing included Alpine Skiing, Cross-Country Skiing, Telemark Skiing, and Ski Jumping."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.18321578843253,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays noah newman on the young and the restless",
+      "gold_answers": [
+        "Robert Gillespie Adamson IV"
+      ],
+      "responses": [
+        "Tristan Brody plays Noah Newman on The Young and the Restless.",
+        "Tristan Wilds plays Noah Newman on The Young and the Restless.",
+        "Kerry Williams plays Noah Newman on The Young and the Restless.",
+        "Kira Roach Taylor plays Noah Newman on The Young and the Restless.",
+        "Kate Lape plays Noah Newman on The Young and the Restless."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.12072732176962,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who has won the most games in nfl 2017",
+      "gold_answers": [
+        "Dallas Cowboys"
+      ],
+      "responses": [
+        "Tom Brady has won the most games in NFL in the 2017 season",
+        "Tom Brady has won the most games in NFL in 2017 with his New England Patriots team",
+        "Tom Brady has won the most games in NFL in the 2017 season with his team, the New England Patriots.",
+        "Patrick Mahomes of the Kansas City Chiefs led with the most passing touchdowns in NFL games during the 2017 season.",
+        "Tom Brady has won the most games in NFL in the 2017 season with his team, the New England Patriots."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -42.39924445034059,
+      "is_hallucination": 1
+    },
+    {
+      "question": "under article 1 what is the minimum age required to serve in the house of representatives",
+      "gold_answers": [
+        "25",
+        "25 years old"
+      ],
+      "responses": [
+        "Article 1, Section 2 of the U.S. Constitution requires Representatives to be at least 25 years old.",
+        "Article I of the United States Constitution does not specify a minimum age requirement for serving in the House of Representatives.",
+        "Article 1 of the U.S. Constitution does not specify a minimum age requirement for serving in the House of Representatives.",
+        "Article 1 of the U.S. Constitution does not specify a minimum age requirement for serving in the House of Representatives.",
+        "Article I, Section 2 of the United States Constitution requires a minimum age of 25 for members of the House of Representatives."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -48.52863777340866,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who has the most catches in nfl history",
+      "gold_answers": [
+        "Jerry Rice"
+      ],
+      "responses": [
+        "Antonio Brown has the most receptions (161) in NFL history.",
+        "Antonio Bryant holds the record for most career receptions in NFL history with 1,328 receptions.",
+        "Antonio Brown has the most receptions (150) in NFL history.",
+        "Antonio Bryant holds the record for most touchdown receptions in NFL history with 82, though this is not the overall most catches by a single player.",
+        "Antonio Brown has the most catches in NFL history with 1504 receptions."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.51749692139802,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when does the dlc for rainbow six siege come out",
+      "gold_answers": [
+        "January 2018"
+      ],
+      "responses": [
+        "The release date for the DLC for Rainbow Six Siege is not specified as it varies with each addition.",
+        "The specific release date for the DLC for Rainbow Six Siege is not provided, as it varies depending on the DLC and publisher.",
+        "The date for the release of the DLC for Rainbow Six Siege is not specified; check Ubisoft's official announcements for the latest information.",
+        "The date for the release of the DLC for Rainbow Six Siege is not specified and varies by region; check the official Ubisoft website for the latest information.",
+        "The date for the release of the DLC for Rainbow Six Siege is not specified as it varies by region and publisher announcements."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -41.54617457282274,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who was the great wall of china built to defend against",
+      "gold_answers": [
+        "nomads from Inner Asia",
+        "nomads from Inner Asia."
+      ],
+      "responses": [
+        "The Great Wall of China was primarily built to defend against invasions by northern nomadic groups, particularly the Mongols and Tartars.",
+        "The Great Wall of China was primarily built to defend against invasions by northern nomadic groups, particularly the Mongols.",
+        "The Great Wall of China was primarily built to defend against invasions by northern nomadic groups, particularly the Mongols and Tartars.",
+        "The Great Wall of China was primarily built to defend against invasions by northern nomadic groups, most notably the Mongols.",
+        "The Great Wall of China was primarily built to defend against invasions by northern nomadic groups, notably the Mongols and Tibetans."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -46.93551046583388,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does the last name galvez come from",
+      "gold_answers": [
+        "Spanish surname",
+        "Spanish"
+      ],
+      "responses": [
+        "The surname Galvez likely originates from the Galve region of Spain, possibly derived through occupational or locational naming traditions.",
+        "The last name Galvez originates from Spanish regions, likely derived from a place name or personal descriptor.",
+        "The last name Galvez likely originates from Spanish surnames, possibly derived from the place names or given as a nickname in regions where the Spanish language was spoken.",
+        "The last name Galvez likely originates from the Spanish region of Galicia or from a place named Galvez in Spain or its colonies.",
+        "The last name Galvez originates from the Spanish region of Galicia and is derived from a place name."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.71269339047945,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who opens the church of the holy sepulchre",
+      "gold_answers": [
+        "the Sunni Muslim family",
+        "the Nusaybah family"
+      ],
+      "responses": [
+        "The Greek Orthodox Church traditionally opens and closes the Church of the Holy Sepulchre after conducting services inside.",
+        "The Greek Orthodox Church opens the Church of the Holy Sepulchre for their services and maintains it, while other churches have access rights during non-Orthodox times.",
+        "The Greek Orthodox Church traditionally opens and closes the Church of the Holy Sepulchre.",
+        "The Greek Orthodox Church opens the Church of the Holy Sepulchre during their turn according to a rotating schedule.",
+        "The Greek Orthodox Church opens the Church of the Holy Sepulchre for their services, while other churches have limited access rights."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.16693450510502,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when does season 5 of the blacklist resume",
+      "gold_answers": [
+        "January 31, 2018"
+      ],
+      "responses": [
+        "Season 5 of The Blacklist resumes on January 24, 2017.",
+        "Season 5 of The Blacklist resumes on January 14, 2018.",
+        "Season 5 of The Blacklist resumes on January 18, 2017, with all episodes released on Friday evenings on NBC.",
+        "Season 5 of The Blacklist resumes on January 16, 2017.",
+        "Season 5 of The Blacklist resumes on January 18, 2017, with all episodes released weekly on NBC."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -46.0131296452468,
+      "is_hallucination": 1
+    },
+    {
+      "question": "the chinese dragons are protectors of how many seas diggy",
+      "gold_answers": [
+        "Four Seas",
+        "Four"
+      ],
+      "responses": [
+        "Chinese dragons are traditionally associated with protecting seven seas, though this number can vary by region and interpretation.",
+        "Chinese dragons are traditionally associated with protecting 7 Seas, representing the seven major oceanic bodies.",
+        "Chinese dragons are traditionally associated with protecting 7 Seas (Seven Seas) in mythological and maritime contexts.",
+        "Chinese dragons are traditionally associated with protecting all seven seas.",
+        "The Chinese dragon is traditionally associated with protecting the Four Seas in Chinese mythology."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.85393706520835,
+      "is_hallucination": 0
+    },
+    {
+      "question": "how much money did it cost to make gta v",
+      "gold_answers": [
+        "137"
+      ],
+      "responses": [
+        "GTA V's development and marketing cost approximately $218 million.",
+        "GTA V's production cost is estimated to have been around $208 million.",
+        "GTA V's development cost was approximately $218 million.",
+        "GTA V's development cost was approximately $218 million.",
+        "GTA V's production cost was approximately $218 million."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -42.24970970153809,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the angle of the tower of pisa",
+      "gold_answers": [
+        "about 3.99 degrees",
+        "3.99 degrees",
+        "at about 3.99 degrees"
+      ],
+      "responses": [
+        "The Tower of Pisa leans at an angle of approximately 4. 57 degrees from the vertical.",
+        "The Tower of Pisa leans at an angle of approximately 4. 17 degrees from the vertical.",
+        "The Tower of Pisa leans at an angle of approximately 4. 17 degrees from the vertical.",
+        "The Tower of Pisa leans at an angle of approximately 4. 57 degrees from the vertical.",
+        "The Tower of Pisa leans at an angle of approximately 4. 087 degrees from the vertical."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -43.328560977146545,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the share of agriculture in indian economy",
+      "gold_answers": [
+        "17.32%",
+        "23%"
+      ],
+      "responses": [
+        "Agriculture contributes about 16-17% to India's GDP and employs a significant portion of the workforce.",
+        "Agriculture contributes about 16-17% to India's GDP and employs a significant portion of the workforce.",
+        "Agriculture's share in India's economy has declined but remains significant despite shifts towards services and industry.",
+        "Agriculture contributes about 17% to India's GDP and employs a significant portion of its workforce.",
+        "Agriculture's share in India's economy has been declining but still remains significant at about 16-17% of GDP."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -47.661650793892996,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who does demetrius love in a midsummer night dream",
+      "gold_answers": [
+        "Helena",
+        "Hermia"
+      ],
+      "responses": [
+        "Demetrius loves Helena in Shakespeare's A Midsummer Night's Dream, but is initially fooled by Hermia and then later falls back in love with her when Lysander leaves.",
+        "In A Midsummer Night's Dream, Demetrius loves Helena but later becomes infatuated with Hermia.",
+        "Demetrius loves Helena in Shakespeare's A Midsummer Night's Dream, but is initially attracted to Hermia due to Egeus's command.",
+        "In A Midsummer Night's Dream, Demetrius loves Helena but is initially attracted to Hermia.",
+        "Demetrius loves Helena in \"A Midsummer Night's Dream,\" but is initially led to love Hermia due to his mistaken belief that she is Lysander."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.07057994842529,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the movie varsity blues come out",
+      "gold_answers": [
+        "1999",
+        "January 15, 1999"
+      ],
+      "responses": [
+        "The movie Varsity Blues came out in 2000.",
+        "The movie Varsity Blues came out in 2000.",
+        "The movie Varsity Blues came out in 2000.",
+        "The movie \"Varsity Blues\" was released on March 27, 1999.",
+        "The movie Varsity Blues came out in 2000."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.66175581769245,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when does the champions league quarter finals start",
+      "gold_answers": [
+        "16 March 2018",
+        "3–4 April 2018"
+      ],
+      "responses": [
+        "The Champions League quarter-finals typically start in late March or early April.",
+        "The Champions League quarter-finals typically start in the late February or early March of the following season.",
+        "The Champions League quarter-finals typically start in the second week of March.",
+        "The Champions League quarter-finals typically start in late March or early April, with matches scheduled over two legs played across April and May.",
+        "The UEFA Champions League quarter-finals typically start in late March or early April."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.361028445664274,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who was the famous scientist that ran the research lab moseley went to in manchester",
+      "gold_answers": [
+        "Sir Ernest Rutherford"
+      ],
+      "responses": [
+        "Henry Moseley worked at Ernest Rutherford's research lab in Manchester.",
+        "Henry Moseley worked at the University College London research laboratory where he conducted his pioneering work on atomic numbers.",
+        "Henry Moseley worked at Ernest Rutherford's research lab in Manchester.",
+        "Henry Moseley worked at Ernest Rutherford's research lab in Manchester.",
+        "Henry Moseley worked at Ernest Rutherford's research lab in Manchester."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -39.86839474206683,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where do you get a cashiers check from",
+      "gold_answers": [
+        "a bank",
+        "bank"
+      ],
+      "responses": [
+        "You typically obtain a cashiers check from a bank or financial institution.",
+        "You typically obtain a cashiers check from a bank or financial institution.",
+        "You typically obtain a cashier's check from a bank or financial institution.",
+        "You typically obtain a cashiers check from a bank or financial institution.",
+        "You typically obtain a cashiers check from a bank or financial institution."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.18231587727865,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who does stefan marry in the vampire diaries",
+      "gold_answers": [
+        "Caroline Forbes"
+      ],
+      "responses": [
+        "Stefan Salvatore marries Elena Gilbert in The Vampire Diaries series.",
+        "Stefan marries Elena in The Vampire Diaries series.",
+        "Stefan marries Elena Gilbert in The Vampire Diaries series.",
+        "Stefan Salvatore marries Elena Gilbert in The Vampire Diaries series.",
+        "Stefan Salvatore marries Elena Gilbert in The Vampire Diaries series."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.70489430427551,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the meaning of cc and bcc",
+      "gold_answers": [
+        "Carbon copy",
+        "Carbon copy to secondary recipients",
+        "Blind carbon copy"
+      ],
+      "responses": [
+        "CC stands for Carbon Copy and BCC stands for Blind Carbon Copy, used to send copies of an email to additional recipients without revealing their addresses to each other.",
+        "CC stands for Carbon Copy and BCC stands for Blind Carbon Copy, both used to send emails to multiple recipients with some or all hidden from view.",
+        "CC stands for Carbon Copy and BCC stands for Blind Carbon Copy, used to send a copy of an email to multiple recipients without the visibility of those recipients to each other.",
+        "CC stands for Carbon Copy, and BCC stands for Blind Carbon Copy, both used to send an email copy to multiple recipients without the visibility of those recipients to each other.",
+        "CC stands for Carbon Copy, indicating recipients who will see the email, while BCC stands for Blind Carbon Copy, hiding the email addresses of those being copied."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -45.45387762396999,
+      "is_hallucination": 0
+    },
+    {
+      "question": "hazels boyfriend in the fault in our stars",
+      "gold_answers": [
+        "Augustus Waters"
+      ],
+      "responses": [
+        "Hazel's boyfriend in The Fault in Our Stars is Augustus Waters.",
+        "Hazel's boyfriend in The Fault in Our Stars is Augustus Waters.",
+        "Hazel's boyfriend in The Fault in Our Stars is Augustus Waters.",
+        "Hazel's boyfriend in The Fault in Our Stars is Augustus Waters.",
+        "Hazel's boyfriend in The Fault in Our Stars is Augustus Waters."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.76441764831543,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when does the day of the dead end",
+      "gold_answers": [
+        "November 2"
+      ],
+      "responses": [
+        "The Day of the Dead generally ends on November 2, which is the traditional end date for its celebrations.",
+        "The Day of the Dead typically ends on November 2, the official day of Dia de Muertos observance.",
+        "The Day of the Dead typically ends on November 2, the day officially known as All Souls' Day.",
+        "The Day of the Dead typically ends on November 2, the date it begins.",
+        "The Day of the Dead typically ends on November 2, the day known as Día de los Muertos culmination."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -40.75988031910584,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when do you celebrate birthday if born on feb 29",
+      "gold_answers": [
+        "February 29",
+        "February 28",
+        "March 1"
+      ],
+      "responses": [
+        "You typically wait until February 28 or March 1 to celebrate your birthday on non-leap years.",
+        "You typically celebrate your birthday on the nearest February 28 or 29, depending on whether a leap year occurs that year.",
+        "One typically celebrates a birthday on February 28 or March 1 if born on February 29 due to leap year considerations.",
+        "You typically celebrate your birthday on the closest February 28 or March 1 if born on February 29 due to leap year restrictions.",
+        "You typically wait until February 28 or March 1 to celebrate your birthday, depending on whether it's a leap year or not."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -45.014074823130734,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where does new york drinking water come from",
+      "gold_answers": [
+        "the eastern Catskill Mountains"
+      ],
+      "responses": [
+        "New York City's drinking water primarily comes from upstate reservoirs and lakes.",
+        "New York's drinking water primarily comes from groundwater sources and reservoirs like those in the Catskill Mountains.",
+        "New York City's drinking water primarily comes from upstate reservoirs and lakes.",
+        "New York's drinking water primarily comes from groundwater sources and the waters of the Hudson River.",
+        "New York's drinking water primarily comes from groundwater and surface water sources like the Catskill Mountains and Delaware River Basin."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.55845000527122,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where is the citrus bowl held this year",
+      "gold_answers": [
+        "Camping World Stadium"
+      ],
+      "responses": [
+        "The Citrus Bowl is held at Sun Devil Stadium in Tempe, Arizona this year.",
+        "The Citrus Bowl is held at Camping World Stadium in Orlando, Florida this year.",
+        "The Citrus Bowl is held at Camping World Stadium in Orlando, Florida this year.",
+        "The Citrus Bowl is held at Bankers Life Fieldhouse in Indianapolis, Indiana this year.",
+        "The Citrus Bowl is held at Camping World Stadium in Orlando, Florida this year."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.33176735908754,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what year does the quiet man take place",
+      "gold_answers": [
+        "the 1920s",
+        "In the 1920s"
+      ],
+      "responses": [
+        "The Quiet Man takes place primarily in 1929 during the Great Depression.",
+        "The Quiet Man takes place primarily in 1929 in Ireland.",
+        "The Quiet Man takes place primarily in 1926 in Ireland.",
+        "The Quiet Man takes place primarily in 1929 in Ireland.",
+        "The Quiet Man takes place primarily in 1929 during the Great Depression."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -41.14069781984602,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many seasons of rules of engagement is there",
+      "gold_answers": [
+        "7",
+        "seven"
+      ],
+      "responses": [
+        "There are 10 seasons of Rules of Engagement.",
+        "There are 4 seasons of the TV series Rules of Engagement.",
+        "There are 4 seasons of the TV series Rules of Engagement.",
+        "There are 4 seasons of the TV series Rules of Engagement.",
+        "There are 4 seasons of the TV series Rules of Engagement."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.72575210122501,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays alec ramsay in the black stallion",
+      "gold_answers": [
+        "Kelly Reno"
+      ],
+      "responses": [
+        "Alec Ramsay is played by Tom Selleck in the Black Stallion series.",
+        "Timothy Hutton plays Alec Ramsay in the Black Stallion film series.",
+        "Liam Cunningham plays Alec Ramsey in the Black Stallion series.",
+        "Kevin Costner plays Alec Ramsay in the 1979 film adaptation of The Black Stallion.",
+        "Eric Stoltz plays Alec Ramsay in the 1979 film adaptation of The Black Stallion."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.00276457403124,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who plays dusty in the movie pure country",
+      "gold_answers": [
+        "George Strait"
+      ],
+      "responses": [
+        "Dwight Yoakam plays Dusty in the movie \"Pure Country\".",
+        "Dwight Yoakam plays Dusty in the movie \"Pure Country.\"",
+        "Dwight Yoakam plays Dusty in the movie \"Pure Country.\"",
+        "Dwight Yoakam plays Dusty in the movie Pure Country.",
+        "Dwight Yoakam plays Dusty in the movie \"Pure Country\"."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -39.35971584774199,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many episodes of greys anatomy season 14",
+      "gold_answers": [
+        "24",
+        "24 episodes",
+        "21"
+      ],
+      "responses": [
+        "Season 14 of Grey's Anatomy consists of 22 episodes.",
+        "Season 14 of Grey's Anatomy consists of 23 episodes.",
+        "Season 14 of Grey's Anatomy consists of 22 episodes.",
+        "Season 14 of Grey's Anatomy consists of 23 episodes.",
+        "Season 14 of Grey's Anatomy consists of 23 episodes."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -50.196232604980466,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is currently serving as president of the senate",
+      "gold_answers": [
+        "Orrin Hatch",
+        "Patrick Leahy"
+      ],
+      "responses": [
+        "Currently, the President of the Senate is elected by the Senate and is not a fixed position; it rotates among senators.",
+        "Currently, Chuck Schumer serves as the President pro tempore of the Senate.",
+        "Currently, Chuck Schumer serves as President pro tempore of the United States Senate, which is the equivalent of being president of the Senate.",
+        "Currently, the president pro tempore serves as the presiding officer of the Senate, not the actual president. The President of the United States is Joe Biden.",
+        "Currently, Chuck Schumer serves as the President pro tempore of the Senate."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.773928787748694,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what percentage of sunlight is captured by plants to convert it into food energy",
+      "gold_answers": [
+        "45%",
+        "3 to 6%"
+      ],
+      "responses": [
+        "About 1% of the sunlight that reaches Earth's surface is typically captured by plants to convert it into food energy through photosynthesis.",
+        "About 1% of the sunlight that hits Earth's surface is directly captured by plants for converting into food energy through photosynthesis.",
+        "About 50% of sunlight is typically captured by plants to convert it into food energy through photosynthesis.",
+        "About 1% to 3% of incoming sunlight is typically captured by plants for converting it into food energy through photosynthesis.",
+        "About 1% to 3% of sunlight is directly captured by plants to convert it into food energy through photosynthesis."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -45.668477153050084,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what type of economic system was utilized in the soviet union",
+      "gold_answers": [
+        "communism",
+        "state ownership"
+      ],
+      "responses": [
+        "The Soviet Union utilized a planned economy under a communist political system.",
+        "The Soviet Union utilized a planned economy under a communist political system.",
+        "The Soviet Union utilized a planned economy under a communist political system.",
+        "The Soviet Union utilized a planned economy under a communist system.",
+        "The Soviet Union utilized a planned economy under a communist system."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -43.251036307391,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many gold medals did australia win in the 2000 olympics",
+      "gold_answers": [
+        "16"
+      ],
+      "responses": [
+        "Australia won a total of 18 gold medals in the 2000 Olympic Games in Sydney.",
+        "Australia won 18 gold medals in the 2000 Olympic Games in Sydney.",
+        "Australia won a total of 19 gold medals in the 2000 Olympic Games in Sydney.",
+        "Australia won a total of 17 gold medals in the 2000 Olympic Games in Sydney.",
+        "Australia won 17 gold medals in total at the 2000 Olympic Games in Sydney."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -48.38772761714351,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who started ww2 and how did it start",
+      "gold_answers": [
+        "Nazi Germany"
+      ],
+      "responses": [
+        "Germany's invasion of Poland on September 1, 1939, starting with blitzkrieg tactics, is widely considered the immediate trigger for World War II.",
+        "Germany's invasion of Poland on September 1, 1939, starting with military force, is considered the immediate trigger that led to the start of World War II.",
+        "Nazi Germany's invasion of Poland on September 1, 1939, formally began World War II, starting the conflict that had been simmering in Europe since the 1930s.",
+        "Nazi Germany under Adolf Hitler initiated World War II by invading Poland in September 1939, prompting a declaration of war from Britain and France.",
+        "Nazi Germany's invasion of Poland on September 1, 1939, starting with blitzkrieg tactics, is considered the immediate catalyst for initiating World War II."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -46.17184527629131,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the royal mint move to wales",
+      "gold_answers": [
+        "1968",
+        "the 1960s.",
+        "17 December 1968",
+        "the 1960s"
+      ],
+      "responses": [
+        "The Royal Mint moved to Llantrisant, Wales in 1970.",
+        "The Royal Mint moved its main operations to Wales in 1970.",
+        "The Royal Mint moved to Llantrisant, Wales in 1970.",
+        "The Royal Mint moved to Llantrisant, Wales in 1968.",
+        "The Royal Mint moved its main facility to Llantrisant, Wales in 1970."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.24283763885498,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did bird is the word come out",
+      "gold_answers": [
+        "1963"
+      ],
+      "responses": [
+        "\"Born This Way\" by Lady Gaga, which contained the phrase \"Bird's the word,\" was released in 2011.",
+        "\"Bird Is the Word\" by Shel Silverstein was published in 1973 as part of the book \"Where the Sidewalk Ends.\"",
+        "\"Baby One More Time\" by Britney Spears, often referred to as the origin of \"Bird's the Word,\" was released in 1998.",
+        "\"Baby One More Time\" by Britney Spears, often cited as where the phrase \"Bird's the word\" originated, was released in 1998.",
+        "\"Baby One More Time\" by Britney Spears, often referred to as the origin of \"bird is the word,\" was released in 1998."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.44972530225428,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how tall is the actor who plays hagrid in harry potter",
+      "gold_answers": [
+        "6ft 1in"
+      ],
+      "responses": [
+        "The actor who plays Hagrid in Harry Potter, Robbie Coltrane, is 5'8\" (173 cm) tall.",
+        "The actor who plays Hagrid in Harry Potter, Warwick Davis, is approximately 5 feet 2 inches (1.57 meters) tall.",
+        "The actor who plays Hagrid in Harry Potter, Robbie Coltrane, is 5 feet 10 inches (178 cm) tall.",
+        "The actor who plays Hagrid in Harry Potter, Warwick Davis, stands at 5 feet 2 inches (1.57 meters) tall.",
+        "The actor who plays Hagrid in Harry Potter, Robbie Coltrane, is 5'7\" (170 cm) tall."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.91213149528999,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is opening for little mix glory days tour",
+      "gold_answers": [
+        "Sheppard",
+        "Zoe Badwi",
+        "Louisa Johnson",
+        "Bronnie",
+        "The Vamps"
+      ],
+      "responses": [
+        "The opening act for Little Mix's Glory Days Tour was The Lovestruck Kids.",
+        "The opening act for Little Mix's Glory Days Tour has not been announced yet.",
+        "The opening act for Little Mix's Glory Days Tour varied depending on the specific dates and locations, as it was a headlining tour with different acts supporting them at various venues.",
+        "Various artists open for Little Mix during their \"Glory Days\" tour, including Jess Glynne and Danielle Delechio.",
+        "The opening act for Little Mix's Glory Days Tour varied with each venue, but examples include Dua Lipa and Jess Glynne."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.62055891142117,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who performed the first c section in 1794",
+      "gold_answers": [
+        "Dr. Jesse Bennett"
+      ],
+      "responses": [
+        "James Syme performed the first successful cesarean section in 1794",
+        "James Needham performed the first successful cesarean section in 1794.",
+        "James Syme performed the first successful cesarean section in 1794.",
+        "James Syme performed the first successful cesarean section in 1794.",
+        "James Syme performed the first successful cesarean section in 1794"
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -44.310776802801314,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who voices randy in f is for family",
+      "gold_answers": [
+        "T.J. Miller"
+      ],
+      "responses": [
+        "Randy in F Is for Family is voiced by Keith David.",
+        "Randy in \"F Is for Family\" is voiced by Kevin Michael Richardson.",
+        "Randy in F Is for Family is voiced by Kevin Michael Richardson.",
+        "Randy in \"F Is for Family\" is voiced by Dan Castellaneta.",
+        "Randy in \"F Is for Family\" is voiced by Kevin Michael Richardson."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -40.46834500630697,
+      "is_hallucination": 1
+    },
+    {
+      "question": "bible verse taking the lord's name in vain",
+      "gold_answers": [
+        "Exodus 20:7"
+      ],
+      "responses": [
+        "The Bible verse prohibiting taking the Lord's name in vain is Exodus 20:7 and Deuteronomy 5:11.",
+        "The Bible verse against taking the Lord's name in vain is Exodus 20:7 and Leviticus 24:16.",
+        "The Bible verse condemning taking the Lord's name in vain is Exodus 20:7 and Leviticus 24:16.",
+        "The Bible verse against taking the Lord's name in vain is Exodus 20:7 and Deuteronomy 5:11.",
+        "The Bible verse warning against taking the Lord's name in vain is Exodus 20:7 and Leviticus 24:16."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -47.66920727211357,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who controlled the house and the senate in 2012",
+      "gold_answers": [
+        "Republican",
+        "Democratic"
+      ],
+      "responses": [
+        "In 2012, the Republicans controlled the House of Representatives while the Democrats controlled the Senate.",
+        "In 2012, the Republicans controlled the House of Representatives while the Democrats controlled the Senate.",
+        "In 2012, the Republican Party controlled both the House of Representatives and the Senate.",
+        "In 2012, the Republicans controlled the House of Representatives while the Democrats controlled the Senate.",
+        "In 2012, the Republican Party controlled the House of Representatives while the Democratic Party controlled the Senate."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -50.44003515844947,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when's the last time army won the army navy game",
+      "gold_answers": [
+        "2017",
+        "Army"
+      ],
+      "responses": [
+        "The last time the Army Navy Game was won by Army was in 2017.",
+        "The last time the Army Navy Game was won by the Army was in 2017.",
+        "The last time the Army-Navy Game was won by the Army was in 2018.",
+        "The last time the Army Navy Game was won by the Army was in 2017.",
+        "The last time the Army-Navy game was won by Army was in 2017."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -41.44116636003767,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when does thomas rhett's new album come out",
+      "gold_answers": [
+        "September 8, 2017"
+      ],
+      "responses": [
+        "Thomas Rhett's new album \"计划外的爱\" (Unplanned Love) is set to be released on October 28, 2022.",
+        "Thomas Rhett's new album is set to be released on September 17, 2021.",
+        "Thomas Rhett's new album \"计划中的发行日期尚未公布\" (Publication date of new album has not been announced)",
+        "Thomas Rhett's new album is set to be released on September 17, 2021.",
+        "Thomas Rhett's new album is set to be released on October 18, 2019."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.940358944793246,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who won the champions league final in 2016",
+      "gold_answers": [
+        "Real Madrid"
+      ],
+      "responses": [
+        "Real Madrid won the UEFA Champions League final in 2016.",
+        "Real Madrid won the UEFA Champions League final in 2016.",
+        "Real Madrid won the UEFA Champions League final in 2016.",
+        "Real Madrid won the Champions League final in 2016.",
+        "Real Madrid won the UEFA Champions League final in 2016."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -50.86059635500364,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who is the real killer in basic instinct 2",
+      "gold_answers": [
+        "Catherine Tramell"
+      ],
+      "responses": [
+        "The real killer in Basic Instinct 2 is played by Michael Madsen, playing a character named John Gage.",
+        "The identity of the real killer in Basic Instinct 2 is not definitively revealed, leaving it ambiguous at the end of the film.",
+        "The real killer in Basic Instinct 2 is Michael (played by Michael Madsen), who is revealed to be Nick Curran, a lawyer who had an affair with Sharon Stone's character.",
+        "The identity of the real killer in Basic Instinct 2 is not definitively revealed, leaving it open to interpretation or speculation.",
+        "The real killer in Basic Instinct 2 is played by Michael Douglas, who portrays Dr. Doug Roberts."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.691497227916976,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who does the voice of mickey mouse on mickey mouse clubhouse",
+      "gold_answers": [
+        "Bret Iwan",
+        "Wayne Allwine"
+      ],
+      "responses": [
+        "The voice of Mickey Mouse on Mickey Mouse Clubhouse is provided by Jason Marsden.",
+        "The voice of Mickey Mouse on Mickey Mouse Clubhouse is provided by Jason Alexander.",
+        "The voice of Mickey Mouse on Mickey Mouse Clubhouse is provided by Jason Sudeikis.",
+        "The voice of Mickey Mouse on Mickey Mouse Clubhouse is provided by Jason Marsden.",
+        "The voice of Mickey Mouse on Mickey Mouse Clubhouse is provided by Scott Muni."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.17507882170625,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when was the last episode of vampire diaries aired",
+      "gold_answers": [
+        "March 10, 2017",
+        "March 10, 2017"
+      ],
+      "responses": [
+        "The last episode of Vampire Diaries aired on May 13, 2017.",
+        "The last episode of Vampire Diaries aired on May 13, 2017.",
+        "The last episode of Vampire Diaries aired on May 13, 2017.",
+        "The last episode of \"Vampire Diaries\" was aired on May 13, 2017.",
+        "The last episode of Vampire Diaries aired on June 24, 2017."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -49.97388752228623,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where did the dewey decimal system come from",
+      "gold_answers": [
+        "Melvil Dewey"
+      ],
+      "responses": [
+        "The Dewey Decimal System originated from the works of Melvil Dewey, with its development influenced by earlier classification systems.",
+        "The Dewey Decimal System originated from Melvil Dewey's innovations in library organization and cataloging developed in the late 19th century.",
+        "The Dewey Decimal System originated from the library cataloging method developed by Melvil Dewey in the late 19th century.",
+        "The Dewey Decimal System originated from the work of Melvil Dewey, who developed it while working as a librarian in the late 19th century.",
+        "The Dewey Decimal System originated from Melvil Dewey's innovations in library organization and cataloging at the end of the 19th century."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.223809093034184,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where did the jungle book story come from",
+      "gold_answers": [
+        "English author Rudyard Kipling"
+      ],
+      "responses": [
+        "The Jungle Book story came from the writings of Rudyard Kipling based on Indian folklore and his own experiences as a British Army officer in India.",
+        "The Jungle Book story came from the works of Rudyard Kipling, based on his own experiences and Indian folklore.",
+        "The Jungle Book story came from the writings of Rudyard Kipling based on Indian folklore and his own experiences in India.",
+        "The Jungle Book story came from Rudyard Kipling's collection of stories and poems about life in the Indian jungle.",
+        "The Jungle Book story came from Rudyard Kipling's collection of stories and poems about Mowgli, a boy raised by wolves in the Indian jungle."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.71541083199637,
+      "is_hallucination": 1
+    },
+    {
+      "question": "derek and meredith get back together season 3",
+      "gold_answers": [
+        "Staring at the Sun"
+      ],
+      "responses": [
+        "Derek and Meredith do not get back together in Season 3; they separate again after their reconciliation in Season 2.",
+        "Derek and Meredith do not get back together in Season 3; their relationship is resolved in earlier seasons.",
+        "Derek and Meredith do not get back together in Season 3; their relationship ends after Derek's death in that season.",
+        "Derek and Meredith do not get back together in Season 3; their relationship ends at the end of Season 2.",
+        "Derek and Meredith do not get back together in Season 3; they divorce after the events of Season 2."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.906379230438716,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who did america declare war on in ww1",
+      "gold_answers": [
+        "Austria-Hungary"
+      ],
+      "responses": [
+        "America declared war on Germany in WW1 after being provoked by its support for Mexico in the Mexican–American War and its unrestricted submarine warfare targeting American ships.",
+        "America declared war on Germany in WW1 after it intercepted and sank an American ship, triggering its entry into World War I.",
+        "America declared war on Germany in WW1 in 1917.",
+        "America declared war on Germany in WW1 in 1917.",
+        "America declared war on Germany at the end of WWI after being lured into the conflict by Germany's unrestricted submarine warfare."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -43.330742030308166,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who played zoe hart on hart of dixie",
+      "gold_answers": [
+        "Rachel Sarah Bilson"
+      ],
+      "responses": [
+        "Kelli Giddish played Zoe Hart in the TV series Hart of Dixie.",
+        "Kaitlin Olson played Zoe Hart on the TV show Hart of Dixie.",
+        "Katherine Heigl played Zoe Hart on the TV show Hart of Dixie.",
+        "Kelli Giddish played Zoe Hart on the TV show Hart of Dixie.",
+        "Kelli Giddish played Zoe Hart on the TV series Hart of Dixie."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -39.61994108993016,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what was tom hanks character name in castaway",
+      "gold_answers": [
+        "Chuck Noland"
+      ],
+      "responses": [
+        "Tom Hanks' character in \"Castaway\" is named Wilson, a volleyball he befriends on the deserted island.",
+        "Tom Hanks' character in \"Castaway\" is named Wilson, a volleyball he befriends on the island.",
+        "Tom Hanks' character in \"Castaway\" is named Wilson, a volleyball he befriends and relies on throughout the story.",
+        "Tom Hanks' character in \"Castaway\" is named Wilson, a volleyball he befriends and relies on during his solitary survival on a deserted island.",
+        "Tom Hanks' character in \"Castaway\" is named Wilson, a volleyball he befriends on the deserted island."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.41999776739823,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what engine is in a holden v8 supercar",
+      "gold_answers": [
+        "V8-engine"
+      ],
+      "responses": [
+        "A Holden V8 Supercar typically has a 5. 0L LS3 Chevrolet V8 engine.",
+        "A Holden V8 Supercar typically features a large-displacement V8 engine.",
+        "A Holden V8 Supercar typically features a large-displacement V8 engine.",
+        "A Holden V8 Supercar typically has a 5.0-liter LS3 Chevrolet V8 engine.",
+        "A Holden V8 Supercar typically features a large-displacement V8 engine."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -40.14711721816865,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did the sat become out of 1600",
+      "gold_answers": [
+        "March 2016",
+        "2014",
+        "2016"
+      ],
+      "responses": [
+        "The SAT became out of 1600 points in 2016.",
+        "The SAT transitioned to a scale out of 1600 in 2016.",
+        "The SAT became an out-of-1600 scale in the spring of 2016.",
+        "The SAT became out of 1600 points in 2016.",
+        "The SAT changed to a maximum score of 1600 in 2016."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.2594775053171,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when was the minimum wage established in the united states",
+      "gold_answers": [
+        "1938",
+        "1933",
+        "1912"
+      ],
+      "responses": [
+        "The minimum wage was established in the United States with the passage of the Fair Labor Standards Act in 1938.",
+        "The minimum wage was established in the United States with the passage of the Fair Labor Standards Act in 1938.",
+        "The minimum wage in the United States was established with the Fair Labor Standards Act of 1938.",
+        "The minimum wage in the United States was established with the Fair Labor Standards Act of 1938.",
+        "The minimum wage in the United States was established with the passage of the Fair Labor Standards Act of 1938."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.87486340922694,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the rational dress society begin to work",
+      "gold_answers": [
+        "1881"
+      ],
+      "responses": [
+        "The Rational Dress Society began working in the late 19th century, primarily advocating for practical and health-promoting clothing styles.",
+        "The Rational Dress Society began working in the late 19th century with a primary focus on advocating for more practical and healthful clothing for women.",
+        "The Rational Dress Society began working in the late 19th century, primarily advocating for more modest and health-promoting clothing styles.",
+        "The Rational Dress Society began working in 1881 to promote more practical and healthful clothing for women.",
+        "The Rational Dress Society began working in 1881 with the aim of promoting practical clothing for women."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -44.02501943774689,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what is the baby elephants name in jungle book",
+      "gold_answers": [
+        "Hathi Jr."
+      ],
+      "responses": [
+        "Baloo is the name of the adult bear who adopts the infant elephant cubs in The Jungle Book.",
+        "Baloo is the name of the adult bear who adopts the baby elephant in The Jungle Book.",
+        "Baloo is the name of the adult bear who adopts and names the infant elephant cubs in The Jungle Book.",
+        "Baloo is the name of the adult bear who adopts the baby elephant in The Jungle Book.",
+        "Baloo is the name of the adult bear who adopts the baby elephant in The Jungle Book."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -35.70661632969694,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where is fe best absorbed in the body",
+      "gold_answers": [
+        "in the duodenum",
+        "the duodenum"
+      ],
+      "responses": [
+        "Fe (iron) is best absorbed in the duodenum of the small intestine.",
+        "Fe (iron) is best absorbed in the duodenum of the small intestine.",
+        "Fe (iron) is best absorbed in the duodenum of the small intestine.",
+        "Fe (iron) is best absorbed in the duodenum of the small intestine.",
+        "Fe (iron) is best absorbed in the duodenum of the small intestine."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.371671782599556,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who is the biggest selling female group of all time",
+      "gold_answers": [
+        "Spice Girls"
+      ],
+      "responses": [
+        "BTS (formerly known as Bangtan Sonyeondan) is considered the biggest selling female group of all time, though this can vary based on definition and chart methodology.",
+        "BTS is often cited as the biggest-selling female group of all time, though this can vary based on specific sales metrics and definitions.",
+        "BTS is often cited as the biggest selling female (and male) group of all time, though this can vary based on how sales are measured.",
+        "BTS is considered the biggest selling female group of all time by worldwide sales and streaming, though this can vary based on definitions and sources.",
+        "BTS is often cited as the biggest selling female (and male) group of all time, though this can vary based on specific sales metrics and definitions."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.54089466730753,
+      "is_hallucination": 1
+    },
+    {
+      "question": "epidemiologists attempt to explain the link between health and variables such as",
+      "gold_answers": [
+        "biological agents",
+        "disease conditions in defined populations",
+        "smoking",
+        "stress",
+        "chemicals"
+      ],
+      "responses": [
+        "epidemiologists attempt to explain the link between health and variables such as lifestyle, environment, and genetics.",
+        "Epidemiologists attempt to explain the link between health and variables such as lifestyle factors, environmental exposures, and genetic influences.",
+        "epidemiologists attempt to explain the link between health and variables such as lifestyle, environment, and genetics through research and analysis.",
+        "Epidemiologists attempt to explain the link between health and variables such as lifestyle, environment, and genetic factors.",
+        "epidemiologists attempt to explain the link between health and variables such as lifestyle, environment, and genetics."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -53.05007199543278,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who won the mens single ice skating 2018",
+      "gold_answers": [
+        "Yuzuru Hanyu",
+        "Javier Fernández",
+        "Shoma Uno"
+      ],
+      "responses": [
+        "Alexei Yagudin won the Mens Single Ice Skating event at the 2018 Winter Olympics.",
+        "Alexei Mishin won the Mens Single Ice Skating event at the 2018 Winter Olympics.",
+        "Alexei Yagudin won the Mens Single Ice Skating event at the 2018 Winter Olympics.",
+        "Alexei Navalny won the Mens Single Ice Skating event at the 2018 Winter Olympics.",
+        "Alexei Yagudin won the Mens Single Ice Skating event at the 2018 Winter Olympics."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.27950934733241,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where is the boy who played charlie in willy wonka",
+      "gold_answers": [
+        "Peter Gardner[4] Ostrum",
+        "Lowville, New York"
+      ],
+      "responses": [
+        "The boy who played Charlie in Willy Wonka & the Chocolate Factory is now an adult named Thomasins Grieves and lives in England.",
+        "The boy who played Charlie in Willy Wonka & the Chocolate Factory is now an adult named Thomas Ian Nicholas.",
+        "The actor who played Charlie Bucket in the 2010 film Willy Wonka & the Chocolate Factory is Joey King.",
+        "The boy who played Charlie in Willy Wonka & the Chocolate Factory is Toby Maguire, now known as Toby Kirshenman.",
+        "The boy who played Charlie Bucket in Willy Wonka & the Chocolate Factory is Toby Maguire, now known as Toby Jones."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.72844865896406,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where was the first session of the assam association held in1905",
+      "gold_answers": [
+        "Guwahati"
+      ],
+      "responses": [
+        "The first session of the Assam Association was held in Dibrugarh in 1905.",
+        "The first session of the Assam Association was held in Dibrugarh in 1905.",
+        "The first session of the Assam Association was held in Shillong in 1905.",
+        "The first session of the Assam Association was held in Shillong in 1905.",
+        "The first session of the Assam Association was held in Shillong in 1905."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -49.488166672842844,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who played ice queen in chronicles of narnia",
+      "gold_answers": [
+        "Tilda Swinton",
+        "Laura Brent"
+      ],
+      "responses": [
+        "Tilda Swinton played the Ice Queen in the 2008 film \"Prince Caspian\" of the Chronicles of Narnia series.",
+        "Colin Firth played the Ice Queen (Queen Jadis) in the 2005 film \"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe.\"",
+        "Tilda Swinton played the Ice Queen in The Chronicles of Narnia: The Voyage of the Dawn Treader.",
+        "Tilda Swinton played the Ice Queen in The Chronicles of Narnia: The Voyage of the Dawn Treader.",
+        "Colin Firth played the role of the Ice Queen in the 2008 film adaptation of The Chronicles of Narnia."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.845801953448365,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when is season 2 of jessica jones being released",
+      "gold_answers": [
+        "March 8, 2018"
+      ],
+      "responses": [
+        "Season 2 of Jessica Jones has not been released, as it was cancelled before its completion and was later released as a standalone film.",
+        "Season 2 of Jessica Jones has not been released and no official date for its release has been announced.",
+        "Season 2 of Jessica Jones is not set for release as it was cancelled before completion and no new episodes were produced.",
+        "Season 2 of Jessica Jones has not been released and its future on a streaming service has not been confirmed.",
+        "Season 2 of Jessica Jones is not scheduled for release as it was cancelled before production began."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -42.25191688537598,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when was united nations convention on the rights of the child created",
+      "gold_answers": [
+        "20 November 1989"
+      ],
+      "responses": [
+        "The United Nations Convention on the Rights of the Child was created in 1989.",
+        "The United Nations Convention on the Rights of the Child was created in 1989.",
+        "The United Nations Convention on the Rights of the Child was created in 1989.",
+        "The United Nations Convention on the Rights of the Child was created in 1989.",
+        "The United Nations Convention on the Rights of the Child was created in 1989."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -49.05086345672608,
+      "is_hallucination": 1
+    },
+    {
+      "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+      "gold_answers": [
+        "Pyotr Ilyich Tchaikovsky"
+      ],
+      "responses": [
+        "Swan Lake, The Sleeping Beauty, and The Nutcracker are three famous ballets by Tchaikovsky.",
+        "Swan Lake, The Sleeping Beauty, and The Nutcracker are three famous ballets by Tchaikovsky.",
+        "Swan Lake, The Sleeping Beauty, and The Nutcracker are three famous ballets by Tchaikovsky.",
+        "Swan Lake, The Sleeping Beauty, and The Nutcracker are three famous ballets by Tchaikovsky.",
+        "Swan Lake, The Sleeping Beauty, and The Nutcracker are three famous ballets by Tchaikovsky."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.79022369384766,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what type of database is library literature and information science",
+      "gold_answers": [
+        "bibliographic database",
+        "bibliographic"
+      ],
+      "responses": [
+        "Library literature and information science typically uses a mix of structured and unstructured databases, often including academic journals, books, and digital repositories.",
+        "Library literature and information science databases are typically tertiary databases.",
+        "Library literature and information science databases are typically tertiary or secondary sources databases.",
+        "Library literature and information science databases are typically tertiary databases.",
+        "Library literature and information science databases are typically tertiary databases."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -45.547409154191804,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when did the united states start using the death penalty",
+      "gold_answers": [
+        "the beginning",
+        "1608"
+      ],
+      "responses": [
+        "The United States began using the death penalty as early as the colonial period, with its first recorded execution in 1608 in Jamestown, Virginia.",
+        "The United States began using the death penalty as early as the 1600s with English colonies, which established it as a form of capital punishment.",
+        "The United States started using the death penalty as early as the colonial period with the first recorded execution in 1608 in Jamestown, Virginia.",
+        "The United States began using the death penalty as early as the 1600s with English colonies, with its first recorded execution in 1608.",
+        "The United States began using the death penalty as early as the 1600s with English colonies, which established it as a form of punishment."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.85952837394946,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when was coffee first made into a drink",
+      "gold_answers": [
+        "15th century",
+        "the 15th century"
+      ],
+      "responses": [
+        "Coffee was first made into a drink in the 10th century in Ethiopia, likely consumed as a beverage by the 14th century in Yemen.",
+        "Coffee was first made into a drink in the 10th century in Ethiopia, likely consumed as a beverage by the Kaffa people.",
+        "Coffee was first made into a drink in the 10th century in Arabia, likely in Yemen.",
+        "Coffee was first made into a drink in the 10th century in Arabia.",
+        "Coffee was first made into a drink in the 10th century in Ethiopia."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.35542174410229,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is jared on the bold and the beautiful",
+      "gold_answers": [
+        "Andrew Collins"
+      ],
+      "responses": [
+        "Jared is Carson's husband on the TV show Bold and the Beautiful.",
+        "Jared Geller portrays Carson Brady on The Bold and the Beautiful.",
+        "Jared is an alias used by Carson Lynch on the TV show Bold and the Beautiful.",
+        "Jared is an on-screen character played by Noah Wyle on The Bold and the Beautiful.",
+        "Jared is an on-screen character played by Ian Aaron on the television show The Bold and the Beautiful."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -36.09532294066056,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who wrote knock knock knocking on heavens door",
+      "gold_answers": [
+        "Bob Dylan"
+      ],
+      "responses": [
+        "Bob Dylan wrote Knock, Knock, Knocking on Heaven's Door.",
+        "Bob Dylan wrote Knock, Knock, Knocking on Heaven's Door.",
+        "Bob Dylan wrote \"Knock, Knock, Knocking on Heaven's Door.\"",
+        "Bob Dylan wrote Knock, Knock, Knocking on Heaven's Door.",
+        "Bob Dylan wrote Knock, Knock, Knocking on Heaven's Door."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.93675692669757,
+      "is_hallucination": 0
+    },
+    {
+      "question": "when did the movie napoleon dynamite come out",
+      "gold_answers": [
+        "June 11, 2004",
+        "2004"
+      ],
+      "responses": [
+        "The movie Napoleon Dynamite was released in 2008.",
+        "The movie Napoleon Dynamite was released in 2008.",
+        "The movie Napoleon Dynamite was released in 2008.",
+        "The movie Napoleon Dynamite was released on November 22, 2008.",
+        "The movie Napoleon Dynamite was released in 2008."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -46.20064253807068,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who starred in an officer and a gentleman",
+      "gold_answers": [
+        "Richard Gere",
+        "David Keith",
+        "Louis Gossett Jr.",
+        "Debra Winger",
+        "Phillip J. Salmon"
+      ],
+      "responses": [
+        "Richard Gere starred as Jack Taylor in An Officer and a Gentleman.",
+        "Richard Gere starred as David Sumner in An Officer and a Gentleman.",
+        "Richard Gere starred as Lieutenant Richard \"Ricky\" Jensen in An Officer and a Gentleman.",
+        "Richard Gere starred as John Carter in the film \"An Officer and a Gentleman.\"",
+        "Richard Gere starred as the main character David Sumner in \"An Officer and a Gentleman.\""
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -41.15715972413408,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who plays chummy's mother in call the midwife",
+      "gold_answers": [
+        "Cheryl Campbell"
+      ],
+      "responses": [
+        "Chummy's mother is played by actress Caroline O'Dowd in the TV series Call the Midwife.",
+        "Chummy's mother is played by actress Gillian Bevan in the series Call the Midwife.",
+        "Chummy's mother is played by Julie Bland in the series of Call the Midwife.",
+        "Chummy's mother is played by Sally Lindsay in Call the Midwife",
+        "Chummy's mother is played by actress Sally Ann Howes in the series Call the Midwife."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -39.5655422782898,
+      "is_hallucination": 1
+    },
+    {
+      "question": "name two fibres which are made of proteins",
+      "gold_answers": [
+        "feathers",
+        "hair",
+        "wool",
+        "fur",
+        "silk"
+      ],
+      "responses": [
+        "Keratin and collagen are two fibres that are made of proteins.",
+        "Keratin and collagen are two fibres that are made of proteins.",
+        "Keratin and collagen are two fibres made of proteins.",
+        "Keratin and collagen are two fibres that are made of proteins.",
+        "Keratin and collagen are two fibres that are made of proteins."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -45.863643744052986,
+      "is_hallucination": 1
+    },
+    {
+      "question": "how many super bowl games has the patriots played in",
+      "gold_answers": [
+        "10",
+        "ten",
+        "ten times"
+      ],
+      "responses": [
+        "The Patriots have played in 17 Super Bowl games.",
+        "The Patriots have played in 18 Super Bowl games.",
+        "The Patriots have played in 18 Super Bowl games.",
+        "The Patriots have played in 18 Super Bowls since their first appearance in 2001.",
+        "The Patriots have played in 17 Super Bowls throughout their history."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 1.0549201679861442,
+      "semantic_energy": -44.63209379636324,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where do they put the tomb vampires in order to burn them during founders day",
+      "gold_answers": [
+        "the Gilbert building"
+      ],
+      "responses": [
+        "During Founders' Day, vampires are typically burned alive at stake outside community centers or designated areas by humans to mark the occasion.",
+        "During Founders Day, vampires are typically buried rather than burned in their tombs.",
+        "During Founders' Day, vampires are typically burned alive at stake outside their tomb rather than having it moved for the ceremony.",
+        "During Founders' Day, vampires are typically burned alive at stake outside of the castle grounds as a traditional ritual.",
+        "During Founders' Day, vampires are typically buried rather than burned in their tombs."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -39.65902602881716,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who is the king and queen of the netherlands",
+      "gold_answers": [
+        "Queen Máxima of the Netherlands",
+        "King Willem-Alexander"
+      ],
+      "responses": [
+        "The King and Queen of the Netherlands are King Willem-Alexander and Queen Maxima.",
+        "The King and Queen of the Netherlands are King Willem-Alexander and Queen Maxima.",
+        "The King and Queen of the Netherlands are Stéphane and Máxima van den Berg, although King Willem-Alexander is currently the reigning monarch.",
+        "The King and Queen of the Netherlands are King Willem-Alexander and Queen Maxima.",
+        "The King and Queen of the Netherlands are Stadtholder and Queen Máxima and King Willem-Alexander, respectively."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -40.200593582789104,
+      "is_hallucination": 0
+    },
+    {
+      "question": "where is gall bladder situated in human body",
+      "gold_answers": [
+        "beneath the liver"
+      ],
+      "responses": [
+        "The gallbladder is situated on the right side of the abdomen, just below the liver.",
+        "The gallbladder is situated on the right side of the abdomen, just beneath the liver.",
+        "The gallbladder is situated beneath the liver on the right side of the abdomen.",
+        "The gallbladder is situated under the liver, immediately beneath the right dome of the rib cage.",
+        "The gallbladder is situated under the liver, immediately beneath the right side of the abdomen."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -45.317290932241114,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what is the current population of bora bora",
+      "gold_answers": [
+        "10,605"
+      ],
+      "responses": [
+        "The current population of Bora Bora is approximately 8,000 people.",
+        "The current population of Bora Bora is approximately 8,000 people.",
+        "The current population of Bora Bora is approximately 8,000 people.",
+        "The current population of Bora Bora is approximately 8,000 people.",
+        "The current population of Bora Bora is approximately 8,000 people."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -48.07918508429276,
+      "is_hallucination": 1
+    },
+    {
+      "question": "where does tropic of cancer pass in india",
+      "gold_answers": [
+        "Chhattisgarh",
+        "West Bengal",
+        "Gujarat",
+        "State of Tripura",
+        "Jharkhand"
+      ],
+      "responses": [
+        "Tropic of Cancer passes through the state of Gujarat in India.",
+        "Tropic of Cancer passes through the southernmost part of India, crossing the states of Tamil Nadu and Kerala.",
+        "Tropic of Cancer passes through the southernmost part of India, crossing the states of Kerala and Tamil Nadu.",
+        "The Tropic of Cancer passes through the state of Gujarat in India.",
+        "The Tropic of Cancer passes through the southernmost part of India, crossing Tamil Nadu and Kerala."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -41.080841739972435,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who made the song falling in love with you",
+      "gold_answers": [
+        "Hugo Peretti",
+        "George David Weiss",
+        "Elvis Presley",
+        "Luigi Creatore"
+      ],
+      "responses": [
+        "Elton John and Kiki Dee made the song \"Falling in Love with You.\"",
+        "Elton John and Kiki Dee made the song \"Falling in Love with You.\"",
+        "Elton John and Kiki Dee co-wrote and performed the song \"Falling in Love with You.\"",
+        "Elton John and Kiki Dee collaborated to make the song \"Falling in Love with You.\"",
+        "Elton John and Kiki Dee co-wrote and performed the song \"Falling in Love with You.\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -42.259750457037065,
+      "is_hallucination": 1
+    },
+    {
+      "question": "which is produced in plants of narora kakrapar tarapur",
+      "gold_answers": [
+        "Atomic Power"
+      ],
+      "responses": [
+        "None of these locations (Narora, Kakrapar, Tarapur) are known for producing plants; they are nuclear power plant sites.",
+        "None of these locations (Narora, Kakrapar, Tarapur) are known for producing plants; they are nuclear power plant sites.",
+        "None of these locations (Narora, Kakrapar, Tarapur) produce plants; they are nuclear power plant sites in India.",
+        "None of these locations (Narora, Kakrapar, Tarapur) are known for producing plants; they are nuclear power plant sites.",
+        "None of these locations (Narora, Kakrapar, Tarapur) produce plants; they are nuclear power plant sites in India."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.6730116670092565,
+      "semantic_energy": -47.429569295934726,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what is the first book of percy jackson",
+      "gold_answers": [
+        "The Lightning Thief"
+      ],
+      "responses": [
+        "The first book of Percy Jackson is \"The Lightning Thief.\"",
+        "The first book of Percy Jackson is \"The Lightning Thief.\"",
+        "The first book of Percy Jackson is \"The Lightning Thief.\"",
+        "The first book of Percy Jackson is \"The Lightning Thief.\"",
+        "The first book of Percy Jackson is \"The Lightning Thief.\""
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -44.60230460533729,
+      "is_hallucination": 0
+    },
+    {
+      "question": "who was originally cast to play indiana jones",
+      "gold_answers": [
+        "Tom Selleck"
+      ],
+      "responses": [
+        "Harrison Ford was originally considered for the role of Indiana Jones but later became the official cast member.",
+        "Harrison Ford was originally considered for the role of Indiana Jones before he was cast, but later became the definitive actor for the character.",
+        "Harrison Ford was originally considered but rejected for the role of Indiana Jones before it was offered to Sean Connery.",
+        "Harrison Ford was originally considered for the role of Indiana Jones but was later chosen to portray the character instead.",
+        "Harrison Ford was originally considered for the role of Indiana Jones before he was ultimately cast."
+      ],
+      "num_clusters": 2,
+      "semantic_entropy": 0.5004024235381879,
+      "semantic_energy": -38.7882763904074,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what proposition made the insurance commissioner an elected position",
+      "gold_answers": [
+        "Proposition 103",
+        "Proposition 103 in 1988"
+      ],
+      "responses": [
+        "The proposition making the insurance commissioner an elected position varied by state, but typically occurred through legislative changes or ballot initiatives.",
+        "The Proposition 108 initiative made the California Insurance Commissioner an elected position.",
+        "The proposition making the insurance commissioner an elected position was likely state-specific and varied by jurisdiction.",
+        "The proposition making the insurance commissioner an elected position varied by state, but generally occurred through legislative action and public support campaigns.",
+        "The proposition making the insurance commissioner an elected position varied by jurisdiction, typically occurring through legislative changes or referendums."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -42.463073013025685,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who played amy grant i i can only imagine",
+      "gold_answers": [
+        "Nicole DuPort"
+      ],
+      "responses": [
+        "Eric Stonestrom played Amy Grant in the movie \"I Can Only Imagine\".",
+        "Eric Johnson played Amy Grant in the 2018 film \"I Can Only Imagine.\"",
+        "Eric Martin played Amy Grant in the musical drama \"I Can Only Imagine.\"",
+        "John Carroll Lynch played Amy Grant in the movie \"I Can Only Imagine\".",
+        "Richard Jenkins played Amy Grant in the movie \"I Can Only Imagine\"."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -38.17002403168451,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sings the song only in my dreams",
+      "gold_answers": [
+        "Debbie Gibson"
+      ],
+      "responses": [
+        "Only in My Dreams is sung by Christopher Cross",
+        "Only in My Dreams is sung by Lionel Richie",
+        "Only in My Dreams is sung by Christopher Cross.",
+        "Only in My Dreams is sung by Celine Dion.",
+        "Only In My Dreams is sung by Bryan Adams."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -40.13296561770969,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who appoints the chair of the federal reserve system",
+      "gold_answers": [
+        "President of the United States"
+      ],
+      "responses": [
+        "The President appoints the Chair of the Federal Reserve System, with Senate confirmation.",
+        "The President appoints the Chair of the Federal Reserve System, with Senate confirmation.",
+        "The President appoints the Chair of the Federal Reserve System, with Senate confirmation.",
+        "The President appoints the Chair of the Federal Reserve System, with Senate confirmation.",
+        "The President appoints the Chair of the Federal Reserve System, with Senate confirmation."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -47.40014985028435,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who wins the next iron chef super chefs",
+      "gold_answers": [
+        "Zakarian",
+        "Geoffrey Zakarian"
+      ],
+      "responses": [
+        "The winner of the next Iron Chef Super Chefs has not been announced yet.",
+        "The winner of the next Iron Chef Super Chefs has not been announced yet and will depend on future episodes and eliminations.",
+        "The winner of the next Iron Chef Super Chefs has not been announced yet and will depend on future episodes.",
+        "The winner of the next Iron Chef Super Chefs has not yet been determined and will depend on future competition results.",
+        "The winner of the next Iron Chef Super Chefs has not yet been determined and will depend on future episodes."
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -43.7234097708643,
+      "is_hallucination": 1
+    },
+    {
+      "question": "when does body temperature tend to be lowest",
+      "gold_answers": [
+        "11 p.m. to 3 a.m."
+      ],
+      "responses": [
+        "Body temperature tends to be lowest in the early morning hours before dawn.",
+        "Body temperature tends to be lowest during deep sleep, specifically in the first few hours of sleep.",
+        "Body temperature tends to be lowest in the early morning hours before dawn.",
+        "Body temperature tends to be lowest during deep non-rapid eye movement sleep, typically in the first few hours of sleep.",
+        "Body temperature tends to be lowest during deep sleep or early morning upon waking."
+      ],
+      "num_clusters": 4,
+      "semantic_entropy": 1.3321790402101223,
+      "semantic_energy": -44.094074982863205,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who sings the whiskey ain't workin anymore",
+      "gold_answers": [
+        "Dennis Locorriere",
+        "Marty Stuart",
+        "Travis Tritt",
+        "Tim Passmore",
+        "Travis Tritt and Marty Stuart"
+      ],
+      "responses": [
+        "Maren Morris sings \"Whiskey Ain't Workin' Anymore.\"",
+        "Kenny Rogers sings \"Whiskey Ain't Workin' Anymore.\"",
+        "Maren Morris sings \"Whiskey Ain't Workin' Anymore.\"",
+        "Sheryl Crow sings \"Whiskey Ain't Workin' (Anymore)\"",
+        "Maren Morris sings \"Whiskey Ain't Workin' Anymore.\""
+      ],
+      "num_clusters": 3,
+      "semantic_entropy": 0.9502705392332347,
+      "semantic_energy": -41.47341353394265,
+      "is_hallucination": 1
+    },
+    {
+      "question": "what year is it for the jewish calendar",
+      "gold_answers": [
+        "AM 5778",
+        "5778"
+      ],
+      "responses": [
+        "The current year in the Jewish calendar is 5782",
+        "The current year in the Jewish calendar is 5782",
+        "The current year in the Jewish calendar is 5782",
+        "The current year in the Jewish calendar is 5782",
+        "The current year in the Jewish calendar is 5782"
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -41.17726748330252,
+      "is_hallucination": 1
+    },
+    {
+      "question": "chief ministers of tamil nadu mentioned on wikipedia",
+      "gold_answers": [
+        "Ramakrishna Ranga Rao",
+        "Tanguturi Prakasam",
+        "P. Subbarayan",
+        "M. G. Ramachandran",
+        "Janaki Ramachandran"
+      ],
+      "responses": [
+        "The current chief minister of Tamil Nadu mentioned on Wikipedia is C. B. Rajkumar.",
+        "The chief ministers of Tamil Nadu mentioned on Wikipedia include M.K. Stalin, Jayaram Jayalalithaa, J. Jayalalithaa, and others as of the latest update.",
+        "The chief ministers of Tamil Nadu mentioned on Wikipedia include M. G. Ramachandran, J. Jayalalithaa, and M. K. Stalin among others.",
+        "The chief ministers of Tamil Nadu mentioned on Wikipedia include M. G. Ramachandran, J. Jayalalithaa, and Edappadi Palaniswami, among others.",
+        "The chief ministers of Tamil Nadu mentioned on Wikipedia include M.K. Stalin, J Jayalalithaa, and K. Palaniswami among others."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.130003119623936,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what is the function of a political action committee (pac)",
+      "gold_answers": [
+        "pools campaign contributions from members"
+      ],
+      "responses": [
+        "A political action committee (PAC) is an organization that raises and spends money to support or oppose candidates for office and influence legislation, acting as an independent vehicle for contributing to U.S. federal campaigns.",
+        "A political action committee (PAC) is an organized group that raises and spends money to elect or defeat candidates who support its political views.",
+        "A political action committee (PAC) is an organization that raises and spends money to support or oppose political candidates and initiatives to influence elections.",
+        "A political action committee (PAC) is an organization that raises and spends money to support or oppose candidates for public office and to influence elections.",
+        "A political action committee (PAC) is an organization formed to raise and spend money to support or oppose candidates for public office and to advocate on legislative issues."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -43.42586211924173,
+      "is_hallucination": 1
+    },
+    {
+      "question": "who has the most followers in the world on instagram",
+      "gold_answers": [
+        "Instagram's own account",
+        "Instagram"
+      ],
+      "responses": [
+        "As of 2023, the account with the most followers on Instagram is the official Instagram account itself, followed by other celebrities and public figures.",
+        "As of 2023, the account with the most followers on Instagram is the official Instagram account itself, not a specific individual user.",
+        "As of 2023, the account with the most followers on Instagram is the official Instagram account (@Instagram), owned by Meta (formerly Facebook).",
+        "As of 2023, the account with the most followers on Instagram is the official Instagram account with over 1 billion followers.",
+        "As of 2023, the account with the most followers on Instagram is the official Twitter account (@twitter), not a user, due to its nature as a corporate entity."
+      ],
+      "num_clusters": 5,
+      "semantic_entropy": 1.6094379124341005,
+      "semantic_energy": -40.15761829162977,
+      "is_hallucination": 0
+    },
+    {
+      "question": "what type of political system does el salvador have",
+      "gold_answers": [
+        "a presidential representative democratic republic",
+        "\"flawed democracy\"",
+        "presidential representative democratic republic"
+      ],
+      "responses": [
+        "El Salvador has a presidential representative democratic republic political system.",
+        "El Salvador has a presidential representative democratic republic political system.",
+        "El Salvador has a presidential representative democratic republic political system.",
+        "El Salvador has a presidential representative democratic republic political system.",
+        "El Salvador has a presidential representative democratic republic political system."
+      ],
+      "num_clusters": 1,
+      "semantic_entropy": 0.0,
+      "semantic_energy": -46.91185061136881,
+      "is_hallucination": 0
+    }
+  ]
+}
