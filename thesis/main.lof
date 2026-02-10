@@ -1,0 +1,11 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces SE-Gated Cascade 개념도: SE가 낮으면 Energy로, 높으면 SE로 판단}}{6}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율, 환각률, Energy AUROC}}{9}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교}}{10}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Cascade 임계값($\tau $) sweep 결과}}{11}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교}}{12}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{12}{}%
+\addvspace {10\p@ }

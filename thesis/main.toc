@@ -1,0 +1,33 @@
+\contentsline {chapter}{초록}{i}{}%
+\contentsline {chapter}{\numberline {1}서론}{1}{}%
+\contentsline {section}{\numberline {1.1}연구 배경}{1}{}%
+\contentsline {section}{\numberline {1.2}연구 목적}{1}{}%
+\contentsline {section}{\numberline {1.3}논문 구성}{2}{}%
+\contentsline {chapter}{\numberline {2}관련 연구}{3}{}%
+\contentsline {section}{\numberline {2.1}Semantic Entropy}{3}{}%
+\contentsline {subsection}{\numberline {2.1.1}작동 원리}{3}{}%
+\contentsline {subsection}{\numberline {2.1.2}해석}{3}{}%
+\contentsline {section}{\numberline {2.2}Semantic Energy}{4}{}%
+\contentsline {subsection}{\numberline {2.2.1}작동 원리}{4}{}%
+\contentsline {subsection}{\numberline {2.2.2}SE와의 차이점}{4}{}%
+\contentsline {section}{\numberline {2.3}Zero-SE 문제}{4}{}%
+\contentsline {chapter}{\numberline {3}제안 방법}{5}{}%
+\contentsline {section}{\numberline {3.1}핵심 통찰}{5}{}%
+\contentsline {section}{\numberline {3.2}SE-Gated Cascade}{5}{}%
+\contentsline {subsection}{\numberline {3.2.1}알고리즘}{5}{}%
+\contentsline {subsection}{\numberline {3.2.2}임계값 결정}{5}{}%
+\contentsline {section}{\numberline {3.3}이론적 근거}{7}{}%
+\contentsline {chapter}{\numberline {4}실험}{8}{}%
+\contentsline {section}{\numberline {4.1}실험 설정}{8}{}%
+\contentsline {subsection}{\numberline {4.1.1}데이터셋}{8}{}%
+\contentsline {subsection}{\numberline {4.1.2}파이프라인 설정}{8}{}%
+\contentsline {section}{\numberline {4.2}Zero-SE 현상 분석}{9}{}%
+\contentsline {subsection}{\numberline {4.2.1}Zero-SE 비율 및 환각률}{9}{}%
+\contentsline {subsection}{\numberline {4.2.2}SE 구간별 Crossover 분석}{9}{}%
+\contentsline {section}{\numberline {4.3}SE-Gated Cascade 성능}{10}{}%
+\contentsline {section}{\numberline {4.4}상보성 분석}{11}{}%
+\contentsline {section}{\numberline {4.5}전체 비교}{12}{}%
+\contentsline {chapter}{\numberline {5}결론}{13}{}%
+\contentsline {section}{\numberline {5.1}연구 요약}{13}{}%
+\contentsline {section}{\numberline {5.2}학술적 기여}{13}{}%
+\contentsline {section}{\numberline {5.3}향후 연구}{13}{}%
