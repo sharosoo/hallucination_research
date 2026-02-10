@@ -1,4 +1,4 @@
-% 서울대학교 학사 학위논문 - Semantic Entropy와 Semantic Energy의 상보적 결합을 통한 LLM 환각 탐지
+% 서울대학교 학사 학위논문 - SE-gated Cascade를 통한 LLM 환각 탐지
 \RequirePackage{fix-cm}
 \documentclass[oneside,ko,under]{snuthesis}
 
@@ -38,13 +38,27 @@
 \usepackage{url}
 \usepackage{kotex}
 \usepackage{fontspec}
+\usepackage{listings}
+\usepackage{xcolor}
+
 \setmainfont{NanumSquare}
 \setsansfont{NanumSquare}
 \setmonofont{NanumSquare}
+
+% 코드 스타일
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    language=Python,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Semantic Entropy와 Semantic Energy의\\%
-상보적 결합을 통한 LLM 환각 탐지}
+상보적 결합을 통한 LLM 환각 탐지:\\%
+Zero-SE 문제 해결을 중심으로}
 
 \schoolko{서울대학교}
 \departmentko{자유전공학부}
@@ -68,13 +82,21 @@
 \cleardoublepage
 \pagenumbering{roman}
 
-\keyword{대규모 언어모델, 환각 탐지, Semantic Entropy, Semantic Energy, Zero-SE 문제}
+\keyword{대규모 언어모델, 환각 탐지, Semantic Entropy, Semantic Energy, Zero-SE 문제, Adaptive Threshold}
 \begin{abstract}
-대규모 언어모델(LLM)의 환각(hallucination)은 의료, 법률, 금융 분야에서 심각한 위험을 초래한다. 기존의 Semantic Entropy(SE) 기반 탐지 방법은 모델이 일관되게 틀린 답변을 생성하는 경우, 즉 Zero-SE 문제에서 한계를 보인다. 본 연구에서는 SE와 Semantic Energy의 상보적 특성을 분석하고, SE가 낮을 때 Energy로 대체하는 SE-gated cascade 방법을 제안한다.
+대규모 언어모델(LLM)의 환각(hallucination) 문제는 실용적 적용에 있어 가장 심각한 장애물 중 하나이다. Farquhar 등이 Nature(2024)에서 제안한 Semantic Entropy(SE)는 LLM의 의미적 불확실성을 측정하는 대표적 방법이나, 모델이 일관되게 틀린 답변을 생성하는 Zero-SE 문제에서 한계를 보인다.
 
-TruthfulQA 데이터셋에서 K=5 응답 샘플링 실험 결과, Zero-SE 영역이 전체의 19\%를 차지하며 이 중 73.7\%가 환각임을 확인하였다. SE는 이 영역에서 판별력이 없으나, Energy는 AUROC 0.736으로 환각을 효과적으로 구분할 수 있었다. 또한 SE-gated cascade는 SE 단독 대비 AUROC 0.030 개선(0.613에서 0.643)을 달성하였으며, SE와 Energy의 합집합 탐지율은 89.6\%에 도달하여 두 메트릭의 상보성을 검증하였다.
+본 연구에서는 SE와 Semantic Energy의 상보적 특성을 분석하고, SE가 낮을 때 Energy로 대체하는 SE-gated cascade 방법을 제안한다. 핵심 통찰은 환각이 두 가지 유형---혼란(confusion)과 지어냄(confabulation)---으로 구분되며, SE는 전자를, Energy는 후자를 효과적으로 탐지한다는 것이다.
 
-본 연구는 SE와 Energy가 서로 다른 환각 패턴(혼란 대 지어냄)을 탐지함을 최초로 규명하였으며, 두 메트릭을 안전하게 결합하는 방법을 제안하여 LLM 환각 탐지 분야에 기여한다.
+TruthfulQA 데이터셋(K=5)에서의 실험 결과:
+\begin{itemize}
+    \item Zero-SE 영역이 전체의 19\%를 차지하며, 이 중 73.7\%가 환각
+    \item Zero-SE 영역에서 Energy AUROC 0.736 달성 (SE는 판별 불가)
+    \item SE-gated cascade는 SE 단독 대비 AUROC +0.030 개선 (0.613 → 0.643)
+    \item 합집합 탐지율 89.6\% 달성
+\end{itemize}
+
+본 연구는 SE와 Energy가 서로 다른 환각 패턴을 탐지함을 규명하고, 두 메트릭의 안전한 결합 방법을 제안하여 LLM 환각 탐지 분야에 기여한다.
 \end{abstract}
 
 \tableofcontents
@@ -105,118 +127,258 @@ TruthfulQA 데이터셋에서 K=5 응답 샘플링 실험 결과, Zero-SE 영역
 \begin{enumerate}
     \item \textbf{Zero-SE 문제의 정량화}: Zero-SE 현상이 실제로 얼마나 발생하며, 그 중 환각이 얼마나 포함되어 있는지 정량적으로 분석한다.
     
-    \item \textbf{상보적 메트릭 검증}: SE와 Semantic Energy가 서로 다른 유형의 환각을 탐지하는지 검증한다.
+    \item \textbf{환각 유형 규명}: SE와 Semantic Energy가 서로 다른 유형의 환각(혼란 vs 지어냄)을 탐지하는지 검증한다.
     
-    \item \textbf{SE-gated Cascade 제안}: 두 메트릭을 상보적으로 결합하여 Zero-SE 문제를 해결하는 SE-gated cascade 방법을 제안한다.
+    \item \textbf{SE-gated Cascade 제안}: 두 메트릭을 상보적으로 결합하여 Zero-SE 문제를 해결하는 방법을 제안한다.
+    
+    \item \textbf{이론적 근거 제시}: 기존 문헌 분석을 통해 제안 방법의 이론적 정당성을 확보한다.
 \end{enumerate}
 
 
 \section{논문 구성}
 
-본 논문은 다음과 같이 구성된다. 제~\ref{ch:related}장에서는 Semantic Entropy, Semantic Energy 및 Zero-SE 문제에 대한 관련 연구를 살펴본다. 제~\ref{ch:method}장에서는 제안하는 SE-gated cascade 방법론을 설명한다. 제~\ref{ch:experiment}장에서는 TruthfulQA 데이터셋에서의 실험 결과를 분석하고, 제~\ref{ch:conclusion}장에서 결론 및 향후 연구 방향을 제시한다.
+본 논문은 다음과 같이 구성된다. 제~\ref{ch:related}장에서는 LLM 환각 탐지를 위한 기존 연구들을 체계적으로 분석한다. 제~\ref{ch:theory}장에서는 제안 방법의 이론적 근거를 제시한다. 제~\ref{ch:method}장에서는 SE-gated cascade 방법론을 설명한다. 제~\ref{ch:experiment}장에서는 TruthfulQA 데이터셋에서의 실험 결과를 분석하고, 제~\ref{ch:conclusion}장에서 결론 및 향후 연구 방향을 제시한다.
 
 
 \chapter{관련 연구}{\label{ch:related}}
 
-\section{Semantic Entropy}
+본 장에서는 LLM 환각 탐지를 위한 불확실성 추정 방법론들을 체계적으로 분석한다. 표~\ref{tab:method_comparison}은 주요 방법론들의 비교를 보여준다.
 
-Semantic Entropy(SE)는 Farquhar 등이 2024년 Nature에 발표한 LLM 불확실성 측정 방법이다. 기존의 토큰 단위 확률 기반 불확실성 측정 방법과 달리, SE는 응답의 의미적 내용을 기반으로 불확실성을 측정한다.
+\begin{table}[htbp]
+\centering
+\caption{LLM 환각 탐지 방법론 비교}
+\label{tab:method_comparison}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+방법 & 핵심 아이디어 & 장점 & 한계 \\
+\midrule
+SE & NLI 클러스터링 + Shannon Entropy & 의미적 불확실성 시초 & Zero-SE 문제 \\
+KLE & von Neumann Entropy + Kernel & SE를 이론적으로 일반화 & O(N³) 복잡도 \\
+SNNE & Nearest Neighbor LogSumExp & 클러스터링 불필요 & 유사도 함수 의존 \\
+Cleanse & Hidden Embedding 비율 & 클러스터 간 유사도 활용 & White-box only \\
+Energy & Raw Logit 기반 에너지 & Zero-SE 해결 & 다양성 정보 부족 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Semantic Entropy (SE)}
+
+Semantic Entropy는 Farquhar 등이 2024년 Nature에 발표한 LLM 불확실성 측정 방법이다. 기존의 토큰 단위 확률 기반 불확실성 측정 방법과 달리, SE는 응답의 의미적 내용을 기반으로 불확실성을 측정한다.
 
 \subsection{작동 원리}
 
 SE의 계산 과정은 다음과 같다:
 
 \begin{enumerate}
-    \item \textbf{응답 샘플링}: 하나의 질문 $q$에 대해 LLM으로부터 $K$개의 응답 $\{r_1, r_2, ..., r_K\}$를 샘플링한다. 일반적으로 temperature $\tau > 0$을 사용하여 다양한 응답을 생성한다.
+    \item \textbf{응답 샘플링}: 하나의 질문 $q$에 대해 LLM으로부터 $K$개의 응답 $\{r_1, r_2, ..., r_K\}$를 샘플링한다.
     
-    \item \textbf{의미적 클러스터링}: 자연어 추론(NLI) 모델을 사용하여 응답들을 의미적으로 클러스터링한다. 두 응답이 서로 entailment 관계에 있으면 같은 클러스터로 분류한다.
+    \item \textbf{의미적 클러스터링}: NLI 모델을 사용하여 응답들을 의미적으로 클러스터링한다. 두 응답이 서로 entailment 관계에 있으면 같은 클러스터로 분류한다.
     
     \item \textbf{엔트로피 계산}: 클러스터 분포의 Shannon entropy를 계산한다.
 \end{enumerate}
 
-수식으로 표현하면 다음과 같다:
+수식으로 표현하면:
 \begin{equation}
     SE = -\sum_{c \in C} p(c) \log p(c)
 \end{equation}
 여기서 $C$는 의미 클러스터 집합이고, $p(c)$는 클러스터 $c$에 속하는 응답의 비율이다.
 
-\subsection{해석}
+\subsection{한계점}
 
-SE 값의 의미는 다음과 같이 해석된다:
+SE의 주요 한계점은 다음과 같다:
+\begin{itemize}
+    \item \textbf{Hard Clustering}: 응답들을 이진적으로(동일/다름) 분류하여 세밀한 유사도를 반영하지 못한다.
+    \item \textbf{Zero-SE 문제}: 모든 응답이 하나의 클러스터에 속하면 SE=0이 되어 판별력이 사라진다.
+    \item \textbf{긴 응답 문제}: 최신 LLM들의 긴 응답에서는 클러스터 수가 증가하여 효과가 감소한다.
+\end{itemize}
+
+
+\section{Kernel Language Entropy (KLE)}
+
+Nikitin 등(2024)이 제안한 KLE는 SE의 hard clustering 한계를 극복한다.
+
+\subsection{핵심 아이디어}
+
+KLE는 의미적 관계를 \textbf{동치 관계(equivalence relation)} 대신 \textbf{유사도 관계(similarity relation)}로 포착한다. 이를 위해 von Neumann Entropy를 사용하여 의미 커널의 엔트로피를 계산한다.
+
+\begin{equation}
+    KLE(x) = VNE(K_{sem}) = -\sum_i \lambda_i \log \lambda_i
+\end{equation}
+여기서 $\lambda_i$는 의미 커널 $K_{sem}$의 고유값이다.
+
+\subsection{이론적 기여}
+
+KLE의 핵심 이론적 기여는 다음과 같다:
+\begin{quote}
+\textbf{Theorem 3.5}: KLE는 Semantic Entropy를 일반화한다. 임의의 의미적 클러스터링에 대해 KLE = SE가 되는 의미 커널이 존재한다.
+\end{quote}
+
+이는 SE가 KLE의 특수한 경우임을 보여주며, KLE가 더 일반적인 프레임워크임을 증명한다.
+
+
+\section{Semantic Nearest Neighbor Entropy (SNNE)}
+
+Nguyen 등(2025)이 제안한 SNNE는 클러스터링 없이 직접 유사도 기반 불확실성을 측정한다.
+
+\subsection{핵심 아이디어}
+
+SNNE는 Nearest Neighbor 엔트로피 추정에서 영감을 받아, LogSumExp 연산으로 이상치 영향을 완화한다:
+
+\begin{equation}
+    SNNE(q) = -\frac{1}{n} \sum_{i=1}^{n} \log \sum_{j=1}^{n} \exp\left(\frac{f(a_i, a_j | q)}{\tau}\right)
+\end{equation}
+
+\subsection{SE/KLE 대비 장점}
 
 \begin{itemize}
-    \item \textbf{SE가 높음}: 응답이 여러 클러스터로 분산되어 있어 모델이 혼란스러워하는 상태이다. 이는 환각 가능성이 높음을 의미한다.
-    
-    \item \textbf{SE가 낮음}: 응답이 하나 또는 소수의 클러스터에 집중되어 있어 모델이 일관된 답변을 생성하는 상태이다. 그러나 이것이 반드시 정답을 의미하지는 않는다.
-    
-    \item \textbf{SE가 0}: 모든 응답이 하나의 클러스터에 속한다. 모델이 매우 일관된 답변을 생성하지만, 일관되게 틀린 답변일 수도 있다.
+    \item \textbf{클러스터링 불필요}: O(N²) 복잡도로 KLE의 O(N³)보다 효율적
+    \item \textbf{긴 응답 강건성}: 클러스터 수 증가에 덜 민감
+    \item \textbf{이론적 일반화}: SE와 DSE를 일반화 (Theorem 4.1-4.2)
 \end{itemize}
 
 
 \section{Semantic Energy}
 
-Semantic Energy는 Ma 등이 2025년에 제안한 방법으로, 토큰 단위의 확신도를 측정한다. SE가 응답 간 다양성을 측정하는 것과 달리, Energy는 각 토큰 생성 시 모델의 내재적 확신도를 측정한다.
+Ma 등(2025)이 제안한 Semantic Energy는 토큰 단위의 확신도를 측정한다.
 
 \subsection{작동 원리}
 
-Energy는 LLM이 각 토큰을 생성할 때 부여한 raw logit 값을 기반으로 계산된다:
+Energy는 LLM이 각 토큰을 생성할 때 부여한 \textbf{softmax 전 raw logit} 값을 사용한다:
 \begin{equation}
-    Energy = \frac{1}{nT} \sum_{i=1}^{n} \sum_{t=1}^{T_i} -z(x_t^{(i)})
+    Energy = \frac{1}{nT} \sum_{i=1}^{n} \sum_{t=1}^{T_i} -z_\theta(x_t^{(i)})
 \end{equation}
-여기서 $n$은 응답의 수, $T_i$는 $i$번째 응답의 토큰 수, $z(x_t)$는 토큰 $x_t$의 logit 값이다.
+여기서 $z_\theta(x_t)$는 토큰 $x_t$의 logit 값이다.
 
-\subsection{SE와의 차이점}
-
-SE와 Energy의 근본적인 차이점은 다음과 같다:
-
-\begin{itemize}
-    \item \textbf{SE}: 응답 간 다양성(inter-response diversity)을 측정한다. 여러 응답이 의미적으로 얼마나 다른지를 본다.
-    
-    \item \textbf{Energy}: 각 토큰의 내재적 확신도(intra-token confidence)를 측정한다. 모델이 각 토큰을 생성할 때 얼마나 확신을 가지고 있는지를 본다.
-\end{itemize}
-
-이 차이점으로 인해, SE=0인 상황(모든 응답이 동일한 의미)에서도 Energy는 여전히 정보를 제공할 수 있다. 모델이 일관되게 답변하더라도 각 토큰 생성 시의 확신도는 다를 수 있기 때문이다.
-
-
-\section{Zero-SE 문제}
-
-Zero-SE는 $K$개 응답이 \textbf{모두 단일 NLI 클러스터}에 속하는 경우(SE $\approx$ 0)를 의미한다. 이 상황에서 발생하는 문제점은 다음과 같다:
-
-\begin{enumerate}
-    \item \textbf{판별력 부재}: SE가 정의상 0이므로, 환각 여부에 대한 판별력이 전혀 없다. 모든 Zero-SE 샘플이 동일한 SE 값(0)을 가지므로 순위를 매길 수 없다.
-    
-    \item \textbf{높은 환각률}: 실제로 Zero-SE 영역에 환각이 다수 포함되어 있다. 모델이 일관되게 틀린 답변을 생성하는 경우가 이에 해당한다.
-    
-    \item \textbf{기존 해결책 부재}: 기존 연구에서는 이 문제에 대한 명시적인 해결책이 제시되지 않았다.
-\end{enumerate}
-
-본 연구는 Zero-SE 영역에서 Energy를 대신 사용하는 방법을 제안하여 이 문제를 해결한다.
-
-
-\chapter{제안 방법}{\label{ch:method}}
-
-\section{핵심 통찰}
-
-본 연구의 핵심 통찰은 LLM이 환각을 일으킬 때, 모델이 해당 주제를 \textit{아는지 여부}에 따라 근본적으로 다른 방식으로 환각한다는 것이다. 표~\ref{tab:hallucination_types}는 두 가지 환각 유형을 정리한 것이다.
+\subsection{SE 대비 차별점}
 
 \begin{table}[htbp]
 \centering
-\caption{환각 유형별 특성과 최적 탐지기}
-\label{tab:hallucination_types}
-\begin{tabular}{@{}llll@{}}
+\caption{SE와 Semantic Energy의 비교}
+\label{tab:se_vs_energy}
+\begin{tabular}{@{}lll@{}}
 \toprule
-유형 & 원인 & 행동적 신호 & 최적 탐지기 \\
+항목 & SE & Semantic Energy \\
 \midrule
-혼란(Confusion) & 모델이 알지만 헷갈림 & 다양한 오답 & SE \\
-지어냄(Confabulation) & 모델이 모르고 지어냄 & 일관된 오답 & Energy \\
+사용 값 & softmax 후 확률 & softmax 전 logit \\
+측정 대상 & 응답 간 다양성 & 토큰별 확신도 \\
+정보 손실 & 정규화로 손실 & logit 크기 보존 \\
+Zero-SE & 해결 못함 & \textbf{해결} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{혼란(Confusion)}은 모델이 관련 지식을 가지고 있지만 헷갈리는 경우이다. 예를 들어, 비슷한 이름을 가진 여러 인물 중 누구인지 혼동하는 경우가 이에 해당한다. 이 경우 모델은 여러 번 질문받으면 다양한 오답을 생성하며, 이는 높은 SE로 나타난다.
+\subsection{Zero-SE 해결}
 
-\textbf{지어냄(Confabulation)}은 모델이 관련 지식이 없어서 그럴듯하게 지어내는 경우이다. 존재하지 않는 책이나 인물에 대해 질문받았을 때, 모델은 일관되게 같은 거짓 정보를 생성한다. 이 경우 SE는 낮지만(모든 응답이 동일), 각 토큰 생성 시의 Energy는 높다.
+Energy의 가장 중요한 장점은 Zero-SE 문제를 해결한다는 것이다. 모든 응답이 동일한 의미라도(SE=0), 각 토큰 생성 시 logit 크기가 다르면 Energy로 구분할 수 있다.
 
+
+\section{기존 연구의 한계 및 연구 공백}
+
+기존 연구들의 한계를 정리하면 다음과 같다:
+
+\begin{enumerate}
+    \item \textbf{SE 계열 (SE, KLE, SNNE)}: Zero-SE 문제를 해결하지 못함
+    \item \textbf{Energy}: 응답 간 다양성 정보를 활용하지 못함
+    \item \textbf{결합 시도 부재}: SE와 Energy를 체계적으로 결합하는 연구 없음
+\end{enumerate}
+
+본 연구는 SE와 Energy의 \textbf{상보성}을 규명하고, \textbf{SE-gated cascade}를 통해 두 메트릭을 안전하게 결합하는 방법을 제안한다.
+
+
+\chapter{이론적 분석}{\label{ch:theory}}
+
+본 장에서는 제안 방법의 이론적 근거를 제시한다.
+
+\section{환각의 두 가지 유형}
+
+Physics of Language Models 연구에 따르면, LLM의 지식 추출 능력은 사전학습 중 노출 빈도에 크게 의존한다:
+
+\begin{quote}
+``지식이 안정적으로 추출되려면, 사전학습 중 충분히 증강(paraphrasing, shuffling 등)되어야 한다. 이러한 증강 없이는 지식이 암기되더라도 추출 불가능할 수 있다.''
+\end{quote}
+
+이를 기반으로 우리는 환각을 두 가지 유형으로 구분한다:
+
+\subsection{혼란 (Confusion)}
+
+\textbf{정의}: 모델이 관련 지식을 가지고 있지만 헷갈리는 경우
+
+\textbf{특성}:
+\begin{itemize}
+    \item 사전학습 중 높은 빈도로 노출된 주제
+    \item 여러 관련 정보가 경쟁하여 혼동 발생
+    \item 여러 번 질문 시 \textbf{다양한 오답} 생성 (높은 SE)
+\end{itemize}
+
+\textbf{탐지}: SE가 효과적 (다양한 응답 → 높은 엔트로피)
+
+\subsection{지어냄 (Confabulation)}
+
+\textbf{정의}: 모델이 관련 지식이 없어서 그럴듯하게 지어내는 경우
+
+\textbf{특성}:
+\begin{itemize}
+    \item 사전학습 중 낮은 빈도로 노출되거나 없는 주제
+    \item 관련 정보 부재로 일관된 패턴 생성
+    \item 여러 번 질문 시 \textbf{일관된 오답} 생성 (낮은 SE)
+\end{itemize}
+
+\textbf{탐지}: Energy가 효과적 (낮은 logit 확신도 → 높은 Energy)
+
+
+\section{SE와 Energy의 상보성}
+
+\subsection{정보 이론적 관점}
+
+SE와 Energy는 서로 다른 정보를 포착한다:
+
+\begin{itemize}
+    \item \textbf{SE}: \textit{Inter-response} 다양성 --- 응답들이 의미적으로 얼마나 다른가?
+    \item \textbf{Energy}: \textit{Intra-token} 확신도 --- 각 토큰 생성 시 모델이 얼마나 확신하는가?
+\end{itemize}
+
+이 두 가지 정보는 독립적이다. 모든 응답이 동일해도(SE=0), 각 토큰의 logit은 다를 수 있다.
+
+\subsection{상보성의 수학적 표현}
+
+환각 탐지 함수 $D$를 다음과 같이 정의하자:
+\begin{equation}
+    D(q) = \begin{cases}
+        Energy(q) & \text{if } SE(q) < \tau \\
+        SE(q) & \text{if } SE(q) \geq \tau
+    \end{cases}
+\end{equation}
+
+이 cascade 함수는 SE가 낮은 영역(Zero-SE)에서 Energy를, SE가 높은 영역에서 SE를 사용한다.
+
+
+\section{Internal Logit과 Confabulation의 관계}
+
+Energy가 confabulation을 잘 탐지하는 이유는 다음과 같이 설명할 수 있다:
+
+\subsection{Logit 크기와 지식의 관계}
+
+LLM의 logit은 다음 토큰에 대한 ``확신도''를 반영한다. Allen-Zhu \& Li의 연구에 따르면:
+
+\begin{itemize}
+    \item \textbf{충분히 학습된 지식}: 높은 logit으로 정답 토큰 선택
+    \item \textbf{불충분하게 학습된 지식}: 낮은 logit으로 불확실한 선택
+\end{itemize}
+
+\subsection{Confabulation에서의 Logit 패턴}
+
+모델이 confabulation할 때:
+\begin{enumerate}
+    \item 관련 지식 부재로 정답 토큰에 높은 logit 부여 불가
+    \item ``그럴듯한'' 토큰들에 비슷한 중간 logit 분배
+    \item 결과적으로 평균 logit이 낮음 → 높은 Energy
+\end{enumerate}
+
+이는 SE=0인 상황에서도 Energy가 환각을 탐지할 수 있는 이유이다.
+
+
+\chapter{제안 방법}{\label{ch:method}}
 
 \section{SE-Gated Cascade}
 
@@ -253,23 +415,19 @@ SE-gated cascade의 알고리즘은 Algorithm~\ref{alg:cascade}와 같다.
 
 임계값 $\tau$는 SE와 Energy 중 어떤 메트릭을 사용할지 결정하는 기준이다. 본 연구에서는 TruthfulQA 데이터셋의 검증 세트에서 grid search를 통해 최적 임계값 $\tau = 0.526$을 도출하였다.
 
-이 임계값은 Zero-SE 영역(SE $<$ 0.1인 샘플)을 효과적으로 포함하면서, High-SE 영역에서는 SE의 장점을 유지하도록 설정되었다.
+\section{Adaptive Threshold 확장}
 
+고정 임계값의 한계를 극복하기 위해, 입력에 따라 동적으로 가중치를 조정하는 방법도 고려할 수 있다:
 
-\section{이론적 근거}
+\begin{equation}
+    Score = w(x) \cdot Energy + (1 - w(x)) \cdot SE
+\end{equation}
 
-Physics of Language Models 연구에서는 다음과 같이 설명한다:
-
-\begin{quote}
-``지식이 안정적으로 추출되려면, 사전학습 중 충분히 증강(paraphrasing, shuffling 등)되어야 한다. 이러한 증강 없이는 지식이 암기되더라도 추출 불가능할 수 있다.''
-\end{quote}
-
-이를 기반으로 한 우리의 해석은 다음과 같다:
-
+여기서 $w(x)$는 입력 $x$의 특성에 따라 결정되는 가중치 함수이다. 가능한 특성으로는:
 \begin{itemize}
-    \item \textbf{충분히 학습된 지식}: 사전학습 중 많이 노출되어 잘 학습된 지식은 혼란형 오류를 발생시킨다. 모델이 여러 관련 정보를 알고 있어 혼동하기 때문이다. 이 경우 SE가 효과적이다.
-    
-    \item \textbf{불충분하게 학습된 지식}: 사전학습 중 충분히 노출되지 않은 지식은 지어냄형 오류를 발생시킨다. 모델이 관련 정보를 모르기 때문에 그럴듯하게 지어낸다. 이 경우 Energy가 효과적이다.
+    \item SE 값 자체 (SE가 낮으면 Energy 가중치 증가)
+    \item 클러스터 수 (단일 클러스터면 Energy 가중치 증가)
+    \item 응답 길이 통계
 \end{itemize}
 
 
@@ -279,7 +437,7 @@ Physics of Language Models 연구에서는 다음과 같이 설명한다:
 
 \subsection{데이터셋}
 
-TruthfulQA 데이터셋을 사용하였다. 이 데이터셋은 인간이 흔히 가지는 오개념을 유도하는 질문들로 구성되어 있어, LLM의 환각 탐지 연구에 적합하다. 표~\ref{tab:dataset}은 데이터셋의 통계를 보여준다.
+TruthfulQA 데이터셋을 사용하였다. 이 데이터셋은 인간이 흔히 가지는 오개념을 유도하는 질문들로 구성되어 있어, LLM의 환각 탐지 연구에 적합하다.
 
 \begin{table}[htbp]
 \centering
@@ -298,8 +456,6 @@ TruthfulQA 데이터셋을 사용하였다. 이 데이터셋은 인간이 흔히
 
 \subsection{파이프라인 설정}
 
-표~\ref{tab:pipeline}은 실험 파이프라인 설정을 보여준다.
-
 \begin{table}[htbp]
 \centering
 \caption{실험 파이프라인 설정}
@@ -316,8 +472,6 @@ Temperature & 0.7 \\
 \end{tabular}
 \end{table}
 
-파이프라인은 다음과 같이 작동한다: 질문이 입력되면 LLM이 K=5개의 응답을 생성하고, NLI 모델이 응답들을 클러스터링하여 SE를 계산한다. 동시에 각 응답의 토큰 logit 값으로 Energy를 계산한다. 최종적으로 환각 여부 라벨과 비교하여 AUROC을 산출한다.
-
 
 \section{Zero-SE 현상 분석}
 
@@ -332,8 +486,6 @@ Temperature & 0.7 \\
     \label{fig:zero_se_overview}
 \end{figure}
 
-표~\ref{tab:zero_se}는 Zero-SE 영역의 정량적 분석 결과를 보여준다.
-
 \begin{table}[htbp]
 \centering
 \caption{TruthfulQA Zero-SE 영역 분석}
@@ -345,16 +497,16 @@ Temperature & 0.7 \\
 Zero-SE 비율 & 19.0\% (38/200) \\
 Zero-SE 내 환각률 & 73.7\% (28/38) \\
 Zero-SE 내 Energy AUROC & 0.736 \\
-95\% 신뢰구간 & [0.52, 0.93] \\
+95\% 신뢰구간 (Bootstrap) & [0.52, 0.93] \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-주요 발견은 다음과 같다:
+\textbf{주요 발견}:
 \begin{itemize}
-    \item 전체 샘플의 19\%가 Zero-SE에 해당한다. 이는 5개 응답이 모두 단일 의미 클러스터에 속하는 경우이다.
-    \item Zero-SE 샘플 중 73.7\%가 실제 환각이다. 모델이 일관되게 틀린 답변을 생성하는 경우가 많다.
-    \item SE로는 이 영역에서 판별이 불가능하지만, Energy는 AUROC 0.736으로 환각을 효과적으로 구분한다.
+    \item 전체 샘플의 19\%가 Zero-SE에 해당한다.
+    \item Zero-SE 샘플 중 73.7\%가 실제 환각이다.
+    \item SE로는 이 영역에서 판별 불가하지만, Energy는 AUROC 0.736으로 효과적으로 구분한다.
 \end{itemize}
 
 
@@ -365,15 +517,13 @@ Zero-SE 내 Energy AUROC & 0.736 \\
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/fig2_se_bin_crossover.png}
-    \caption{SE 구간별 SE vs Energy AUROC 비교}
+    \caption{SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}
     \label{fig:crossover}
 \end{figure}
 
-표~\ref{tab:crossover}는 각 SE 구간별 탐지 성능을 정리한 것이다.
-
 \begin{table}[htbp]
 \centering
-\caption{SE 구간별 탐지 성능 (TruthfulQA)}
+\caption{SE 구간별 탐지 성능}
 \label{tab:crossover}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
@@ -382,19 +532,12 @@ SE 구간 & n & 환각률 & SE AUROC & Energy AUROC \\
 Zero [0, 0.05] & 38 & 73.7\% & N/A & \textbf{0.736} \\
 Medium (0.3, 0.6] & 23 & 78.3\% & N/A & 0.578 \\
 High (0.6, 1.0] & 44 & 84.1\% & \textbf{0.664} & 0.517 \\
-Very High (1.0, $\infty$) & 95 & 85.3\% & \textbf{0.658} & 0.422 \\
+Very High (1.0+) & 95 & 85.3\% & \textbf{0.658} & 0.422 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Crossover 패턴이 명확하게 관찰된다:
-\begin{itemize}
-    \item \textbf{Zero-SE 영역}: Energy가 0.736으로 우세하다. SE는 모든 값이 0이므로 AUROC 계산이 불가능하다.
-    \item \textbf{High-SE 영역}: SE가 0.664로 우세하고, Energy는 0.517로 성능이 떨어진다.
-    \item \textbf{Very High-SE 영역}: SE가 0.658로 여전히 우세하며, Energy는 0.422로 랜덤 수준 이하이다.
-\end{itemize}
-
-이 결과는 SE-gated cascade 전략의 근거가 된다: 낮은 SE 영역에서는 Energy를, 높은 SE 영역에서는 SE를 사용해야 한다.
+\textbf{Crossover 패턴}: Zero-SE 영역에서는 Energy가 우세하고, High-SE 영역에서는 SE가 우세하다.
 
 
 \section{SE-Gated Cascade 성능}
@@ -407,8 +550,6 @@ Crossover 패턴이 명확하게 관찰된다:
     \caption{Cascade 임계값($\tau$) sweep 결과}
     \label{fig:cascade_sweep}
 \end{figure}
-
-표~\ref{tab:cascade_result}는 각 방법의 AUROC을 비교한 것이다.
 
 \begin{table}[htbp]
 \centering
@@ -425,8 +566,6 @@ Energy-only & 0.550 & -0.063 \\
 \end{tabular}
 \end{table}
 
-Cascade 방법이 SE-only 대비 AUROC 0.030 개선을 달성하였다. Energy-only는 SE-only보다 성능이 낮아 단독으로는 사용하기 어렵지만, cascade를 통해 Zero-SE 영역에서의 약점을 보완할 수 있다.
-
 
 \section{상보성 분석}
 
@@ -435,15 +574,13 @@ Cascade 방법이 SE-only 대비 AUROC 0.030 개선을 달성하였다. Energy-o
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{images/fig3_complementarity.png}
-    \caption{SE와 Energy의 환각 탐지 영역 비교}
+    \caption{SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}
     \label{fig:complementarity}
 \end{figure}
 
-표~\ref{tab:complementarity}는 164개 환각 샘플에 대한 탐지 영역 분석 결과이다. 여기서 ``탐지''는 해당 메트릭의 점수가 상위 20\%(80th percentile)에 속하는 경우를 의미한다.
-
 \begin{table}[htbp]
 \centering
-\caption{TruthfulQA 환각 탐지 상보성 (164개 환각 기준)}
+\caption{환각 탐지 상보성 (164개 환각 기준)}
 \label{tab:complementarity}
 \begin{tabular}{@{}lr@{}}
 \toprule
@@ -459,13 +596,7 @@ Energy만 탐지 & 17.7\% (29개) \\
 \end{tabular}
 \end{table}
 
-주목할 점은 다음과 같다:
-\begin{itemize}
-    \item \textbf{Energy만 탐지하는 17.7\%}: 이 환각들은 SE를 아무리 좋은 threshold로 설정해도 잡을 수 없다. 모델이 일관되게 틀린 답변을 생성하기 때문이다.
-    \item \textbf{합집합 탐지율 89.6\%}: SE와 Energy를 함께 사용하면 전체 환각의 약 90\%를 탐지할 수 있다.
-\end{itemize}
-
-이 결과는 두 메트릭의 상보성을 명확히 보여준다.
+Energy만 탐지하는 17.7\%는 SE로는 절대 잡을 수 없는 환각이다.
 
 
 \section{전체 비교}
@@ -489,41 +620,41 @@ Energy만 탐지 & 17.7\% (29개) \\
 TruthfulQA 데이터셋에서의 실험을 통해 다음을 확인하였다:
 
 \begin{enumerate}
-    \item \textbf{Zero-SE 문제의 심각성}: 전체 샘플의 19\%가 Zero-SE에 해당하며, 이 중 73.7\%가 환각이다. SE는 이 영역에서 판별력이 없다.
+    \item \textbf{Zero-SE 문제의 심각성}: 전체 샘플의 19\%가 Zero-SE에 해당하며, 이 중 73.7\%가 환각이다.
     
     \item \textbf{Energy의 효과}: Zero-SE 영역에서 Energy가 AUROC 0.736으로 환각을 효과적으로 구분한다.
     
-    \item \textbf{Cascade의 개선}: SE-gated cascade는 SE-only 대비 AUROC +0.030 개선을 달성한다 (0.613에서 0.643).
+    \item \textbf{Cascade의 개선}: SE-gated cascade는 SE-only 대비 AUROC +0.030 개선을 달성한다.
     
-    \item \textbf{상보성}: SE와 Energy의 합집합 탐지율은 89.6\%에 도달하여, 두 메트릭이 서로 다른 환각 영역을 커버함을 확인하였다.
+    \item \textbf{상보성}: SE와 Energy의 합집합 탐지율은 89.6\%에 도달한다.
 \end{enumerate}
 
 
 \section{학술적 기여}
 
-본 연구의 학술적 기여는 다음과 같다:
-
 \begin{enumerate}
-    \item \textbf{Zero-SE 문제 정의}: SE 기반 환각 탐지의 근본적 한계인 Zero-SE 문제를 처음으로 정의하고 정량적으로 분석하였다.
+    \item \textbf{Zero-SE 문제 정의}: SE 기반 환각 탐지의 근본적 한계를 처음으로 정의하고 정량화하였다.
     
-    \item \textbf{환각 유형 규명}: SE와 Energy가 서로 다른 환각 패턴(혼란 vs 지어냄)을 탐지함을 밝혔다.
+    \item \textbf{환각 유형 규명}: 혼란(confusion)과 지어냄(confabulation)이라는 두 가지 환각 유형을 규명하고, 각각에 적합한 탐지 메트릭을 제시하였다.
     
     \item \textbf{SE-gated Cascade 제안}: 두 메트릭을 안전하게 결합하는 실용적인 방법을 제안하였다.
+    
+    \item \textbf{이론적 근거}: 기존 문헌 분석을 통해 제안 방법의 이론적 정당성을 확보하였다.
 \end{enumerate}
 
 
 \section{향후 연구}
 
-본 연구를 확장할 수 있는 향후 연구 방향은 다음과 같다:
-
 \begin{enumerate}
-    \item \textbf{다양한 데이터셋 검증}: TriviaQA, NaturalQuestions 등 추가 데이터셋에서의 검증이 필요하다.
+    \item \textbf{Adaptive Threshold}: 입력에 따라 $\tau$를 동적으로 결정하는 방법 개발. 현재 고정 임계값은 cross-dataset 환경에서 한계가 있다.
     
-    \item \textbf{적응적 임계값}: 입력에 따라 $\tau$를 동적으로 결정하는 방법을 개발할 수 있다.
+    \item \textbf{다양한 데이터셋 검증}: TriviaQA, NaturalQuestions, HaluEval 등에서 검증 필요.
     
-    \item \textbf{Energy의 이론적 분석}: Energy가 confabulation을 잘 탐지하는 이유에 대한 심층 분석이 필요하다.
+    \item \textbf{더 큰 모델 검증}: Qwen2.5-3B 외에 7B, 72B 등 더 큰 모델에서의 검증 필요.
     
-    \item \textbf{Cross-dataset 일반화}: 학습 데이터셋과 배포 환경이 다른 상황에서의 성능 분석이 필요하다.
+    \item \textbf{Energy 이론 심화}: Energy가 confabulation을 탐지하는 메커니즘에 대한 심층 분석 필요.
+    
+    \item \textbf{KESFE/AHSFE 확장}: 문헌조사에서 제안된 Kernel 기반 또는 Adaptive 가중치 방법 적용.
 \end{enumerate}
 
 
@@ -537,7 +668,22 @@ S. Farquhar, J. Kossen, L. Kuhn, and Y. Gal,
 \bibitem{ma2025}
 Z. Ma et al.,
 ``Semantic Energy: A novel approach for detecting confabulation in language models,''
-\textit{arXiv preprint arXiv:2501.xxxxx}, 2025.
+\textit{arXiv preprint arXiv:2412.07965}, 2025.
+
+\bibitem{nikitin2024}
+A. Nikitin, J. Kossen, Y. Gal, and P. Marttinen,
+``Kernel Language Entropy: Fine-grained Uncertainty Quantification for LLMs from Semantic Similarities,''
+\textit{arXiv preprint arXiv:2405.20003}, 2024.
+
+\bibitem{nguyen2025}
+D. Nguyen, A. Payani, and B. Mirzasoleiman,
+``Beyond Semantic Entropy: Boosting LLM Uncertainty Quantification with Pairwise Semantic Similarity,''
+\textit{arXiv preprint arXiv:2506.00245}, 2025.
+
+\bibitem{cleanse2025}
+J. Joo and Y. Cho,
+``Cleanse: Clustering-based Semantic Consistency for LLM Hallucination Detection,''
+\textit{arXiv preprint arXiv:2507.14649}, 2025.
 
 \bibitem{truthfulqa}
 S. Lin, J. Hilton, and O. Evans,
@@ -549,26 +695,70 @@ Z. Allen-Zhu and Y. Li,
 ``Physics of Language Models: Part 3.1, Knowledge Storage and Extraction,''
 \textit{arXiv preprint arXiv:2309.14316}, 2023.
 
-\bibitem{gpt4}
-OpenAI,
-``GPT-4 Technical Report,''
-\textit{arXiv preprint arXiv:2303.08774}, 2023.
-
-\bibitem{claude}
-Anthropic,
-``Claude 3 Model Card,''
-\textit{Technical Report}, 2024.
+\bibitem{qwen}
+J. Bai et al.,
+``Qwen Technical Report,''
+\textit{arXiv preprint arXiv:2309.16609}, 2023.
 
 \bibitem{deberta}
 P. He, X. Liu, J. Gao, and W. Chen,
 ``DeBERTa: Decoding-enhanced BERT with Disentangled Attention,''
 \textit{Proceedings of ICLR}, 2021.
 
-\bibitem{qwen}
-J. Bai et al.,
-``Qwen Technical Report,''
-\textit{arXiv preprint arXiv:2309.16609}, 2023.
-
 \end{thebibliography}
+
+
+\appendix
+\chapter{코드 구조}
+
+본 연구의 코드는 다음과 같은 구조로 구성되어 있다:
+
+\begin{lstlisting}[caption={프로젝트 구조}]
+hallucination_lfe/
+├── packages/
+│   └── hfe-core/          # 핵심 라이브러리
+│       └── src/hfe_core/
+│           ├── semantic_entropy.py
+│           ├── semantic_energy.py
+│           ├── nli_clusterer.py
+│           ├── adaptive_weights.py
+│           └── ahsfe.py
+├── experiment_notes/
+│   ├── exp01_truthfulqa/  # TruthfulQA 실험
+│   ├── exp07_zero_se_analysis/
+│   └── exp08_robustness/
+├── figures/               # 논문용 그래프
+└── references/            # 참고문헌 요약
+\end{lstlisting}
+
+\section{핵심 클래스}
+
+\begin{lstlisting}[caption={SemanticEntropyCalculator}]
+class SemanticEntropyCalculator:
+    def compute(self, clusters: list[Cluster]) -> float:
+        """클러스터 분포의 Shannon Entropy 계산"""
+        probs = [len(c.responses) / total for c in clusters]
+        return -sum(p * log(p) for p in probs if p > 0)
+\end{lstlisting}
+
+\begin{lstlisting}[caption={SemanticEnergyCalculator}]
+class SemanticEnergyCalculator:
+    def compute(self, responses: list[Response]) -> float:
+        """응답들의 평균 negative logit 계산"""
+        all_logits = [logit for r in responses for logit in r.logits]
+        return -np.mean(all_logits)
+\end{lstlisting}
+
+\begin{lstlisting}[caption={SEFallbackWeight (Adaptive Threshold)}]
+class SEFallbackWeight:
+    def __init__(self, se_threshold: float = 0.1):
+        self.se_threshold = se_threshold
+    
+    def __call__(self, se_value: float) -> float:
+        if se_value < self.se_threshold:
+            return 0.9  # Energy weight (low SE region)
+        return 0.1      # SE weight (high SE region)
+\end{lstlisting}
+
 
 \end{document}
