@@ -415,19 +415,57 @@ SE-gated cascade의 알고리즘은 Algorithm~\ref{alg:cascade}와 같다.
 
 임계값 $\tau$는 SE와 Energy 중 어떤 메트릭을 사용할지 결정하는 기준이다. 본 연구에서는 TruthfulQA 데이터셋의 검증 세트에서 grid search를 통해 최적 임계값 $\tau = 0.526$을 도출하였다.
 
-\section{Adaptive Threshold 확장}
+\section{Adaptive Cascade: 입력 기반 동적 가중치}
 
-고정 임계값의 한계를 극복하기 위해, 입력에 따라 동적으로 가중치를 조정하는 방법도 고려할 수 있다:
+고정 임계값 $\tau$의 한계는 cross-dataset 환경에서 일반화가 어렵다는 것이다. 실험 결과(exp06), 학습 기반 가중치 예측 모델은 같은 분포 내에서는 AUROC 0.91을 달성하지만, 새로운 데이터셋에서는 baseline보다 성능이 떨어졌다.
+
+이를 해결하기 위해, 각 샘플의 특성을 보고 가중치를 결정하는 \textbf{Adaptive Cascade}를 제안한다:
 
 \begin{equation}
     Score = w(x) \cdot Energy + (1 - w(x)) \cdot SE
 \end{equation}
 
-여기서 $w(x)$는 입력 $x$의 특성에 따라 결정되는 가중치 함수이다. 가능한 특성으로는:
+여기서 $w(x)$는 입력 $x$의 특성에 따라 결정되는 가중치 함수이다.
+
+\subsection{Rule-based Adaptive}
+
+학습 없이 해석 가능한 규칙으로 가중치를 결정한다:
+
+\begin{equation}
+    w(x) = \begin{cases}
+        0.9 & \text{if } SE(x) < 0.1 \text{ (Zero-SE)} \\
+        0.1 & \text{if } SE(x) > 0.5 \text{ (High-SE)} \\
+        \text{linear interpolation} & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+\subsection{Cluster-aware Adaptive}
+
+클러스터 수를 직접 활용한다. Zero-SE의 정의가 ``단일 클러스터''이므로:
+
+\begin{equation}
+    w(x) = \begin{cases}
+        0.9 & \text{if } |C| = 1 \text{ (단일 클러스터)} \\
+        0.5 & \text{if } |C| = 2 \\
+        0.1 & \text{if } |C| \geq 3
+    \end{cases}
+\end{equation}
+
+\subsection{Hybrid Adaptive}
+
+SE 값과 클러스터 수를 모두 고려하는 복합 방법:
+
+\begin{enumerate}
+    \item 클러스터 1개 → Energy 강하게 선호 ($w = 0.9$)
+    \item 클러스터 2개 이상 + SE 낮음 → Energy 약하게 선호 ($w = 0.7$)
+    \item 클러스터 2개 이상 + SE 높음 → SE 선호 ($w = 0.1$)
+\end{enumerate}
+
+이 방법의 장점은:
 \begin{itemize}
-    \item SE 값 자체 (SE가 낮으면 Energy 가중치 증가)
-    \item 클러스터 수 (단일 클러스터면 Energy 가중치 증가)
-    \item 응답 길이 통계
+    \item \textbf{학습 불필요}: Cross-dataset 일반화 가능
+    \item \textbf{해석 가능}: 왜 그 가중치를 선택했는지 설명 가능
+    \item \textbf{샘플별 최적화}: 각 입력에 맞는 메트릭 선택
 \end{itemize}
 
 
@@ -749,15 +787,22 @@ class SemanticEnergyCalculator:
         return -np.mean(all_logits)
 \end{lstlisting}
 
-\begin{lstlisting}[caption={SEFallbackWeight (Adaptive Threshold)}]
-class SEFallbackWeight:
-    def __init__(self, se_threshold: float = 0.1):
-        self.se_threshold = se_threshold
-    
-    def __call__(self, se_value: float) -> float:
-        if se_value < self.se_threshold:
-            return 0.9  # Energy weight (low SE region)
-        return 0.1      # SE weight (high SE region)
+\begin{lstlisting}[caption={AdaptiveCascade (입력 기반 동적 가중치)}]
+class AdaptiveCascade:
+    def compute(self, se, energy, num_clusters):
+        # Hybrid: 클러스터 수와 SE 모두 고려
+        if num_clusters == 1:
+            w_energy = 0.9  # 단일 클러스터 -> Energy
+        elif se < 0.1:
+            w_energy = 0.7  # 낮은 SE -> Energy 선호
+        elif se > 0.5:
+            w_energy = 0.1  # 높은 SE -> SE 선호
+        else:
+            w_energy = 0.7 - 0.6 * (se - 0.1) / 0.4
+        
+        w_se = 1 - w_energy
+        score = w_energy * energy + w_se * se
+        return score, w_energy, w_se
 \end{lstlisting}
 
 

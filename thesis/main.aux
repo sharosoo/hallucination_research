@@ -52,49 +52,52 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces SE-Gated Cascade Detection}}{9}{}\protected@file@percent }
 \newlabel{alg:cascade}{{1}{9}{}{algorithm.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}임계값 결정}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Adaptive Threshold 확장}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}실험}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Adaptive Cascade: 입력 기반 동적 가중치}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Rule-based Adaptive}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Cluster-aware Adaptive}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Hybrid Adaptive}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}실험}{12}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:experiment}{{5}{11}{}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}실험 설정}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}데이터셋}{11}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces TruthfulQA 데이터셋 통계}}{11}{}\protected@file@percent }
-\newlabel{tab:dataset}{{5.1}{11}{}{table.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}파이프라인 설정}{11}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces 실험 파이프라인 설정}}{11}{}\protected@file@percent }
-\newlabel{tab:pipeline}{{5.2}{11}{}{table.5.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율, 환각률, Energy AUROC}}{12}{}\protected@file@percent }
-\newlabel{fig:zero_se_overview}{{5.1}{12}{}{figure.5.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{12}{}\protected@file@percent }
-\newlabel{tab:zero_se}{{5.3}{12}{}{table.5.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{12}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces SE 구간별 탐지 성능}}{12}{}\protected@file@percent }
-\newlabel{tab:crossover}{{5.4}{12}{}{table.5.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}}{13}{}\protected@file@percent }
-\newlabel{fig:crossover}{{5.2}{13}{}{figure.5.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{13}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Cascade 임계값($\tau $) sweep 결과}}{13}{}\protected@file@percent }
-\newlabel{fig:cascade_sweep}{{5.3}{13}{}{figure.5.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}상보성 분석}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}전체 비교}{13}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces 탐지 방법별 AUROC 비교}}{14}{}\protected@file@percent }
-\newlabel{tab:cascade_result}{{5.5}{14}{}{table.5.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}}{14}{}\protected@file@percent }
-\newlabel{fig:complementarity}{{5.4}{14}{}{figure.5.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{14}{}\protected@file@percent }
-\newlabel{tab:complementarity}{{5.6}{14}{}{table.5.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{15}{}\protected@file@percent }
-\newlabel{fig:overall}{{5.5}{15}{}{figure.5.5}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}결론}{16}{}\protected@file@percent }
+\newlabel{ch:experiment}{{5}{12}{}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}실험 설정}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}데이터셋}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces TruthfulQA 데이터셋 통계}}{12}{}\protected@file@percent }
+\newlabel{tab:dataset}{{5.1}{12}{}{table.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}파이프라인 설정}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces 실험 파이프라인 설정}}{12}{}\protected@file@percent }
+\newlabel{tab:pipeline}{{5.2}{12}{}{table.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율, 환각률, Energy AUROC}}{13}{}\protected@file@percent }
+\newlabel{fig:zero_se_overview}{{5.1}{13}{}{figure.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{13}{}\protected@file@percent }
+\newlabel{tab:zero_se}{{5.3}{13}{}{table.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces SE 구간별 탐지 성능}}{13}{}\protected@file@percent }
+\newlabel{tab:crossover}{{5.4}{13}{}{table.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}}{14}{}\protected@file@percent }
+\newlabel{fig:crossover}{{5.2}{14}{}{figure.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Cascade 임계값($\tau $) sweep 결과}}{14}{}\protected@file@percent }
+\newlabel{fig:cascade_sweep}{{5.3}{14}{}{figure.5.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}상보성 분석}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}전체 비교}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces 탐지 방법별 AUROC 비교}}{15}{}\protected@file@percent }
+\newlabel{tab:cascade_result}{{5.5}{15}{}{table.5.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}}{15}{}\protected@file@percent }
+\newlabel{fig:complementarity}{{5.4}{15}{}{figure.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{15}{}\protected@file@percent }
+\newlabel{tab:complementarity}{{5.6}{15}{}{table.5.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{16}{}\protected@file@percent }
+\newlabel{fig:overall}{{5.5}{16}{}{figure.5.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}결론}{17}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusion}{{6}{16}{}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}연구 요약}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}학술적 기여}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}향후 연구}{16}{}\protected@file@percent }
+\newlabel{ch:conclusion}{{6}{17}{}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}연구 요약}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}학술적 기여}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}향후 연구}{17}{}\protected@file@percent }
 \bibcite{farquhar2024}{1}
 \bibcite{ma2025}{2}
 \bibcite{nikitin2024}{3}
@@ -104,12 +107,12 @@
 \bibcite{allenzhu2023}{7}
 \bibcite{qwen}{8}
 \bibcite{deberta}{9}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}코드 구조}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}코드 구조}{20}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.1}프로젝트 구조}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}핵심 클래스}{19}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.2}SemanticEntropyCalculator}{19}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.3}SemanticEnergyCalculator}{19}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.4}SEFallbackWeight (Adaptive Threshold)}{20}{}\protected@file@percent }
-\gdef \@abspage@last{27}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.1}프로젝트 구조}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}핵심 클래스}{20}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.2}SemanticEntropyCalculator}{20}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.3}SemanticEnergyCalculator}{20}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {A.4}AdaptiveCascade (입력 기반 동적 가중치)}{21}{}\protected@file@percent }
+\gdef \@abspage@last{28}
