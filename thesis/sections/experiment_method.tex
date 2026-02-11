@@ -177,29 +177,5 @@ Transformers & 4.36.0 \\
 
 \subsection{재현성}
 
-실험 코드와 데이터는 다음과 같이 구성되어 있다:
-
-\begin{lstlisting}[caption={실험 디렉토리 구조}, label={lst:structure}, language=bash]
-hallucination_lfe/
-├── packages/hfe-core/src/     # 핵심 라이브러리
-│   ├── nli_clusterer.py       # NLI 클러스터링
-│   ├── semantic_entropy.py    # SE 계산
-│   └── semantic_energy.py     # Energy 계산
-├── experiment_notes/
-│   ├── exp01_truthfulqa/      # 200샘플 실험 (본 논문)
-│   │   ├── run_experiment.py  # 실험 스크립트
-│   │   └── results.json       # 실험 결과
-│   └── thesis_200_analysis.json  # 분석 요약
-└── thesis/                    # 논문 LaTeX 소스
-\end{lstlisting}
-
-실험 재현 명령:
-\begin{lstlisting}[language=bash]
-cd hallucination_lfe
-source .venv/bin/activate
-python experiment_notes/exp01_truthfulqa/run_experiment.py
-\end{lstlisting}
-
+본 연구의 실험 코드는 GitHub 저장소에서 제공되며, README에 환경 설정 및 실험 재현 방법이 기술되어 있다.
 전체 200개 샘플 실험에 약 10분이 소요된다.
-
-\textbf{한계 및 향후 확장}: 본 연구는 200개 샘플에서의 탐색적 분석으로, 전체 데이터셋(817개)으로 확장 시 통계적 변동으로 인한 성능 변화가 있을 수 있다. 대규모 검증은 향후 연구로 남긴다.

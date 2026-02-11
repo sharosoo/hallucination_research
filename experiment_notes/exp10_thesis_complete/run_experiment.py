@@ -3,7 +3,7 @@
 Exp10: 논문용 TruthfulQA 완전 실험
 
 목적:
-- TruthfulQA 전체 817개 샘플에서 SE와 Energy의 환각 탐지 성능 비교
+- TruthfulQA 200개 샘플에서 SE와 Energy의 환각 탐지 성능 비교
 - Zero-SE 문제 정량화
 - SE-gated Cascade 방법 검증
 - 논문용 Figure 및 테이블 생성
@@ -768,7 +768,7 @@ def main():
     parser = argparse.ArgumentParser(description="Exp10: TruthfulQA 논문용 완전 실험")
     parser.add_argument("--resume", action="store_true", help="체크포인트에서 이어서 실행")
     parser.add_argument("--analysis-only", action="store_true", help="분석만 실행")
-    parser.add_argument("--max-samples", type=int, default=None, help="최대 샘플 수")
+    parser.add_argument("--max-samples", type=int, default=200, help="최대 샘플 수 (기본: 200)")
     args = parser.parse_args()
 
     if args.analysis_only:

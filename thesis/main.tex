@@ -677,55 +677,57 @@ P. He, X. Liu, J. Gao, and W. Chen,
 
 
 \appendix
-\chapter{코드 구조}
+\chapter{핵심 알고리즘}
 
-본 연구의 코드는 다음과 같은 구조로 구성되어 있다:
+본 연구에서 사용된 핵심 알고리즘의 의사코드는 다음과 같다.
 
-\begin{lstlisting}[caption={프로젝트 구조}]
-hallucination_lfe/
-├── packages/
-│   └── hfe-core/          # 핵심 라이브러리
-│       └── src/hfe_core/
-│           ├── semantic_entropy.py
-│           ├── semantic_energy.py
-│           ├── nli_clusterer.py
-│           ├── adaptive_weights.py
-│           └── ahsfe.py
-├── experiment_notes/
-│   ├── exp01_truthfulqa/  # TruthfulQA 실험
-│   ├── exp07_zero_se_analysis/
-│   └── exp08_robustness/
-├── figures/               # 논문용 그래프
-└── references/            # 참고문헌 요약
-\end{lstlisting}
+\begin{algorithm}[H]
+\caption{Semantic Entropy 계산}
+\label{alg:se}
+\begin{algorithmic}[1]
+\REQUIRE 클러스터 집합 $C = \{c_1, c_2, ..., c_m\}$, 총 응답 수 $K$
+\ENSURE Semantic Entropy $SE$
+\FOR{each cluster $c_i \in C$}
+    \STATE $p_i \leftarrow |c_i| / K$
+\ENDFOR
+\STATE $SE \leftarrow -\sum_{i=1}^{m} p_i \log p_i$
+\RETURN $SE$
+\end{algorithmic}
+\end{algorithm}
 
-\section{핵심 클래스}
+\begin{algorithm}[H]
+\caption{Semantic Energy 계산}
+\label{alg:energy}
+\begin{algorithmic}[1]
+\REQUIRE 응답 집합 $R = \{r_1, ..., r_K\}$, 각 응답의 토큰 logit $\ell_{i,t}$
+\ENSURE Semantic Energy $E$
+\STATE $L \leftarrow \emptyset$
+\FOR{each response $r_i \in R$}
+    \FOR{each token $t$ in $r_i$}
+        \STATE $L \leftarrow L \cup \{\ell_{i,t}\}$
+    \ENDFOR
+\ENDFOR
+\STATE $E \leftarrow -\text{mean}(L)$
+\RETURN $E$
+\end{algorithmic}
+\end{algorithm}
 
-\begin{lstlisting}[caption={SemanticEntropyCalculator}]
-class SemanticEntropyCalculator:
-    def compute(self, clusters: list[Cluster]) -> float:
-        """클러스터 분포의 Shannon Entropy 계산"""
-        probs = [len(c.responses) / total for c in clusters]
-        return -sum(p * log(p) for p in probs if p > 0)
-\end{lstlisting}
-
-\begin{lstlisting}[caption={SemanticEnergyCalculator}]
-class SemanticEnergyCalculator:
-    def compute(self, responses: list[Response]) -> float:
-        """응답들의 평균 negative logit 계산"""
-        all_logits = [logit for r in responses for logit in r.logits]
-        return -np.mean(all_logits)
-\end{lstlisting}
-
-\begin{lstlisting}[caption={ClusterBasedCascade (클러스터 기반 판별)}]
-class ClusterBasedCascade:
-    def compute(self, se, energy, num_clusters):
-        # |C| = 1 -> Energy, |C| >= 2 -> SE
-        if num_clusters == 1:
-            return energy, "energy"
-        else:
-            return se, "se"
-\end{lstlisting}
+\begin{algorithm}[H]
+\caption{SE-gated Cascade}
+\label{alg:cascade}
+\begin{algorithmic}[1]
+\REQUIRE $SE$, $Energy$, 클러스터 수 $|C|$
+\ENSURE 환각 점수 $score$, 사용된 방법 $method$
+\IF{$|C| = 1$}
+    \STATE $score \leftarrow Energy$
+    \STATE $method \leftarrow$ ``Energy''
+\ELSE
+    \STATE $score \leftarrow SE$
+    \STATE $method \leftarrow$ ``SE''
+\ENDIF
+\RETURN $score$, $method$
+\end{algorithmic}
+\end{algorithm}
 
 
 \end{document}

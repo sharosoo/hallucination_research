@@ -125,6 +125,16 @@ hallucination_lfe/
 
 ---
 
+## 🔄 2026-02-11 15:26 업데이트
+
+### 재현성 개선
+- [x] `run_experiment.py` 생성 (프로젝트 루트) - 완전 재현 가능한 단일 스크립트
+- [x] `README.md` 업데이트 - 실험 재현 방법 안내
+- [x] 논문에서 디렉토리 구조/bash 명령어 제거 → GitHub README로 이동
+- [x] 부록 프로젝트 구조 리스팅 제거
+
+---
+
 ## 🔗 참고
 
 - **데이터 원본**: `experiment_notes/exp01_truthfulqa/results.json`
