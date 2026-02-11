@@ -147,8 +147,6 @@ def run_experiment(
     print("\n[2/4] 모델 로드...")
     sampler = LLMSampler()
     clusterer = NLIClusterer()
-    se_calc = SemanticEntropyCalculator()
-    energy_calc = SemanticEnergyCalculator()
     
     # 실험 실행
     print("\n[3/4] 실험 실행...")
@@ -165,11 +163,11 @@ def run_experiment(
         # NLI 클러스터링
         clusters = clusterer.cluster(responses)
         
-        # SE 계산
-        se = se_calc.compute(clusters)
+        # SE 계산 (static method 사용)
+        se = SemanticEntropyCalculator.compute_from_clusters(clusters, len(responses))
         
-        # Energy 계산
-        energy = energy_calc.compute(responses)
+        # Energy 계산 (static method 사용)
+        energy = SemanticEnergyCalculator.compute_energy_only(responses)
         
         # 정답 여부 확인 (하나라도 맞으면 정상)
         any_correct = any(

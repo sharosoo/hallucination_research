@@ -63,7 +63,7 @@ class NLIClusterer:
 
     def __init__(
         self,
-        model_name: str = "microsoft/deberta-v3-large-mnli",
+        model_name: str = "facebook/bart-large-mnli",  # gated 아닌 모델
         device: Optional[str] = None,
         threshold: float = 0.5,
     ):

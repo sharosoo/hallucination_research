@@ -5,11 +5,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces TruthfulQA 데이터셋 통계}}{12}{}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces 실험 파이프라인 설정}}{12}{}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{13}{}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces SE 구간별 탐지 성능}}{13}{}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces 탐지 방법별 AUROC 비교}}{15}{}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{15}{}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces 실험 데이터셋 통계}}{12}{}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces 실험에 사용된 모델}}{15}{}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces 실험 환경}}{15}{}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{17}{}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces SE 구간별 탐지 성능}}{17}{}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{19}{}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{20}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

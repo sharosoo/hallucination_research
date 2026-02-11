@@ -31,24 +31,37 @@
 \contentsline {chapter}{\numberline {4}제안 방법}{9}{}%
 \contentsline {section}{\numberline {4.1}SE-Gated Cascade}{9}{}%
 \contentsline {subsection}{\numberline {4.1.1}알고리즘}{9}{}%
-\contentsline {subsection}{\numberline {4.1.2}임계값 결정}{10}{}%
+\contentsline {subsection}{\numberline {4.1.2}임계값 결정}{9}{}%
 \contentsline {section}{\numberline {4.2}Adaptive Cascade: 입력 기반 동적 가중치}{10}{}%
 \contentsline {subsection}{\numberline {4.2.1}Rule-based Adaptive}{10}{}%
 \contentsline {subsection}{\numberline {4.2.2}Cluster-aware Adaptive}{10}{}%
-\contentsline {subsection}{\numberline {4.2.3}Hybrid Adaptive}{10}{}%
+\contentsline {subsection}{\numberline {4.2.3}Hybrid Adaptive}{11}{}%
 \contentsline {chapter}{\numberline {5}실험}{12}{}%
 \contentsline {section}{\numberline {5.1}실험 설정}{12}{}%
 \contentsline {subsection}{\numberline {5.1.1}데이터셋}{12}{}%
-\contentsline {subsection}{\numberline {5.1.2}파이프라인 설정}{12}{}%
-\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{12}{}%
-\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{12}{}%
-\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{13}{}%
-\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{14}{}%
-\contentsline {section}{\numberline {5.4}상보성 분석}{14}{}%
-\contentsline {section}{\numberline {5.5}전체 비교}{14}{}%
-\contentsline {chapter}{\numberline {6}결론}{17}{}%
-\contentsline {section}{\numberline {6.1}연구 요약}{17}{}%
-\contentsline {section}{\numberline {6.2}학술적 기여}{17}{}%
-\contentsline {section}{\numberline {6.3}향후 연구}{17}{}%
-\contentsline {chapter}{\numberline {A}코드 구조}{20}{}%
-\contentsline {section}{\numberline {A.1}핵심 클래스}{20}{}%
+\contentsline {subsection}{\numberline {5.1.2}실험 파이프라인}{12}{}%
+\contentsline {subsubsection}{Step 1: 다중 응답 샘플링}{12}{}%
+\contentsline {subsubsection}{Step 2: 의미적 클러스터링}{13}{}%
+\contentsline {subsubsection}{Step 3: 메트릭 계산}{13}{}%
+\contentsline {paragraph}{Semantic Entropy (SE)}{13}{}%
+\contentsline {paragraph}{Semantic Energy}{13}{}%
+\contentsline {subsubsection}{Step 4: 환각 판정 및 평가}{15}{}%
+\contentsline {paragraph}{환각 레이블링}{15}{}%
+\contentsline {paragraph}{평가 지표}{15}{}%
+\contentsline {subsection}{\numberline {5.1.3}모델 설정}{15}{}%
+\contentsline {paragraph}{LLM 선택 근거}{15}{}%
+\contentsline {paragraph}{NLI 모델 선택 근거}{15}{}%
+\contentsline {subsection}{\numberline {5.1.4}실험 환경}{15}{}%
+\contentsline {subsection}{\numberline {5.1.5}재현성}{16}{}%
+\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{16}{}%
+\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{16}{}%
+\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{17}{}%
+\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{17}{}%
+\contentsline {section}{\numberline {5.4}상보성 분석}{19}{}%
+\contentsline {section}{\numberline {5.5}전체 비교}{19}{}%
+\contentsline {chapter}{\numberline {6}결론}{21}{}%
+\contentsline {section}{\numberline {6.1}연구 요약}{21}{}%
+\contentsline {section}{\numberline {6.2}학술적 기여}{21}{}%
+\contentsline {section}{\numberline {6.3}향후 연구}{21}{}%
+\contentsline {chapter}{\numberline {A}코드 구조}{24}{}%
+\contentsline {section}{\numberline {A.1}핵심 클래스}{24}{}%
