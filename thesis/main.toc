@@ -52,8 +52,8 @@
 \contentsline {subsection}{\numberline {5.1.5}재현성}{16}{}%
 \contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{16}{}%
 \contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{16}{}%
-\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{18}{}%
-\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{18}{}%
+\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{17}{}%
+\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{17}{}%
 \contentsline {section}{\numberline {5.4}상보성 분석}{19}{}%
 \contentsline {section}{\numberline {5.5}전체 비교}{19}{}%
 \contentsline {chapter}{\numberline {6}결론}{21}{}%

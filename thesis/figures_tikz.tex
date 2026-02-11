@@ -63,79 +63,78 @@
 }
 
 %=============================================================================
-% Figure 2: Zero-SE 현상 요약 (3-panel)
+% Figure 2: Zero-SE 현상 요약 (3-panel) - 단순화된 버전
 %=============================================================================
 \newcommand{\zerosefigure}{
-\begin{tikzpicture}
-% Panel A: 도넛 차트
-\begin{scope}[local bounding box=panelA]
-    \def\innerrad{0.7}
-    \def\outerrad{1.4}
-    % Non-Zero-SE (81%)
-    \fill[primaryblue!60] (90:\outerrad) arc (90:-201.6:\outerrad) -- (-201.6:\innerrad) arc (-201.6:90:\innerrad) -- cycle;
-    % Zero-SE (19%)
-    \fill[hallred!70] (90:\outerrad) arc (90:90-68.4:\outerrad) -- (21.6:\innerrad) arc (21.6:90:\innerrad) -- cycle;
+\centering
+\begin{tikzpicture}[font=\small]
+% Panel A: 파이 차트 (도넛)
+\begin{scope}
+    \def\outerrad{1.3}
+    \def\innerrad{0.6}
+    % Non-Zero-SE (81%) - 아래쪽 큰 부분
+    \fill[primaryblue!50] (90:\outerrad) arc (90:-201.6:\outerrad) -- (-201.6:\innerrad) arc (-201.6:90:\innerrad) -- cycle;
+    % Zero-SE (19%) - 위쪽 작은 부분  
+    \fill[hallred!60] (90:\outerrad) arc (90:21.6:\outerrad) -- (21.6:\innerrad) arc (21.6:90:\innerrad) -- cycle;
     
-    % 중앙 텍스트
-    \node[font=\small\bfseries] at (0,0) {n=200};
+    \node[font=\footnotesize\bfseries] at (0,0) {200};
+    \node[font=\scriptsize] at (60:1.0) {19\%};
+    \node[font=\scriptsize] at (-60:1.0) {81\%};
+    \node[font=\scriptsize\bfseries, anchor=north] at (0,-1.6) {(a) Zero-SE 비율};
     
     % 범례
-    \node[font=\scriptsize, anchor=west] at (1.8, 0.4) {\textcolor{hallred!70}{$\blacksquare$} Zero-SE (19\%)};
-    \node[font=\scriptsize, anchor=west] at (1.8, -0.1) {\textcolor{primaryblue!60}{$\blacksquare$} Non-Zero (81\%)};
-    
-    \node[font=\small\bfseries, anchor=north] at (0, -1.7) {(a) Zero-SE 비율};
+    \fill[hallred!60] (1.6,0.3) rectangle (1.9,0.5);
+    \node[font=\tiny, anchor=west] at (2.0, 0.4) {Zero-SE};
+    \fill[primaryblue!50] (1.6,-0.1) rectangle (1.9,0.1);
+    \node[font=\tiny, anchor=west] at (2.0, 0) {Non-Zero};
 \end{scope}
 
-% Panel B: 환각/정상 구성
-\begin{scope}[xshift=6cm]
-    \begin{axis}[
-        ybar,
-        width=4.5cm, height=4.5cm,
-        ymin=0, ymax=35,
-        xtick={1,2},
-        xticklabels={환각, 정상},
-        ylabel style={font=\scriptsize},
-        xlabel style={font=\scriptsize},
-        tick label style={font=\scriptsize},
-        bar width=12pt,
-        nodes near coords,
-        nodes near coords style={font=\scriptsize},
-        axis lines=left,
-        enlarge x limits=0.5,
-        title={\small\bfseries (b) Zero-SE 구성},
-        title style={at={(0.5,1.05)}},
-    ]
-    \addplot[fill=hallred!70, draw=hallred!90] coordinates {(1,28)};
-    \addplot[fill=normgreen!60, draw=normgreen!80] coordinates {(2,10)};
-    \end{axis}
-    \node[font=\tiny, text=black!60] at (1.8, 3.8) {환각률: 73.7\%};
+% Panel B: 환각/정상 막대
+\begin{scope}[xshift=5.5cm]
+    \draw[->] (0,0) -- (0,2.8);
+    \draw[->] (0,0) -- (2.8,0);
+    
+    % 환각 막대 (28)
+    \fill[hallred!60] (0.4,0) rectangle (1.1,2.24);
+    \node[font=\scriptsize] at (0.75,2.4) {28};
+    
+    % 정상 막대 (10)
+    \fill[normgreen!60] (1.5,0) rectangle (2.2,0.8);
+    \node[font=\scriptsize] at (1.85,0.96) {10};
+    
+    \node[font=\tiny] at (0.75,-0.25) {환각};
+    \node[font=\tiny] at (1.85,-0.25) {정상};
+    
+    % Y축 라벨
+    \node[font=\tiny, rotate=90, anchor=south] at (-0.3,1.4) {Count};
+    \node[font=\tiny, left] at (0,0) {0};
+    \node[font=\tiny, left] at (0,2.24) {28};
+    
+    \node[font=\scriptsize\bfseries, anchor=north] at (1.3,-0.6) {(b) Zero-SE 구성};
+    \node[font=\tiny, text=black!60] at (1.3,2.7) {환각률: 73.7\%};
 \end{scope}
 
 % Panel C: Energy AUROC
-\begin{scope}[xshift=10.5cm]
-    \begin{axis}[
-        ybar,
-        width=4cm, height=4.5cm,
-        ymin=0, ymax=1,
-        xtick={1},
-        xticklabels={Energy},
-        ylabel={AUROC},
-        ylabel style={font=\scriptsize},
-        tick label style={font=\scriptsize},
-        bar width=20pt,
-        nodes near coords,
-        nodes near coords style={font=\scriptsize},
-        axis lines=left,
-        enlarge x limits=1,
-        title={\small\bfseries (c) Zero-SE 탐지},
-        title style={at={(0.5,1.05)}},
-        extra y ticks={0.5},
-        extra y tick style={grid=major, grid style={dashed, lightgray}},
-        extra y tick labels={},
-    ]
-    \addplot[fill=secondaryorange!70, draw=secondaryorange!90] coordinates {(1,0.736)};
-    \end{axis}
-    \node[font=\tiny, text=black!50] at (1.2, 2) {random=0.5};
+\begin{scope}[xshift=9.5cm]
+    \draw[->] (0,0) -- (0,2.8);
+    \draw[->] (0,0) -- (2,0);
+    
+    % Random baseline
+    \draw[dashed, lightgray] (0,1.25) -- (1.8,1.25);
+    \node[font=\tiny, text=lightgray, anchor=west] at (1.8,1.25) {0.5};
+    
+    % Energy 막대 (0.736)
+    \fill[secondaryorange!70] (0.4,0) rectangle (1.4,1.84);
+    \node[font=\scriptsize] at (0.9,2.0) {0.736};
+    
+    \node[font=\tiny] at (0.9,-0.25) {Energy};
+    
+    % Y축
+    \node[font=\tiny, rotate=90, anchor=south] at (-0.3,1.4) {AUROC};
+    \node[font=\tiny, left] at (0,0) {0};
+    \node[font=\tiny, left] at (0,2.5) {1.0};
+    
+    \node[font=\scriptsize\bfseries, anchor=north] at (0.9,-0.6) {(c) Zero-SE 탐지};
 \end{scope}
 \end{tikzpicture}
 }
@@ -186,42 +185,55 @@
 }
 
 %=============================================================================
-% Figure 4: 상보성 분석 (Stacked/Grouped)
+% Figure 4: 상보성 분석 - 단순 막대 그래프
 %=============================================================================
 \newcommand{\complementarityfigure}{
-\begin{tikzpicture}
-\begin{axis}[
-    ybar,
-    width=10cm, height=6cm,
-    bar width=22pt,
-    ylabel={환각 샘플 수 (n=164)},
-    ylabel style={font=\small},
-    ymin=0, ymax=130,
-    xtick={1,2,3,4},
-    xticklabels={SE만\\탐지, Energy만\\탐지, 둘 다\\탐지, 미탐지},
-    xticklabel style={align=center, font=\small},
-    tick label style={font=\small},
-    nodes near coords,
-    nodes near coords style={font=\scriptsize},
-    axis lines=left,
-    enlarge x limits=0.2,
-]
-\addplot[fill=primaryblue!70, draw=primaryblue] coordinates {(1,22) (2,0) (3,0) (4,0)};
-\addplot[fill=secondaryorange!70, draw=secondaryorange] coordinates {(1,0) (2,22) (3,0) (4,0)};
-\addplot[fill=accentpurple!60, draw=accentpurple] coordinates {(1,0) (2,0) (3,12) (4,0)};
-\addplot[fill=neutralgray!50, draw=neutralgray] coordinates {(1,0) (2,0) (3,0) (4,108)};
-\end{axis}
+\centering
+\begin{tikzpicture}[font=\small]
+% 축
+\draw[->] (0,0) -- (0,5.5);
+\draw[->] (0,0) -- (10,0);
 
-% 비율 레이블
-\node[font=\tiny, text=black!60] at (1.5, 2.2) {13.4\%};
-\node[font=\tiny, text=black!60] at (3.6, 2.2) {13.4\%};
-\node[font=\tiny, text=black!60] at (5.7, 1.5) {7.3\%};
-\node[font=\tiny, text=black!60] at (7.8, 4.8) {65.9\%};
+% Y축 라벨 및 눈금
+\node[font=\small, rotate=90, anchor=south] at (-0.6,2.75) {환각 샘플 수};
+\foreach \y/\val in {0/0, 1.08/20, 2.16/40, 3.24/60, 4.32/80, 5.4/108} {
+    \draw (-0.1,\y) -- (0.1,\y);
+}
+\node[font=\tiny, left] at (0,0) {0};
+\node[font=\tiny, left] at (0,2.7) {50};
+\node[font=\tiny, left] at (0,5.4) {108};
+
+% 막대 1: SE만 (22)
+\fill[primaryblue!70] (0.8,0) rectangle (2,1.1);
+\node[font=\scriptsize] at (1.4,1.3) {22};
+\node[font=\tiny, text=black!60] at (1.4,1.6) {(13.4\%)};
+\node[font=\scriptsize, align=center] at (1.4,-0.4) {SE만\\탐지};
+
+% 막대 2: Energy만 (22)
+\fill[secondaryorange!70] (2.8,0) rectangle (4,1.1);
+\node[font=\scriptsize] at (3.4,1.3) {22};
+\node[font=\tiny, text=black!60] at (3.4,1.6) {(13.4\%)};
+\node[font=\scriptsize, align=center] at (3.4,-0.4) {Energy만\\탐지};
+
+% 막대 3: 둘 다 (12)
+\fill[accentpurple!60] (4.8,0) rectangle (6,0.6);
+\node[font=\scriptsize] at (5.4,0.8) {12};
+\node[font=\tiny, text=black!60] at (5.4,1.1) {(7.3\%)};
+\node[font=\scriptsize, align=center] at (5.4,-0.4) {둘 다\\탐지};
+
+% 막대 4: 미탐지 (108)
+\fill[neutralgray!50] (6.8,0) rectangle (8,5.4);
+\node[font=\scriptsize] at (7.4,5.6) {108};
+\node[font=\tiny, text=black!60] at (7.4,5.9) {(65.9\%)};
+\node[font=\scriptsize, align=center] at (7.4,-0.4) {미탐지};
 
 % 합집합 강조 박스
-\draw[rounded corners=3pt, fill=accentgreen!10, draw=accentgreen!50, line width=0.8pt] 
-    (0.3, 5.3) rectangle (5, 6.2);
-\node[font=\small, text=accentgreen!80!black] at (2.65, 5.75) {합집합 탐지율: \textbf{34.1\%}};
+\draw[rounded corners=3pt, fill=accentgreen!15, draw=accentgreen!60, line width=1pt] 
+    (0.5, 6.3) rectangle (5.5, 7.0);
+\node[font=\small] at (3, 6.65) {합집합 탐지율: \textbf{34.1\%}};
+
+% 제목
+\node[font=\small\bfseries] at (4.5, 7.5) {상보성 분석 (n=164 환각)};
 
 \end{tikzpicture}
 }
