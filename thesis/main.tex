@@ -41,7 +41,12 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows,positioning}
+\usetikzlibrary{shapes,arrows,positioning,calc,backgrounds,shapes.geometric,arrows.meta,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% TikZ 다이어그램 정의 파일
+\input{figures_tikz}
 
 \setmainfont{NanumSquare}
 \setsansfont{NanumSquare}
@@ -393,8 +398,8 @@ LLM의 logit은 다음 토큰에 대한 ``확신도''를 반영한다. Allen-Zhu
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/fig6_story_diagram.png}
-    \caption{SE-Gated Cascade 개념도: SE가 낮으면 Energy로, 높으면 SE로 판단}
+    \cascadediagram
+    \caption{SE-Gated Cascade 개념도: 클러스터가 1개면 Energy로, 그 외에는 SE로 판단}
     \label{fig:cascade_diagram}
 \end{figure}
 
@@ -448,8 +453,8 @@ SE-gated cascade의 알고리즘은 Algorithm~\ref{alg:cascade}와 같다.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/fig1_zero_se_overview.png}
-    \caption{Zero-SE 현상 개요: 전체 대비 비율, 환각률, Energy AUROC}
+    \zerosefigure
+    \caption{Zero-SE 현상 개요: 전체 대비 비율(19\%), 환각률(73.7\%), Energy AUROC(0.736)}
     \label{fig:zero_se_overview}
 \end{figure}
 
@@ -482,8 +487,8 @@ Zero-SE 내 Energy AUROC & 0.736 \\
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/fig2_se_bin_crossover.png}
-    \caption{SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}
+    \crossoverfigure
+    \caption{SE 구간별 SE vs Energy AUROC 비교: Zero-SE에서 Energy 우세, High-SE에서 SE 우세}
     \label{fig:crossover}
 \end{figure}
 
@@ -533,8 +538,8 @@ Energy-only & 0.550 & -0.063 \\
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/fig3_complementarity.png}
-    \caption{SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}
+    \complementarityfigure
+    \caption{SE와 Energy의 환각 탐지 상보성: 합집합 탐지율 34.1\%}
     \label{fig:complementarity}
 \end{figure}
 
@@ -565,8 +570,8 @@ Energy만 탐지하는 13.4\%는 SE로는 절대 잡을 수 없는 환각이다.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/fig5_overall_comparison.png}
-    \caption{SE, Energy, Cascade 전체 성능 비교}
+    \overallfigure
+    \caption{SE, Energy, Cascade 전체 성능 비교: Cascade($|C|=1$)가 +0.029 개선}
     \label{fig:overall}
 \end{figure}
 

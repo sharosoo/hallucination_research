@@ -46,7 +46,7 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:method}{{4}{10}{}{chapter.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{10}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces SE-Gated Cascade 개념도: SE가 낮으면 Energy로, 높으면 SE로 판단}}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces SE-Gated Cascade 개념도: 클러스터가 1개면 Energy로, 그 외에는 SE로 판단}}{10}{}\protected@file@percent }
 \newlabel{fig:cascade_diagram}{{4.1}{10}{}{figure.4.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}알고리즘}{10}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}클러스터 기반 판별의 정당성}{10}{}\protected@file@percent }
@@ -89,7 +89,7 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {5.2}실험 디렉토리 구조}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율, 환각률, Energy AUROC}}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율(19\%), 환각률(73.7\%), Energy AUROC(0.736)}}{17}{}\protected@file@percent }
 \newlabel{fig:zero_se_overview}{{5.2}{17}{}{figure.5.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{17}{}\protected@file@percent }
 \newlabel{tab:zero_se}{{5.4}{17}{}{table.5.4}{}}
@@ -97,17 +97,17 @@
 \@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces SE 구간별 탐지 성능}}{17}{}\protected@file@percent }
 \newlabel{tab:crossover}{{5.5}{17}{}{table.5.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{17}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}}{18}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Zero-SE에서 Energy 우세, High-SE에서 SE 우세}}{18}{}\protected@file@percent }
 \newlabel{fig:crossover}{{5.3}{18}{}{figure.5.3}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{18}{}\protected@file@percent }
 \newlabel{tab:cascade_result}{{5.6}{18}{}{table.5.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}상보성 분석}{19}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 상보성: 합집합 탐지율 34.1\%}}{19}{}\protected@file@percent }
 \newlabel{fig:complementarity}{{5.4}{19}{}{figure.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{19}{}\protected@file@percent }
+\newlabel{tab:complementarity}{{5.7}{19}{}{table.5.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.5}전체 비교}{19}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{20}{}\protected@file@percent }
-\newlabel{tab:complementarity}{{5.7}{20}{}{table.5.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교: Cascade($|C|=1$)가 +0.029 개선}}{20}{}\protected@file@percent }
 \newlabel{fig:overall}{{5.5}{20}{}{figure.5.5}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}결론}{21}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
