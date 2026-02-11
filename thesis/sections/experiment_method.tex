@@ -186,18 +186,18 @@ hallucination_lfe/
 │   ├── semantic_entropy.py    # SE 계산
 │   └── semantic_energy.py     # Energy 계산
 ├── experiment_notes/
-│   └── exp10_thesis_complete/
-│       ├── run_complete.py    # 실험 스크립트
-│       ├── results.json       # 실험 결과
-│       ├── analysis.json      # 분석 결과
-│       └── figures/           # 논문용 그래프
+│   ├── exp01_truthfulqa/      # 200샘플 실험 (본 논문)
+│   │   ├── run_experiment.py  # 실험 스크립트
+│   │   └── results.json       # 실험 결과
+│   └── thesis_200_analysis.json  # 분석 요약
+└── thesis/                    # 논문 LaTeX 소스
 \end{lstlisting}
 
 실험 재현 명령:
 \begin{lstlisting}[language=bash]
 cd hallucination_lfe
 source .venv/bin/activate
-python experiment_notes/exp10_thesis_complete/run_complete.py
+python experiment_notes/exp01_truthfulqa/run_experiment.py
 \end{lstlisting}
 
 전체 200개 샘플 실험에 약 10분이 소요된다.
