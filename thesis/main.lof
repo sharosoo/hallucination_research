@@ -6,8 +6,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces 실험 파이프라인 개요}}{13}{}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율(19\%), 환각률(73.7\%), Energy AUROC(0.736)}}{17}{}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Zero-SE에서 Energy 우세, High-SE에서 SE 우세}}{18}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Zero-SE에서 Energy 우세, High-SE에서 SE 우세}}{17}{}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 상보성: 합집합 탐지율 34.1\%}}{19}{}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교: Cascade($|C|=1$)가 +0.029 개선}}{20}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교: Cascade($|C|=1$)가 +0.029 개선}}{19}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

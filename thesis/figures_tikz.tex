@@ -63,88 +63,72 @@
 }
 
 %=============================================================================
-% Figure 2: Zero-SE 현상 요약 (3-panel) - 깔끔한 버전
+% Figure 2: Zero-SE 현상 요약 (3-panel) - 정렬 버전
 %=============================================================================
 \newcommand{\zerosefigure}{
 \centering
 \begin{tikzpicture}[font=\small]
 
-% Panel A: 파이 차트 (단순 원형)
-\begin{scope}
-    \def\radius{1.2}
-    % 전체 원 (Non-Zero 81%)
+% 기준선: y=0이 모든 패널의 하단
+% 패널 높이: 약 2.5cm
+% 제목 위치: y=-0.5
+
+% Panel A: 파이 차트
+\begin{scope}[yshift=1.2cm]  % 파이 중심을 위로
+    \def\radius{1.1}
     \fill[primaryblue!50] (0,0) circle (\radius);
-    % Zero-SE (19%) - 68.4도 = 19% of 360
     \fill[hallred!60] (0,0) -- (90:\radius) arc (90:21.6:\radius) -- cycle;
     
-    % 퍼센트 라벨
-    \node[font=\scriptsize, white] at (55:0.8) {\textbf{19\%}};
-    \node[font=\scriptsize, white] at (-70:0.7) {\textbf{81\%}};
+    \node[font=\scriptsize, white] at (55:0.7) {\textbf{19\%}};
+    \node[font=\scriptsize, white] at (-70:0.6) {\textbf{81\%}};
     
-    % 제목
-    \node[font=\scriptsize\bfseries, anchor=north] at (0,-1.5) {(a) Zero-SE 비율};
-    \node[font=\tiny, text=black!60] at (0,-1.9) {n=200};
-    
-    % 범례
-    \fill[hallred!60] (1.5,0.5) rectangle (1.8,0.7);
-    \node[font=\tiny, anchor=west] at (1.9, 0.6) {Zero-SE};
-    \fill[primaryblue!50] (1.5,0.1) rectangle (1.8,0.3);
-    \node[font=\tiny, anchor=west] at (1.9, 0.2) {Non-Zero};
+    % 범례 (파이 오른쪽)
+    \fill[hallred!60] (1.4,0.3) rectangle (1.65,0.5);
+    \node[font=\tiny, anchor=west] at (1.7, 0.4) {Zero-SE};
+    \fill[primaryblue!50] (1.4,-0.1) rectangle (1.65,0.1);
+    \node[font=\tiny, anchor=west] at (1.7, 0) {Non-Zero};
 \end{scope}
+% Panel A 제목 (고정 위치)
+\node[font=\scriptsize\bfseries] at (0,-0.5) {(a) Zero-SE 비율};
+\node[font=\tiny, text=black!60] at (0,-0.85) {n=200};
 
-% Panel B: 환각/정상 막대 (38개 중)
-\begin{scope}[xshift=5.5cm, yshift=-0.3cm]
-    % 축
-    \draw[->, black!70] (0,0) -- (0,2.6);
-    \draw[->, black!70] (0,0) -- (2.6,0);
+% Panel B: 환각/정상 막대
+\begin{scope}[xshift=5cm]
+    \draw[->, black!70] (0,0) -- (0,2.5);
+    \draw[->, black!70] (0,0) -- (2.5,0);
     
-    % 환각 막대 (28/38)
-    \fill[hallred!60] (0.3,0) rectangle (1.0,2.1);
-    \node[font=\scriptsize] at (0.65,2.25) {\textbf{28}};
+    \fill[hallred!60] (0.3,0) rectangle (0.95,2.0);
+    \node[font=\scriptsize] at (0.625,2.15) {\textbf{28}};
     
-    % 정상 막대 (10/38)
-    \fill[normgreen!60] (1.4,0) rectangle (2.1,0.75);
-    \node[font=\scriptsize] at (1.75,0.9) {\textbf{10}};
+    \fill[normgreen!60] (1.3,0) rectangle (1.95,0.71);
+    \node[font=\scriptsize] at (1.625,0.86) {\textbf{10}};
     
-    % X축 라벨
-    \node[font=\tiny] at (0.65,-0.2) {환각};
-    \node[font=\tiny] at (1.75,-0.2) {정상};
+    \node[font=\tiny] at (0.625,-0.2) {환각};
+    \node[font=\tiny] at (1.625,-0.2) {정상};
     
-    % Y축 눈금
     \node[font=\tiny, anchor=east] at (-0.05,0) {0};
-    \node[font=\tiny, anchor=east] at (-0.05,1.5) {20};
-    \node[font=\tiny, anchor=east] at (-0.05,2.25) {30};
-    
-    % 제목
-    \node[font=\scriptsize\bfseries, anchor=north] at (1.2,-0.5) {(b) Zero-SE 구성};
-    \node[font=\tiny, text=black!60] at (1.2,-0.85) {환각률: 73.7\%};
+    \node[font=\tiny, anchor=east] at (-0.05,2.0) {28};
 \end{scope}
+\node[font=\scriptsize\bfseries] at (5+1.1,-0.5) {(b) Zero-SE 구성};
+\node[font=\tiny, text=black!60] at (5+1.1,-0.85) {환각률: 73.7\%};
 
 % Panel C: Energy AUROC
-\begin{scope}[xshift=9.5cm, yshift=-0.3cm]
-    % 축
-    \draw[->, black!70] (0,0) -- (0,2.6);
+\begin{scope}[xshift=9.2cm]
+    \draw[->, black!70] (0,0) -- (0,2.5);
     \draw[->, black!70] (0,0) -- (2,0);
     
-    % Random baseline (0.5)
     \draw[dashed, black!40, line width=0.5pt] (0,1.25) -- (1.7,1.25);
+    \node[font=\tiny, text=black!40, anchor=west] at (1.4,1.35) {0.5};
     
-    % Energy 막대 (AUROC 0.736)
-    \fill[secondaryorange!70] (0.4,0) rectangle (1.3,1.84);
-    \node[font=\scriptsize] at (0.85,2.0) {\textbf{0.736}};
+    \fill[secondaryorange!70] (0.4,0) rectangle (1.2,1.84);
+    \node[font=\scriptsize] at (0.8,2.0) {\textbf{0.736}};
     
-    % X축 라벨
-    \node[font=\tiny] at (0.85,-0.2) {Energy};
+    \node[font=\tiny] at (0.8,-0.2) {Energy};
     
-    % Y축 눈금
     \node[font=\tiny, anchor=east] at (-0.05,0) {0};
-    \node[font=\tiny, anchor=east] at (-0.05,1.25) {0.5};
     \node[font=\tiny, anchor=east] at (-0.05,2.5) {1.0};
-    
-    % 제목
-    \node[font=\scriptsize\bfseries, anchor=north] at (0.85,-0.5) {(c) Zero-SE 탐지};
-    \node[font=\tiny, text=black!40] at (1.5,1.4) {random};
 \end{scope}
+\node[font=\scriptsize\bfseries] at (9.2+0.8,-0.5) {(c) Zero-SE 탐지};
 
 \end{tikzpicture}
 }
