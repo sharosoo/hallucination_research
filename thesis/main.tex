@@ -84,7 +84,7 @@ Zero-SE 문제 해결을 중심으로}
 \cleardoublepage
 \pagenumbering{roman}
 
-\keyword{대규모 언어모델, 환각 탐지, Semantic Entropy, Semantic Energy, Zero-SE 문제, Adaptive Threshold}
+\keyword{대규모 언어모델, 환각 탐지, Semantic Entropy, Semantic Energy, Zero-SE 문제, SE-gated Cascade}
 \begin{abstract}
 대규모 언어모델(LLM)의 환각(hallucination) 문제는 실용적 적용에 있어 가장 심각한 장애물 중 하나이다. Farquhar 등이 Nature(2024)에서 제안한 Semantic Entropy(SE)는 LLM의 의미적 불확실성을 측정하는 대표적 방법이나, 모델이 일관되게 틀린 답변을 생성하는 Zero-SE 문제에서 한계를 보인다.
 
@@ -94,7 +94,7 @@ TruthfulQA 데이터셋 200개 샘플(K=5)에서의 실험 결과:
 \begin{itemize}
     \item Zero-SE 영역이 전체의 19\%를 차지하며, 이 중 73.7\%가 환각
     \item Zero-SE 영역에서 Energy AUROC 0.736 달성 (SE는 판별 불가)
-    \item SE-gated cascade는 SE 단독 대비 AUROC +0.030 개선 (0.613 → 0.643)
+    \item 클러스터 기반 SE-gated cascade는 SE 단독 대비 AUROC +0.029 개선 (0.613 → 0.642)
     \item 합집합 탐지율 34.1\% 달성
 \end{itemize}
 
@@ -344,15 +344,20 @@ SE와 Energy는 서로 다른 정보를 포착한다:
 
 \subsection{상보성의 수학적 표현}
 
-환각 탐지 함수 $D$를 다음과 같이 정의하자:
+SE의 정의에서, $SE = 0$이 되는 조건은 모든 응답이 단일 클러스터에 속할 때이다:
+\begin{equation}
+    SE = -\sum_{c \in C} p(c) \log p(c) = 0 \iff |C| = 1
+\end{equation}
+
+이 수학적 사실을 활용하여, 환각 탐지 함수 $D$를 다음과 같이 정의한다:
 \begin{equation}
     D(q) = \begin{cases}
-        Energy(q) & \text{if } SE(q) < \tau \\
-        SE(q) & \text{if } SE(q) \geq \tau
+        Energy(q) & \text{if } |C| = 1 \text{ (Zero-SE)} \\
+        SE(q) & \text{if } |C| \geq 2
     \end{cases}
 \end{equation}
 
-이 cascade 함수는 SE가 낮은 영역(Zero-SE)에서 Energy를, SE가 높은 영역에서 SE를 사용한다.
+이 cascade 함수는 클러스터가 하나뿐인 경우(Zero-SE)에서 Energy를, 그 외에서 SE를 사용한다. 임의의 임계값 $\tau$를 설정할 필요 없이, 클러스터 수라는 명확한 기준을 사용한다.
 
 
 \section{Internal Logit과 Confabulation의 관계}
@@ -401,74 +406,32 @@ SE-gated cascade의 알고리즘은 Algorithm~\ref{alg:cascade}와 같다.
 \caption{SE-Gated Cascade Detection}
 \label{alg:cascade}
 \begin{algorithmic}[1]
-\REQUIRE 질문 $q$, 임계값 $\tau$
+\REQUIRE 질문 $q$
 \STATE LLM으로부터 $K=5$ 응답 생성
-\STATE NLI 클러스터링을 통해 SE 계산
+\STATE NLI 클러스터링 수행 → 클러스터 집합 $C$
+\STATE SE 계산: $SE = -\sum_{c} p(c) \log p(c)$
 \STATE 토큰 logit 값으로 Energy 계산
-\IF{$SE < \tau$}
-    \STATE \textbf{return} Energy (지어냄 영역)
+\IF{$|C| = 1$}
+    \STATE \textbf{return} Energy \COMMENT{Zero-SE: 지어냄 영역}
 \ELSE
-    \STATE \textbf{return} SE (혼란 영역)
+    \STATE \textbf{return} SE \COMMENT{혼란 영역}
 \ENDIF
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{임계값 결정}
+\subsection{클러스터 기반 판별의 정당성}
 
-임계값 $\tau$는 SE와 Energy 중 어떤 메트릭을 사용할지 결정하는 기준이다. 본 연구에서는 TruthfulQA 데이터셋의 검증 세트에서 grid search를 통해 최적 임계값 $\tau = 0.526$을 도출하였다.
-
-\section{Adaptive Cascade: 입력 기반 동적 가중치}
-
-고정 임계값 $\tau$의 한계는 cross-dataset 환경에서 일반화가 어렵다는 것이다. 실험 결과(exp06), 학습 기반 가중치 예측 모델은 같은 분포 내에서는 AUROC 0.91을 달성하지만, 새로운 데이터셋에서는 baseline보다 성능이 떨어졌다.
-
-이를 해결하기 위해, 각 샘플의 특성을 보고 가중치를 결정하는 \textbf{Adaptive Cascade}를 제안한다:
-
-\begin{equation}
-    Score = w(x) \cdot Energy + (1 - w(x)) \cdot SE
-\end{equation}
-
-여기서 $w(x)$는 입력 $x$의 특성에 따라 결정되는 가중치 함수이다.
-
-\subsection{Rule-based Adaptive}
-
-학습 없이 해석 가능한 규칙으로 가중치를 결정한다:
-
-\begin{equation}
-    w(x) = \begin{cases}
-        0.9 & \text{if } SE(x) < 0.1 \text{ (Zero-SE)} \\
-        0.1 & \text{if } SE(x) > 0.5 \text{ (High-SE)} \\
-        \text{linear interpolation} & \text{otherwise}
-    \end{cases}
-\end{equation}
-
-\subsection{Cluster-aware Adaptive}
-
-클러스터 수를 직접 활용한다. Zero-SE의 정의가 ``단일 클러스터''이므로:
-
-\begin{equation}
-    w(x) = \begin{cases}
-        0.9 & \text{if } |C| = 1 \text{ (단일 클러스터)} \\
-        0.5 & \text{if } |C| = 2 \\
-        0.1 & \text{if } |C| \geq 3
-    \end{cases}
-\end{equation}
-
-\subsection{Hybrid Adaptive}
-
-SE 값과 클러스터 수를 모두 고려하는 복합 방법:
+제안 방법은 임의의 임계값 $\tau$ 대신 클러스터 수 $|C|$를 기준으로 사용한다. 이 선택의 정당성은 다음과 같다:
 
 \begin{enumerate}
-    \item 클러스터 1개 → Energy 강하게 선호 ($w = 0.9$)
-    \item 클러스터 2개 이상 + SE 낮음 → Energy 약하게 선호 ($w = 0.7$)
-    \item 클러스터 2개 이상 + SE 높음 → SE 선호 ($w = 0.1$)
+    \item \textbf{수학적 명확성}: $SE = 0 \iff |C| = 1$이므로, Zero-SE 영역은 정확히 단일 클러스터 경우와 일치한다.
+    \item \textbf{하이퍼파라미터 불필요}: 데이터셋에 따라 최적 $\tau$가 달라질 수 있지만, 클러스터 수는 보편적 기준이다.
+    \item \textbf{해석 가능성}: ``모든 응답이 의미적으로 동일할 때 Energy 사용''이라는 직관적 규칙이다.
 \end{enumerate}
 
-이 방법의 장점은:
-\begin{itemize}
-    \item \textbf{학습 불필요}: Cross-dataset 일반화 가능
-    \item \textbf{해석 가능}: 왜 그 가중치를 선택했는지 설명 가능
-    \item \textbf{샘플별 최적화}: 각 입력에 맞는 메트릭 선택
-\end{itemize}
+\section{확장 가능성}
+
+본 연구에서 제안한 클러스터 기반 cascade는 단순하고 해석 가능한 방법이다. 향후 연구에서는 클러스터 수뿐 아니라 SE 값의 연속적 변화를 활용한 가중치 결합 방법을 탐색할 수 있다. 예를 들어, $|C| = 2$인 경계 영역에서 SE와 Energy를 적절히 혼합하는 방식이 가능하다. 다만, 이러한 확장은 추가적인 하이퍼파라미터를 도입하므로, 본 연구에서는 가장 단순하고 엄밀한 형태인 클러스터 기반 이진 판별을 채택하였다.
 
 
 \chapter{실험}{\label{ch:experiment}}
@@ -544,14 +507,7 @@ High (1.0+) & 95 & 85.3\% & \textbf{0.658} & 0.422 \\
 
 \section{SE-Gated Cascade 성능}
 
-그림~\ref{fig:cascade_sweep}은 다양한 임계값 $\tau$에 대한 cascade 성능을 보여준다.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/fig4_cascade_sweep.png}
-    \caption{Cascade 임계값($\tau$) sweep 결과}
-    \label{fig:cascade_sweep}
-\end{figure}
+표~\ref{tab:cascade_result}는 제안하는 클러스터 기반 cascade 방법의 성능을 보여준다.
 
 \begin{table}[htbp]
 \centering
@@ -563,10 +519,12 @@ High (1.0+) & 95 & 85.3\% & \textbf{0.658} & 0.422 \\
 \midrule
 SE-only & 0.613 & - \\
 Energy-only & 0.550 & -0.063 \\
-\textbf{Cascade ($\tau$=0.55)} & \textbf{0.643} & \textbf{+0.030} \\
+\textbf{Cascade ($|C|=1$ → Energy)} & \textbf{0.642} & \textbf{+0.029} \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+클러스터가 1개인 경우(Zero-SE)에만 Energy를 사용하는 단순한 규칙으로 AUROC +0.029 개선을 달성하였다. 이 방법은 임계값 튜닝 없이도 일관된 성능 향상을 제공한다.
 
 
 \section{상보성 분석}
@@ -626,7 +584,7 @@ TruthfulQA 데이터셋 200개 샘플에서의 실험을 통해 다음을 확인
     
     \item \textbf{Energy의 효과}: Zero-SE 영역에서 Energy가 AUROC 0.736으로 환각을 효과적으로 구분한다.
     
-    \item \textbf{Cascade의 개선}: SE-gated cascade는 SE-only 대비 AUROC +0.030 개선을 달성한다 (0.613 → 0.643).
+    \item \textbf{Cascade의 개선}: 클러스터 기반 SE-gated cascade ($|C|=1$ → Energy)는 SE-only 대비 AUROC +0.029 개선을 달성한다 (0.613 → 0.642).
     
     \item \textbf{상보성}: SE와 Energy의 합집합 탐지율은 34.1\%에 도달한다.
 \end{enumerate}
@@ -648,15 +606,15 @@ TruthfulQA 데이터셋 200개 샘플에서의 실험을 통해 다음을 확인
 \section{향후 연구}
 
 \begin{enumerate}
-    \item \textbf{Adaptive Threshold}: 입력에 따라 $\tau$를 동적으로 결정하는 방법 개발. 현재 고정 임계값은 cross-dataset 환경에서 한계가 있다.
+    \item \textbf{대규모 데이터셋 검증}: 본 연구는 200개 샘플에서의 탐색적 분석으로, 전체 데이터셋(817개)으로 확장 시 성능 변화를 검증할 필요가 있다.
     
-    \item \textbf{다양한 데이터셋 검증}: TriviaQA, NaturalQuestions, HaluEval 등에서 검증 필요.
+    \item \textbf{다양한 데이터셋 검증}: TriviaQA, NaturalQuestions, HaluEval 등 다른 데이터셋에서의 일반화 성능 확인이 필요하다.
     
     \item \textbf{더 큰 모델 검증}: Qwen2.5-3B 외에 7B, 72B 등 더 큰 모델에서의 검증 필요.
     
-    \item \textbf{Energy 이론 심화}: Energy가 confabulation을 탐지하는 메커니즘에 대한 심층 분석 필요.
+    \item \textbf{경계 영역 처리}: $|C| = 2$인 경계 영역에서 SE와 Energy를 가중 결합하는 방법 탐색.
     
-    \item \textbf{KESFE/AHSFE 확장}: 문헌조사에서 제안된 Kernel 기반 또는 Adaptive 가중치 방법 적용.
+    \item \textbf{Energy 이론 심화}: Energy가 confabulation을 탐지하는 메커니즘에 대한 심층 분석 필요.
 \end{enumerate}
 
 

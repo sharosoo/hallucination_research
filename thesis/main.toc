@@ -27,15 +27,12 @@
 \contentsline {subsection}{\numberline {3.2.2}상보성의 수학적 표현}{8}{}%
 \contentsline {section}{\numberline {3.3}Internal Logit과 Confabulation의 관계}{8}{}%
 \contentsline {subsection}{\numberline {3.3.1}Logit 크기와 지식의 관계}{8}{}%
-\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{8}{}%
-\contentsline {chapter}{\numberline {4}제안 방법}{9}{}%
-\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{9}{}%
-\contentsline {subsection}{\numberline {4.1.1}알고리즘}{9}{}%
-\contentsline {subsection}{\numberline {4.1.2}임계값 결정}{9}{}%
-\contentsline {section}{\numberline {4.2}Adaptive Cascade: 입력 기반 동적 가중치}{10}{}%
-\contentsline {subsection}{\numberline {4.2.1}Rule-based Adaptive}{10}{}%
-\contentsline {subsection}{\numberline {4.2.2}Cluster-aware Adaptive}{10}{}%
-\contentsline {subsection}{\numberline {4.2.3}Hybrid Adaptive}{11}{}%
+\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{9}{}%
+\contentsline {chapter}{\numberline {4}제안 방법}{10}{}%
+\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{10}{}%
+\contentsline {subsection}{\numberline {4.1.1}알고리즘}{10}{}%
+\contentsline {subsection}{\numberline {4.1.2}클러스터 기반 판별의 정당성}{10}{}%
+\contentsline {section}{\numberline {4.2}확장 가능성}{11}{}%
 \contentsline {chapter}{\numberline {5}실험}{12}{}%
 \contentsline {section}{\numberline {5.1}실험 설정}{12}{}%
 \contentsline {subsection}{\numberline {5.1.1}데이터셋}{12}{}%

@@ -40,22 +40,19 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}상보성의 수학적 표현}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Internal Logit과 Confabulation의 관계}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Logit 크기와 지식의 관계}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}제안 방법}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}제안 방법}{10}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:method}{{4}{9}{}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces SE-Gated Cascade 개념도: SE가 낮으면 Energy로, 높으면 SE로 판단}}{9}{}\protected@file@percent }
-\newlabel{fig:cascade_diagram}{{4.1}{9}{}{figure.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}알고리즘}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}임계값 결정}{9}{}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces SE-Gated Cascade Detection}}{10}{}\protected@file@percent }
-\newlabel{alg:cascade}{{1}{10}{}{algorithm.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Adaptive Cascade: 입력 기반 동적 가중치}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Rule-based Adaptive}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Cluster-aware Adaptive}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Hybrid Adaptive}{11}{}\protected@file@percent }
+\newlabel{ch:method}{{4}{10}{}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces SE-Gated Cascade 개념도: SE가 낮으면 Energy로, 높으면 SE로 판단}}{10}{}\protected@file@percent }
+\newlabel{fig:cascade_diagram}{{4.1}{10}{}{figure.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}알고리즘}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}클러스터 기반 판별의 정당성}{10}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces SE-Gated Cascade Detection}}{11}{}\protected@file@percent }
+\newlabel{alg:cascade}{{1}{11}{}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}확장 가능성}{11}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}실험}{12}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -102,18 +99,16 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{17}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Crossover 패턴 확인}}{18}{}\protected@file@percent }
 \newlabel{fig:crossover}{{5.3}{18}{}{figure.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Cascade 임계값($\tau $) sweep 결과}}{18}{}\protected@file@percent }
-\newlabel{fig:cascade_sweep}{{5.4}{18}{}{figure.5.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{19}{}\protected@file@percent }
-\newlabel{tab:cascade_result}{{5.6}{19}{}{table.5.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{18}{}\protected@file@percent }
+\newlabel{tab:cascade_result}{{5.6}{18}{}{table.5.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}상보성 분석}{19}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}}{19}{}\protected@file@percent }
-\newlabel{fig:complementarity}{{5.5}{19}{}{figure.5.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 영역 비교 (80th percentile 기준)}}{19}{}\protected@file@percent }
+\newlabel{fig:complementarity}{{5.4}{19}{}{figure.5.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.5}전체 비교}{19}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{20}{}\protected@file@percent }
 \newlabel{tab:complementarity}{{5.7}{20}{}{table.5.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{20}{}\protected@file@percent }
-\newlabel{fig:overall}{{5.6}{20}{}{figure.5.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교}}{20}{}\protected@file@percent }
+\newlabel{fig:overall}{{5.5}{20}{}{figure.5.5}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}결론}{21}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -138,4 +133,4 @@
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.2}SemanticEntropyCalculator}{24}{}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.3}SemanticEnergyCalculator}{24}{}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {A.4}AdaptiveCascade (입력 기반 동적 가중치)}{25}{}\protected@file@percent }
-\gdef \@abspage@last{33}
+\gdef \@abspage@last{32}
