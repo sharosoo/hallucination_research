@@ -63,58 +63,56 @@
 }
 
 %=============================================================================
-% Figure 2: Zero-SE 현상 요약 (3-panel) - 정렬 버전
+% Figure 2: Zero-SE 현상 요약 (3-panel) - 완전 정렬 버전
 %=============================================================================
 \newcommand{\zerosefigure}{
 \centering
 \begin{tikzpicture}[font=\small]
 
-% 기준선: y=0이 모든 패널의 하단
-% 패널 높이: 약 2.5cm
-% 제목 위치: y=-0.5
+% 모든 패널: y=0 ~ y=2.5 범위, 제목은 y=-0.5
 
-% Panel A: 파이 차트
-\begin{scope}[yshift=1.2cm]  % 파이 중심을 위로
+% Panel A: 파이 차트 (하단을 y=0에 맞춤, 중심=radius)
+\begin{scope}
     \def\radius{1.1}
-    \fill[primaryblue!50] (0,0) circle (\radius);
-    \fill[hallred!60] (0,0) -- (90:\radius) arc (90:21.6:\radius) -- cycle;
+    \def\centery{1.1}  % 중심 y = radius이면 하단이 y=0
+    \fill[primaryblue!50] (0,\centery) circle (\radius);
+    \fill[hallred!60] (0,\centery) -- ++(90:\radius) arc (90:21.6:\radius) -- cycle;
     
-    \node[font=\scriptsize, white] at (55:0.7) {\textbf{19\%}};
-    \node[font=\scriptsize, white] at (-70:0.6) {\textbf{81\%}};
+    \node[font=\scriptsize, white] at ($(0,\centery)+(55:0.7)$) {\textbf{19\%}};
+    \node[font=\scriptsize, white] at ($(0,\centery)+(-70:0.6)$) {\textbf{81\%}};
     
-    % 범례 (파이 오른쪽)
-    \fill[hallred!60] (1.4,0.3) rectangle (1.65,0.5);
-    \node[font=\tiny, anchor=west] at (1.7, 0.4) {Zero-SE};
-    \fill[primaryblue!50] (1.4,-0.1) rectangle (1.65,0.1);
-    \node[font=\tiny, anchor=west] at (1.7, 0) {Non-Zero};
+    % 범례 (막대 차트 높이에 맞춤)
+    \fill[hallred!60] (1.5,1.8) rectangle (1.75,2.0);
+    \node[font=\tiny, anchor=west] at (1.8, 1.9) {Zero-SE};
+    \fill[primaryblue!50] (1.5,1.4) rectangle (1.75,1.6);
+    \node[font=\tiny, anchor=west] at (1.8, 1.5) {Non-Zero};
 \end{scope}
-% Panel A 제목 (고정 위치)
 \node[font=\scriptsize\bfseries] at (0,-0.5) {(a) Zero-SE 비율};
 \node[font=\tiny, text=black!60] at (0,-0.85) {n=200};
 
-% Panel B: 환각/정상 막대
+% Panel B: 환각/정상 막대 (y=0 ~ 2.5)
 \begin{scope}[xshift=5cm]
-    \draw[->, black!70] (0,0) -- (0,2.5);
+    \draw[->, black!70] (0,0) -- (0,2.6);
     \draw[->, black!70] (0,0) -- (2.5,0);
     
-    \fill[hallred!60] (0.3,0) rectangle (0.95,2.0);
-    \node[font=\scriptsize] at (0.625,2.15) {\textbf{28}};
+    \fill[hallred!60] (0.3,0) rectangle (0.95,2.15);
+    \node[font=\scriptsize] at (0.625,2.3) {\textbf{28}};
     
-    \fill[normgreen!60] (1.3,0) rectangle (1.95,0.71);
-    \node[font=\scriptsize] at (1.625,0.86) {\textbf{10}};
+    \fill[normgreen!60] (1.3,0) rectangle (1.95,0.77);
+    \node[font=\scriptsize] at (1.625,0.92) {\textbf{10}};
     
     \node[font=\tiny] at (0.625,-0.2) {환각};
     \node[font=\tiny] at (1.625,-0.2) {정상};
     
     \node[font=\tiny, anchor=east] at (-0.05,0) {0};
-    \node[font=\tiny, anchor=east] at (-0.05,2.0) {28};
+    \node[font=\tiny, anchor=east] at (-0.05,2.15) {28};
 \end{scope}
-\node[font=\scriptsize\bfseries] at (5+1.1,-0.5) {(b) Zero-SE 구성};
-\node[font=\tiny, text=black!60] at (5+1.1,-0.85) {환각률: 73.7\%};
+\node[font=\scriptsize\bfseries] at (6.1,-0.5) {(b) Zero-SE 구성};
+\node[font=\tiny, text=black!60] at (6.1,-0.85) {환각률: 73.7\%};
 
-% Panel C: Energy AUROC
+% Panel C: Energy AUROC (y=0 ~ 2.5)
 \begin{scope}[xshift=9.2cm]
-    \draw[->, black!70] (0,0) -- (0,2.5);
+    \draw[->, black!70] (0,0) -- (0,2.6);
     \draw[->, black!70] (0,0) -- (2,0);
     
     \draw[dashed, black!40, line width=0.5pt] (0,1.25) -- (1.7,1.25);
@@ -128,7 +126,7 @@
     \node[font=\tiny, anchor=east] at (-0.05,0) {0};
     \node[font=\tiny, anchor=east] at (-0.05,2.5) {1.0};
 \end{scope}
-\node[font=\scriptsize\bfseries] at (9.2+0.8,-0.5) {(c) Zero-SE 탐지};
+\node[font=\scriptsize\bfseries] at (10,-0.5) {(c) Zero-SE 탐지};
 
 \end{tikzpicture}
 }
