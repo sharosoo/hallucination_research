@@ -50,16 +50,19 @@
 
 \setmainfont{NanumSquare}
 \setsansfont{NanumSquare}
-\setmonofont{NanumSquare}
+% 모노스페이스 폰트는 시스템 기본 사용 (NanumSquare는 모노스페이스 아님)
 
 % 코드 스타일
 \lstset{
-    basicstyle=\ttfamily\small,
+    basicstyle=\footnotesize\ttfamily,
     breaklines=true,
     frame=single,
     language=Python,
     keywordstyle=\color{blue},
     commentstyle=\color{gray},
+    columns=flexible,
+    showspaces=false,
+    showstringspaces=false,
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -717,11 +720,7 @@ class SemanticEnergyCalculator:
 \begin{lstlisting}[caption={ClusterBasedCascade (클러스터 기반 판별)}]
 class ClusterBasedCascade:
     def compute(self, se, energy, num_clusters):
-        """
-        클러스터 수 기반 단순 판별
-        - |C| = 1 (Zero-SE): Energy 사용
-        - |C| >= 2: SE 사용
-        """
+        # |C| = 1 -> Energy, |C| >= 2 -> SE
         if num_clusters == 1:
             return energy, "energy"
         else:
