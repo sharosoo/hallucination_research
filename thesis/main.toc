@@ -60,4 +60,4 @@
 \contentsline {section}{\numberline {6.1}연구 요약}{20}{}%
 \contentsline {section}{\numberline {6.2}학술적 기여}{20}{}%
 \contentsline {section}{\numberline {6.3}향후 연구}{20}{}%
-\contentsline {chapter}{\numberline {A}핵심 알고리즘}{23}{}%
+\contentsline {chapter}{\numberline {A}메트릭 계산 알고리즘}{23}{}%

@@ -679,13 +679,13 @@ P. He, X. Liu, J. Gao, and W. Chen,
 
 
 \appendix
-\chapter{핵심 알고리즘}
+\chapter{메트릭 계산 알고리즘}
 
-본 연구에서 사용된 핵심 알고리즘의 의사코드는 다음과 같다.
+본 연구에서 사용된 SE와 Energy의 상세 계산 알고리즘은 다음과 같다. SE-gated Cascade 알고리즘은 본문 Algorithm~1을 참조한다.
 
 \begin{algorithm}[H]
 \caption{Semantic Entropy 계산}
-\label{alg:se}
+\label{alg:se_appendix}
 \begin{algorithmic}[1]
 \REQUIRE 클러스터 집합 $C = \{c_1, c_2, ..., c_m\}$, 총 응답 수 $K$
 \ENSURE Semantic Entropy $SE$
@@ -699,7 +699,7 @@ P. He, X. Liu, J. Gao, and W. Chen,
 
 \begin{algorithm}[H]
 \caption{Semantic Energy 계산}
-\label{alg:energy}
+\label{alg:energy_appendix}
 \begin{algorithmic}[1]
 \REQUIRE 응답 집합 $R = \{r_1, ..., r_K\}$, 각 응답의 토큰 logit $\ell_{i,t}$
 \ENSURE Semantic Energy $E$
@@ -711,23 +711,6 @@ P. He, X. Liu, J. Gao, and W. Chen,
 \ENDFOR
 \STATE $E \leftarrow -\text{mean}(L)$
 \RETURN $E$
-\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}[H]
-\caption{SE-gated Cascade}
-\label{alg:cascade}
-\begin{algorithmic}[1]
-\REQUIRE $SE$, $Energy$, 클러스터 수 $|C|$
-\ENSURE 환각 점수 $score$, 사용된 방법 $method$
-\IF{$|C| = 1$}
-    \STATE $score \leftarrow Energy$
-    \STATE $method \leftarrow$ ``Energy''
-\ELSE
-    \STATE $score \leftarrow SE$
-    \STATE $method \leftarrow$ ``SE''
-\ENDIF
-\RETURN $score$, $method$
 \end{algorithmic}
 \end{algorithm}
 
