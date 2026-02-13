@@ -1,0 +1,228 @@
+{
+  "dataset": "TruthfulQA",
+  "n_samples": 817,
+  "n_hallucinations": 613,
+  "n_normal": 204,
+  "hallucination_rate": 75.03059975520195,
+  "overall": {
+    "se_auroc": 0.5684915075328663,
+    "se_auprc": 0.7848406003236276,
+    "energy_auroc": 0.5690272846495857,
+    "energy_auprc": 0.7927225279707255
+  },
+  "zero_se": [
+    {
+      "epsilon": 0.001,
+      "n": 123,
+      "percentage": 15.055079559363524,
+      "n_hallucinations": 81,
+      "hallucination_rate": 65.85365853658537,
+      "energy_auroc": 0.5711346266901822,
+      "energy_auroc_ci": [
+        0.45463042288379624,
+        0.6786996904024767
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "n": 123,
+      "percentage": 15.055079559363524,
+      "n_hallucinations": 81,
+      "hallucination_rate": 65.85365853658537,
+      "energy_auroc": 0.5711346266901822,
+      "energy_auroc_ci": [
+        0.45463042288379624,
+        0.6786996904024767
+      ]
+    },
+    {
+      "epsilon": 0.05,
+      "n": 123,
+      "percentage": 15.055079559363524,
+      "n_hallucinations": 81,
+      "hallucination_rate": 65.85365853658537,
+      "energy_auroc": 0.5711346266901822,
+      "energy_auroc_ci": [
+        0.45463042288379624,
+        0.6786996904024767
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "n": 123,
+      "percentage": 15.055079559363524,
+      "n_hallucinations": 81,
+      "hallucination_rate": 65.85365853658537,
+      "energy_auroc": 0.5711346266901822,
+      "energy_auroc_ci": [
+        0.45463042288379624,
+        0.6786996904024767
+      ]
+    }
+  ],
+  "se_bins": [
+    {
+      "bin": "Zero-SE",
+      "range": "[0, 0.05)",
+      "n": 123,
+      "hallucination_rate": 65.85365853658537,
+      "se_auroc": null,
+      "energy_auroc": 0.5711346266901822
+    },
+    {
+      "bin": "Medium",
+      "range": "(0.3, 0.6]",
+      "n": 84,
+      "hallucination_rate": 71.42857142857143,
+      "se_auroc": null,
+      "energy_auroc": 0.5152777777777778
+    },
+    {
+      "bin": "High",
+      "range": "(0.6, 1.0]",
+      "n": 167,
+      "hallucination_rate": 76.64670658682635,
+      "se_auroc": 0.5477764423076923,
+      "energy_auroc": 0.538261217948718
+    },
+    {
+      "bin": "Very High",
+      "range": "(1.0, inf]",
+      "n": 443,
+      "hallucination_rate": 77.65237020316027,
+      "se_auroc": 0.5534267089499648,
+      "energy_auroc": 0.5614575992482969
+    }
+  ],
+  "cascade_sweep": [
+    {
+      "tau": 0.0,
+      "auroc": 0.5684915075328663
+    },
+    {
+      "tau": 0.05,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.1,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.15000000000000002,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.2,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.25,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.30000000000000004,
+      "auroc": 0.5654687649937626
+    },
+    {
+      "tau": 0.35000000000000003,
+      "auroc": 0.5678277836420049
+    },
+    {
+      "tau": 0.4,
+      "auroc": 0.5678277836420049
+    },
+    {
+      "tau": 0.45,
+      "auroc": 0.5670800946806128
+    },
+    {
+      "tau": 0.5,
+      "auroc": 0.5670800946806128
+    },
+    {
+      "tau": 0.55,
+      "auroc": 0.5670800946806128
+    },
+    {
+      "tau": 0.6000000000000001,
+      "auroc": 0.56550475002399
+    },
+    {
+      "tau": 0.65,
+      "auroc": 0.56550475002399
+    },
+    {
+      "tau": 0.7000000000000001,
+      "auroc": 0.5639334037040591
+    },
+    {
+      "tau": 0.75,
+      "auroc": 0.5639334037040591
+    },
+    {
+      "tau": 0.8,
+      "auroc": 0.5639334037040591
+    },
+    {
+      "tau": 0.8500000000000001,
+      "auroc": 0.5744330358570835
+    },
+    {
+      "tau": 0.9,
+      "auroc": 0.5744330358570835
+    },
+    {
+      "tau": 0.9500000000000001,
+      "auroc": 0.5744330358570835
+    },
+    {
+      "tau": 1.0,
+      "auroc": 0.5690272846495857
+    }
+  ],
+  "best_cascade": {
+    "tau": 0.8500000000000001,
+    "auroc": 0.5744330358570835
+  },
+  "complementarity": {
+    "threshold_percentile": 80,
+    "n_hallucinations": 613,
+    "both_catch": 0,
+    "se_only": 0,
+    "energy_only": 136,
+    "neither_catch": 477,
+    "union_catch_rate": 22.185970636215334
+  },
+  "cluster_analysis": [
+    {
+      "num_clusters": 1,
+      "n": 123,
+      "percentage": 15.055079559363524,
+      "hallucination_rate": 65.85365853658537
+    },
+    {
+      "num_clusters": 2,
+      "n": 136,
+      "percentage": 16.64626682986536,
+      "hallucination_rate": 71.32352941176471
+    },
+    {
+      "num_clusters": 3,
+      "n": 165,
+      "percentage": 20.195838433292536,
+      "hallucination_rate": 78.78787878787878
+    },
+    {
+      "num_clusters": 4,
+      "n": 190,
+      "percentage": 23.25581395348837,
+      "hallucination_rate": 72.63157894736842
+    },
+    {
+      "num_clusters": 5,
+      "n": 203,
+      "percentage": 24.84700122399021,
+      "hallucination_rate": 82.26600985221675
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+\contentsline {chapter}{초록}{i}{}%
+\contentsline {chapter}{\numberline {1}서론}{1}{}%
+\contentsline {section}{\numberline {1.1}연구 배경}{1}{}%
+\contentsline {section}{\numberline {1.2}연구 목적}{1}{}%
+\contentsline {section}{\numberline {1.3}논문 구성}{2}{}%
+\contentsline {chapter}{\numberline {2}관련 연구}{3}{}%
+\contentsline {section}{\numberline {2.1}Semantic Entropy (SE)}{3}{}%
+\contentsline {subsection}{\numberline {2.1.1}작동 원리}{3}{}%
+\contentsline {subsection}{\numberline {2.1.2}한계점}{4}{}%
+\contentsline {section}{\numberline {2.2}Kernel Language Entropy (KLE)}{4}{}%
+\contentsline {subsection}{\numberline {2.2.1}핵심 아이디어}{4}{}%
+\contentsline {subsection}{\numberline {2.2.2}이론적 기여}{4}{}%
+\contentsline {section}{\numberline {2.3}Semantic Nearest Neighbor Entropy (SNNE)}{4}{}%
+\contentsline {subsection}{\numberline {2.3.1}핵심 아이디어}{4}{}%
+\contentsline {subsection}{\numberline {2.3.2}SE/KLE 대비 장점}{5}{}%
+\contentsline {section}{\numberline {2.4}Semantic Energy}{5}{}%
+\contentsline {subsection}{\numberline {2.4.1}작동 원리}{5}{}%
+\contentsline {subsection}{\numberline {2.4.2}SE 대비 차별점}{5}{}%
+\contentsline {subsection}{\numberline {2.4.3}Zero-SE 해결}{5}{}%
+\contentsline {section}{\numberline {2.5}기존 연구의 한계 및 연구 공백}{6}{}%
+\contentsline {chapter}{\numberline {3}이론적 분석}{7}{}%
+\contentsline {section}{\numberline {3.1}환각의 두 가지 유형}{7}{}%
+\contentsline {subsection}{\numberline {3.1.1}혼란 (Confusion)}{7}{}%
+\contentsline {subsection}{\numberline {3.1.2}지어냄 (Confabulation)}{7}{}%
+\contentsline {section}{\numberline {3.2}SE와 Energy의 상보성}{8}{}%
+\contentsline {subsection}{\numberline {3.2.1}정보 이론적 관점}{8}{}%
+\contentsline {subsection}{\numberline {3.2.2}상보성의 수학적 표현}{8}{}%
+\contentsline {section}{\numberline {3.3}Internal Logit과 Confabulation의 관계}{8}{}%
+\contentsline {subsection}{\numberline {3.3.1}Logit 크기와 지식의 관계}{8}{}%
+\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{8}{}%
+\contentsline {chapter}{\numberline {4}제안 방법}{10}{}%
+\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{10}{}%
+\contentsline {subsection}{\numberline {4.1.1}알고리즘}{10}{}%
+\contentsline {subsection}{\numberline {4.1.2}클러스터 기반 판별의 정당성}{10}{}%
+\contentsline {section}{\numberline {4.2}확장 가능성}{11}{}%
+\contentsline {chapter}{\numberline {5}실험}{12}{}%
+\contentsline {section}{\numberline {5.1}실험 설정}{12}{}%
+\contentsline {subsection}{\numberline {5.1.1}데이터셋}{12}{}%
+\contentsline {subsection}{\numberline {5.1.2}실험 파이프라인}{12}{}%
+\contentsline {subsubsection}{Step 1: 다중 응답 샘플링}{12}{}%
+\contentsline {subsubsection}{Step 2: 의미적 클러스터링}{13}{}%
+\contentsline {subsubsection}{Step 3: 메트릭 계산}{13}{}%
+\contentsline {paragraph}{Semantic Entropy (SE)}{13}{}%
+\contentsline {paragraph}{Semantic Energy}{13}{}%
+\contentsline {subsubsection}{Step 4: 환각 판정 및 평가}{13}{}%
+\contentsline {paragraph}{환각 레이블링}{13}{}%
+\contentsline {paragraph}{평가 지표}{15}{}%
+\contentsline {subsection}{\numberline {5.1.3}모델 설정}{15}{}%
+\contentsline {paragraph}{LLM 선택 근거}{15}{}%
+\contentsline {paragraph}{NLI 모델 선택 근거}{15}{}%
+\contentsline {subsection}{\numberline {5.1.4}실험 환경}{15}{}%
+\contentsline {subsection}{\numberline {5.1.5}재현성}{15}{}%
+\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{16}{}%
+\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{16}{}%
+\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{16}{}%
+\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{16}{}%
+\contentsline {section}{\numberline {5.4}상보성 분석}{18}{}%
+\contentsline {section}{\numberline {5.5}전체 비교}{18}{}%
+\contentsline {chapter}{\numberline {6}결론}{20}{}%
+\contentsline {section}{\numberline {6.1}연구 요약}{20}{}%
+\contentsline {section}{\numberline {6.2}학술적 기여}{20}{}%
+\contentsline {section}{\numberline {6.3}향후 연구}{20}{}%
+\contentsline {chapter}{\numberline {A}메트릭 계산 알고리즘}{23}{}%

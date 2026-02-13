@@ -1,0 +1,133 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{초록}{i}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}서론}{1}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}연구 배경}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}연구 목적}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}논문 구성}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}관련 연구}{3}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:related}{{2}{3}{}{chapter.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces LLM 환각 탐지 방법론 비교}}{3}{}\protected@file@percent }
+\newlabel{tab:method_comparison}{{2.1}{3}{}{table.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Semantic Entropy (SE)}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}작동 원리}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}한계점}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Kernel Language Entropy (KLE)}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}핵심 아이디어}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}이론적 기여}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Semantic Nearest Neighbor Entropy (SNNE)}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}핵심 아이디어}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}SE/KLE 대비 장점}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Semantic Energy}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}작동 원리}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}SE 대비 차별점}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces SE와 Semantic Energy의 비교}}{5}{}\protected@file@percent }
+\newlabel{tab:se_vs_energy}{{2.2}{5}{}{table.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Zero-SE 해결}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}기존 연구의 한계 및 연구 공백}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}이론적 분석}{7}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:theory}{{3}{7}{}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}환각의 두 가지 유형}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}혼란 (Confusion)}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}지어냄 (Confabulation)}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}SE와 Energy의 상보성}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}정보 이론적 관점}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}상보성의 수학적 표현}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Internal Logit과 Confabulation의 관계}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Logit 크기와 지식의 관계}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Confabulation에서의 Logit 패턴}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}제안 방법}{10}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:method}{{4}{10}{}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}SE-Gated Cascade}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces SE-Gated Cascade 개념도: 클러스터가 1개면 Energy로, 그 외에는 SE로 판단}}{10}{}\protected@file@percent }
+\newlabel{fig:cascade_diagram}{{4.1}{10}{}{figure.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}알고리즘}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}클러스터 기반 판별의 정당성}{10}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces SE-Gated Cascade Detection}}{11}{}\protected@file@percent }
+\newlabel{alg:cascade}{{1}{11}{}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}확장 가능성}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}실험}{12}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:experiment}{{5}{12}{}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}실험 설정}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}데이터셋}{12}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces 실험 데이터셋 통계}}{12}{}\protected@file@percent }
+\newlabel{tab:dataset}{{5.1}{12}{}{table.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}실험 파이프라인}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Step 1: 다중 응답 샘플링}{12}{}\protected@file@percent }
+\newlabel{lst:prompt}{{5.1}{12}{}{lstlisting.5.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}응답 샘플링 프롬프트}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces 실험 파이프라인 개요}}{13}{}\protected@file@percent }
+\newlabel{fig:pipeline}{{5.1}{13}{}{figure.5.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Step 2: 의미적 클러스터링}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Step 3: 메트릭 계산}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Semantic Entropy (SE)}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Semantic Energy}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Step 4: 환각 판정 및 평가}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{환각 레이블링}{13}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces NLI 기반 의미적 클러스터링}}{14}{}\protected@file@percent }
+\newlabel{alg:clustering}{{2}{14}{}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{평가 지표}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}모델 설정}{15}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces 실험에 사용된 모델}}{15}{}\protected@file@percent }
+\newlabel{tab:models}{{5.2}{15}{}{table.5.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{LLM 선택 근거}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NLI 모델 선택 근거}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}실험 환경}{15}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces 실험 환경}}{15}{}\protected@file@percent }
+\newlabel{tab:environment}{{5.3}{15}{}{table.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}재현성}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Zero-SE 현상 분석}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Zero-SE 비율 및 환각률}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Zero-SE 현상 개요: 전체 대비 비율(19\%), 환각률(73.7\%), Energy AUROC(0.736)}}{16}{}\protected@file@percent }
+\newlabel{fig:zero_se_overview}{{5.2}{16}{}{figure.5.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{16}{}\protected@file@percent }
+\newlabel{tab:zero_se}{{5.4}{16}{}{table.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}SE 구간별 Crossover 분석}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}SE-Gated Cascade 성능}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces SE 구간별 SE vs Energy AUROC 비교: Zero-SE에서 Energy 우세, High-SE에서 SE 우세}}{17}{}\protected@file@percent }
+\newlabel{fig:crossover}{{5.3}{17}{}{figure.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces SE 구간별 탐지 성능}}{17}{}\protected@file@percent }
+\newlabel{tab:crossover}{{5.5}{17}{}{table.5.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{17}{}\protected@file@percent }
+\newlabel{tab:cascade_result}{{5.6}{17}{}{table.5.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}상보성 분석}{18}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SE와 Energy의 환각 탐지 상보성: 합집합 탐지율 34.1\%}}{18}{}\protected@file@percent }
+\newlabel{fig:complementarity}{{5.4}{18}{}{figure.5.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{18}{}\protected@file@percent }
+\newlabel{tab:complementarity}{{5.7}{18}{}{table.5.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}전체 비교}{18}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces SE, Energy, Cascade 전체 성능 비교: Cascade($|C|=1$)가 +0.029 개선}}{19}{}\protected@file@percent }
+\newlabel{fig:overall}{{5.5}{19}{}{figure.5.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}결론}{20}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:conclusion}{{6}{20}{}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}연구 요약}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}학술적 기여}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}향후 연구}{20}{}\protected@file@percent }
+\bibcite{farquhar2024}{1}
+\bibcite{ma2025}{2}
+\bibcite{nikitin2024}{3}
+\bibcite{nguyen2025}{4}
+\bibcite{cleanse2025}{5}
+\bibcite{truthfulqa}{6}
+\bibcite{allenzhu2023}{7}
+\bibcite{qwen}{8}
+\bibcite{deberta}{9}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}메트릭 계산 알고리즘}{23}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Semantic Entropy 계산}}{23}{}\protected@file@percent }
+\newlabel{alg:se_appendix}{{3}{23}{}{algorithm.3}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Semantic Energy 계산}}{23}{}\protected@file@percent }
+\newlabel{alg:energy_appendix}{{4}{23}{}{algorithm.4}{}}
+\gdef \@abspage@last{30}

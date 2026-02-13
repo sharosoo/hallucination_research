@@ -1,0 +1,38 @@
+% 자동 생성됨: exp10_thesis_complete/update_thesis.py
+% 실험 결과 기반 LaTeX 테이블
+
+%% 데이터셋 통계
+% 전체 샘플: 817
+% 환각: 613 (75.0%)
+% 정상: 204 (25.0%)
+
+%% 전체 성능
+% SE AUROC: 0.5685
+% Energy AUROC: 0.5690
+% Cascade AUROC: 0.5744 (τ=0.85)
+% Cascade 개선: +0.0059
+
+%% Zero-SE (ε=0.05)
+% 비율: 15.1%
+% 환각률: 65.9%
+% Energy AUROC: 0.5711346266901822
+
+%% 상보성
+% 합집합 탐지율: 22.2%
+
+%% SE 구간별 성능
+\begin{table}[htbp]
+\centering
+\caption{SE 구간별 탐지 성능 (실험 결과)}
+\label{tab:crossover_exp10}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+SE 구간 & n & 환각률 & SE AUROC & Energy AUROC \\
+\midrule
+Zero-SE [0, 0.05) & 123 & 65.9\% & N/A & \textbf{0.571} \\
+Medium (0.3, 0.6] & 84 & 71.4\% & N/A & 0.515 \\
+High (0.6, 1.0] & 167 & 76.6\% & 0.548 & 0.538 \\
+Very High (1.0, inf] & 443 & 77.7\% & 0.553 & 0.561 \\
+\bottomrule
+\end{tabular}
+\end{table}

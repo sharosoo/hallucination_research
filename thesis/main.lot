@@ -1,0 +1,16 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces LLM 환각 탐지 방법론 비교}}{3}{}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces SE와 Semantic Energy의 비교}}{5}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces 실험 데이터셋 통계}}{12}{}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces 실험에 사용된 모델}}{15}{}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces 실험 환경}}{15}{}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces TruthfulQA Zero-SE 영역 분석}}{16}{}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces SE 구간별 탐지 성능}}{17}{}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces 탐지 방법별 AUROC 비교}}{17}{}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces 환각 탐지 상보성 (164개 환각 기준)}}{18}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
