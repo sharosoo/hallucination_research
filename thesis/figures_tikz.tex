@@ -168,10 +168,7 @@
 \end{axis}
 
 % 주석
-\node[font=\scriptsize, text=secondaryorange!80!black, anchor=west] at (1.2, 5.2) {$\leftarrow$ Energy 우세};
-\node[font=\scriptsize, text=primaryblue!80!black, anchor=east] at (9.5, 5.2) {SE 우세 $\rightarrow$};
-\draw[->, line width=0.6pt, secondaryorange!70] (2.5, 5.0) -- (1.5, 4.5);
-\draw[->, line width=0.6pt, primaryblue!70] (8, 5.0) -- (9, 4.5);
+% (요청 반영) 우세 방향 화살표/주석 제거
 
 \end{tikzpicture}
 }
@@ -254,9 +251,9 @@
     extra y tick style={grid=major, grid style={dashed, lightgray}},
     extra y tick labels={},
 ]
-\addplot[fill=primaryblue!70, draw=primaryblue] coordinates {(1,0.613)};
-\addplot[fill=secondaryorange!70, draw=secondaryorange] coordinates {(2,0.550)};
-\addplot[fill=accentgreen!70, draw=accentgreen] coordinates {(3,0.642)};
+\addplot[fill=primaryblue!70, draw=primaryblue, bar shift=0pt] coordinates {(1,0.613)};
+\addplot[fill=secondaryorange!70, draw=secondaryorange, bar shift=0pt] coordinates {(2,0.550)};
+\addplot[fill=accentgreen!70, draw=accentgreen, bar shift=0pt] coordinates {(3,0.642)};
 \end{axis}
 
 % 개선 화살표
